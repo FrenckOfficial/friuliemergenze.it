@@ -1,662 +1,1333 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Galleria | Friuli Emergenze</title>
-  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-  <link rel="stylesheet" href="/style.css" />
-   
-  <link rel="shortcut icon" href="/assets/logo.png" type="image/png" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <style>
-    .filter-spotters {
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galleria | Friuli Emergenze</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <link rel="stylesheet" href="/style.css" />
 
-    .filter-spotters button {
-      background-color: #eee;
-      border: none;
-      padding: 0.5rem 1rem;
-      margin: 0 0.25rem;
-      cursor: pointer;
-      font-weight: bold;
-      border-radius: 6px;
-      transition: background-color 0.2s ease;
-    }
+    <link rel="shortcut icon" href="/assets/logo.png" type="image/png" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      .filter-spotters {
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
 
-    .filter-spotters button:hover,
-    .filter-spotters button.active {
-      background-color: #db7b0e;
-      color: #fff;
-    }
-  </style>
-</head>
-<body>
-  <nav class="navbar">
-    <div class="navbar-container">
-      <a href="/" class="logo">🚨 Friuli Emergenze</a>
+      .filter-spotters button {
+        background-color: #eee;
+        border: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.25rem;
+        cursor: pointer;
+        font-weight: bold;
+        border-radius: 6px;
+        transition: background-color 0.2s ease;
+      }
 
-      <button class="menu-toggle" aria-label="Menu">
-        <i class="fas fa-bars"></i>
-      </button>
+      .filter-spotters button:hover,
+      .filter-spotters button.active {
+        background-color: #db7b0e;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="/" class="logo">🚨 Friuli Emergenze</a>
 
-      <ul class="nav-links">
-        <li><a href="/" class="nav-link">Home</a></li>
-        <li><a href="/gallery" class="nav-link active">Galleria</a></li>
-        <li><a href="/mediakit" class="nav-link">Media Kit</a></li>
-        <li><a href="/spotters" class="nav-link">Spotters</a></li>
-        <li><a href="/contact-us" class="nav-link">Contatti</a></li>
-        <li><a href="https://myfrem.friuliemergenze.it" target="_blank" class="nav-icon">Progetto My-FrEm</a></li>
-        <li><a href="https://instagram.com/friuliemergenze" target="_blank" class="nav-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
-        <li><a href="https://chat.whatsapp.com/I35F1A1bafKA1evG6lYYed" target="_blank" class="nav-icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></li>
-      </ul>
-    </div>
-  </nav>
+        <button class="menu-toggle" aria-label="Menu">
+          <i class="fas fa-bars"></i>
+        </button>
 
-  <header class="hero">
-    <img src="/assets/logo.png" alt="Logo Friuli Emergenze" class="logo" />
-    <h1>Galleria</h1>
-    <p>Tutti i mezzi fotografati e pubblicati da Friuli Emergenze</p>
-  </header>
+        <ul class="nav-links">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/gallery" class="nav-link active">Galleria</a></li>
+          <li><a href="/mediakit" class="nav-link">Media Kit</a></li>
+          <li><a href="/spotters" class="nav-link">Spotters</a></li>
+          <li><a href="/contact-us" class="nav-link">Contatti</a></li>
+          <li>
+            <a
+              href="https://myfrem.friuliemergenze.it"
+              target="_blank"
+              class="nav-icon"
+            >
+              Progetto MyFrEM</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://instagram.com/friuliemergenze"
+              target="_blank"
+              class="nav-icon"
+              aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://chat.whatsapp.com/I35F1A1bafKA1evG6lYYed"
+              target="_blank"
+              class="nav-icon"
+              aria-label="WhatsApp"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-  <main>
-    <section class="filter-buttons">
-      <button data-filter="all" class="active">Tutti</button>
-      <button data-filter="vvf">Vigili del Fuoco</button>
-      <button data-filter="soccorso-sanitario">Soccorso Sanitario</button>
-      <button data-filter="guardia-costiera">Guardia Costiera</button>
-      <button data-filter="carabinieri">Carabinieri</button>
-      <button data-filter="guardia-di-finanza">Guardia di Finanza</button>
-      <button data-filter="polizia-di-stato">Polizia di Stato</button>
-      <button data-filter="polizia-locale">Polizia Locale</button>
-      <button data-filter="esercito">Esercito Italiano</button>
-    </section>
+    <header class="hero">
+      <img src="/assets/logo.png" alt="Logo Friuli Emergenze" class="logo" />
+      <h1>Galleria</h1>
+      <p>Tutti i mezzi fotografati e pubblicati da Friuli Emergenze</p>
+    </header>
 
-    <section class="filter-spotters">
-      <button data-spotter="all" class="active">Tutti</button>
-      <button data-spotter="rescuespotter_ts">rescuespotter_ts</button>
-      <button data-spotter="verona_emergency112">verona_emergency112</button>
-      <button data-spotter="malcus08">malcus08</button>
-      <button data-spotter="s.o.s_italia">s.o.s_italia</button>
-      <button data-spotter="s.o.g.i.t._sez._trieste">SOGIT Trieste</button>
-    </section>
+    <main>
+      <section class="filter-buttons">
+        <button data-filter="all" class="active">Tutti</button>
+        <button data-filter="vvf">Vigili del Fuoco</button>
+        <button data-filter="protezione-civile">Protezione Civile</button>
+        <button data-filter="soccorso-sanitario">Soccorso Sanitario</button>
+        <button data-filter="guardia-costiera">Guardia Costiera</button>
+        <button data-filter="carabinieri">Carabinieri</button>
+        <button data-filter="guardia-di-finanza">Guardia di Finanza</button>
+        <button data-filter="polizia-di-stato">Polizia di Stato</button>
+        <button data-filter="polizia-locale">Polizia Locale</button>
+        <button data-filter="esercito">Esercito Italiano</button>
+      </section>
 
-    <div class="gallery-search">
-      <input type="text" id="searchInput" placeholder="Cerca un mezzo..." style="width:100%;padding:0.75rem;margin:1rem 0;border:1px solid #ccc;border-radius:8px;font-size:1rem;">
-    </div>
+      <section class="filter-spotters">
+        <button data-spotter="all" class="active">Tutti</button>
+        <button data-spotter="rescuespotter_ts">rescuespotter_ts</button>
+        <button data-spotter="verona_emergency112">verona_emergency112</button>
+        <button data-spotter="malcus08">malcus08</button>
+        <button data-spotter="s.o.s_italia">s.o.s_italia</button>
+        <button data-spotter="s.o.g.i.t._sez._trieste">SOGIT Trieste</button>
+      </section>
 
-    <div class="gallery-count" style="text-align: center; margin-top: 1rem; font-size: 1.2rem; font-weight: 600; color: #00bcd4;">
-      Mezzi totali: <span id="mezziCount"></span>
-    </div>
+      <div class="gallery-search">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Cerca un mezzo..."
+          style="
+            width: 100%;
+            padding: 0.75rem;
+            margin: 1rem 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+          "
+        />
+      </div>
 
-    <section class="gallery">
-      <div class="grid">
-        <div class="grid-item" data-category="soccorso-sanitario">
-          <a href="/assets/mezzi/sierra271-sogitgrado.jpg" data-lightbox="mezzi" data-title="MAN TGE 3.180 - SIERRA 271 - SOGIT Grado">
-            <img src="/assets/mezzi/sierra271-sogitgrado.jpg" alt="SIERRA 271 SOGIT Grado">
-          </a>
-          <p>MAN TGE 3.180 - SIERRA 271 - SOGIT Grado</p>
-          <a href="/gallery/scheda/sierra271-sogit/" class="btn-scopri">Scopri di più</a>
-        </div>
+      <div
+        class="gallery-count"
+        style="
+          text-align: center;
+          margin-top: 1rem;
+          font-size: 1.2rem;
+          font-weight: 600;
+          color: #00bcd4;
+        "
+      >
+        Mezzi totali: <span id="mezziCount"></span>
+      </div>
 
-        <div class="grid-item" data-category="vvf">
-          <a href="/assets/mezzi/volvofl-vvfgorizia.jpg" data-lightbox="mezzi" data-title="VOLVO FL - VVF Gorizia">
-            <img src="/assets/mezzi/volvofl-vvfgorizia.jpg" alt="Volvo FL VVF Gorizia">
-          </a>
-          <p>VOLVO FL - VVF Gorizia</p>
-          <a href="/gallery/scheda/volvofl-vvfgorizia/" class="btn-scopri">Scopri di più</a>
-        </div>
+      <section class="gallery">
+        <div class="grid">
+          <div class="grid-item" data-category="soccorso-sanitario">
+            <a
+              href="/assets/mezzi/sierra271-sogitgrado.jpg"
+              data-lightbox="mezzi"
+              data-title="MAN TGE 3.180 - SIERRA 271 - SOGIT Grado"
+            >
+              <img
+                src="/assets/mezzi/sierra271-sogitgrado.jpg"
+                alt="SIERRA 271 SOGIT Grado"
+              />
+            </a>
+            <p>MAN TGE 3.180 - SIERRA 271 - SOGIT Grado</p>
+            <a href="/gallery/scheda/sierra271-sogit/" class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="soccorso-sanitario">
-          <a href="/assets/mezzi/sierra76-sogitgrado.webp" data-lightbox="mezzi" data-title="MAN TGE 3.180 - SIERRA 76 - SOGIT Grado">
-            <img src="/assets/mezzi/sierra76-sogitgrado.webp" alt="SIERRA 276 SOGIT Grado">
-          </a>
-          <p>MAN TGE 3.180 - SIERRA 76 - SOGIT Grado</p>
-          <a href="/gallery/scheda/sierra76-sogit/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div class="grid-item" data-category="vvf">
+            <a
+              href="/assets/mezzi/volvofl-vvfgorizia.jpg"
+              data-lightbox="mezzi"
+              data-title="VOLVO FL - VVF Gorizia"
+            >
+              <img
+                src="/assets/mezzi/volvofl-vvfgorizia.jpg"
+                alt="Volvo FL VVF Gorizia"
+              />
+            </a>
+            <p>VOLVO FL - VVF Gorizia</p>
+            <a href="/gallery/scheda/volvofl-vvfgorizia/" class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="vvf">
-          <a href="/assets/mezzi/nissannavara-vvfgorizia.jpg" data-lightbox="mezzi" data-title="Nissan Navara - VVF Gorizia">
-            <img src="/assets/mezzi/nissannavara-vvfgorizia.jpg" alt="Nissan Navara VVF Gorizia">
-          </a>
-          <p>Nissan Navara - VVF Gorizia</p>
-          <a href="/gallery/scheda/nissannavara-vvfgorizia/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div class="grid-item" data-category="soccorso-sanitario">
+            <a
+              href="/assets/mezzi/sierra76-sogitgrado.webp"
+              data-lightbox="mezzi"
+              data-title="MAN TGE 3.180 - SIERRA 76 - SOGIT Grado"
+            >
+              <img
+                src="/assets/mezzi/sierra76-sogitgrado.webp"
+                alt="SIERRA 276 SOGIT Grado"
+              />
+            </a>
+            <p>MAN TGE 3.180 - SIERRA 76 - SOGIT Grado</p>
+            <a href="/gallery/scheda/sierra76-sogit/" class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="soccorso-sanitario">
-          <a href="/assets/mezzi/fiatducato-dueeffe.jpg" data-lightbox="mezzi" data-title="Fiat Ducato - Due Effe Ambulanze">
-            <img src="/assets/mezzi/fiatducato-dueeffe.jpg" alt="Fiat Ducato DueEffe Ambulanze">
-          </a>
-          <p>Fiat Ducato - Due Effe Ambulanze</p>
-          <a href="/gallery/scheda/fiatducato-dueeffeambulanze/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div class="grid-item" data-category="vvf">
+            <a
+              href="/assets/mezzi/nissannavara-vvfgorizia.jpg"
+              data-lightbox="mezzi"
+              data-title="Nissan Navara - VVF Gorizia"
+            >
+              <img
+                src="/assets/mezzi/nissannavara-vvfgorizia.jpg"
+                alt="Nissan Navara VVF Gorizia"
+              />
+            </a>
+            <p>Nissan Navara - VVF Gorizia</p>
+            <a
+              href="/gallery/scheda/nissannavara-vvfgorizia/"
+              class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="vvf">
-          <a href="/assets/mezzi/ivecomaxicity-vvfgorizia.jpg" data-lightbox="mezzi" data-title="Iveco Maxicity 2020 - VVF Gorizia">
-            <img src="/assets/mezzi/ivecomaxicity-vvfgorizia.jpg" alt="Iveco Maxicity 2020 - VVF Gorizia">
-          </a>
-          <p>Iveco Maxicity 2020 - VVF Gorizia</p>
-          <a href="/gallery/scheda/ivecomaxicity-vvfgorizia/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div class="grid-item" data-category="soccorso-sanitario">
+            <a
+              href="/assets/mezzi/fiatducato-dueeffe.jpg"
+              data-lightbox="mezzi"
+              data-title="Fiat Ducato - Due Effe Ambulanze"
+            >
+              <img
+                src="/assets/mezzi/fiatducato-dueeffe.jpg"
+                alt="Fiat Ducato DueEffe Ambulanze"
+              />
+            </a>
+            <p>Fiat Ducato - Due Effe Ambulanze</p>
+            <a
+              href="/gallery/scheda/fiatducato-dueeffeambulanze/"
+              class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="soccorso-sanitario">
-          <a href="/assets/mezzi/sierra275-sogitgrado.png" data-lightbox="mezzi" data-title="Fiat Ducato X290 - SIERRA 275 - SOGIT Grado">
-            <img src="/assets/mezzi/sierra275-sogitgrado.png" alt="SIERRA 271 SOGIT Grado">
-          </a>
-          <p>Fiat Ducato X290 - SIERRA 275 - SOGIT Grado</p>
-          <a href="/gallery/scheda/sierra275-sogit/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div class="grid-item" data-category="vvf">
+            <a
+              href="/assets/mezzi/ivecomaxicity-vvfgorizia.jpg"
+              data-lightbox="mezzi"
+              data-title="Iveco Maxicity 2020 - VVF Gorizia"
+            >
+              <img
+                src="/assets/mezzi/ivecomaxicity-vvfgorizia.jpg"
+                alt="Iveco Maxicity 2020 - VVF Gorizia"
+              />
+            </a>
+            <p>Iveco Maxicity 2020 - VVF Gorizia</p>
+            <a
+              href="/gallery/scheda/ivecomaxicity-vvfgorizia/"
+              class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="guardia-costiera">
-          <a href="/assets/mezzi/cp881-guardiacostieratrieste.png" data-lightbox="mezzi" data-title="Charlie Papa 881 - Guardia Costiera Trieste">
-            <img src="/assets/mezzi/cp881-guardiacostieratrieste.png" alt="Charlie Papa 881 Guardia Costiera Trieste">
-          </a>
-          <p>Charlie Papa 881 - Guardia Costiera Trieste</p>
-          <a href="/gallery/scheda/charliepapa881-gctrieste/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div class="grid-item" data-category="soccorso-sanitario">
+            <a
+              href="/assets/mezzi/sierra275-sogitgrado.png"
+              data-lightbox="mezzi"
+              data-title="Fiat Ducato X290 - SIERRA 275 - SOGIT Grado"
+            >
+              <img
+                src="/assets/mezzi/sierra275-sogitgrado.png"
+                alt="SIERRA 271 SOGIT Grado"
+              />
+            </a>
+            <p>Fiat Ducato X290 - SIERRA 275 - SOGIT Grado</p>
+            <a href="/gallery/scheda/sierra275-sogit/" class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="vvf">
-          <a href="/assets/mezzi/carolina-vvfgrado.jpg" data-lightbox="mezzi" data-title="Acquatica Carolina - VVF Monfalcone">
-            <img src="/assets/mezzi/carolina-vvfgrado.jpg" alt="Acquatica Carolina VVF Monfalcone">
-          </a>
-          <p>Acquatica Carolina - VVF Gorizia (DST STAG di Grado)</p>
-          <a href="/gallery/scheda/carolina-vvfgrado/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div class="grid-item" data-category="guardia-costiera">
+            <a
+              href="/assets/mezzi/cp881-guardiacostieratrieste.png"
+              data-lightbox="mezzi"
+              data-title="Charlie Papa 881 - Guardia Costiera Trieste"
+            >
+              <img
+                src="/assets/mezzi/cp881-guardiacostieratrieste.png"
+                alt="Charlie Papa 881 Guardia Costiera Trieste"
+              />
+            </a>
+            <p>Charlie Papa 881 - Guardia Costiera Trieste</p>
+            <a
+              href="/gallery/scheda/charliepapa881-gctrieste/"
+              class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="vvf">
-          <a href="/assets/mezzi/vfbps30-grado.jpg" data-lightbox="mezzi" data-title="VF BPS30 - VVF Monfalcone">
-            <img src="/assets/mezzi/vfbps30-grado.jpg" alt="VF BPS30 VVF Monfalcone">
-          </a>
-          <p>VF BPS30 - VVF Gorizia (DST STAG di Grado)</p>
-          <a href="/gallery/scheda/vfbps30-vvfgrado/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div class="grid-item" data-category="vvf">
+            <a
+              href="/assets/mezzi/carolina-vvfgrado.jpg"
+              data-lightbox="mezzi"
+              data-title="Acquatica Carolina - VVF Monfalcone"
+            >
+              <img
+                src="/assets/mezzi/carolina-vvfgrado.jpg"
+                alt="Acquatica Carolina VVF Monfalcone"
+              />
+            </a>
+            <p>Acquatica Carolina - VVF Gorizia (DST STAG di Grado)</p>
+            <a href="/gallery/scheda/carolina-vvfgrado/" class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="guardia-costiera">
-          <a href="/assets/mezzi/cp1783-grado.jpg" data-lightbox="mezzi" data-title="CP 1783 Fiat Punto - GC Grado">
-            <img src="/assets/mezzi/cp1783-grado.jpg" alt="CP1783 Fiat Punto GC Grado">
-          </a>
-          <p>Fiat Punto CP1783 - Guardia Costiera Grado</p>
-          <a href="/gallery/scheda/cp1783-gcgrado/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div class="grid-item" data-category="vvf">
+            <a
+              href="/assets/mezzi/vfbps30-grado.jpg"
+              data-lightbox="mezzi"
+              data-title="VF BPS30 - VVF Monfalcone"
+            >
+              <img
+                src="/assets/mezzi/vfbps30-grado.jpg"
+                alt="VF BPS30 VVF Monfalcone"
+              />
+            </a>
+            <p>VF BPS30 - VVF Gorizia (DST STAG di Grado)</p>
+            <a href="/gallery/scheda/vfbps30-vvfgrado/" class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="carabinieri">
-          <a href="/assets/mezzi/fiattipo1-ccgrado.jpg" data-lightbox="mezzi" data-title="Fiat Tipo - Carabinieri Grado">
-            <img src="/assets/mezzi/fiattipo1-ccgrado.jpg" alt="Fiat Tipo Carabinieri Grado">
-          </a>
-          <p>Fiat Tipo - Carabinieri Grado</p>
-          <a href="/gallery/scheda/fiattipo1-ccgrado/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div class="grid-item" data-category="guardia-costiera">
+            <a
+              href="/assets/mezzi/cp1783-grado.jpg"
+              data-lightbox="mezzi"
+              data-title="CP 1783 Fiat Punto - GC Grado"
+            >
+              <img
+                src="/assets/mezzi/cp1783-grado.jpg"
+                alt="CP1783 Fiat Punto GC Grado"
+              />
+            </a>
+            <p>Fiat Punto CP1783 - Guardia Costiera Grado</p>
+            <a href="/gallery/scheda/cp1783-gcgrado/" class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="vvf">
-          <a href="/assets/mezzi/mercedesactros1841-vvfmonfalcone.jpg" data-lightbox="mezzi" data-title="APS Mercedes Actros 1841 - VVF Monfalcone">
-            <img src="/assets/mezzi/mercedesactros1841-vvfmonfalcone.jpg" alt="APS Mercedes Actros 1841 VVF Monfalcone">
-          </a>
-          <p>Mercedes Benz Actros 1841 - VVF Monfalcone</p>
-          <a href="/gallery/scheda/mercedesactros1841-vvfmonfalcone/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div class="grid-item" data-category="carabinieri">
+            <a
+              href="/assets/mezzi/fiattipo1-ccgrado.jpg"
+              data-lightbox="mezzi"
+              data-title="Fiat Tipo - Carabinieri Grado"
+            >
+              <img
+                src="/assets/mezzi/fiattipo1-ccgrado.jpg"
+                alt="Fiat Tipo Carabinieri Grado"
+              />
+            </a>
+            <p>Fiat Tipo - Carabinieri Grado</p>
+            <a href="/gallery/scheda/fiattipo1-ccgrado/" class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="guardia-di-finanza">
-          <a href="/assets/mezzi/repnautico-gdffvg.jpg" data-lightbox="mezzi" data-title="Reparto Nautico - Guardia di Finanza FVG">
-            <img src="/assets/mezzi/repnautico-gdffvg.jpg" alt="Reparto Nautico Guardia di Finanza FVG">
-          </a>
-          <p>Reparto Nautico - Guardia di Finanza</p>
-          <a href="/gallery/scheda/repnautico-gdffvg/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div class="grid-item" data-category="vvf">
+            <a
+              href="/assets/mezzi/mercedesactros1841-vvfmonfalcone.jpg"
+              data-lightbox="mezzi"
+              data-title="APS Mercedes Actros 1841 - VVF Monfalcone"
+            >
+              <img
+                src="/assets/mezzi/mercedesactros1841-vvfmonfalcone.jpg"
+                alt="APS Mercedes Actros 1841 VVF Monfalcone"
+              />
+            </a>
+            <p>Mercedes Benz Actros 1841 - VVF Monfalcone</p>
+            <a
+              href="/gallery/scheda/mercedesactros1841-vvfmonfalcone/"
+              class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="polizia-di-stato">
-          <a href="/assets/mezzi/repnautico-poliziatrieste.jpg" data-lightbox="mezzi" data-title="Moto d'Acqua - Polizia di Stato Trieste">
-            <img src="/assets/mezzi/repnautico-poliziatrieste.jpg" alt="Moto d'Acqua Polizia di Stato Trieste">
-          </a>
-          <p>Moto d'Acqua - Polizia di Stato Trieste</p>
-          <a href="/gallery/scheda/motodacqua-poliziatrieste/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div class="grid-item" data-category="guardia-di-finanza">
+            <a
+              href="/assets/mezzi/repnautico-gdffvg.jpg"
+              data-lightbox="mezzi"
+              data-title="Reparto Nautico - Guardia di Finanza FVG"
+            >
+              <img
+                src="/assets/mezzi/repnautico-gdffvg.jpg"
+                alt="Reparto Nautico Guardia di Finanza FVG"
+              />
+            </a>
+            <p>Reparto Nautico - Guardia di Finanza</p>
+            <a href="/gallery/scheda/repnautico-gdffvg/" class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="polizia-di-stato">
-          <a href="/assets/mezzi/tonale-poliziamonfalcone.jpg" data-lightbox="mezzi" data-title="Alfa Romeo Tonale - Polizia di Stato Monfalcone">
-            <img src="/assets/mezzi/tonale-poliziamonfalcone.jpg" alt="Alfa Romeo Tonale Polizia di Stato Monfalcone">
-          </a>
-          <p>Alfa Romeo Tonale - Polizia di Stato Monfalcone</p>
-          <a href="/gallery/scheda/tonale-poliziamonfalcone/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div class="grid-item" data-category="polizia-di-stato">
+            <a
+              href="/assets/mezzi/repnautico-poliziatrieste.jpg"
+              data-lightbox="mezzi"
+              data-title="Moto d'Acqua - Polizia di Stato Trieste"
+            >
+              <img
+                src="/assets/mezzi/repnautico-poliziatrieste.jpg"
+                alt="Moto d'Acqua Polizia di Stato Trieste"
+              />
+            </a>
+            <p>Moto d'Acqua - Polizia di Stato Trieste</p>
+            <a
+              href="/gallery/scheda/motodacqua-poliziatrieste/"
+              class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="guardia-costiera">
-          <a href="/assets/mezzi/gcb174-guardiacostiera.jpg" data-lightbox="mezzi" data-title="Golf Charlie Bravo 174 - Guardia Costiera Grado">
-            <img src="/assets/mezzi/gcb174-guardiacostiera.jpg" alt="Golf Charlie Bravo 174 Guardia Costiera Grado">
-          </a>
-          <p>Golf Charlie Bravo 174 - Guardia Costiera Grado</p>
-          <a href="/gallery/scheda/golfcharliebravo174-guardiacostiera/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div class="grid-item" data-category="polizia-di-stato">
+            <a
+              href="/assets/mezzi/tonale-poliziamonfalcone.jpg"
+              data-lightbox="mezzi"
+              data-title="Alfa Romeo Tonale - Polizia di Stato Monfalcone"
+            >
+              <img
+                src="/assets/mezzi/tonale-poliziamonfalcone.jpg"
+                alt="Alfa Romeo Tonale Polizia di Stato Monfalcone"
+              />
+            </a>
+            <p>Alfa Romeo Tonale - Polizia di Stato Monfalcone</p>
+            <a
+              href="/gallery/scheda/tonale-poliziamonfalcone/"
+              class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="guardia-costiera">
-          <a href="/assets/mezzi/cp846-guardiacostieragrado.jpg" data-lightbox="mezzi" data-title="Charlie Papa 846 - Guardia Costiera Grado">
-            <img src="/assets/mezzi/cp846-guardiacostieragrado.jpg" alt="Charlie Papa 846 Guardia Costiera Grado">
-          </a>
-          <p>Charlie Papa 846 - Guardia Costiera Trieste</p>
-          <a href="/gallery/scheda/charliepapa846-gcgrado/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div class="grid-item" data-category="guardia-costiera">
+            <a
+              href="/assets/mezzi/gcb174-guardiacostiera.jpg"
+              data-lightbox="mezzi"
+              data-title="Golf Charlie Bravo 174 - Guardia Costiera Grado"
+            >
+              <img
+                src="/assets/mezzi/gcb174-guardiacostiera.jpg"
+                alt="Golf Charlie Bravo 174 Guardia Costiera Grado"
+              />
+            </a>
+            <p>Golf Charlie Bravo 174 - Guardia Costiera Grado</p>
+            <a
+              href="/gallery/scheda/golfcharliebravo174-guardiacostiera/"
+              class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="carabinieri">
-            <a href="/assets/mezzi/cc7801-ccvenezia.jpg" data-lightbox="mezzi" data-title="CC-78-01 - Carabinieri Venezia">
-              <img src="/assets/mezzi/cc7801-ccvenezia.jpg" alt="CC-78-01 Carabinieri Venezia">
+          <div class="grid-item" data-category="guardia-costiera">
+            <a
+              href="/assets/mezzi/cp846-guardiacostieragrado.jpg"
+              data-lightbox="mezzi"
+              data-title="Charlie Papa 846 - Guardia Costiera Grado"
+            >
+              <img
+                src="/assets/mezzi/cp846-guardiacostieragrado.jpg"
+                alt="Charlie Papa 846 Guardia Costiera Grado"
+              />
+            </a>
+            <p>Charlie Papa 846 - Guardia Costiera Trieste</p>
+            <a href="/gallery/scheda/charliepapa846-gcgrado/" class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
+
+          <div class="grid-item" data-category="carabinieri">
+            <a
+              href="/assets/mezzi/cc7801-ccvenezia.jpg"
+              data-lightbox="mezzi"
+              data-title="CC-78-01 - Carabinieri Venezia"
+            >
+              <img
+                src="/assets/mezzi/cc7801-ccvenezia.jpg"
+                alt="CC-78-01 Carabinieri Venezia"
+              />
             </a>
             <p>CC-78-01 - Carabinieri Venezia</p>
-            <a href="/gallery/scheda/cc7801-ccvenezia/" class="btn-scopri">Scopri di più</a>
-        </div>
+            <a href="/gallery/scheda/cc7801-ccvenezia/" class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="carabinieri">
-            <a href="/assets/mezzi/jeeprenegade-ccgrado.jpg" data-lightbox="mezzi" data-title="Jeep Renegade - Carabinieri Grado">
-              <img src="/assets/mezzi/jeeprenegade-ccgrado.jpg" alt="Jeep Renegade Carabinieri Grado">
+          <div class="grid-item" data-category="carabinieri">
+            <a
+              href="/assets/mezzi/jeeprenegade-ccgrado.jpg"
+              data-lightbox="mezzi"
+              data-title="Jeep Renegade - Carabinieri Grado"
+            >
+              <img
+                src="/assets/mezzi/jeeprenegade-ccgrado.jpg"
+                alt="Jeep Renegade Carabinieri Grado"
+              />
             </a>
             <p>Jeep Renegade - Carabinieri Grado</p>
-            <a href="/gallery/scheda/jeeprenegade-ccgrado/" class="btn-scopri">Scopri di più</a>
-        </div>
+            <a href="/gallery/scheda/jeeprenegade-ccgrado/" class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="guardia-costiera">
-          <a href="/assets/mezzi/gcb32-guardiacostiera.jpg" data-lightbox="mezzi" data-title="Golf Charlie Bravo 32 - Guardia Costiera Grado">
-            <img src="/assets/mezzi/gcb32-guardiacostiera.jpg" alt="Golf Charlie Bravo 32 Guardia Costiera Grado">
-          </a>
-          <p>Golf Charlie Bravo 32 - Guardia Costiera Grado</p>
-          <a href="/gallery/scheda/golfcharliebravo32-guardiacostiera/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div class="grid-item" data-category="guardia-costiera">
+            <a
+              href="/assets/mezzi/gcb32-guardiacostiera.jpg"
+              data-lightbox="mezzi"
+              data-title="Golf Charlie Bravo 32 - Guardia Costiera Grado"
+            >
+              <img
+                src="/assets/mezzi/gcb32-guardiacostiera.jpg"
+                alt="Golf Charlie Bravo 32 Guardia Costiera Grado"
+              />
+            </a>
+            <p>Golf Charlie Bravo 32 - Guardia Costiera Grado</p>
+            <a
+              href="/gallery/scheda/golfcharliebravo32-guardiacostiera/"
+              class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="vvf">
-          <a href="/assets/mezzi/mercedesatego-vvfgorizia.jpg" data-lightbox="mezzi" data-title="ABP Mercedes Atego - VVF Gorizia">
-            <img src="/assets/mezzi/mercedesatego-vvfgorizia.jpg" alt="ABP Mercedes Atego VVF Gorizia">
-          </a>
-          <p>Mercedes Benz Atego - VVF Gorizia</p>
-          <a href="/gallery/scheda/mercedesatego-vvfgorizia/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div class="grid-item" data-category="vvf">
+            <a
+              href="/assets/mezzi/mercedesatego-vvfgorizia.jpg"
+              data-lightbox="mezzi"
+              data-title="ABP Mercedes Atego - VVF Gorizia"
+            >
+              <img
+                src="/assets/mezzi/mercedesatego-vvfgorizia.jpg"
+                alt="ABP Mercedes Atego VVF Gorizia"
+              />
+            </a>
+            <p>Mercedes Benz Atego - VVF Gorizia</p>
+            <a
+              href="/gallery/scheda/mercedesatego-vvfgorizia/"
+              class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="polizia-locale">
-            <a href="/assets/mezzi/grado02-polizialocale.jpeg" data-lightbox="mezzi" data-title="Toyota Hilux - Polizia Locale Grado">
-              <img src="/assets/mezzi/grado02-polizialocale.jpeg" alt="Toyota Hilux Polizia Locale Grado">
+          <div class="grid-item" data-category="polizia-locale">
+            <a
+              href="/assets/mezzi/grado02-polizialocale.jpeg"
+              data-lightbox="mezzi"
+              data-title="Toyota Hilux - Polizia Locale Grado"
+            >
+              <img
+                src="/assets/mezzi/grado02-polizialocale.jpeg"
+                alt="Toyota Hilux Polizia Locale Grado"
+              />
             </a>
             <p>Toyota Hilux - Polizia Locale Grado</p>
-            <a href="/gallery/scheda/grado02-polizialocale/" class="btn-scopri">Scopri di più</a>
-        </div>
+            <a href="/gallery/scheda/grado02-polizialocale/" class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="vvf">
-          <a href="/assets/mezzi/fordranger-vvfmonfalcone.jpg" data-lightbox="mezzi" data-title="Ford Ranger - VVF Monfalcone">
-            <img src="/assets/mezzi/fordranger-vvfmonfalcone.jpg" alt="Ford Ranger VVF Monfalcone">
-          </a>
-          <p>Ford Ranger IX Serie - VVF Monfalcone</p>
-          <a href="/gallery/scheda/fordranger-vvfmonfalcone/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div class="grid-item" data-category="vvf">
+            <a
+              href="/assets/mezzi/fordranger-vvfmonfalcone.jpg"
+              data-lightbox="mezzi"
+              data-title="Ford Ranger - VVF Monfalcone"
+            >
+              <img
+                src="/assets/mezzi/fordranger-vvfmonfalcone.jpg"
+                alt="Ford Ranger VVF Monfalcone"
+              />
+            </a>
+            <p>Ford Ranger IX Serie - VVF Monfalcone</p>
+            <a
+              href="/gallery/scheda/fordranger-vvfmonfalcone/"
+              class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="soccorso-sanitario">
-          <a href="/assets/mezzi/doppioindia-elifvg.jpg" data-lightbox="mezzi" data-title="DOPPIO INDIA - Elisoccorso Friuli Venezia Giulia">
-            <img src="/assets/mezzi/doppioindia-elifvg.jpg" alt="DOPPIO INDIA Elisoccorso Friuli Venezia Giulia">
-          </a>
-          <p>DOPPIO INDIA - Elisoccorso FVG</p>
-          <a href="/gallery/scheda/doppioindia-elifvg/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div class="grid-item" data-category="soccorso-sanitario">
+            <a
+              href="/assets/mezzi/doppioindia-elifvg.jpg"
+              data-lightbox="mezzi"
+              data-title="DOPPIO INDIA - Elisoccorso Friuli Venezia Giulia"
+            >
+              <img
+                src="/assets/mezzi/doppioindia-elifvg.jpg"
+                alt="DOPPIO INDIA Elisoccorso Friuli Venezia Giulia"
+              />
+            </a>
+            <p>DOPPIO INDIA - Elisoccorso FVG</p>
+            <a href="/gallery/scheda/doppioindia-elifvg/" class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="carabinieri">
-          <a href="/assets/mezzi/fiattipo2-ccgrado.jpg" data-lightbox="mezzi" data-title="Fiat Tipo - Carabinieri Grado">
-            <img src="/assets/mezzi/fiattipo2-ccgrado.jpg" alt="Fiat Tipo Carabinieri Grado">
-          </a>
-          <p>Fiat Tipo - Carabinieri Grado</p>
-          <a href="/gallery/scheda/fiattipo2-ccgrado/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div class="grid-item" data-category="carabinieri">
+            <a
+              href="/assets/mezzi/fiattipo2-ccgrado.jpg"
+              data-lightbox="mezzi"
+              data-title="Fiat Tipo - Carabinieri Grado"
+            >
+              <img
+                src="/assets/mezzi/fiattipo2-ccgrado.jpg"
+                alt="Fiat Tipo Carabinieri Grado"
+              />
+            </a>
+            <p>Fiat Tipo - Carabinieri Grado</p>
+            <a href="/gallery/scheda/fiattipo2-ccgrado/" class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="esercito" data-spotter="s.o.s_italia">
-          <a href="/assets/mezzi/jeepwrangler-esercito.jpg" data-lightbox="mezzi" data-title="Jeep Wrangler J8 - Esercito Italiano">
-            <img src="/assets/mezzi/jeepwrangler-esercito.jpg" alt="Jeep Wrangler J8 Esercito Italiano">
-          </a>
-          <p>Jeep Wrangler J8 - Esercito Italiano</p>
-          <a href="/gallery/scheda/jeepwrangler-esercitoitaliano/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div
+            class="grid-item"
+            data-category="esercito"
+            data-spotter="s.o.s_italia"
+          >
+            <a
+              href="/assets/mezzi/jeepwrangler-esercito.jpg"
+              data-lightbox="mezzi"
+              data-title="Jeep Wrangler J8 - Esercito Italiano"
+            >
+              <img
+                src="/assets/mezzi/jeepwrangler-esercito.jpg"
+                alt="Jeep Wrangler J8 Esercito Italiano"
+              />
+            </a>
+            <p>Jeep Wrangler J8 - Esercito Italiano</p>
+            <a
+              href="/gallery/scheda/jeepwrangler-esercitoitaliano/"
+              class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="soccorso-sanitario" data-spotter="verona_emergency112">
-          <a href="/assets/mezzi/volskwagencrafter-cripalmanova.jpg" data-lightbox="mezzi" data-title="Volkswagen Crafter - CRI Palmanova">
-            <img src="/assets/mezzi/volskwagencrafter-cripalmanova.jpg" alt="Volkswagen Crafter CRI Palmanova">
-          </a>
-          <p>Volkswagen Crafter - CRI Palmanova</p>
-          <a href="/gallery/scheda/volkswagencrafter-cripalmanova/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div
+            class="grid-item"
+            data-category="soccorso-sanitario"
+            data-spotter="verona_emergency112"
+          >
+            <a
+              href="/assets/mezzi/volskwagencrafter-cripalmanova.jpg"
+              data-lightbox="mezzi"
+              data-title="Volkswagen Crafter - CRI Palmanova"
+            >
+              <img
+                src="/assets/mezzi/volskwagencrafter-cripalmanova.jpg"
+                alt="Volkswagen Crafter CRI Palmanova"
+              />
+            </a>
+            <p>Volkswagen Crafter - CRI Palmanova</p>
+            <a
+              href="/gallery/scheda/volkswagencrafter-cripalmanova/"
+              class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="soccorso-sanitario" data-spotter="verona_emergency112">
-          <a href="/assets/mezzi/fiatducatoqtx-cvcervignano.jpg" data-lightbox="mezzi" data-title="Fiat Ducato QTX - Croce Verde Cervignano">
-            <img src="/assets/mezzi/fiatducatoqtx-cvcervignano.jpg" alt="Fiat Ducato QTX Croce Verde Cervignano">
-          </a>
-          <p>Fiat Ducato QTX - Croce Verde Basso Friuli</p>
-          <a href="/gallery/scheda/fiatducatoqtx-cvcervignano/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div
+            class="grid-item"
+            data-category="soccorso-sanitario"
+            data-spotter="verona_emergency112"
+          >
+            <a
+              href="/assets/mezzi/fiatducatoqtx-cvcervignano.jpg"
+              data-lightbox="mezzi"
+              data-title="Fiat Ducato QTX - Croce Verde Cervignano"
+            >
+              <img
+                src="/assets/mezzi/fiatducatoqtx-cvcervignano.jpg"
+                alt="Fiat Ducato QTX Croce Verde Cervignano"
+              />
+            </a>
+            <p>Fiat Ducato QTX - Croce Verde Basso Friuli</p>
+            <a
+              href="/gallery/scheda/fiatducatoqtx-cvcervignano/"
+              class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="soccorso-sanitario" data-spotter="malcus08">
-          <a href="/assets/mezzi/icrew-elifvg.jpg" data-lightbox="mezzi" data-title="I-CREW - Elisoccorso Friuli Venezia Giulia">
-            <img src="/assets/mezzi/icrew-elifvg.jpg" alt="I-CREW Elisoccorso Friuli Venezia Giulia">
-          </a>
-          <p>I-CREW - Elisoccorso FVG</p>
-          <a href="/gallery/scheda/icrew-elifvg/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div
+            class="grid-item"
+            data-category="soccorso-sanitario"
+            data-spotter="malcus08"
+          >
+            <a
+              href="/assets/mezzi/icrew-elifvg.jpg"
+              data-lightbox="mezzi"
+              data-title="I-CREW - Elisoccorso Friuli Venezia Giulia"
+            >
+              <img
+                src="/assets/mezzi/icrew-elifvg.jpg"
+                alt="I-CREW Elisoccorso Friuli Venezia Giulia"
+              />
+            </a>
+            <p>I-CREW - Elisoccorso FVG</p>
+            <a href="/gallery/scheda/icrew-elifvg/" class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="soccorso-sanitario">
-          <a href="/assets/mezzi/fiatducatox290-asufc_ocpalmanova.jpg" data-lightbox="mezzi" data-title="Fiat Ducato X290 - Ospedale Civile Palmanova ASUFC">
-            <img src="/assets/mezzi/fiatducatox290-asufc_ocpalmanova.jpg" alt="Fiat Ducato X290 ASUFC Ospedale Civile Palmanova">
-          </a>
-          <p>Fiat Ducato X290 - Ospedale Civile Palmanova ASUFC</p>
-          <a href="/gallery/scheda/fiatducatox290-asufc_ocpalmanova/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div class="grid-item" data-category="soccorso-sanitario">
+            <a
+              href="/assets/mezzi/fiatducatox290-asufc_ocpalmanova.jpg"
+              data-lightbox="mezzi"
+              data-title="Fiat Ducato X290 - Ospedale Civile Palmanova ASUFC"
+            >
+              <img
+                src="/assets/mezzi/fiatducatox290-asufc_ocpalmanova.jpg"
+                alt="Fiat Ducato X290 ASUFC Ospedale Civile Palmanova"
+              />
+            </a>
+            <p>Fiat Ducato X290 - Ospedale Civile Palmanova ASUFC</p>
+            <a
+              href="/gallery/scheda/fiatducatox290-asufc_ocpalmanova/"
+              class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="vvf" data-spotter="rescuespotter_ts">
-          <a href="/assets/mezzi/fordranger-vvftrieste.jpg" data-lightbox="mezzi" data-title="Ford Ranger - VVF Trieste">
-            <img src="/assets/mezzi/fordranger-vvftrieste.jpg" alt="Ford Ranger VVF Trieste">
-          </a>
-          <p>Ford Ranger IX Serie - VVF Trieste</p>
-          <a href="/gallery/scheda/fordranger-vvftrieste/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div
+            class="grid-item"
+            data-category="vvf"
+            data-spotter="rescuespotter_ts"
+          >
+            <a
+              href="/assets/mezzi/fordranger-vvftrieste.jpg"
+              data-lightbox="mezzi"
+              data-title="Ford Ranger - VVF Trieste"
+            >
+              <img
+                src="/assets/mezzi/fordranger-vvftrieste.jpg"
+                alt="Ford Ranger VVF Trieste"
+              />
+            </a>
+            <p>Ford Ranger IX Serie - VVF Trieste</p>
+            <a href="/gallery/scheda/fordranger-vvftrieste/" class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="soccorso-sanitario" data-spotter="rescuespotter_ts">
-          <a href="/assets/mezzi/tango17-sistema118trieste.jpg" data-lightbox="mezzi" data-title="Volkswagen Crafter - Sistema 118 Trieste">
-            <img src="/assets/mezzi/tango17-sistema118trieste.jpg" alt="TANGO 17 Sistema 118 Trieste">
-          </a>
-          <p>Volkswagen Crafter - Sistema 118 Trieste</p>
-          <a href="/gallery/scheda/tango17-sistema118trieste/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div
+            class="grid-item"
+            data-category="soccorso-sanitario"
+            data-spotter="rescuespotter_ts"
+          >
+            <a
+              href="/assets/mezzi/tango17-sistema118trieste.jpg"
+              data-lightbox="mezzi"
+              data-title="Volkswagen Crafter - Sistema 118 Trieste"
+            >
+              <img
+                src="/assets/mezzi/tango17-sistema118trieste.jpg"
+                alt="TANGO 17 Sistema 118 Trieste"
+              />
+            </a>
+            <p>Volkswagen Crafter - Sistema 118 Trieste</p>
+            <a
+              href="/gallery/scheda/tango17-sistema118trieste/"
+              class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="esercito">
-          <a href="/assets/mezzi/fiatdoblo-marinamilitare.jpg" data-lightbox="mezzi" data-title="Fiat Doblò - Marina Militare">
-            <img src="/assets/mezzi/fiatdoblo-marinamilitare.jpg" alt="Fiat Doblò Marina Militare">
-          </a>
-          <p>Fiat Doblò - Marina Militare</p>
-          <a href="/gallery/scheda/fiatdoblo-marinamilitare/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div class="grid-item" data-category="esercito">
+            <a
+              href="/assets/mezzi/fiatdoblo-marinamilitare.jpg"
+              data-lightbox="mezzi"
+              data-title="Fiat Doblò - Marina Militare"
+            >
+              <img
+                src="/assets/mezzi/fiatdoblo-marinamilitare.jpg"
+                alt="Fiat Doblò Marina Militare"
+              />
+            </a>
+            <p>Fiat Doblò - Marina Militare</p>
+            <a
+              href="/gallery/scheda/fiatdoblo-marinamilitare/"
+              class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="polizia-locale" data-spotter="rescuespotter_ts">
-          <a href="/assets/mezzi/toyotayariscross-polizialocalets.jpg" data-lightbox="mezzi" data-title="Toyota Yaris Cross - Polizia Locale Trieste">
-            <img src="/assets/mezzi/toyotayariscross-polizialocalets.jpg" alt="Toyota Yaris Cross Polizia Locale Trieste">
-          </a>
-          <p>Toyota Yaris Cross - Polizia Locale Trieste</p>
-          <a href="/gallery/scheda/toyotayariscross-polizialocalets/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div
+            class="grid-item"
+            data-category="polizia-locale"
+            data-spotter="rescuespotter_ts"
+          >
+            <a
+              href="/assets/mezzi/toyotayariscross-polizialocalets.jpg"
+              data-lightbox="mezzi"
+              data-title="Toyota Yaris Cross - Polizia Locale Trieste"
+            >
+              <img
+                src="/assets/mezzi/toyotayariscross-polizialocalets.jpg"
+                alt="Toyota Yaris Cross Polizia Locale Trieste"
+              />
+            </a>
+            <p>Toyota Yaris Cross - Polizia Locale Trieste</p>
+            <a
+              href="/gallery/scheda/toyotayariscross-polizialocalets/"
+              class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="soccorso-sanitario" data-spotter="rescuespotter_ts">
-          <a href="/assets/mezzi/fiatducatox290-asugi_sistema118trieste.jpg" data-lightbox="mezzi" data-title="Fiat Ducato X290 - Sistema 118 Trieste">
-            <img src="/assets/mezzi/fiatducatox290-asugi_sistema118trieste.jpg" alt="TANGO 39 Sistema 118 Trieste">
-          </a>
-          <p>Fiat Ducato X290 - Sistema 118 Trieste</p>
-          <a href="/gallery/scheda/tango39-sistema118trieste/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div
+            class="grid-item"
+            data-category="soccorso-sanitario"
+            data-spotter="rescuespotter_ts"
+          >
+            <a
+              href="/assets/mezzi/fiatducatox290-asugi_sistema118trieste.jpg"
+              data-lightbox="mezzi"
+              data-title="Fiat Ducato X290 - Sistema 118 Trieste"
+            >
+              <img
+                src="/assets/mezzi/fiatducatox290-asugi_sistema118trieste.jpg"
+                alt="TANGO 39 Sistema 118 Trieste"
+              />
+            </a>
+            <p>Fiat Ducato X290 - Sistema 118 Trieste</p>
+            <a
+              href="/gallery/scheda/tango39-sistema118trieste/"
+              class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="soccorso-sanitario">
-          <a href="/assets/mezzi/sm05-dueeffe.jpg" data-lightbox="mezzi" data-title="Audi A4 Avant - Due Effe Ambulanze">
-            <img src="/assets/mezzi/sm05-dueeffe.jpg" alt="Audi A4 Avant DueEffe Ambulanze">
-          </a>
-          <p>Audi A4 Avant - Due Effe Ambulanze</p>
-          <a href="/gallery/scheda/sm05-dueeffeambulanze/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div class="grid-item" data-category="soccorso-sanitario">
+            <a
+              href="/assets/mezzi/sm05-dueeffe.jpg"
+              data-lightbox="mezzi"
+              data-title="Audi A4 Avant - Due Effe Ambulanze"
+            >
+              <img
+                src="/assets/mezzi/sm05-dueeffe.jpg"
+                alt="Audi A4 Avant DueEffe Ambulanze"
+              />
+            </a>
+            <p>Audi A4 Avant - Due Effe Ambulanze</p>
+            <a href="/gallery/scheda/sm05-dueeffeambulanze/" class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="soccorso-sanitario">
-          <a href="/assets/mezzi/sm06-dueeffe.jpg" data-lightbox="mezzi" data-title="Alfa Romeo Stelvio - Due Effe Ambulanze">
-            <img src="/assets/mezzi/sm06-dueeffe.jpg" alt="Alfa Romeo Stelvio DueEffe Ambulanze">
-          </a>
-          <p>Alfa Romeo Stelvio - Due Effe Ambulanze</p>
-          <a href="/gallery/scheda/sm06-dueeffeambulanze/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div class="grid-item" data-category="soccorso-sanitario">
+            <a
+              href="/assets/mezzi/sm06-dueeffe.jpg"
+              data-lightbox="mezzi"
+              data-title="Alfa Romeo Stelvio - Due Effe Ambulanze"
+            >
+              <img
+                src="/assets/mezzi/sm06-dueeffe.jpg"
+                alt="Alfa Romeo Stelvio DueEffe Ambulanze"
+              />
+            </a>
+            <p>Alfa Romeo Stelvio - Due Effe Ambulanze</p>
+            <a href="/gallery/scheda/sm06-dueeffeambulanze/" class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="soccorso-sanitario">
-          <a href="/assets/mezzi/sm07-dueeffe.jpg" data-lightbox="mezzi" data-title="Skoda Octavia - Due Effe Ambulanze">
-            <img src="/assets/mezzi/sm07-dueeffe.jpg" alt="Skoda Octavia DueEffe Ambulanze">
-          </a>
-          <p>Skoda Octavia - Due Effe Ambulanze</p>
-          <a href="/gallery/scheda/sm07-dueeffeambulanze/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div class="grid-item" data-category="soccorso-sanitario">
+            <a
+              href="/assets/mezzi/sm07-dueeffe.jpg"
+              data-lightbox="mezzi"
+              data-title="Skoda Octavia - Due Effe Ambulanze"
+            >
+              <img
+                src="/assets/mezzi/sm07-dueeffe.jpg"
+                alt="Skoda Octavia DueEffe Ambulanze"
+              />
+            </a>
+            <p>Skoda Octavia - Due Effe Ambulanze</p>
+            <a href="/gallery/scheda/sm07-dueeffeambulanze/" class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="polizia-locale">
-          <a href="/assets/mezzi/fiattipo-polizialocalegrado.jpeg" data-lightbox="mezzi" data-title="Fiat Tipo - Carabinieri Grado">
-            <img src="/assets/mezzi/fiattipo-polizialocalegrado.jpeg" alt="Fiat Tipo Carabinieri Grado">
-          </a>
-          <p>Fiat Tipo - Polizia Locale Grado</p>
-          <a href="/gallery/scheda/fiattipo-polizialocalegrado/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div class="grid-item" data-category="polizia-locale">
+            <a
+              href="/assets/mezzi/fiattipo-polizialocalegrado.jpeg"
+              data-lightbox="mezzi"
+              data-title="Fiat Tipo - Carabinieri Grado"
+            >
+              <img
+                src="/assets/mezzi/fiattipo-polizialocalegrado.jpeg"
+                alt="Fiat Tipo Carabinieri Grado"
+              />
+            </a>
+            <p>Fiat Tipo - Polizia Locale Grado</p>
+            <a
+              href="/gallery/scheda/fiattipo-polizialocalegrado/"
+              class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="soccorso-sanitario" data-spotter="rescuespotter_ts">
-          <a href="/assets/mezzi/tango15-sistema118trieste.jpg" data-lightbox="mezzi" data-title="MAN TGE 3.180 - Sistema 118 Trieste">
-            <img src="/assets/mezzi/tango15-sistema118trieste.jpg" alt="MAN TGE 3.180 Sistema 118 Trieste">
-          </a>
-          <p>MAN TGE 3.180 - Sistema 118 Trieste</p>
-          <a href="/gallery/scheda/tango15-sistema118trieste/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div
+            class="grid-item"
+            data-category="soccorso-sanitario"
+            data-spotter="rescuespotter_ts"
+          >
+            <a
+              href="/assets/mezzi/tango15-sistema118trieste.jpg"
+              data-lightbox="mezzi"
+              data-title="MAN TGE 3.180 - Sistema 118 Trieste"
+            >
+              <img
+                src="/assets/mezzi/tango15-sistema118trieste.jpg"
+                alt="MAN TGE 3.180 Sistema 118 Trieste"
+              />
+            </a>
+            <p>MAN TGE 3.180 - Sistema 118 Trieste</p>
+            <a
+              href="/gallery/scheda/tango15-sistema118trieste/"
+              class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="soccorso-sanitario" data-spotter="rescuespotter_ts">
-          <a href="/assets/mezzi/tango16-sistema118trieste.jpg" data-lightbox="mezzi" data-title="MAN TGE 3.180 - Sistema 118 Trieste">
-            <img src="/assets/mezzi/tango16-sistema118trieste.jpg" alt="MAN TGE 3.180 Sistema 118 Trieste">
-          </a>
-          <p>MAN TGE 3.180 - Sistema 118 Trieste</p>
-          <a href="/gallery/scheda/tango16-sistema118trieste/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div
+            class="grid-item"
+            data-category="soccorso-sanitario"
+            data-spotter="rescuespotter_ts"
+          >
+            <a
+              href="/assets/mezzi/tango16-sistema118trieste.jpg"
+              data-lightbox="mezzi"
+              data-title="MAN TGE 3.180 - Sistema 118 Trieste"
+            >
+              <img
+                src="/assets/mezzi/tango16-sistema118trieste.jpg"
+                alt="MAN TGE 3.180 Sistema 118 Trieste"
+              />
+            </a>
+            <p>MAN TGE 3.180 - Sistema 118 Trieste</p>
+            <a
+              href="/gallery/scheda/tango16-sistema118trieste/"
+              class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="soccorso-sanitario" data-spotter="rescuespotter_ts">
-          <a href="/assets/mezzi/tango18-sistema118trieste.jpg" data-lightbox="mezzi" data-title="Volkswagen Crafter - Sistema 118 Trieste">
-            <img src="/assets/mezzi/tango18-sistema118trieste.jpg" alt="Volkswagen Crafter Sistema 118 Trieste">
-          </a>
-          <p>Volkswagen Crafter - Sistema 118 Trieste</p>
-          <a href="/gallery/scheda/tango18-sistema118trieste/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div
+            class="grid-item"
+            data-category="soccorso-sanitario"
+            data-spotter="rescuespotter_ts"
+          >
+            <a
+              href="/assets/mezzi/tango18-sistema118trieste.jpg"
+              data-lightbox="mezzi"
+              data-title="Volkswagen Crafter - Sistema 118 Trieste"
+            >
+              <img
+                src="/assets/mezzi/tango18-sistema118trieste.jpg"
+                alt="Volkswagen Crafter Sistema 118 Trieste"
+              />
+            </a>
+            <p>Volkswagen Crafter - Sistema 118 Trieste</p>
+            <a
+              href="/gallery/scheda/tango18-sistema118trieste/"
+              class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="soccorso-sanitario" data-spotter="s.o.g.i.t._sez._trieste">
-          <a href="/assets/mezzi/sierratango80-sogittrieste.jpg" data-lightbox="mezzi" data-title="Fiat Ducato X290 - SOGIT Trieste">
-            <img src="/assets/mezzi/sierratango80-sogittrieste.jpg" alt="Fiat Ducato X290 SOGIT Trieste">
-          </a>
-          <p>Fiat Ducato X290 - SIERRA 80 - SOGIT Trieste</p>
-          <a href="/gallery/scheda/sierratango80-sogittrieste/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div
+            class="grid-item"
+            data-category="soccorso-sanitario"
+            data-spotter="s.o.g.i.t._sez._trieste"
+          >
+            <a
+              href="/assets/mezzi/sierratango80-sogittrieste.jpg"
+              data-lightbox="mezzi"
+              data-title="Fiat Ducato X290 - SOGIT Trieste"
+            >
+              <img
+                src="/assets/mezzi/sierratango80-sogittrieste.jpg"
+                alt="Fiat Ducato X290 SOGIT Trieste"
+              />
+            </a>
+            <p>Fiat Ducato X290 - SIERRA 80 - SOGIT Trieste</p>
+            <a
+              href="/gallery/scheda/sierratango80-sogittrieste/"
+              class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="soccorso-sanitario" data-spotter="rescuespotter_ts">
-          <a href="/assets/mezzi/tango38-sistema118trieste.png" data-lightbox="mezzi" data-title="Fiat Ducato X290 - Sistema 118 Trieste">
-            <img src="/assets/mezzi/tango38-sistema118trieste.png" alt="TANGO 38 Sistema 118 Trieste">
-          </a>
-          <p>Fiat Ducato X290 - Sistema 118 Trieste</p>
-          <a href="/gallery/scheda/tango38-sistema118trieste/" class="btn-scopri">Scopri di più</a>
-        </div>
+          <div
+            class="grid-item"
+            data-category="soccorso-sanitario"
+            data-spotter="rescuespotter_ts"
+          >
+            <a
+              href="/assets/mezzi/tango38-sistema118trieste.png"
+              data-lightbox="mezzi"
+              data-title="Fiat Ducato X290 - Sistema 118 Trieste"
+            >
+              <img
+                src="/assets/mezzi/tango38-sistema118trieste.png"
+                alt="TANGO 38 Sistema 118 Trieste"
+              />
+            </a>
+            <p>Fiat Ducato X290 - Sistema 118 Trieste</p>
+            <a
+              href="/gallery/scheda/tango38-sistema118trieste/"
+              class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="polizia-locale">
-            <a href="/assets/mezzi/grado01-polizialocale.jpeg" data-lightbox="mezzi" data-title="Toyota C-HR - Polizia Locale Grado">
-              <img src="/assets/mezzi/grado01-polizialocale.jpeg" alt="Toyota C-HR Polizia Locale Grado">
+          <div class="grid-item" data-category="polizia-locale">
+            <a
+              href="/assets/mezzi/grado01-polizialocale.jpeg"
+              data-lightbox="mezzi"
+              data-title="Toyota C-HR - Polizia Locale Grado"
+            >
+              <img
+                src="/assets/mezzi/grado01-polizialocale.jpeg"
+                alt="Toyota C-HR Polizia Locale Grado"
+              />
             </a>
             <p>Toyota C-HR - Polizia Locale Grado</p>
-            <a href="/gallery/scheda/grado01-polizialocale/" class="btn-scopri">Scopri di più</a>
-        </div>
+            <a href="/gallery/scheda/grado01-polizialocale/" class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="polizia-locale">
-            <a href="/assets/mezzi/grado03-polizialocale.jpeg" data-lightbox="mezzi" data-title="Subaru Forester - Polizia Locale Grado">
-              <img src="/assets/mezzi/grado03-polizialocale.jpeg" alt="Subaru Forester Polizia Locale Grado">
+          <div class="grid-item" data-category="polizia-locale">
+            <a
+              href="/assets/mezzi/grado03-polizialocale.jpeg"
+              data-lightbox="mezzi"
+              data-title="Subaru Forester - Polizia Locale Grado"
+            >
+              <img
+                src="/assets/mezzi/grado03-polizialocale.jpeg"
+                alt="Subaru Forester Polizia Locale Grado"
+              />
             </a>
             <p>Subaru Forester - Polizia Locale Grado</p>
-            <a href="/gallery/scheda/grado03-polizialocale/" class="btn-scopri">Scopri di più</a>
-        </div>
+            <a href="/gallery/scheda/grado03-polizialocale/" class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
 
-        <div class="grid-item" data-category="polizia-locale">
-            <a href="/assets/mezzi/grado01b-polizialocale.jpeg" data-lightbox="mezzi" data-title="Yamaha Tracer 900 - Polizia Locale Grado">
-              <img src="/assets/mezzi/grado01b-polizialocale.jpeg" alt="Yamaha Tracer 900 Polizia Locale Grado">
+          <div class="grid-item" data-category="polizia-locale">
+            <a
+              href="/assets/mezzi/grado01b-polizialocale.jpeg"
+              data-lightbox="mezzi"
+              data-title="Yamaha Tracer 900 - Polizia Locale Grado"
+            >
+              <img
+                src="/assets/mezzi/grado01b-polizialocale.jpeg"
+                alt="Yamaha Tracer 900 Polizia Locale Grado"
+              />
             </a>
             <p>Yamaha Tracer 900 - Polizia Locale Grado</p>
-            <a href="/gallery/scheda/grado01b-polizialocale/" class="btn-scopri">Scopri di più</a>
+            <a href="/gallery/scheda/grado01b-polizialocale/" class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
+
+          <div class="grid-item" data-category="polizia-locale">
+            <a
+              href="/assets/mezzi/italcargrado-polizialocale.jpeg"
+              data-lightbox="mezzi"
+              data-title="Italcar NEV - Polizia Locale Grado"
+            >
+              <img
+                src="/assets/mezzi/italcargrado-polizialocale.jpeg"
+                alt="Italcar NEV Polizia Locale Grado"
+              />
+            </a>
+            <p>Italcar NEV - Polizia Locale Grado</p>
+            <a
+              href="/gallery/scheda/italcargrado-polizialocale/"
+              class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
+          <div class="grid-item" data-category="protezione-civile">
+            <a
+              href="/assets/mezzi/fiatpunto-protezionecivileaquileia.jpeg"
+              data-lightbox="mezzi"
+              data-title="Fiat Punto - Protezione Civile Aquileia"
+            >
+              <img
+                src="/assets/mezzi/fiatpunto-protezionecivileaquileia.jpeg"
+                alt="Fiat Punto Protezione Civile Aquileia"
+              />
+            </a>
+            <p>Fiat Punto - Protezione Civile Aquileia</p>
+            <a
+              href="/gallery/scheda/fiatpunto-protezionecivileaquileia/"
+              class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
+          <div class="grid-item" data-category="protezione-civile">
+            <a
+              href="/assets/mezzi/mercedes311cdi-protezionecivileaquileia.jpeg"
+              data-lightbox="mezzi"
+              data-title="Mercedes 311 CDI - Protezione Civile Aquileia"
+            >
+              <img
+                src="/assets/mezzi/mercedes311cdi-protezionecivileaquileia.jpeg"
+                alt="Mercedes 311 CDI Protezione Civile Aquileia"
+              />
+            </a>
+            <p>Mercedes 311 CDI - Protezione Civile Aquileia</p>
+            <a
+              href="/gallery/scheda/mercedes311cdi-protezionecivileaquileia/"
+              class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
+          <div class="grid-item" data-category="protezione-civile">
+            <a
+              href="/assets/mezzi/fordranger-protezionecivileaquileia.jpeg"
+              data-lightbox="mezzi"
+              data-title="Ford Ranger - Protezione Civile Aquileia"
+            >
+              <img
+                src="/assets/mezzi/fordranger-protezionecivileaquileia.jpeg"
+                alt="Ford Ranger Protezione Civile Aquileia"
+              />
+            </a>
+            <p>Ford Ranger - Protezione Civile Aquileia</p>
+            <a
+              href="/gallery/scheda/fordranger-protezionecivileaquileia/"
+              class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
         </div>
+      </section>
+    </main>
 
-        <div class="grid-item" data-category="polizia-locale">
-          <a href="/assets/mezzi/italcargrado-polizialocale.jpeg" data-lightbox="mezzi" data-title="Italcar NEV - Polizia Locale Grado">
-            <img src="/assets/mezzi/italcargrado-polizialocale.jpeg" alt="Italcar NEV Polizia Locale Grado">
-          </a>
-          <p>Italcar NEV - Polizia Locale Grado</p>
-          <a href="/gallery/scheda/italcargrado-polizialocale/" class="btn-scopri">Scopri di più</a>
-        </div>
-      </div>
-    </section>
-  </main>
+    <footer>
+      <p>© 2025 Friuli Emergenze — tutti i diritti riservati</p>
+      <p>
+        <a href="https://myfrem.friuliemergenze.it/">MyFrEM</a> ·
+        <a href="/cookie-policy">Cookie Policy</a> ·
+        <a href="/privacy-policy" target="_blank">Privacy Policy</a> ·
+        <a href="https://friuliemergenze.it/contact-us" target="_blank"
+          >Contatti</a
+        >
+      </p>
+    </footer>
 
-  <footer>
-    <p>© 2025 Friuli Emergenze — tutti i diritti riservati</p>
-    <p>
-      <a href="https://myfrem.friuliemergenze.it/">MyFrEM</a> · 
-      <a href="/cookie-policy">Cookie Policy</a> · 
-      <a href="/privacy-policy" target="_blank">Privacy Policy</a> · 
-      <a href="https://friuliemergenze.it/contact-us" target="_blank">Contatti</a>
-    </p>
-  </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const spotterParam = urlParams.get("spotter"); // legge ?spotter=Nome+Spotter
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const urlParams = new URLSearchParams(window.location.search);
-      const spotterParam = urlParams.get('spotter'); // legge ?spotter=Nome+Spotter
-
-      if (spotterParam) {
-        const spotterButtons = document.querySelectorAll('.filter-spotters button');
-        spotterButtons.forEach(btn => {
-          if (btn.getAttribute('data-spotter') === spotterParam) {
-            btn.click(); // simula il click sul pulsante corretto
-          }
-        });
-      }
-    });
-  </script>
-
-  <script>
-    function aggiornaConteggio() {
-      const mezziVisibili = document.querySelectorAll('.grid-item');
-      document.getElementById('mezziCount').textContent = mezziVisibili.length;
-    }
-
-    // Aggiorna al caricamento iniziale
-    document.addEventListener('DOMContentLoaded', aggiornaConteggio);
-
-    // Aggiorna anche dopo il caricamento da Firebase
-    document.addEventListener('galleryUpdated', aggiornaConteggio);
-  </script>
-
-  <script>
-    const categoryButtons = document.querySelectorAll('.filter-buttons button');
-    const spotterButtons = document.querySelectorAll('.filter-spotters button'); // nuova sezione
-    const gridItems = document.querySelectorAll('.grid-item');
-
-    let activeCategory = 'all';
-    let activeSpotter = 'all';
-
-    // Funzione che applica entrambi i filtri
-    function applyFilters() {
-      let visibleCount = 0;
-
-      gridItems.forEach(item => {
-        const category = item.getAttribute('data-category');
-        const spotter = item.getAttribute('data-spotter');
-
-        const showCategory = (activeCategory === 'all' || category === activeCategory);
-        const showSpotter = (activeSpotter === 'all' || spotter === activeSpotter);
-
-        if (showCategory && showSpotter) {
-          item.style.display = 'block';
-          visibleCount++;
-        } else {
-          item.style.display = 'none';
+        if (spotterParam) {
+          const spotterButtons = document.querySelectorAll(
+            ".filter-spotters button",
+          );
+          spotterButtons.forEach((btn) => {
+            if (btn.getAttribute("data-spotter") === spotterParam) {
+              btn.click(); // simula il click sul pulsante corretto
+            }
+          });
         }
       });
+    </script>
 
-      // Aggiorna contatore se presente
-      const counter = document.getElementById('mezziCount');
-      if(counter) counter.textContent = visibleCount;
-    }
-
-    // --- Filtra per categoria ---
-    categoryButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        categoryButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-        activeCategory = button.getAttribute('data-filter');
-        applyFilters();
-      });
-    });
-
-    // --- Filtra per spotter ---
-    spotterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        spotterButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-        activeSpotter = button.getAttribute('data-spotter');
-        applyFilters();
-      });
-    });
-
-    // Applica filtro iniziale
-    applyFilters();
-  </script>
-
-  <script>
-    const searchInput = document.getElementById('searchInput');
-    const galleryItems = document.querySelectorAll('.grid-item'); 
-
-    searchInput.addEventListener('keyup', () => {
-      const filter = searchInput.value.toLowerCase();
-      galleryItems.forEach(item => {
-        const text = item.textContent.toLowerCase();
-        item.style.display = text.includes(filter) ? '' : 'none';
-      });
-    });
-  </script>
-
-  <script type="module">
-    import { app } from '/admin/firebase.js';
-    import { getFirestore, collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
-    const db = getFirestore(app);
-
-    const container = document.querySelector('.grid'); // la tua griglia
-
-    const q = query(collection(db, 'gallery'), orderBy('createdAt', 'desc'));
-    const snap = await getDocs(q);
-    container.innerHTML = '';
-    snap.forEach(doc => {
-      const d = doc.data();
-      const el = document.createElement('div');
-      el.className = 'grid-item';
-      el.setAttribute('data-category', d.category || '');
-      el.innerHTML = `
-        <a href="${d.imageUrl}" data-lightbox="mezzi" data-title="${d.title || ''}">
-          <img src="${d.imageUrl}" alt="${d.title || ''}">
-        </a>
-        <p>${d.title || ''}</p>
-      `;
-      container.appendChild(el);
-    });
-
-    // Aggiorna il contatore dopo aver popolato la griglia
-    document.dispatchEvent(new Event('galleryUpdated'));
-  </script>
-
-  <script>
-    // Applica il fade-in all'avvio
-    document.body.classList.add('fade-in');
-
-    // Aggiunge effetto fade-out prima del cambio pagina
-    document.querySelectorAll('a[href]').forEach(link => {
-      const target = link.getAttribute('target');
-      if (!target || target === '_self') {
-        link.addEventListener('click', function (e) {
-          const href = this.getAttribute('href');
-          if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
-
-          e.preventDefault();
-          document.body.classList.remove('fade-in');
-          document.body.classList.add('fade-out');
-          setTimeout(() => {
-            window.location.href = href;
-          }, 300); // deve combaciare con la durata di fadeOut
-        });
+    <script>
+      function aggiornaConteggio() {
+        const mezziVisibili = document.querySelectorAll(".grid-item");
+        document.getElementById("mezziCount").textContent =
+          mezziVisibili.length;
       }
-    });
-  </script>
 
-  <script>
-    // Toggle mobile menu
-    document.querySelector('.menu-toggle').addEventListener('click', () => {
-      document.querySelector('.nav-links').classList.toggle('open');
-    });
-  </script>
+      // Aggiorna al caricamento iniziale
+      document.addEventListener("DOMContentLoaded", aggiornaConteggio);
 
-   
+      // Aggiorna anche dopo il caricamento da Firebase
+      document.addEventListener("galleryUpdated", aggiornaConteggio);
+    </script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
-</body>
+    <script>
+      const categoryButtons = document.querySelectorAll(
+        ".filter-buttons button",
+      );
+      const spotterButtons = document.querySelectorAll(
+        ".filter-spotters button",
+      ); // nuova sezione
+      const gridItems = document.querySelectorAll(".grid-item");
+
+      let activeCategory = "all";
+      let activeSpotter = "all";
+
+      // Funzione che applica entrambi i filtri
+      function applyFilters() {
+        let visibleCount = 0;
+
+        gridItems.forEach((item) => {
+          const category = item.getAttribute("data-category");
+          const spotter = item.getAttribute("data-spotter");
+
+          const showCategory =
+            activeCategory === "all" || category === activeCategory;
+          const showSpotter =
+            activeSpotter === "all" || spotter === activeSpotter;
+
+          if (showCategory && showSpotter) {
+            item.style.display = "block";
+            visibleCount++;
+          } else {
+            item.style.display = "none";
+          }
+        });
+
+        // Aggiorna contatore se presente
+        const counter = document.getElementById("mezziCount");
+        if (counter) counter.textContent = visibleCount;
+      }
+
+      // --- Filtra per categoria ---
+      categoryButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          categoryButtons.forEach((btn) => btn.classList.remove("active"));
+          button.classList.add("active");
+          activeCategory = button.getAttribute("data-filter");
+          applyFilters();
+        });
+      });
+
+      // --- Filtra per spotter ---
+      spotterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          spotterButtons.forEach((btn) => btn.classList.remove("active"));
+          button.classList.add("active");
+          activeSpotter = button.getAttribute("data-spotter");
+          applyFilters();
+        });
+      });
+
+      // Applica filtro iniziale
+      applyFilters();
+    </script>
+
+    <script>
+      const searchInput = document.getElementById("searchInput");
+      const galleryItems = document.querySelectorAll(".grid-item");
+
+      searchInput.addEventListener("keyup", () => {
+        const filter = searchInput.value.toLowerCase();
+        galleryItems.forEach((item) => {
+          const text = item.textContent.toLowerCase();
+          item.style.display = text.includes(filter) ? "" : "none";
+        });
+      });
+    </script>
+
+    <script type="module">
+      import { app } from "/admin/firebase.js";
+      import {
+        getFirestore,
+        collection,
+        getDocs,
+        query,
+        orderBy,
+      } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
+      const db = getFirestore(app);
+
+      const container = document.querySelector(".grid"); // la tua griglia
+
+      const q = query(collection(db, "gallery"), orderBy("createdAt", "desc"));
+      const snap = await getDocs(q);
+      container.innerHTML = "";
+      snap.forEach((doc) => {
+        const d = doc.data();
+        const el = document.createElement("div");
+        el.className = "grid-item";
+        el.setAttribute("data-category", d.category || "");
+        el.innerHTML = `
+        <a href="${d.imageUrl}" data-lightbox="mezzi" data-title="${d.title || ""}">
+          <img src="${d.imageUrl}" alt="${d.title || ""}">
+        </a>
+        <p>${d.title || ""}</p>
+      `;
+        container.appendChild(el);
+      });
+
+      // Aggiorna il contatore dopo aver popolato la griglia
+      document.dispatchEvent(new Event("galleryUpdated"));
+    </script>
+
+    <script>
+      // Applica il fade-in all'avvio
+      document.body.classList.add("fade-in");
+
+      // Aggiunge effetto fade-out prima del cambio pagina
+      document.querySelectorAll("a[href]").forEach((link) => {
+        const target = link.getAttribute("target");
+        if (!target || target === "_self") {
+          link.addEventListener("click", function (e) {
+            const href = this.getAttribute("href");
+            if (
+              href.startsWith("#") ||
+              href.startsWith("mailto:") ||
+              href.startsWith("tel:")
+            )
+              return;
+
+            e.preventDefault();
+            document.body.classList.remove("fade-in");
+            document.body.classList.add("fade-out");
+            setTimeout(() => {
+              window.location.href = href;
+            }, 300); // deve combaciare con la durata di fadeOut
+          });
+        }
+      });
+    </script>
+
+    <script>
+      // Toggle mobile menu
+      document.querySelector(".menu-toggle").addEventListener("click", () => {
+        document.querySelector(".nav-links").classList.toggle("open");
+      });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+  </body>
 </html>

@@ -1,164 +1,258 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-  <title>Friuli Emergenze</title>
-   
-  <link rel="stylesheet" href="style.css" />
-  <link rel="shortcut icon" href="assets/logo.png" type="image/png" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-</head>
-<body>
-  <nav class="navbar">
-    <div class="navbar-container">
-      <a href="/" class="logo">🚨 Friuli Emergenze</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>Friuli Emergenze</title>
 
-      <button class="menu-toggle" aria-label="Menu">
-        <i class="fas fa-bars"></i>
-      </button>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="assets/logo.png" type="image/png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="/" class="logo">🚨 Friuli Emergenze</a>
 
-      <ul class="nav-links">
-        <li><a href="/" class="nav-link active">Home</a></li>
-        <li><a href="/gallery" class="nav-link">Galleria</a></li>
-        <li><a href="/mediakit" class="nav-link">Media Kit</a></li>
-        <li><a href="/spotters" class="nav-link">Spotters</a></li>
-        <li><a href="/contact-us" class="nav-link">Contatti</a></li>
-        <li><a href="https://myfrem.friuliemergenze.it" target="_blank" class="nav-icon">Progetto My-FrEm</a></li>
-        <li><a href="https://instagram.com/friuliemergenze" target="_blank" class="nav-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
-        <li><a href="https://chat.whatsapp.com/I35F1A1bafKA1evG6lYYed" target="_blank" class="nav-icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></li>
-      </ul>
-    </div>
-  </nav>
+        <button class="menu-toggle" aria-label="Menu">
+          <i class="fas fa-bars"></i>
+        </button>
 
-  <header class="hero">
-    <img src="assets/logo.png" alt="Logo Friuli Emergenze" class="logo" />
-    <h1>Friuli Emergenze</h1>
-    <p>Documentiamo i mezzi di soccorso in azione sul territorio</p>
-  </header>
-  <section class="contact-info">
-    <div style="
-        background:#1c1c1c;
-        padding:2rem;
-        border-radius:12px;
-        margin:1.2rem auto;
-        max-width:800px;
-        text-align:center;
-        box-shadow:0 0 15px rgba(0,188,212,0.15);
-    ">
-        <h3 style="color:#00bcd4; margin-top:0;">Nessuna allerta in corso</h3>
-        <p>Al momento non ci sono allerte meteo attive in Friuli Venezia Giulia.</p>
-        <p>Consulta lo <a href="/allerte-meteo/storico" style="color:#00bcd4;">storico allerte</a> per le allerte passate.</p>
-    </div>
-  </section>
+        <ul class="nav-links">
+          <li><a href="/" class="nav-link active">Home</a></li>
+          <li><a href="/gallery" class="nav-link">Galleria</a></li>
+          <li><a href="/mediakit" class="nav-link">Media Kit</a></li>
+          <li><a href="/spotters" class="nav-link">Spotters</a></li>
+          <li><a href="/contact-us" class="nav-link">Contatti</a></li>
+          <li>
+            <a
+              href="https://myfrem.friuliemergenze.it"
+              target="_blank"
+              class="nav-icon"
+            >
+              Progetto MyFrEM</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://instagram.com/friuliemergenze"
+              target="_blank"
+              class="nav-icon"
+              aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://chat.whatsapp.com/I35F1A1bafKA1evG6lYYed"
+              target="_blank"
+              class="nav-icon"
+              aria-label="WhatsApp"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-  <section class="about">
-    <h2>Chi siamo</h2>
-    <p>Siamo una community nata dalla passione per i mezzi di emergenza. Attraverso Instagram e altri canali, condividiamo foto, video e informazioni sui servizi di soccorso attivi in Friuli Venezia Giulia.</p>
-  </section>
+    <header class="hero">
+      <img src="assets/logo.png" alt="Logo Friuli Emergenze" class="logo" />
+      <h1>Friuli Emergenze</h1>
+      <p>Documentiamo i mezzi di soccorso in azione sul territorio</p>
+    </header>
+    <section class="contact-info">
+      <div
+        style="
+          background: #1c1c1c;
+          padding: 2rem;
+          border-radius: 12px;
+          margin: 1.2rem auto;
+          max-width: 800px;
+          text-align: center;
+          box-shadow: 0 0 15px rgba(0, 188, 212, 0.15);
+        "
+      >
+        <h3 style="color: #00bcd4; margin-top: 0">Nessuna allerta in corso</h3>
+        <p>
+          Al momento non ci sono allerte meteo attive in Friuli Venezia Giulia.
+        </p>
+        <p>
+          Consulta lo
+          <a href="/allerte-meteo/storico" style="color: #00bcd4"
+            >storico allerte</a
+          >
+          per le allerte passate.
+        </p>
+      </div>
+    </section>
 
-  <section class="partners">
-    <h2>🤝 Collaborazioni</h2>
-    <p>Lavoriamo con volontari, croci locali e servizi di emergenza per valorizzare il territorio.</p>
-    <p>Se vuoi collaborare con noi, anche per inviarci regolarmente foto di mezzi puoi contattarci a: <a href="mailto:programmaspotters@friuliemergenze.it">programmaspotters@friuliemergenze.it</a></p>
-  </section>
-
-  <section class="gallery">
-    <h2>🚒 Galleria</h2>
-    <h3>Le ultime foto pubblicate!</h3>
-    <h5>Per tutti gli utilizzi pregasi contattare preventivamente <a href="mailto:utilizzo.foto@friuliemergenze.it">utilizzo.foto@friuliemergenze.it</a></h5>
-    <div class="grid">
-        <div class="grid-item">
-          <img src="assets/mezzi/fiattipo-polizialocalegrado.jpg" alt="Fiat Tipo - Polizia Locale Grado">
-          <p>Fiat Tipo Allestita Futura Veicoli Speciali - Polizia Locale Grado</p>
-        </div>
-
-        <div class="grid-item">
-            <img src="assets/mezzi/sm05-dueeffe.jpg" alt="Sierra Mike 05 - Due Effe Ambulanze">
-            <p>Audi A4 Avant Allestita Class by Orion - Due Effe Ambulanze</p>
-        </div>
-
-        <div class="grid-item">
-            <img src="assets/mezzi/sm06-dueeffe.jpg" alt="Sierra Mike 06 - Due Effe Ambulanze">
-            <p>Alfa Romeo Stelvio Allestita Class by Orion - Due Effe Ambulanze</p>
-        </div>
-    </div>
-    <p>Per vedere altre foto visita il nostro <a href="https://www.instagram.com/friuliemergenze" target="_blank">profilo Instagram</a> oppure vai alla <a href="/gallery">Galleria Immagini</a></p>
-  </section>
-
-
-  <section class="instagram">
-    <h2>📸 Ultimi post su Instagram</h2>
-    <div class="elfsight-app-41ecf671-9546-44ba-8d06-bdd3abe5db96" data-elfsight-app-lazy></div>
-  </section>
-
-  <section id="novita-whatsapp" class="novita-section">
-    <div class="container">
-      <h2>Unisciti al nostro gruppo WhatsApp! 📲🚑🚒</h2>
+    <section class="about">
+      <h2>Chi siamo</h2>
       <p>
-        Vuoi ricevere aggiornamenti in tempo reale su emergenze, mezzi in azione e notizie dalla nostra community?<br>
-        Unisciti al <strong>gruppo WhatsApp ufficiale di FriuliEmergenze</strong> e resta sempre connesso con tutto ciò che accade in Friuli-Venezia Giulia e dintorni!
+        Siamo una community nata dalla passione per i mezzi di emergenza.
+        Attraverso Instagram e altri canali, condividiamo foto, video e
+        informazioni sui servizi di soccorso attivi in Friuli Venezia Giulia.
       </p>
-      <ul>
-        <li>Condividi le tue foto di mezzi di emergenza</li>
-        <li>Ricevi aggiornamenti e info utili</li>
-        <li>Partecipa attivamente alla community</li>
-      </ul>
-      <ul class="btns-wa">
-        <a href="/regolamento-gruppo" class="btn-regwa" target="_blank">Leggi il regolamento del gruppo!</a>
-        <a href="https://chat.whatsapp.com/I35F1A1bafKA1evG6lYYed" class="btn-whatsapp" target="_blank">Entra nel gruppo WhatsApp!</a>
-      </ul>
-    </div>
-  </section>
+    </section>
 
+    <section class="partners">
+      <h2>🤝 Collaborazioni</h2>
+      <p>
+        Lavoriamo con volontari, croci locali e servizi di emergenza per
+        valorizzare il territorio.
+      </p>
+      <p>
+        Se vuoi collaborare con noi, anche per inviarci regolarmente foto di
+        mezzi puoi contattarci a:
+        <a href="mailto:programmaspotters@friuliemergenze.it"
+          >programmaspotters@friuliemergenze.it</a
+        >
+      </p>
+    </section>
 
-  <section class="contact">
-    <h2>📬 Contatti & Social</h2>
-    <p>Puoi contattare lo staff di FriuliEmergenze scrivendo a <a href="mailto:info@friuliemergenze.it">info@friuliemergenze.it</a></p>
-  </section>
+    <section class="gallery">
+      <h2>🚒 Galleria</h2>
+      <h3>Le ultime foto pubblicate!</h3>
+      <h5>
+        Per tutti gli utilizzi pregasi contattare preventivamente
+        <a href="mailto:utilizzo.foto@friuliemergenze.it"
+          >utilizzo.foto@friuliemergenze.it</a
+        >
+      </h5>
+      <div class="grid">
+        <div class="grid-item">
+          <img
+            src="assets/mezzi/fordranger-protezionecivileaquileia.jpeg"
+            alt="Ford Ranger - Protezione Civile Aquileia"
+          />
+          <p>Ford Ranger - Protezione Civile Aquileia</p>
+        </div>
 
-  <footer>
-    <p>© 2025 Friuli Emergenze — tutti i diritti riservati</p>
-    <p>
-      <a href="https://myfrem.friuliemergenze.it/">MyFrEM</a> · 
-      <a href="/cookie-policy">Cookie Policy</a> · 
-      <a href="/privacy-policy" target="_blank">Privacy Policy</a> · 
-      <a href="https://friuliemergenze.it/contact-us" target="_blank">Contatti</a>
-    </p>
-  </footer>
+        <div class="grid-item">
+          <img
+            src="assets/mezzi/fiatpunto-protezionecivileaquileia.jpeg"
+            alt="Fiat Punto - Protezione Civile Aquileia"
+          />
+          <p>Fiat Punto - Protezione Civile Aquileia</p>
+        </div>
 
-  <script>
-    // Applica il fade-in all'avvio
-    document.body.classList.add('fade-in');
+        <div class="grid-item">
+          <img
+            src="assets/mezzi/mercedes311cdi-protezionecivileaquileia.jpeg"
+            alt="Mercedes 311 CDI - Protezione Civile Aquileia"
+          />
+          <p>Mercedes 311 CDI - Protezione Civile Aquileia</p>
+        </div>
+      </div>
+      <p>
+        Per vedere altre foto visita il nostro
+        <a href="https://www.instagram.com/friuliemergenze" target="_blank"
+          >profilo Instagram</a
+        >
+        oppure vai alla <a href="/gallery">Galleria Immagini</a>
+      </p>
+    </section>
 
-    // Aggiunge effetto fade-out prima del cambio pagina
-    document.querySelectorAll('a[href]').forEach(link => {
-      const target = link.getAttribute('target');
-      if (!target || target === '_self') {
-        link.addEventListener('click', function (e) {
-          const href = this.getAttribute('href');
-          if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+    <section class="instagram">
+      <h2>📸 Ultimi post su Instagram</h2>
+      <div
+        class="elfsight-app-41ecf671-9546-44ba-8d06-bdd3abe5db96"
+        data-elfsight-app-lazy
+      ></div>
+    </section>
 
-          e.preventDefault();
-          document.body.classList.remove('fade-in');
-          document.body.classList.add('fade-out');
-          setTimeout(() => {
-            window.location.href = href;
-          }, 300); // deve combaciare con la durata di fadeOut
-        });
-      }
-    });
-  </script>
+    <section id="novita-whatsapp" class="novita-section">
+      <div class="container">
+        <h2>Unisciti al nostro gruppo WhatsApp! 📲🚑🚒</h2>
+        <p>
+          Vuoi ricevere aggiornamenti in tempo reale su emergenze, mezzi in
+          azione e notizie dalla nostra community?<br />
+          Unisciti al
+          <strong>gruppo WhatsApp ufficiale di FriuliEmergenze</strong> e resta
+          sempre connesso con tutto ciò che accade in Friuli-Venezia Giulia e
+          dintorni!
+        </p>
+        <ul>
+          <li>Condividi le tue foto di mezzi di emergenza</li>
+          <li>Ricevi aggiornamenti e info utili</li>
+          <li>Partecipa attivamente alla community</li>
+        </ul>
+        <ul class="btns-wa">
+          <a href="/regolamento-gruppo" class="btn-regwa" target="_blank"
+            >Leggi il regolamento del gruppo!</a
+          >
+          <a
+            href="https://chat.whatsapp.com/I35F1A1bafKA1evG6lYYed"
+            class="btn-whatsapp"
+            target="_blank"
+            >Entra nel gruppo WhatsApp!</a
+          >
+        </ul>
+      </div>
+    </section>
 
-  <script>
-    // Toggle mobile menu
-    document.querySelector('.menu-toggle').addEventListener('click', () => {
-      document.querySelector('.nav-links').classList.toggle('open');
-    });
-  </script>
+    <section class="contact">
+      <h2>📬 Contatti & Social</h2>
+      <p>
+        Puoi contattare lo staff di FriuliEmergenze scrivendo a
+        <a href="mailto:info@friuliemergenze.it">info@friuliemergenze.it</a>
+      </p>
+    </section>
 
-   
-  <script src="https://static.elfsight.com/platform/platform.js" async></script>
-</body>
+    <footer>
+      <p>© 2025 Friuli Emergenze — tutti i diritti riservati</p>
+      <p>
+        <a href="https://myfrem.friuliemergenze.it/">MyFrEM</a> ·
+        <a href="/cookie-policy">Cookie Policy</a> ·
+        <a href="/privacy-policy" target="_blank">Privacy Policy</a> ·
+        <a href="https://friuliemergenze.it/contact-us" target="_blank"
+          >Contatti</a
+        >
+      </p>
+    </footer>
+
+    <script>
+      // Applica il fade-in all'avvio
+      document.body.classList.add("fade-in");
+
+      // Aggiunge effetto fade-out prima del cambio pagina
+      document.querySelectorAll("a[href]").forEach((link) => {
+        const target = link.getAttribute("target");
+        if (!target || target === "_self") {
+          link.addEventListener("click", function (e) {
+            const href = this.getAttribute("href");
+            if (
+              href.startsWith("#") ||
+              href.startsWith("mailto:") ||
+              href.startsWith("tel:")
+            )
+              return;
+
+            e.preventDefault();
+            document.body.classList.remove("fade-in");
+            document.body.classList.add("fade-out");
+            setTimeout(() => {
+              window.location.href = href;
+            }, 300); // deve combaciare con la durata di fadeOut
+          });
+        }
+      });
+    </script>
+
+    <script>
+      // Toggle mobile menu
+      document.querySelector(".menu-toggle").addEventListener("click", () => {
+        document.querySelector(".nav-links").classList.toggle("open");
+      });
+    </script>
+
+    <script
+      src="https://static.elfsight.com/platform/platform.js"
+      async
+    ></script>
+  </body>
 </html>
