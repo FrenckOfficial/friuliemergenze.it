@@ -100,10 +100,20 @@ h1 {
   margin-bottom: 0.5rem;
 }
 
-.about, .instagram, .contact, .partners, .gallery {
+.nuntii-proximi, .about, .instagram, .contact, .partners, .gallery {
   padding: 2rem 1rem;
   max-width: 800px;
   margin: 0 auto;
+}
+
+.nuntii-proximi {
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.none {
+  display: none;
 }
 
 .instagram {
