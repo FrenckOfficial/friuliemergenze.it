@@ -82,6 +82,10 @@ body {
   .nav-links.open {
     display: flex;
   }
+
+  .scheda-mezzo img {
+    width: 100%;
+  }
 }
 
 header.hero {
