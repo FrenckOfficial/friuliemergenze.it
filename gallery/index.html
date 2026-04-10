@@ -462,7 +462,7 @@
                 alt="Charlie Papa 846 Guardia Costiera Grado"
               />
             </a>
-            <p>Charlie Papa 846 - Guardia Costiera Trieste</p>
+            <p>Charlie Papa 846 - Guardia Costiera Grado</p>
             <a href="/gallery/scheda/charliepapa846-gcgrado/" class="btn-scopri"
               >Scopri di più</a
             >
@@ -1316,6 +1316,22 @@
               >Scopri di più</a
              >
           </div>
+          <div class="grid-item" data-category="carabinieri">
+            <a
+              href="/assets/mezzi/cc401-ccgrado.jpg"
+              data-lightbox="mezzi"
+              data-title="CC-401 - Carabinieri Grado"
+            >
+              <img
+                src="/assets/mezzi/cc401-ccgrado.jpg"
+                alt="CC-78-01 Carabinieri Grado"
+              />
+            </a>
+            <p>CC-401 - Carabinieri Grado</p>
+            <a href="/gallery/scheda/cc401-ccgrado/" class="btn-scopri"
+              >Scopri di più</a
+            >
+          </div>
         </div>
       </section>
     </main>
@@ -1335,7 +1351,7 @@
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const urlParams = new URLSearchParams(window.location.search);
-        const spotterParam = urlParams.get("spotter"); // legge ?spotter=Nome+Spotter
+        const spotterParam = urlParams.get("spotter");
 
         if (spotterParam) {
           const spotterButtons = document.querySelectorAll(
@@ -1343,7 +1359,7 @@
           );
           spotterButtons.forEach((btn) => {
             if (btn.getAttribute("data-spotter") === spotterParam) {
-              btn.click(); // simula il click sul pulsante corretto
+              btn.click();
             }
           });
         }
