@@ -1,0 +1,450 @@
+[
+  {
+    "title": "Sierra 2.7.1 - SOGIT Grado",
+    "image": "/assets/mezzi/sierra271-sogitgrado.jpg",
+    "category": "soccorso-sanitario",
+    "spotter": "",
+    "link": "/gallery/scheda/sierra271-sogit/"
+  },
+  {
+    "title": "VOLVO FL - VVF Gorizia",
+    "image": "/assets/mezzi/volvofl-vvfgorizia.jpg",
+    "category": "vvf",
+    "spotter": "",
+    "link": "/gallery/scheda/volvofl-vvfgorizia/"
+  },
+  {
+    "title": "Sierra 7.6 - SOGIT Grado",
+    "image": "/assets/mezzi/sierra76-sogitgrado.webp",
+    "category": "soccorso-sanitario",
+    "spotter": "",
+    "link": "/gallery/scheda/sierra76-sogit/"
+  },
+  {
+    "title": "Nissan Navara - VVF Gorizia",
+    "image": "/assets/mezzi/nissannavara-vvfgorizia.jpg",
+    "category": "vvf",
+    "spotter": "",
+    "link": "/gallery/scheda/nissannavara-vvfgorizia/"
+  },
+  {
+    "title": "Fiat Ducato - Due Effe Ambulanze",
+    "image": "/assets/mezzi/fiatducato-dueeffe.jpg",
+    "category": "soccorso-sanitario",
+    "spotter": "",
+    "link": "/gallery/scheda/fiatducato-dueeffeambulanze/"
+  },
+  {
+    "title": "Iveco Maxicity 2020 - VVF Gorizia",
+    "image": "/assets/mezzi/ivecomaxicity-vvfgorizia.jpg",
+    "category": "vvf",
+    "spotter": "",
+    "link": "/gallery/scheda/ivecomaxicity-vvfgorizia/"
+  },
+  {
+    "title": "Sierra 2.7.5 - SOGIT Grado",
+    "image": "/assets/mezzi/sierra275-sogitgrado.png",
+    "category": "soccorso-sanitario",
+    "spotter": "",
+    "link": "/gallery/scheda/sierra275-sogit/"
+  },
+  {
+    "title": "Charlie Papa 8.8.1 - Guardia Costiera Trieste",
+    "image": "/assets/mezzi/cp881-guardiacostieratrieste.png",
+    "category": "guardia-costiera",
+    "spotter": "",
+    "link": "/gallery/scheda/charliepapa881-gctrieste/"
+  },
+  {
+    "title": "Acquatica Carolina - VVF Gorizia (DST STAG di Grado)",
+    "image": "/assets/mezzi/carolina-vvfgrado.jpg",
+    "category": "vvf",
+    "spotter": "",
+    "link": "/gallery/scheda/carolina-vvfgrado/"
+  },
+  {
+    "title": "VF BPS30 - VVF Gorizia (DST STAG di Grado)",
+    "image": "/assets/mezzi/vfbps30-grado.jpg",
+    "category": "vvf",
+    "spotter": "",
+    "link": "/gallery/scheda/vfbps30-vvfgrado/"
+  },
+  {
+    "title": "Fiat Punto - Guardia Costiera Grado",
+    "image": "/assets/mezzi/cp1783-grado.jpg",
+    "category": "guardia-costiera",
+    "spotter": "",
+    "link": "/gallery/scheda/cp1783-gcgrado/"
+  },
+  {
+    "title": "Fiat Tipo - Carabinieri Grado",
+    "image": "/assets/mezzi/fiattipo1-ccgrado.jpg",
+    "category": "carabinieri",
+    "spotter": "",
+    "link": "/gallery/scheda/fiattipo1-ccgrado/"
+  },
+  {
+    "title": "Mercedes Benz Actros 1841 - VVF Monfalcone",
+    "image": "/assets/mezzi/mercedesactros1841-vvfmonfalcone.jpg",
+    "category": "vvf",
+    "spotter": "",
+    "link": "/gallery/scheda/mercedesactros1841-vvfmonfalcone/"
+  },
+  {
+    "title": "Reparto Nautico - Guardia di Finanza",
+    "image": "/assets/mezzi/repnautico-gdffvg.jpg",
+    "category": "guardia-di-finanza",
+    "spotter": "",
+    "link": "/gallery/scheda/repnautico-gdffvg/"
+  },
+  {
+    "title": "Moto d'Acqua - Polizia di Stato Trieste",
+    "image": "/assets/mezzi/repnautico-poliziatrieste.jpg",
+    "category": "polizia-di-stato",
+    "spotter": "",
+    "link": "/gallery/scheda/motodacqua-poliziatrieste/"
+  },
+  {
+    "title": "Alfa Romeo Tonale - Polizia di Stato Monfalcone",
+    "image": "/assets/mezzi/tonale-poliziamonfalcone.jpg",
+    "category": "polizia-di-stato",
+    "spotter": "",
+    "link": "/gallery/scheda/tonale-poliziamonfalcone/"
+  },
+  {
+    "title": "Golf Charlie Bravo 1.7.4 - Guardia Costiera Grado",
+    "image": "/assets/mezzi/gcb174-guardiacostiera.jpg",
+    "category": "guardia-costiera",
+    "spotter": "",
+    "link": "/gallery/scheda/golfcharliebravo174-guardiacostiera/"
+  },
+  {
+    "title": "Charlie Papa 8.4.6 - Guardia Costiera Grado",
+    "image": "/assets/mezzi/cp846-guardiacostieragrado.jpg",
+    "category": "guardia-costiera",
+    "spotter": "",
+    "link": "/gallery/scheda/charliepapa846-gcgrado/"
+  },
+  {
+    "title": "CC-78-01 - Carabinieri Venezia",
+    "image": "/assets/mezzi/cc7801-ccvenezia.jpg",
+    "category": "carabinieri",
+    "spotter": "",
+    "link": "/gallery/scheda/cc7801-ccvenezia/"
+  },
+  {
+    "title": "Jeep Renegade - Carabinieri Grado",
+    "image": "/assets/mezzi/jeeprenegade-ccgrado.jpg",
+    "category": "carabinieri",
+    "spotter": "",
+    "link": "/gallery/scheda/jeeprenegade-ccgrado/"
+  },
+  {
+    "title": "Golf Charlie Bravo 3.2 - Guardia Costiera Grado",
+    "image": "/assets/mezzi/gcb32-guardiacostiera.jpg",
+    "category": "guardia-costiera",
+    "spotter": "",
+    "link": "/gallery/scheda/golfcharliebravo32-guardiacostiera/"
+  },
+  {
+    "title": "Mercedes Benz Atego - VVF Gorizia",
+    "image": "/assets/mezzi/mercedesatego-vvfgorizia.jpg",
+    "category": "vvf",
+    "spotter": "",
+    "link": "/gallery/scheda/mercedesatego-vvfgorizia/"
+  },
+  {
+    "title": "Toyota Hilux - Polizia Locale Grado",
+    "image": "/assets/mezzi/grado02-polizialocale.jpeg",
+    "category": "polizia-locale",
+    "spotter": "",
+    "link": "/gallery/scheda/grado02-polizialocale/"
+  },
+  {
+    "title": "Ford Ranger IX Serie - VVF Monfalcone",
+    "image": "/assets/mezzi/fordranger-vvfmonfalcone.jpg",
+    "category": "vvf",
+    "spotter": "",
+    "link": "/gallery/scheda/fordranger-vvfmonfalcone/"
+  },
+  {
+    "title": "I-DNAM - Elisoccorso FVG",
+    "image": "/assets/mezzi/doppioindia-elifvg.jpg",
+    "category": "soccorso-sanitario",
+    "spotter": "",
+    "link": "/gallery/scheda/doppioindia-elifvg/"
+  },
+  {
+    "title": "Fiat Tipo - Carabinieri Grado",
+    "image": "/assets/mezzi/fiattipo2-ccgrado.jpg",
+    "category": "carabinieri",
+    "spotter": "",
+    "link": "/gallery/scheda/fiattipo2-ccgrado/"
+  },
+  {
+    "title": "Jeep Wrangler J8 - Esercito Italiano",
+    "image": "/assets/mezzi/jeepwrangler-esercito.jpg",
+    "category": "esercito",
+    "spotter": "s.o.s_italia",
+    "link": "/gallery/scheda/jeepwrangler-esercitoitaliano/"
+  },
+  {
+    "title": "Volkswagen Crafter - CRI Palmanova",
+    "image": "/assets/mezzi/volskwagencrafter-cripalmanova.jpg",
+    "category": "soccorso-sanitario",
+    "spotter": "verona_emergency112",
+    "link": "/gallery/scheda/volkswagencrafter-cripalmanova/"
+  },
+  {
+    "title": "Bravo 4.9 - Croce Verde Basso Friuli",
+    "image": "/assets/mezzi/fiatducatoqtx-cvcervignano.jpg",
+    "category": "soccorso-sanitario",
+    "spotter": "verona_emergency112",
+    "link": "/gallery/scheda/fiatducatoqtx-cvcervignano/"
+  },
+  {
+    "title": "I-CREW - Elisoccorso FVG",
+    "image": "/assets/mezzi/icrew-elifvg.jpg",
+    "category": "soccorso-sanitario",
+    "spotter": "malcus08",
+    "link": "/gallery/scheda/icrew-elifvg/"
+  },
+  {
+    "title": "Fiat Ducato X290 - Ospedale Civile Palmanova ASUFC",
+    "image": "/assets/mezzi/fiatducatox290-asufc_ocpalmanova.jpg",
+    "category": "soccorso-sanitario",
+    "spotter": "",
+    "link": "/gallery/scheda/fiatducatox290-asufc_ocpalmanova/"
+  },
+  {
+    "title": "Ford Ranger IX Serie - VVF Trieste",
+    "image": "/assets/mezzi/fordranger-vvftrieste.jpg",
+    "category": "vvf",
+    "spotter": "rescuespotter_ts",
+    "link": "/gallery/scheda/fordranger-vvftrieste/"
+  },
+  {
+    "title": "Tango 1.7 - Sistema 118 Trieste",
+    "image": "/assets/mezzi/tango17-sistema118trieste.jpg",
+    "category": "soccorso-sanitario",
+    "spotter": "rescuespotter_ts",
+    "link": "/gallery/scheda/tango17-sistema118trieste/"
+  },
+  {
+    "title": "Fiat Doblò - Marina Militare",
+    "image": "/assets/mezzi/fiatdoblo-marinamilitare.jpg",
+    "category": "esercito",
+    "spotter": "",
+    "link": "/gallery/scheda/fiatdoblo-marinamilitare/"
+  },
+  {
+    "title": "Toyota Yaris Cross - Polizia Locale Trieste",
+    "image": "/assets/mezzi/toyotayariscross-polizialocalets.jpg",
+    "category": "polizia-locale",
+    "spotter": "rescuespotter_ts",
+    "link": "/gallery/scheda/toyotayariscross-polizialocalets/"
+  },
+  {
+    "title": "Tango 3.9 - Sistema 118 Trieste",
+    "image": "/assets/mezzi/fiatducatox290-asugi_sistema118trieste.jpg",
+    "category": "soccorso-sanitario",
+    "spotter": "rescuespotter_ts",
+    "link": "/gallery/scheda/tango39-sistema118trieste/"
+  },
+  {
+    "title": "Sierra Mike 0.5 - Due Effe Ambulanze",
+    "image": "/assets/mezzi/sm05-dueeffe.jpg",
+    "category": "soccorso-sanitario",
+    "spotter": "",
+    "link": "/gallery/scheda/sm05-dueeffeambulanze/"
+  },
+  {
+    "title": "Sierra Mike 0.6 - Due Effe Ambulanze",
+    "image": "/assets/mezzi/sm06-dueeffe.jpg",
+    "category": "soccorso-sanitario",
+    "spotter": "",
+    "link": "/gallery/scheda/sm06-dueeffeambulanze/"
+  },
+  {
+    "title": "Sierra Mike 0.7 - Due Effe Ambulanze",
+    "image": "/assets/mezzi/sm07-dueeffe.jpg",
+    "category": "soccorso-sanitario",
+    "spotter": "",
+    "link": "/gallery/scheda/sm07-dueeffeambulanze/"
+  },
+  {
+    "title": "Fiat Tipo - Polizia Locale Grado",
+    "image": "/assets/mezzi/fiattipo-polizialocalegrado.jpeg",
+    "category": "polizia-locale",
+    "spotter": "",
+    "link": "/gallery/scheda/fiattipo-polizialocalegrado/"
+  },
+  {
+    "title": "Tango 1.5 - Sistema 118 Trieste",
+    "image": "/assets/mezzi/tango15-sistema118trieste.jpg",
+    "category": "soccorso-sanitario",
+    "spotter": "rescuespotter_ts",
+    "link": "/gallery/scheda/tango15-sistema118trieste/"
+  },
+  {
+    "title": "Tango 1.6 - Sistema 118 Trieste",
+    "image": "/assets/mezzi/tango16-sistema118trieste.jpg",
+    "category": "soccorso-sanitario",
+    "spotter": "rescuespotter_ts",
+    "link": "/gallery/scheda/tango16-sistema118trieste/"
+  },
+  {
+    "title": "Tango 1.8 - Sistema 118 Trieste",
+    "image": "/assets/mezzi/tango18-sistema118trieste.jpg",
+    "category": "soccorso-sanitario",
+    "spotter": "rescuespotter_ts",
+    "link": "/gallery/scheda/tango18-sistema118trieste/"
+  },
+  {
+    "title": "Sierra Tango 8.0 - SOGIT Trieste",
+    "image": "/assets/mezzi/sierratango80-sogittrieste.jpg",
+    "category": "soccorso-sanitario",
+    "spotter": "s.o.g.i.t._sez._trieste",
+    "link": "/gallery/scheda/sierratango80-sogittrieste/"
+  },
+  {
+    "title": "Tango 3.8 - Sistema 118 Trieste",
+    "image": "/assets/mezzi/tango38-sistema118trieste.png",
+    "category": "soccorso-sanitario",
+    "spotter": "rescuespotter_ts",
+    "link": "/gallery/scheda/tango38-sistema118trieste/"
+  },
+  {
+    "title": "Toyota C-HR - Polizia Locale Grado",
+    "image": "/assets/mezzi/grado01-polizialocale.jpeg",
+    "category": "polizia-locale",
+    "spotter": "",
+    "link": "/gallery/scheda/grado01-polizialocale/"
+  },
+  {
+    "title": "Subaru Forester - Polizia Locale Grado",
+    "image": "/assets/mezzi/grado03-polizialocale.jpeg",
+    "category": "polizia-locale",
+    "spotter": "",
+    "link": "/gallery/scheda/grado03-polizialocale/"
+  },
+  {
+    "title": "Yamaha Tracer 900 - Polizia Locale Grado",
+    "image": "/assets/mezzi/grado01b-polizialocale.jpeg",
+    "category": "polizia-locale",
+    "spotter": "",
+    "link": "/gallery/scheda/grado01b-polizialocale/"
+  },
+  {
+    "title": "Italcar NEV - Polizia Locale Grado",
+    "image": "/assets/mezzi/italcargrado-polizialocale.jpeg",
+    "category": "polizia-locale",
+    "spotter": "",
+    "link": "/gallery/scheda/italcargrado-polizialocale/"
+  },
+  {
+    "title": "Fiat Punto - Protezione Civile Aquileia",
+    "image": "/assets/mezzi/fiatpunto-protezionecivileaquileia.jpeg",
+    "category": "protezione-civile",
+    "spotter": "",
+    "link": "/gallery/scheda/fiatpunto-protezionecivileaquileia/"
+  },
+  {
+    "title": "Mercedes 311 CDI - Protezione Civile Aquileia",
+    "image": "/assets/mezzi/mercedes311cdi-protezionecivileaquileia.jpeg",
+    "category": "protezione-civile",
+    "spotter": "",
+    "link": "/gallery/scheda/mercedes311cdi-protezionecivileaquileia/"
+  },
+  {
+    "title": "Ford Ranger - Protezione Civile Aquileia",
+    "image": "/assets/mezzi/fordranger-protezionecivileaquileia.jpeg",
+    "category": "protezione-civile",
+    "spotter": "",
+    "link": "/gallery/scheda/fordranger-protezionecivileaquileia/"
+  },
+  {
+    "title": "Sierra Charlie 1.6 - SOGIT Udine",
+    "image": "/assets/mezzi/sierracharlie16-sogitudine.jpeg",
+    "category": "soccorso-sanitario",
+    "spotter": "malcus08",
+    "link": "/gallery/scheda/sierracharlie16-sogitudine/"
+  },
+  {
+    "title": "Nissan Navara - Protezione Civile Majano",
+    "image": "/assets/mezzi/nissannavara-protezionecivilemajano.jpeg",
+    "category": "protezione-civile",
+    "spotter": "malcus08",
+    "link": "/gallery/scheda/nissannavara-protezionecivilemajano/"
+  },
+  {
+    "title": "Skoda Kodiaq - Polizia Locale Sesto Al Reghena",
+    "image": "/assets/mezzi/skodakodiaq-polizialocalesestoalreghena.jpg",
+    "category": "polizia-locale",
+    "spotter": "",
+    "link": "/gallery/scheda/skodakodiaq-polizialocalesestoalreghena/"
+  },
+  {
+    "title": "Alfa Romeo Giulietta - Polizia Locale Azzano Decimo",
+    "image": "/assets/mezzi/alfaromeogiulietta-polizialocaleazzanox.jpg",
+    "category": "polizia-locale",
+    "spotter": "",
+    "link": "/gallery/scheda/alfaromeogiulietta-polizialocaleazzanox/"
+  },
+  {
+    "title": "Lancia Ypsilon - Polizia Locale Trieste",
+    "image": "/assets/mezzi/ypsilon35-polizialocaletrieste.jpeg",
+    "category": "polizia-locale",
+    "spotter": "",
+    "link": "/gallery/scheda/ypsilon35-polizialocaletrieste/"
+  },
+  {
+    "title": "Golf Echo 1.9 - ASUFC",
+    "image": "/assets/mezzi/golfecho19-asufc.jpeg",
+    "category": "soccorso-sanitario",
+    "spotter": "rescuespotter_ts",
+    "link": "/gallery/scheda/golfecho19-asufc/"
+  },
+  {
+    "title": "Delta 0.9 - ASUFC",
+    "image": "/assets/mezzi/delta09-asufc.jpeg",
+    "category": "soccorso-sanitario",
+    "spotter": "rescuespotter_ts",
+    "link": "/gallery/scheda/delta09-asufc/"
+  },
+  {
+    "title": "Sierra 8.1 - SOGIT Grado",
+    "image": "/assets/mezzi/sierra81-sogitgrado.jpeg",
+    "category": "soccorso-sanitario",
+    "spotter": "",
+    "link": "/gallery/scheda/sierra81-sogitgrado/"
+  },
+  {
+    "title": "Alfa 2.1 - Polizia Locale Trieste",
+    "image": "/assets/mezzi/alfa21-polizialocaletrieste.jpeg",
+    "category": "polizia-locale",
+    "spotter": "",
+    "link": "/gallery/scheda/alfa21-polizialocaletrieste/"
+  },
+  {
+    "title": "DRAG-154 - Reparto Volo VVF Venezia",
+    "image": "/assets/mezzi/drago154-repartovolove1.jpg",
+    "category": "vvf",
+    "spotter": "",
+    "link": "/gallery/scheda/drago154-repartovolove/"
+  },
+  {
+    "title": "BMW 320 Touring F31 III restyle - Polizia Stradale Palmanova",
+    "image": "/assets/mezzi/bmw320touringf31iiirestyle-poliziastradalepalmanova.jpeg",
+    "category": "polizia-di-stato",
+    "spotter": "",
+    "link": "/gallery/scheda/320touringiiirestyle-poliziastradalepalmanova/"
+  },
+  {
+    "title": "CC-401 - Carabinieri Grado",
+    "image": "/assets/mezzi/cc401-ccgrado.jpeg",
+    "category": "carabinieri",
+    "spotter": "",
+    "link": "/gallery/scheda/cc401-ccgrado/"
+  }
+]
