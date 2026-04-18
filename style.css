@@ -6,7 +6,6 @@ body {
   line-height: 1.6;
 }
 
-/* Navbar base */
 .navbar {
   background-color: #111;
   padding: 1rem 2rem;
@@ -44,16 +43,13 @@ body {
   transition: color 0.3s ease;
 }
 
-.nav-link:hover,
-.nav-icon:hover {
+.nav-link:hover, .nav-icon:hover {
   color: #00bcd4;
 }
-
 .nav-link.active {
   border-bottom: 2px solid #00bcd4;
 }
 
-/* Mobile */
 .menu-toggle {
   background: none;
   border: none;
@@ -104,7 +100,12 @@ h1 {
   margin-bottom: 0.5rem;
 }
 
-.nuntii-proximi, .about, .instagram, .contact, .partners, .gallery {
+.nuntii-proximi,
+.about,
+.instagram,
+.contact,
+.partners,
+.gallery {
   padding: 2rem 1rem;
   max-width: 800px;
   margin: 0 auto;
@@ -123,14 +124,14 @@ h1 {
 .instagram {
   padding: 3rem 1rem;
   text-align: center;
-  background-color: #111; /* sfondo scuro */
+  background-color: #111;
   color: #f0f0f0;
 }
 
 .instagram h2 {
   font-size: 2rem;
   margin-bottom: 2rem;
-  color: #00bcd4; /* azzurro coerente */
+  color: #00bcd4;
 }
 
 .instagram .elfsight-app-41ecf671-9546-44ba-8d06-bdd3abe5db96 {
@@ -138,7 +139,7 @@ h1 {
   margin: 0 auto;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 a {
@@ -160,14 +161,16 @@ a {
   background-color: #1a1a1a;
   height: 516.05px;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,188,212,0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 188, 212, 0.15);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .grid-item img {
   width: 100%;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
 }
 
@@ -205,8 +208,7 @@ a {
   transition: background-color 0.2s ease;
 }
 
-.filter-buttons button:hover,
-.filter-buttons button.active {
+.filter-buttons button:hover, .filter-buttons button.active {
   background-color: #007bff;
   color: #fff;
 }
@@ -227,8 +229,7 @@ a {
   transition: background-color 0.2s ease;
 }
 
-.filter-spotters button:hover,
-.filter-spotters button.active {
+.filter-spotters button:hover, .filter-spotters button.active {
   background-color: #db7b0e;
   color: #fff;
 }
@@ -256,7 +257,6 @@ a {
 .contact-list li a:hover {
   text-decoration: underline;
 }
-
 
 .ig-embed {
   width: 100%;
@@ -321,13 +321,11 @@ footer {
   color: #aaa;
 }
 
-/* === MEDIA KIT === */
-
 .mediakit {
   max-width: 900px;
   margin: 0 auto;
   padding: 2rem;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   color: #f0f0f0;
 }
 
@@ -393,7 +391,7 @@ footer {
 .mediakit .content {
   max-width: 800px;
   margin: 0 auto;
-  padding: 0 1rem; /* sicurezza mobile */
+  padding: 0 1rem;
 }
 
 a i.fas {
@@ -413,26 +411,22 @@ a i.fas {
   padding-left: 0;
 }
 
-
 @media (max-width: 600px) {
   .mediakit {
     padding: 1.2rem;
   }
-
   .mediakit h1 {
     font-size: 2rem;
   }
-
   .mediakit h2 {
     font-size: 1.3rem;
   }
-
-  .mediakit p, .mediakit ul li {
+  .mediakit p,
+  .mediakit ul li {
     font-size: 1rem;
   }
 }
 
-/* Transizione fade in/out */
 .fade-in {
   opacity: 0;
   animation: fadeIn 0.5s ease forwards;
@@ -459,7 +453,7 @@ a i.fas {
   max-width: 1000px;
   margin: 0 auto;
   padding: 2rem;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   color: #f0f0f0;
   text-align: center;
 }
@@ -559,7 +553,7 @@ a i.fas {
 
 .cta-button {
   display: inline-block;
-  background-color: #25D366;
+  background-color: #25d366;
   color: white;
   padding: 0.75rem 1.5rem;
   border-radius: 30px;
@@ -582,6 +576,7 @@ a i.fas {
   text-decoration: none;
   transition: background 0.3s ease;
 }
+
 .btn-scopri:hover {
   background-color: #0097a7;
 }
@@ -608,7 +603,6 @@ a i.fas {
   border-color: #00bcd4;
 }
 
-/* Pagina singolo mezzo */
 .scheda-mezzo {
   max-width: 900px;
   margin: 2rem auto;
@@ -627,7 +621,7 @@ a i.fas {
   height: auto;
   margin: 0 auto 1.5rem auto;
   border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .dettagli-mezzo {
@@ -655,7 +649,6 @@ a i.fas {
   border-bottom: none;
 }
 
-/* Bottone indietro */
 .btn-indietro {
   display: inline-block;
   margin-top: 1.5rem;
@@ -671,7 +664,6 @@ a i.fas {
   background-color: #0097a7;
 }
 
-/* === COME DIVENTARE SPOTTER === */
 .mediakit .cta-button {
   display: inline-block;
   background-color: #00bcd4;
@@ -692,49 +684,48 @@ a i.fas {
   margin-bottom: 2.5rem;
 }
 
-.mediakit h1, 
+.mediakit h1,
 .mediakit h2 {
   color: #00bcd4;
 }
 
-/* Responsive */
 @media (max-width: 600px) {
   .mediakit {
     padding: 1.2rem;
   }
-
   .mediakit h1 {
     font-size: 2rem;
   }
-
   .mediakit h2 {
     font-size: 1.3rem;
   }
-
-  .mediakit p, 
+  .mediakit p,
   .mediakit ul li {
     font-size: 1rem;
   }
 }
 
-/* === PAGINA 404 === */
 .container-404 {
   max-width: 600px;
   padding: 20px;
 }
+
 .h1-404 {
   font-size: 5rem;
   margin: 0;
   color: #b30000;
 }
+
 .h2-404 {
   margin: 10px 0;
   font-size: 1.5rem;
 }
+
 .p404 {
   margin: 20px 0;
   font-size: 1rem;
 }
+
 .a404 {
   display: inline-block;
   margin-top: 15px;
@@ -745,15 +736,16 @@ a i.fas {
   border-radius: 6px;
   transition: background 0.3s;
 }
+
 .a404:hover {
   background-color: #800000;
 }
+
 .logo-404 {
   max-width: 150px;
   margin-bottom: 20px;
 }
 
-/* Stile Sezione Novità WhatsApp */
 .novita-section {
   padding: 60px 20px;
   text-align: center;
@@ -808,7 +800,7 @@ a i.fas {
 
 .btn-whatsapp {
   display: inline-block;
-  background-color: #25D366;
+  background-color: #25d366;
   color: #fff;
   padding: 12px 25px;
   border-radius: 30px;
@@ -836,7 +828,6 @@ a i.fas {
   background-color: #0821b3;
 }
 
-/* Novità MyFrEM */
 #novita-myfrem {
   padding: 60px 20px;
   text-align: center;
@@ -919,29 +910,25 @@ a i.fas {
   background-color: #073a74;
 }
 
-/* Responsive */
 @media (max-width: 600px) {
   .novita-section h2 {
     font-size: 22px;
   }
-
   .novita-section p,
   .novita-section ul li {
     font-size: 14px;
   }
 }
 
-/* Contenitore del form */
 #staffForm {
   max-width: 600px;
   margin: 0 auto;
   padding: 2rem;
   border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  font-family: 'Arial', sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: "Arial", sans-serif;
 }
 
-/* Label */
 #staffForm label {
   font-weight: bold;
   color: #ffffff;
@@ -949,7 +936,6 @@ a i.fas {
   margin-bottom: 0.4rem;
 }
 
-/* Input e textarea */
 #staffForm input,
 #staffForm textarea {
   width: 100%;
@@ -962,22 +948,18 @@ a i.fas {
   background: #f9f9f9;
 }
 
-/* Effetto focus */
-#staffForm input:focus,
-#staffForm textarea:focus {
+#staffForm input:focus, #staffForm textarea:focus {
   outline: none;
   border-color: #00bcd4;
   background: #fff;
-  box-shadow: 0 0 0 3px rgba(0,188,212,0.2);
+  box-shadow: 0 0 0 3px rgba(0, 188, 212, 0.2);
 }
 
-/* Textarea */
 #staffForm textarea {
   resize: vertical;
   min-height: 120px;
 }
 
-/* Bottone invio */
 #staffForm button {
   display: inline-block;
   width: 100%;
@@ -989,23 +971,22 @@ a i.fas {
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.15s ease, background 0.3s ease;
+  transition:
+    transform 0.15s ease,
+    background 0.3s ease;
 }
 
-/* Hover bottone */
 #staffForm button:hover {
   background: linear-gradient(135deg, #0097a7, #006064);
   transform: translateY(-2px);
 }
 
-/* Messaggio di stato */
 #formMessage {
   text-align: center;
   font-weight: 600;
   margin-top: 1rem;
 }
 
-/* Responsive */
 @media (max-width: 600px) {
   #staffForm {
     padding: 1.2rem;
@@ -1019,14 +1000,14 @@ a i.fas {
 
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); 
+  grid-template-columns: repeat(3, 1fr);
   gap: 15px;
 }
 
 .video-item video {
-  width: 100%;         
-  height: 475px;       
-  object-fit: cover;   
+  width: 100%;
+  height: 475px;
+  object-fit: cover;
   border-radius: 8px;
   display: block;
   margin: 0 auto;
@@ -1036,7 +1017,7 @@ a i.fas {
   background-color: #000000;
   padding: 10px;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
 }
 
@@ -1057,7 +1038,6 @@ a i.fas {
   margin-top: 10px;
 }
 
-/* Bottoni piattaforme */
 .btn {
   text-decoration: none;
   color: white;
@@ -1083,7 +1063,6 @@ a i.fas {
   background-color: #010101;
 }
 
-/* === STORICO ALLERTE === */
 .storico-container {
   max-width: 1000px;
   margin: 2rem auto;
@@ -1100,14 +1079,16 @@ a i.fas {
   border-radius: 12px;
   padding: 1rem;
   width: 105%;
-  box-shadow: 0 4px 15px rgba(0,188,212,0.15);
+  box-shadow: 0 4px 15px rgba(0, 188, 212, 0.15);
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .storico-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0,188,212,0.25);
+  box-shadow: 0 6px 20px rgba(0, 188, 212, 0.25);
 }
 
 .storico-card img {
@@ -1146,7 +1127,6 @@ a i.fas {
   background-color: #0097a7;
 }
 
-/* STORICO VUOTO */
 .storico-empty {
   text-align: center;
   padding: 2rem;
@@ -1154,7 +1134,7 @@ a i.fas {
   max-width: 600px;
   background-color: #1a1a1a;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,188,212,0.15);
+  box-shadow: 0 4px 15px rgba(0, 188, 212, 0.15);
 }
 
 .storico-empty h3 {
@@ -1180,6 +1160,7 @@ a i.fas {
   text-decoration: none;
   transition: color 0.3s ease;
 }
+
 .share a:hover {
   color: #0097a7;
 }
