@@ -153,10 +153,8 @@
     </main>
 
     <script>
-      // Applica il fade-in all'avvio
       document.body.classList.add("fade-in");
 
-      // Aggiunge effetto fade-out prima del cambio pagina
       document.querySelectorAll("a[href]").forEach((link) => {
         const target = link.getAttribute("target");
         if (!target || target === "_self") {
@@ -174,12 +172,11 @@
             document.body.classList.add("fade-out");
             setTimeout(() => {
               window.location.href = href;
-            }, 300); // deve combaciare con la durata di fadeOut
+            }, 300);
           });
         }
       });
 
-      // Forza il download
       function forceDownload(url, filename) {
         fetch(url)
           .then((response) => response.blob())
@@ -193,7 +190,6 @@
     </script>
 
     <script>
-      // Toggle mobile menu
       document.querySelector(".menu-toggle").addEventListener("click", () => {
         document.querySelector(".nav-links").classList.toggle("open");
       });
