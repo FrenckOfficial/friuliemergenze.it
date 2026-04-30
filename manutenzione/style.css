@@ -66,6 +66,12 @@ body {
     transform: scale(1.05);
 }
 
+.wip-404 {
+    width: 150px;
+    margin: 20px auto;
+    animation: float 3s ease-in-out infinite;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;

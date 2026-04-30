@@ -2,7 +2,7 @@
 <html lang="it">
   <head>
     <script type="text/javascript" src="https://embeds.iubenda.com/widgets/46908651-d6da-462f-b037-e6ef97c84795.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="refresh" content="0; url=/manutenzione">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Galleria | Friuli Emergenze</title>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
     <link rel="stylesheet" href="/style.css" />
@@ -61,12 +61,13 @@
     </nav>
 
     <header class="hero">
-      <img src="/assets/logo.png" alt="Logo Friuli Emergenze" class="logo" data-cmp-info="10">
+      <img src="/assets/logo.png" alt="Logo Friuli Emergenze" class="logoHeading" data-cmp-info="10">
       <h1>Galleria</h1>
       <p>Tutti i mezzi fotografati e pubblicati da Friuli Emergenze</p>
     </header>
 
-    <main>
+    <main class="gallery-page">
+      <h3>Nel caso si vogliano utilizzare foto provenienti da questa galleria è necessario farne richiesta all'indirizzo mail: <a href="mailto:soem@friuliemergenze.it">soem@friuliemergenze.it</a>. Grazie della collaborazione.</h3>
       <section class="filter-buttons">
         <button data-filter="all" class="active">Tutti</button>
         <button data-filter="vvf">Vigili del Fuoco</button>
@@ -115,17 +116,67 @@
       </section>
     </main>
 
-    <footer>
-      <p>© 2026 Friuli Emergenze — tutti i diritti riservati</p>
-      <p>
-        <a href="https://myfrem.friuliemergenze.it/">MyFrEM</a> ·
-        <a href="https://www.iubenda.com/privacy-policy/95409163" class="iubenda-black iubenda-noiframe iubenda-embed" title="Privacy Policy ">Privacy Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script> ·
-        <a href="https://www.iubenda.com/privacy-policy/95409163/cookie-policy" class="iubenda-black iubenda-noiframe iubenda-embed" title="Cookie Policy ">Cookie Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script> ·
-        <a href="https://friuliemergenze.it/contact-us" target="_blank"
-          >Contatti</a
-        >
-      </p>
+    <footer class="footer-clean">
+      <div class="footer-container">
+
+        <div class="footer-col">
+          <p class="footer-brand">
+            <a href="https://friuliemergenze.it"><i class="fa-regular fa-copyright"></i> 2026 FriuliEmergenze</a>
+          </p>
+          <p class="footer-desc">
+            Pagina di condivisione foto e video di mezzi di soccorso. Ti diamo il benvenuto nel nostro sito ufficiale!
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-paragraph">Scopri alcune delle nostre pagine più visitate!</p>
+          <p class="footer-links">
+            <a href="https://myfrem.friuliemergenze.it/" target="_blank">MyFrEM</a>
+            <span>·</span>
+            <a href="https://friuliemergenze.it/chi-sono" target="_blank">Chi sono</a>
+            <span>·</span>
+            <a href="https://friuliemergenze.it/contact-us" target="_blank">Contatti</a>
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-paragraph">Seguici sui nostri canali social</p>
+          <p class="footer-social">
+            <a href="https://friuliemergenze.it/social/facebook"><i class="fa-brands fa-facebook"></i></a>
+            <span>·</span>
+            <a href="https://friuliemergenze.it/social/instagram"><i class="fa-brands fa-instagram"></i></a>
+            <span>·</span>
+            <a href="https://friuliemergenze.it/social/tiktok"><i class="fa-brands fa-tiktok"></i></a>
+            <span>·</span>
+            <a href="https://friuliemergenze.it/social/whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-paragraph">Inviaci una mail</p>
+          <p class="footer-extra">
+            <a href="mailto:info@friuliemergenze.it">
+              <i class="fa-regular fa-envelope"></i>
+            </a> · Versione 2.4.1.0
+          </p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-legal">
+          <a href="https://www.iubenda.com/privacy-policy/95409163">Privacy Policy</a>
+          <span>·</span>
+          <a href="https://www.iubenda.com/privacy-policy/95409163/cookie-policy">Cookie Policy</a>
+        </p>
+      </div>
     </footer>
+
+    <script src="/shinystat_script.js?USER=SS-53595029-55bae" style="display: none;"></script>
+    <noscript>
+      <a href="https://www.shinystat.com/it/" target="_top" style="display: none;">
+      <img src="//www.shinystat.com/cgi-bin/shinystat.cgi?USER=SS-53595029-55bae" alt="Statistiche web" style="border:0px; display: none;" /></a>
+    </noscript>
 
     <script>
       let activeCategory = "all";
@@ -209,6 +260,19 @@
       document.querySelector(".menu-toggle").onclick = () => {
         document.querySelector(".nav-links").classList.toggle("open");
       };
+    </script>
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const spotter = urlParams.get("spotter");
+      const category = urlParams.get("category");
+
+      if (spotter) {
+        document.querySelector(`[data-spotter="${spotter}"]`)?.click();
+      }
+      if (category) {
+        document.querySelector(`[data-filter="${category}"]`)?.click();
+      }
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>

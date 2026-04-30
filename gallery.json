@@ -446,5 +446,54 @@
     "category": "carabinieri",
     "spotter": "",
     "link": "/gallery/scheda/cc401-ccgrado/"
+  },
+  {
+    "title": "Bremach Trekking GR35 4x4 - Protezione Civile Cividale del Friuli",
+    "image": "/assets/mezzi/bremachtrekkinggr354x4-pccividale.jpg",
+    "category": "protezione-civile",
+    "spotter": "",
+    "link": "/gallery/scheda/bremachtrekkinggr354x4-pccividale/"
+  },
+  {
+    "title": "Ford Ranger IX Serie - Protezione Civile Cividale del Friuli",
+    "image": "/assets/mezzi/fordranger-pccividale.jpg",
+    "category": "protezione-civile",
+    "spotter": "",
+    "link": "/gallery/scheda/fordranger-pccividale/"
+  },
+  {
+    "title": "Iveco TurboDaily - Protezione Civile Cividale del Friuli",
+    "image": "/assets/mezzi/ivecoturbodaily40104x4-pccividale.jpg",
+    "category": "protezione-civile",
+    "spotter": "",
+    "link": "/gallery/scheda/ivecoturbodaily35104x4-pccividale/"
+  },
+  {
+    "title": "Mercedes Benz Atego 1222 - Protezione Civile Cividale del Friuli",
+    "image": "/assets/mezzi/mercedesatego1222-pccividale.jpg",
+    "category": "protezione-civile",
+    "spotter": "",
+    "link": "/gallery/scheda/mercedesatego1222-pccividale/"
+  },
+  {
+    "title": "Nissan Navara - Protezione Civile Cividale del Friuli",
+    "image": "/assets/mezzi/nissannavara-pccividale.jpg",
+    "category": "protezione-civile",
+    "spotter": "",
+    "link": "/gallery/scheda/nissannavara-pccividale/"
+  },
+  {
+    "title": "I-OLYA - Antincendio Boschivo FVG",
+    "image": "/assets/mezzi/iolya-aibfvg.jpg",
+    "category": "protezione-civile",
+    "spotter": "",
+    "link": "/gallery/scheda/iolya-aibfvg/"
+  },
+  {
+    "title": "Victor 6.4 - Croce Verde Goriziana",
+    "image": "/assets/mezzi/victor64-cvgoriziana.jpg",
+    "category": "soccorso-sanitario",
+    "spotter": "",
+    "link": "/gallery/scheda/victor64-cvgoriziana/"
   }
 ]
