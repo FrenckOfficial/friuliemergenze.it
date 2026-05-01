@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, system-ui, sans-serif;
+  font-family: -apple-system, "Lexend", sans-serif;
   background-color: #111;
   color: #f0f0f0;
   line-height: 1.6;
@@ -131,6 +131,14 @@ a {
   text-decoration: none;
 }
 
+.galleryPMail {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
 .gallery-page h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
@@ -209,6 +217,26 @@ a {
   font-weight: bold;
   border-radius: 6px;
   transition: background-color 0.2s ease;
+}
+
+.filter-spotters {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.filter-spotters button {
+  background-color: #eee;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0 0.25rem;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+.filter-spotters button:hover,
+.filter-spotters button.active {
+  background-color: #db7b0e;
+  color: #fff;
 }
 
 .filter-buttons button:hover, .filter-buttons button.active {
