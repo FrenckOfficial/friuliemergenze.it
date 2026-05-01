@@ -28,13 +28,6 @@
     "link": "/gallery/scheda/nissannavara-vvfgorizia/"
   },
   {
-    "title": "Fiat Ducato - Due Effe Ambulanze",
-    "image": "/assets/mezzi/fiatducato-dueeffe.jpg",
-    "category": "soccorso-sanitario",
-    "spotter": "",
-    "link": "/gallery/scheda/fiatducato-dueeffeambulanze/"
-  },
-  {
     "title": "Iveco Maxicity 2020 - VVF Gorizia",
     "image": "/assets/mezzi/ivecomaxicity-vvfgorizia.jpg",
     "category": "vvf",
@@ -455,7 +448,7 @@
     "link": "/gallery/scheda/bremachtrekkinggr354x4-pccividale/"
   },
   {
-    "title": "Ford Ranger IX Serie - Protezione Civile Cividale del Friuli",
+    "title": "Ford Ranger X Serie - Protezione Civile Cividale del Friuli",
     "image": "/assets/mezzi/fordranger-pccividale.jpg",
     "category": "protezione-civile",
     "spotter": "",
@@ -488,12 +481,5 @@
     "category": "protezione-civile",
     "spotter": "",
     "link": "/gallery/scheda/iolya-aibfvg/"
-  },
-  {
-    "title": "Victor 6.4 - Croce Verde Goriziana",
-    "image": "/assets/mezzi/victor64-cvgoriziana.jpg",
-    "category": "soccorso-sanitario",
-    "spotter": "",
-    "link": "/gallery/scheda/victor64-cvgoriziana/"
   }
 ]
