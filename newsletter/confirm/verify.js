@@ -1,0 +1,37 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
+import { getFirestore, collection, query, where, getDocs, updateDoc, doc } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+import { firebaseConfig } from "https://myfrem.friuliemergenze.it/configFirebase.js";
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+const token = new URLSearchParams(window.location.search).get("token");
+const verifyingSection = document.getElementById("verifyingSection")
+
+async function verify() {
+  if (!token) {
+    verifyingSection.innerHTML = "<h2>Link non valido ❌</h2>";
+    return;
+  }
+  try {
+    const q = query(
+      collection(db, "newsletterSubs"),
+      where("token", "==", token)
+    );
+    const snap = await getDocs(q);
+    if (snap.empty) {
+      verifyingSection.innerHTML = "<h2>Token non valido ❌</h2>";
+      return;
+    }
+    const userDoc = snap.docs[0];
+    await updateDoc(doc(db, "newsletterSubs", userDoc.id), {
+      verified: true
+    });
+    verifyingSection.innerHTML = "<h2>Iscrizione confermata 🎉</h2>";
+  } catch (err) {
+    console.error(err);
+    verifyingSection.innerHTML = "<h2>Errore durante la verifica ❌</h2>";
+  }
+}
+
+verify();
