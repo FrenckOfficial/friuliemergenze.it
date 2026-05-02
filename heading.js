@@ -19,7 +19,7 @@
 
     { type: 'meta', attrs: { name: 'twitter:card', content: 'summary_large_image' } },
 
-    { type: 'meta', attrs: { name: 'theme-color', content: '#ffffff' } },
+    { type: 'meta', attrs: { name: 'theme-color', content: 'black' } },
     { type: 'meta', attrs: { name: 'mobile-web-app-capable', content: 'yes' } },
     { type: 'meta', attrs: { name: 'apple-mobile-web-app-title', content: titleText } },
 
