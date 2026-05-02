@@ -21,7 +21,7 @@ subscribeBtn.addEventListener("click", async () => {
     return;
   }
   try {
-    const q = query(collection(db, "newsletter"), where("email", "==", emailValue));
+    const q = query(collection(db, "newsletterSubs"), where("email", "==", emailValue));
     const querySnapshot = await getDocs(q);
     if (!querySnapshot.empty) {
       messageDiv.textContent = "Questo indirizzo email è già iscritto alla newsletter.";
