@@ -1,0 +1,8 @@
+User-agent: *
+
+Disallow: /manutenzione/
+Disallow: /bando-staff/
+
+Allow: /
+
+Sitemap: https://friuliemergenze.it/sitemap.xml
