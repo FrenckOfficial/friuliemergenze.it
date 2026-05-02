@@ -5,46 +5,93 @@ import { firebaseConfig } from "https://myfrem.friuliemergenze.it/configFirebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+console.log("🚀 Firebase inizializzato");
+
+emailjs.init("49-8564mCPRVWNmBW");
+console.log("📧 EmailJS inizializzato");
+
+const form = document.getElementById("newsletterForm");
 const email = document.getElementById("email");
 const name = document.getElementById("name");
-const subscribeBtn = document.getElementById("subscribeBtn");
 const messageDiv = document.getElementById("message");
 
-subscribeBtn.addEventListener("click", async () => {
+console.log("🧩 DOM caricato:", { form, email, name, messageDiv });
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  console.log("📨 Submit avviato");
 
   const emailValue = email.value.trim();
   const nameValue = name.value.trim();
 
+  console.log("✉️ Dati input:", { emailValue, nameValue });
+
   if (!emailValue) {
+    console.warn("⚠️ Email vuota");
     messageDiv.textContent = "Per favore, inserisci un indirizzo email.";
     messageDiv.style.color = "#ff3b3b";
     return;
   }
 
   try {
-    const q = query(collection(db, "newsletterSubs"), where("email", "==", emailValue));
+    console.log("🔍 Controllo email su Firestore...");
+
+    const q = query(
+      collection(db, "newsletterSubs"),
+      where("email", "==", emailValue)
+    );
+
     const querySnapshot = await getDocs(q);
 
+    console.log("📦 Query Firestore completata:", querySnapshot.size);
+
     if (!querySnapshot.empty) {
+      console.warn("⚠️ Email già iscritta");
       messageDiv.textContent = "Questo indirizzo email è già iscritto.";
       messageDiv.style.color = "#ff3b3b";
-    } else {
-      await addDoc(collection(db, "newsletterSubs"), {
-        email: emailValue,
-        name: nameValue
-      });
-
-      messageDiv.textContent = "Iscrizione completata!";
-      messageDiv.style.color = "#4CAF50";
-
-      setTimeout(() => {
-        window.location.href = "/";
-      }, 5000);
+      return;
     }
 
+    const token = crypto.randomUUID();
+    console.log("🔑 Token generato:", token);
+
+    console.log("💾 Salvataggio su Firestore...");
+
+    await addDoc(collection(db, "newsletterSubs"), {
+      email: emailValue,
+      name: nameValue,
+      verified: false,
+      token: token,
+      createdAt: new Date()
+    });
+
+    console.log("✅ Salvataggio completato");
+
+    console.log("📧 Invio email EmailJS...");
+
+    const emailResult = await emailjs.send("service_ngxrsq8", "template_32nd0dv", {
+      email: emailValue,
+      name: nameValue,
+      link: `https://friuliemergenze.it/newsletter/confirm/?token=${token}`
+    });
+
+    console.log("📬 Email inviata:", emailResult);
+
+    messageDiv.textContent = "Controlla la tua email per confermare l’iscrizione!";
+    messageDiv.style.color = "#4CAF50";
+
+    setTimeout(() => {
+      console.log("🏠 Redirect alla home");
+      window.location.href = "/";
+    }, 4000);
+
   } catch (error) {
-    console.error(error);
-    messageDiv.innerHTML = `Errore. Contattaci via <a href="mailto:soem@friuliemergenze.it">email</a>.`;
+    console.error("❌ ERRORE COMPLETO:", error);
+
+    messageDiv.innerHTML =
+      `Errore durante l'iscrizione. Contattaci via <a href="mailto:soem@friuliemergenze.it">email</a>.`;
+
     messageDiv.style.color = "#ff3b3b";
   }
 });

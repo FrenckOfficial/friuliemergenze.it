@@ -1,0 +1,11 @@
+<h2>Verifica in corso...</h2>
+
+<script>
+    const email = new URLSearchParams(window.location.search).get("email");
+    if (email) {
+        localStorage.setItem("newsletter_" + email, "verified");
+        document.body.innerHTML = "<h2>Iscrizione confermata 🎉</h2>";
+    } else {
+        document.body.innerHTML = "<h2>Link non valido</h2>";
+    }
+</script>

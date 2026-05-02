@@ -1289,10 +1289,14 @@ a i.fas {
   text-decoration: underline;
 }
 
+#subscribeBtn {
+  margin-top: 25px;
+}
+
 .form-note {
   font-size: 12px;
   color: #777;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .btn {

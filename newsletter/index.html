@@ -4,6 +4,7 @@
     <title>Newsletter - Friuli Emergenze</title>
     <script src="/heading.js"></script>
     <script type="module" src="/newsletter/subscribe.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body class="fade-in">
     <nav class="navbar">
@@ -32,32 +33,20 @@
 
     <section class="newsletter-section">
         <div class="newsletter-card">
-            <h2>Iscriviti alla Newsletter</h2>
-            <p>Inserisci la tua email per ricevere aggiornamenti direttamente nella tua casella di posta.</p>
-            <div class="newsletter-form">
-                <label for="name">Nome</label>
-                <input 
-                    type="text" 
-                    id="name" 
-                    name="name" 
-                    placeholder="Il tuo nome" 
-                    required
-                >
+          <h2>Iscriviti alla Newsletter</h2>
+          <p>Inserisci la tua email per ricevere aggiornamenti direttamente nella tua casella di posta.</p>
+          <form class="newsletter-form" id="newsletterForm">
+            <label for="name">Nome</label>
+            <input type="text" id="name" required>
 
-                <label for="email">Email</label>
-                <input 
-                    type="email" 
-                    id="email" 
-                    name="email" 
-                    placeholder="esempio@email.com" 
-                    required
-                >
-                <button id="subscribeBtn">Iscriviti</button>
-                <p class="form-note">
-                    Nessuno spam. Solo aggiornamenti importanti.
-                </p>
-                <p id="message"></p>
-            </div>
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+
+            <button type="submit" id="subscribeBtn">Iscriviti</button>
+
+            <p class="form-note">Utilizzeremo la newsletter solo per comunicazioni riguardanti l'aggiornamento del sito o per alcune idee che richiederanno la vostra opinione!</p>
+            <p id="message"></p>
+          </form>
         </div>
     </section>
 
