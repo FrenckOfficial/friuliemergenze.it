@@ -208,17 +208,6 @@
       <a href="https://www.shinystat.com/it/" target="_top" style="display: none;">
       <img src="//www.shinystat.com/cgi-bin/shinystat.cgi?USER=SS-53595029-55bae" alt="Statistiche web" style="border:0px; display: none;" /></a>
     </noscript>
-    <script>
-      function aggiornaConteggio() {
-        const mezziVisibili = document.querySelectorAll(".grid-item");
-        document.getElementById("mezziCount").textContent =
-          mezziVisibili.length;
-      }
-
-      document.addEventListener("DOMContentLoaded", aggiornaConteggio);
-
-      document.addEventListener("galleryUpdated", aggiornaConteggio);
-    </script>
 
     <script>
       document.querySelector(".menu-toggle").addEventListener("click", () => {

@@ -12,9 +12,9 @@
           <i class="fas fa-bars"></i>
         </button>
         <ul class="nav-links">
-          <li><a href="/" class="nav-link active">Home</a></li>
+          <li><a href="/" class="nav-link">Home</a></li>
           <li><a href="/gallery" class="nav-link">Galleria</a></li>
-          <li><a href="/photobook" class="nav-link">Photobooks</a></li>
+          <li><a href="/photobook" class="nav-link active">Photobooks</a></li>
           <li><a href="/contact-us" class="nav-link">Contatti</a></li>
           
           <li><a href="https://myfrem.friuliemergenze.it" target="_blank" class="nav-icon" aria-label="MyFrEM">Progetto MyFrEM</a></li>
@@ -118,7 +118,22 @@
       <img src="//www.shinystat.com/cgi-bin/shinystat.cgi?USER=SS-53595029-55bae" alt="Statistiche web" style="border:0px; display: none;" /></a>
     </noscript>
 
-    
+    <script>
+      window.addEventListener("pageshow", (event) => {
+        document.body.style.opacity = "1";
+        document.body.classList.remove("fade-in");
+        void document.body.offsetWidth;
+        document.body.classList.add("fade-in");
+
+        const overlay = document.querySelector(".lightboxOverlay");
+        const box = document.querySelector(".lightbox");
+
+        if (overlay) overlay.style.display = "none";
+        if (box) box.style.display = "none";
+
+        document.body.style.overflow = "";
+      });
+    </script>
 
     <script>
       document.querySelector(".menu-toggle").addEventListener("click", () => {

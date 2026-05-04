@@ -2,7 +2,6 @@
 <html lang="it">
   <head>
     <script src="https://embeds.iubenda.com/widgets/46908651-d6da-462f-b037-e6ef97c84795.js"></script>
-    <script src="/heading.js"></script></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Galleria | Friuli Emergenze</title>
     <script src="/heading.js"></script>
@@ -247,6 +246,23 @@
       if (category) {
         document.querySelector(`[data-filter="${category}"]`)?.click();
       }
+    </script>
+
+    <script>
+      window.addEventListener("pageshow", (event) => {
+        document.body.style.opacity = "1";
+        document.body.classList.remove("fade-in");
+        void document.body.offsetWidth;
+        document.body.classList.add("fade-in");
+
+        const overlay = document.querySelector(".lightboxOverlay");
+        const box = document.querySelector(".lightbox");
+
+        if (overlay) overlay.style.display = "none";
+        if (box) box.style.display = "none";
+
+        document.body.style.overflow = "";
+      });
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
