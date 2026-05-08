@@ -25,7 +25,9 @@ async function verify() {
     }
     const userDoc = snap.docs[0];
     await updateDoc(doc(db, "newsletterSubs", userDoc.id), {
-      verified: true
+      subscribed: true,
+      verified: true,
+      verifiedAt: new Date()
     });
     verifyingSection.innerHTML = "<h2>Iscrizione confermata 🎉</h2>";
   } catch (err) {

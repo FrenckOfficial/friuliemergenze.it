@@ -1,8 +1,14 @@
 User-agent: *
 
+# Pagine da non indicizzare
 Disallow: /manutenzione/
 Disallow: /bando-staff/
 
+# Evita parametri inutili (opzionale ma utile)
+Disallow: /*?*
+
+# Consenti tutto il resto
 Allow: /
 
+# Sitemap principale
 Sitemap: https://friuliemergenze.it/sitemap.xml
