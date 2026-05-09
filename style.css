@@ -1446,6 +1446,49 @@ a i.fas {
   margin-bottom: 2.5rem;
 }
 
+.divStylerGrado2026 {
+  margin-bottom: 2.5rem;
+}
+
+.divStylerGrado2026 > img {
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 10px;
+  background: #e63946;
+  color: #ffffff;
+  font-family: 'Lexend', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.btn-primary:hover {
+  background: #d62828;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.btn-primary:active {
+  transform: translateY(0px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary i {
+  margin-right: 8px;
+}
+
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
