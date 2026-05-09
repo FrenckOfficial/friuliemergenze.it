@@ -104,10 +104,7 @@
 
     <section class="instagram">
       <h2>📸 Ultimi post su Instagram</h2>
-      <div
-        class="elfsight-app-41ecf671-9546-44ba-8d06-bdd3abe5db96"
-        data-elfsight-app-lazy
-      ></div>
+      <iframe onload="iFrameSetup(this)" src="https://app.mirror-app.com/feed-instagram/9b990b85-5822-4188-be36-5fbacb627a94/preview" style="width:100%;border:none;overflow:hidden;" scrolling="no"></iframe>
     </section>
 
     <section id="novita-whatsapp" class="novita-section">
@@ -204,17 +201,12 @@
       <img src="//www.shinystat.com/cgi-bin/shinystat.cgi?USER=SS-53595029-55bae" alt="Statistiche web" style="border:0px; display: none;" /></a>
     </noscript>
 
-    
+    <script src="https://cdn.jsdelivr.net/npm/@mirrorapp/iframe-bridge@latest/dist/index.umd.js"></script>
 
     <script>
       document.querySelector(".menu-toggle").addEventListener("click", () => {
         document.querySelector(".nav-links").classList.toggle("open");
       });
     </script>
-
-    <script
-      src="https://static.elfsight.com/platform/platform.js"
-      async
-    ></script>
   </body>
 </html>
