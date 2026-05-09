@@ -32,22 +32,25 @@
     </header>
 
     <section class="newsletter-section">
-        <div class="newsletter-card">
-          <h2>Iscriviti alla Newsletter</h2>
-          <p>Inserisci la tua email per ricevere aggiornamenti direttamente nella tua casella di posta.</p>
-          <form class="newsletter-form" id="newsletterForm">
-            <label for="name">Nome</label>
-            <input type="text" id="name" required>
-
-            <label for="email">Email</label>
-            <input type="email" id="email" required>
-
-            <button type="submit" id="subscribeBtn">Iscriviti</button>
-
-            <p class="form-note">Utilizzeremo la newsletter solo per comunicazioni riguardanti l'aggiornamento del sito (nuovi veicoli o photobook) o per alcune idee che richiederanno la vostra opinione!</p>
-            <p id="message"></p>
-          </form>
-        </div>
+      <div class="newsletter-card">
+        <h2>Ricevi gli aggiornamenti di Friuli Emergenze</h2>
+        <p>
+          Iscriviti alla newsletter per ricevere aggiornamenti su nuovi mezzi, photobook e novità del progetto.
+        </p>
+        <form class="newsletter-form" id="newsletterForm">
+          <label for="name">Nome <span class="optional">(facoltativo)</span></label>
+          <input type="text" id="name" placeholder="Il tuo nome">
+          <label for="email">Email</label>
+          <input type="email" id="email" required placeholder="nome@email.com">
+          <button type="submit" id="subscribeBtn">
+            Iscrivimi alla newsletter
+          </button>
+          <p class="form-note">
+            Nessuno spam. Solo aggiornamenti quando pubblichiamo qualcosa di nuovo.
+          </p>
+          <p id="message"></p>
+        </form>
+      </div>
     </section>
 
     <footer class="footer-clean">
