@@ -62,6 +62,8 @@ form.addEventListener("submit", async (e) => {
       email: emailValue,
       name: nameValue,
       verified: false,
+      subscribed: false,
+      verifiedAt: null,
       token: token,
       createdAt: new Date()
     });
@@ -90,7 +92,7 @@ form.addEventListener("submit", async (e) => {
     console.error("❌ ERRORE COMPLETO:", error);
 
     messageDiv.innerHTML =
-      `Errore durante l'iscrizione. Contattaci via <a href="mailto:soem@friuliemergenze.it">email</a>.`;
+      `Errore durante l'iscrizione. Contattaci via <a href="mailto:soem@friuliemergenze.it">email</a> per notificarcelo.`;
 
     messageDiv.style.color = "#ff3b3b";
   }

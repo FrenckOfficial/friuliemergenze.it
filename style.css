@@ -1511,7 +1511,7 @@ textarea {
 input::placeholder,
 textarea::placeholder {
   font-family: inherit;
-  opacity: 0.6; /* opzionale, per stile più soft */
+  opacity: 0.6;
 }
 
 @media (max-width: 768px) {
