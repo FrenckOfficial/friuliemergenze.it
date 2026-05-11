@@ -197,10 +197,6 @@ a {
   color: #00bcd4;
 }
 
-button {
-  font-family: inherit;
-}
-
 .filter-buttons {
   margin-top: 20px;
   text-align: center;
@@ -593,7 +589,6 @@ footer {
   max-width: 900px;
   margin: 0 auto;
   padding: 2rem;
-  font-family: "Segoe UI", sans-serif;
   color: #f0f0f0;
 }
 
@@ -977,7 +972,6 @@ a i.fas {
 .novita-section {
   padding: 60px 20px;
   text-align: center;
-  font-family: Arial, sans-serif;
 }
 
 .novita-section .container {
@@ -1059,7 +1053,6 @@ a i.fas {
 #novita-myfrem {
   padding: 60px 20px;
   text-align: center;
-  font-family: Arial, sans-serif;
 }
 
 #novita-myfrem .container {
@@ -1144,7 +1137,6 @@ a i.fas {
   padding: 2rem;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  font-family: "Arial", sans-serif;
 }
 
 #staffForm label {
@@ -1324,10 +1316,6 @@ a i.fas {
   background-color: #ff0000;
 }
 
-.instagram {
-  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
-}
-
 .tiktok {
   background-color: #010101;
 }
@@ -1443,7 +1431,6 @@ a i.fas {
 #evidence {
   padding: 60px 20px;
   text-align: center;
-  font-family: Arial, sans-serif;
 }
 
 .rivista2025 {
@@ -1469,7 +1456,6 @@ a i.fas {
   border-radius: 10px;
   background: #e63946;
   color: #ffffff;
-  font-family: 'Lexend', sans-serif;
   font-size: 0.95rem;
   font-weight: 600;
   text-decoration: none;
@@ -1504,7 +1490,9 @@ a i.fas {
 }
 
 input,
-textarea {
+textarea,
+a,
+button {
   font-family: inherit;
 }
 
