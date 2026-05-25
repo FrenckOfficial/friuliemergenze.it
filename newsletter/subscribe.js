@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
-import { getFirestore, collection, getDocs, query, where, addDoc } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+import { getFirestore, collection, getDocs, query, where, addDoc, doc, updateDoc } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
 import { firebaseConfig } from "https://myfrem.friuliemergenze.it/configFirebase.js";
 
 const app = initializeApp(firebaseConfig);
@@ -99,9 +99,24 @@ form.addEventListener("submit", async (e) => {
       createdAt: new Date()
     });
 
-    await updateDoc(doc(db, "users").where("email", "==", emailValue), {
-      newsSubbed: true
-    });
+    const userQuery = query(
+      collection(db, "users"),
+      where("email", "==", emailValue)
+    );
+
+    const userSnapshot = await getDocs(userQuery);
+
+    if (!userSnapshot.empty) {
+      const userDoc = userSnapshot.docs[0];
+
+      await updateDoc(userDoc.ref, {
+        newsSubbed: true
+      });
+
+      console.log("✅ Utente aggiornato");
+    } else {
+      console.warn("⚠️ Nessun utente trovato con questa email");
+    }
 
     console.log("✅ Salvataggio completato");
 
@@ -119,8 +134,8 @@ form.addEventListener("submit", async (e) => {
     messageDiv.style.color = "#4CAF50";
 
     setTimeout(() => {
-      console.log("🏠 Redirect alla home");
-      window.location.href = "/";
+      console.log("🏠 Tornando indietro di una pagina in reloading");
+      window.history.back();
     }, 4000);
 
   } catch (error) {
