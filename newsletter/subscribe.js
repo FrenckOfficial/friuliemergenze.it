@@ -15,6 +15,27 @@ const email = document.getElementById("email");
 const name = document.getElementById("name");
 const messageDiv = document.getElementById("message");
 
+const urlParams = new URLSearchParams(window.location.search);
+const nameParam = urlParams.get("name");
+const emailParam = urlParams.get("email");
+const privacyParam = urlParams.get("privacyChecked");
+
+if (nameParam) {
+  name.value = decodeURIComponent(nameParam);
+  console.log("👤 Nome precompilato:", name.value);
+}
+if (emailParam) {
+  email.value = decodeURIComponent(emailParam);
+  console.log("✉️ Email precompilata:", email.value);
+}
+if (privacyParam === "true") {
+  const privacyCheckbox = document.getElementById("privacy");
+  if (privacyCheckbox) {
+    privacyCheckbox.checked = true;
+    console.log("✅ Privacy pre-selezionata");
+  }
+}
+
 console.log("🧩 DOM caricato:", { form, email, name, messageDiv });
 
 form.addEventListener("submit", async (e) => {
@@ -24,6 +45,16 @@ form.addEventListener("submit", async (e) => {
 
   const emailValue = email.value.trim();
   const nameValue = name.value.trim();
+
+  if (nameParam && emailParam) {
+    console.log("🔍 Verifica parametri URL...")
+    if (emailValue !== decodeURIComponent(emailParam) || nameValue !== decodeURIComponent(nameParam)) {
+      console.warn("⚠️ Parametri URL non corrispondono ai valori del form");
+      messageDiv.textContent = "I dati inseriti non corrispondono ai parametri URL. Per favore, correggili.";
+      messageDiv.style.color = "#ff3b3b";
+      return;
+    }
+  }
 
   console.log("✉️ Dati input:", { emailValue, nameValue });
 
@@ -66,6 +97,10 @@ form.addEventListener("submit", async (e) => {
       verifiedAt: null,
       token: token,
       createdAt: new Date()
+    });
+
+    await updateDoc(doc(db, "users").where("email", "==", emailValue), {
+      newsSubbed: true
     });
 
     console.log("✅ Salvataggio completato");
