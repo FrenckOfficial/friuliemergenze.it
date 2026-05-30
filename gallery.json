@@ -488,5 +488,40 @@
     "category": "protezione-civile",
     "spotter": "",
     "link": "/gallery/scheda/unimog-protezionecivilegrado/"
+  },
+  {
+    "title": "Fiat Panda 4x4 I serie - Protezione Civile Grado",
+    "image": "/assets/mezzi/fiatpanda-protezionecivilegrado.jpeg",
+    "category": "protezione-civile",
+    "spotter": "",
+    "link": "/gallery/scheda/fiatpanda-protezionecivilegrado/"
+  },
+  {
+    "title": "Toyota Hilux - Protezione Civile Grado",
+    "image": "/assets/mezzi/toyotahilux-protezionecivilegrado.jpeg",
+    "category": "protezione-civile",
+    "spotter": "",
+    "link": "/gallery/scheda/toyotahilux-protezionecivilegrado/"
+  },
+  {
+    "title": "Nissan Navara - Protezione Civile Grado",
+    "image": "/assets/mezzi/nissannavara-protezionecivilegrado.jpeg",
+    "category": "protezione-civile",
+    "spotter": "",
+    "link": "/gallery/scheda/nissannavara-protezionecivilegrado/"
+  },
+  {
+    "title": "Nissan Cabstar - Protezione Civile Grado",
+    "image": "/assets/mezzi/nissancabstar-protezionecivilegrado.jpeg",
+    "category": "protezione-civile",
+    "spotter": "",
+    "link": "/gallery/scheda/nissancabstar-protezionecivilegrado/"
+  },
+  {
+    "title": "Fiat Ducato X290 - Protezione Civile Grado",
+    "image": "/assets/mezzi/fiatducatox290-protezionecivilegrado.jpeg",
+    "category": "protezione-civile",
+    "spotter": "",
+    "link": "/gallery/scheda/fiatducatox290-protezionecivilegrado/"
   }
 ]
