@@ -29,7 +29,7 @@
       <p>Documentiamo i mezzi di soccorso in azione sul territorio</p>
     </header>
     <section class="pcrfvgit-alert">
-      <script type="text/javascript" src="https://www.protezionecivile.fvg.it/widgets/pcrfvgit_alert.js"></script>
+      <script type="text/javascript" src="https://www.friuliemergenze.it/assets/widget/allertemeteo.js"></script>
         <div class="pcrfvgit_alert_widget" data-tk="001" style="display: block; min-height: 170px;"></div>
     </section>
 
@@ -81,40 +81,19 @@
     <section class="gallery">
       <h2>🚒 Galleria</h2>
       <h3>Le ultime foto pubblicate!</h3>
+
       <h5>
         Per tutti gli utilizzi pregasi contattare preventivamente la redazione a
-        <a href="mailto:soem@friuliemergenze.it"
-          >soem@friuliemergenze.it</a
-        >
+        <a href="mailto:soem@friuliemergenze.it">soem@friuliemergenze.it</a>
       </h5>
-      <div class="grid">
-        <div class="grid-item">
-          <img 
-            src="assets/mezzi/iulya-aibfvg.jpg"
-            alt="I-ULYA - Antincendio Boschivo Regione Friuli Venezia Giulia"
-          />
-          <p>I-ULYA - Antincendio Boschivo FVG</p>
-        </div>
-        <div class="grid-item">
-          <img 
-            src="assets/mezzi/mercedesatego1222-pccividale.jpg" 
-            alt="Mercedes-Benz Atego 1222 - Protezione Civile Cividale del Friuli"
-          />
-          <p>Mercedes-Benz Atego 1222 - Protezione Civile Cividale del Friuli</p>
-        </div>
-        <div class="grid-item">
-          <img 
-            src="assets/mezzi/ivecoturbodaily40104x4-pccividale.jpg" 
-            alt="Iveco TurboDaily 35-10 4x4 - Protezione Civile Cividale del Friuli"
-          />
-          <p>Iveco TurboDaily 35-10 4x4 - Protezione Civile Cividale del Friuli</p>
-        </div>
-      </div>
+
+      <div class="grid" id="latest-gallery"></div>
+
       <h4>
         Per vedere altre foto visita il nostro
-        <a href="https://www.instagram.com/friuliemergenze" target="_blank"
-          >profilo Instagram</a
-        >
+        <a href="https://www.instagram.com/friuliemergenze" target="_blank">
+          profilo Instagram
+        </a>
         oppure vai alla <a href="/gallery">Galleria Immagini</a>
       </h4>
     </section>
@@ -225,5 +204,35 @@
         document.querySelector(".nav-links").classList.toggle("open");
       });
     </script>
+
+    <script>
+      fetch('/gallery.json')
+        .then(response => response.json())
+        .then(data => {
+          const container = document.getElementById('latest-gallery');
+
+          const latestPhotos = data.slice(-3).reverse();
+
+          latestPhotos.forEach(photo => {
+            const item = document.createElement('div');
+            item.className = 'grid-item';
+
+            item.innerHTML = `
+              <a href="${photo.link}">
+                <img
+                  src="${photo.image}"
+                  alt="${photo.title}"
+                />
+              </a>
+              <p>${photo.title}</p>
+            `;
+
+            container.appendChild(item);
+          });
+        })
+        .catch(error => {
+          console.error('Errore nel caricamento della galleria:', error);
+        });
+      </script>
   </body>
 </html>

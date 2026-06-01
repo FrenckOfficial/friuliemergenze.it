@@ -523,5 +523,19 @@
     "category": "protezione-civile",
     "spotter": "",
     "link": "/gallery/scheda/fiatducatox290-protezionecivilegrado/"
+  },
+  {
+    "title": "Iveco Eurotech - Vigili del Fuoco Forni di Sopra",
+    "image": "/assets/mezzi/ivecoeurotech-vvffornidisopra.jpeg",
+    "category": "vvf",
+    "spotter": "malcus08",
+    "link": "/gallery/scheda/ivecoeurotech-vvffornidisopra/"
+  },
+  {
+    "title": "Iveco Stralis 400 - Vigili del Fuoco San Daniele del Friuli",
+    "image": "/assets/mezzi/ivecostralis-vvfsandaniele.jpg",
+    "category": "vvf",
+    "spotter": "matteo.pontello",
+    "link": "/gallery/scheda/ivecostralis400-vvfsandaniele/"
   }
 ]
