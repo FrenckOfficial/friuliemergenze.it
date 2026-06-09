@@ -1,26 +1,17 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
-  <head>
-    <script src="https://embeds.iubenda.com/widgets/46908651-d6da-462f-b037-e6ef97c84795.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Sondaggio - Stile Sito Web - Friuli Emergenze</title>
     <script src="/heading.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-    <title>AutoPompaSerbatoio (APS) - Soccorso Tecnico Urgente | Friuli Emergenze</title>
-    <script src="/heading.js"></script>
-
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="/assets/logo.png" type="image/png" />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-  </head>
-  <body class="fade-in">
+    <link rel="shortcut icon" href="assets/logo.png" type="image/png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body class="fade-in">
     <nav class="navbar">
       <div class="navbar-container">
         <a href="/" class="logo">🚨 Friuli Emergenze</a>
@@ -29,7 +20,7 @@
         </button>
         <ul class="nav-links">
           <li><a href="/" class="nav-link">Home</a></li>
-          <li><a href="/gallery" class="nav-link active">Galleria</a></li>
+          <li><a href="/gallery" class="nav-link">Galleria</a></li>
           <li><a href="/photobook" class="nav-link">Photobooks</a></li>
           <li><a href="/contact-us" class="nav-link">Contatti</a></li>
           
@@ -40,60 +31,38 @@
       </div>
     </nav>
 
-    <main class="scheda-mezzo">
-      <h1>AutoPompaSerbatoio (APS)</h1>
-      <img
-        src="/assets/mezzi/1780951749692-1000110125.jpg"
-        alt="AutoPompaSerbatoio (APS)"
-      />
+    <header class="hero">
+      <img src="/assets/logo.png" alt="Logo Friuli Emergenze" class="logoHeading" />
+      <h1>Sondaggio per il sito Friuli Emergenze</h1>
+      <p>Chiediamo agli utenti alcune cose sul nuovo stile del nostro sito web!</p>
+    </header>
 
-      <section class="dettagli-mezzo">
-        <h2>Dati Tecnici</h2>
-        <ul>
-          <li><strong>Marca:</strong> Volvo</li>
-          <li><strong>Modello:</strong> FL290</li>
-          <li><strong>Allestimento:</strong> BAI Brescia Antincendi International</li>
-          <li><strong>Targa:</strong> VF 26528</li>
-          <li><strong>Servizio:</strong> Soccorso Tecnico Urgente</li>
-          <li><strong>Sede:</strong> Comando Provinciale VVF di Gorizia </li>
-        </ul>
-      </section>
-
-      <div class="share">
-        <span>Condividi su:</span>
-        <!-- Facebook -->
-        <div class="share-box">
-          <a
-            href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffriuliemergenze.it%2Fgallery%2Fscheda%2F1780951749692-1000110125"
-            target="_blank"
-            aria-label="Condividi su Facebook"
-          >
-            <i class="fab fa-facebook"></i> - Facebook
-          </a>
+    <form id="surveyForm" style="margin-top:2rem;">
+      <div class="form-group" id="userInfo">
+        <div class="mgr">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="mgr">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
         </div>
       </div>
-
-      <div style="text-align: center; margin-top: 2rem">
-        <a
-          href="/gallery"
-          style="
-            display: inline-block;
-            background-color: #00bcd4;
-            color: white;
-            padding: 0.8rem 1.5rem;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-          "
-        >
-          ⬅ Torna alla galleria
-        </a>
+      <div class="form-group">
+        <label for="grade">Da 1 a 10 quanto ti piace il nuovo stile del sito?</label>
+        <input type="number" id="grade" name="grade" min="1" max="10" required>
       </div>
-    </main>
-
+      <div class="form-group">
+        <label for="miglioramenti">Se fossi lo sviluppatore del sito, cosa miglioreresti? Generalmente parlando</label>
+        <textarea id="miglioramenti" name="miglioramenti" rows="4" required></textarea>
+      </div>
+      <button class="cta-button" type="submit">Invia</button>
+      <p>Cliccando su "Invia" accetti il trattamento dei dati personali secondo le normative vigenti.</p>
+    </form>
+    
     <footer class="footer-clean">
       <div class="footer-container">
+
         <div class="footer-col">
           <p class="footer-brand">
             <a href="/"><i class="fa-regular fa-copyright"></i> 2026 Friuli Emergenze</a>
@@ -144,7 +113,7 @@
           <a href="https://www.iubenda.com/privacy-policy/95409163/cookie-policy">Cookie Policy</a>
         </p>
         <p class="footer-extra"> 
-          Versione 2.4.1.4
+          Versione 2.5.0.0
         </p>
       </div>
     </footer>
@@ -154,5 +123,13 @@
       <a href="https://www.shinystat.com/it/" target="_top" style="display: none;">
       <img src="//www.shinystat.com/cgi-bin/shinystat.cgi?USER=SS-53595029-55bae" alt="Statistiche web" style="border:0px; display: none;" /></a>
     </noscript>
-  </body>
+
+    <script type="module" src="sendMail.js"></script>
+
+    <script>
+      document.querySelector(".menu-toggle").addEventListener("click", () => {
+        document.querySelector(".nav-links").classList.toggle("open");
+      });
+    </script>
+</body>
 </html>

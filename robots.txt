@@ -9,6 +9,7 @@ Disallow: /*?*
 
 # Consenti tutto il resto
 Allow: /
+Allow: /gallery/scheda/*
 
 # Sitemap principale
 Sitemap: https://friuliemergenze.it/sitemap.xml

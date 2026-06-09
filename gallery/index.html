@@ -42,23 +42,21 @@
       <a href="mailto:soem@friuliemergenze.it" class="galleryPMail">Per qualsiasi domanda riguardo l'utilizzo di queste foto è necessario inviare una mail alla redazione scrivendo a soem@friuliemergenze.it specificando la natura della domanda!</a>
       <section class="filter-buttons">
         <button data-filter="all" class="active">Tutti</button>
-        <button data-filter="vvf">Vigili del Fuoco</button>
-        <button data-filter="protezione-civile">Protezione Civile</button>
-        <button data-filter="soccorso-sanitario">Soccorso Sanitario</button>
-        <button data-filter="guardia-costiera">Guardia Costiera</button>
-        <button data-filter="carabinieri">Carabinieri</button>
-        <button data-filter="guardia-di-finanza">Guardia di Finanza</button>
-        <button data-filter="polizia-di-stato">Polizia di Stato</button>
-        <button data-filter="polizia-locale">Polizia Locale</button>
-        <button data-filter="esercito">Esercito Italiano</button>
+        <button data-filter="Vigili del Fuoco">Vigili del Fuoco</button>
+        <button data-filter="Protezione Civile">Protezione Civile</button>
+        <button data-filter="Soccorso Sanitario">Soccorso Sanitario</button>
+        <button data-filter="Guardia Costiera">Guardia Costiera</button>
+        <button data-filter="Carabinieri">Carabinieri</button>
+        <button data-filter="Polizia di Stato">Polizia di Stato</button>
+        <button data-filter="Polizia Locale">Polizia Locale</button>
       </section>
 
       <section class="filter-spotters">
         <button data-spotter="all" class="active">Tutti</button>
+        <button data-spotter="ricky_redz">Ricky_redz</button>
         <button data-spotter="rescuespotter_ts">rescuespotter_ts</button>
         <button data-spotter="verona_emergency112">verona_emergency112</button>
         <button data-spotter="malcus08">malcus08</button>
-        <button data-spotter="s.o.s_italia">s.o.s_italia</button>
         <button data-spotter="s.o.g.i.t._sez._trieste">SOGIT Trieste</button>
         <button data-spotter="matteo.pontello">matteo.pontello</button>
       </section>
@@ -101,13 +99,13 @@
         </div>
 
         <div class="footer-col">
-          <p class="footer-paragraph">Scopri alcune delle nostre pagine più visitate!</p>
+          <p class="footer-paragraph">Vedi altre parti del nostro progetto!</p>
           <p class="footer-links">
-            <a href="https://myfrem.friuliemergenze.it/" target="_blank">MyFrEM</a>
+            <a href="https://myfrem.friuliemergenze.it/" target="_blank" id="linkFooterBtn">MyFrEM</a>
             <span>·</span>
-            <a href="/chi-sono" target="_blank">Chi sono</a>
+            <a href="/chi-sono" target="_blank" id="linkFooterBtn">Chi sono</a>
             <span>·</span>
-            <a href="/contact-us" target="_blank">Contatti</a>
+            <a href="/contact-us" target="_blank" id="linkFooterBtn">Contatti</a>
           </p>
         </div>
 
@@ -141,7 +139,7 @@
           <a href="https://www.iubenda.com/privacy-policy/95409163/cookie-policy">Cookie Policy</a>
         </p>
         <p class="footer-extra"> 
-          Versione 2.4.1.4
+          Versione 2.5.0.0
         </p>
       </div>
     </footer>
@@ -164,14 +162,19 @@
           container.innerHTML = data
             .map(
               (d) => `
-      <div class="grid-item" data-category="${d.category}" data-spotter="${d.spotter || ""}">
-        <a href="${d.image}" data-lightbox="mezzi">
-          <img src="${d.image}" alt="${d.title}">
-        </a>
-        <p>${d.title}</p>
-        <a href="${d.link}" class="btn-scopri">Scopri di più</a>
-      </div>
-    `,
+                <div class="grid-item" data-category="${d.category}" data-spotter="${d.spotter || ""}">
+                  <div class="grid-item-img-wrap">
+                    <a href="${d.image}" data-lightbox="mezzi">
+                      <img src="${d.image}" alt="${d.title}" loading="lazy">
+                    </a>
+                    <span class="grid-item-tag">${d.category.toUpperCase()}</span>
+                  </div>
+                  <div class="grid-item-body">
+                    <p>${d.title}</p>
+                    <a href="${d.link}" class="btn-scopri">Scopri di più</a>
+                  </div>
+                </div>
+              `,
             )
             .join("");
 
@@ -190,7 +193,7 @@
           const okSpot = activeSpotter === "all" || spot === activeSpotter;
 
           if (okCat && okSpot) {
-            item.style.display = "block";
+            item.style.display = "";
             count++;
           } else {
             item.style.display = "none";

@@ -19,7 +19,7 @@
           <i class="fas fa-bars"></i>
         </button>
         <ul class="nav-links">
-          <li><a href="/" class="nav-link active">Home</a></li>
+          <li><a href="/" class="nav-link">Home</a></li>
           <li><a href="/gallery" class="nav-link">Galleria</a></li>
           <li><a href="/photobook" class="nav-link">Photobooks</a></li>
           <li><a href="/contact-us" class="nav-link">Contatti</a></li>
@@ -31,15 +31,38 @@
       </div>
     </nav>
 
-    <header class="hero">
-        <img src="/assets/logo.png" alt="Logo di Friuli Emergenze" class="logoHeading">
-        <h1>404 - Pagina non trovata</h1>
-        <p>La pagina che stai cercando non esiste o è stata spostata.</p>
-    </header>
+    <div style="display:flex;align-items:center;justify-content:center;padding:5rem 2rem;min-height:400px;">
+      <div style="max-width:540px;text-align:center;">
 
-    <section>
-        <h1 style="display:flex;justify-content:center;">La risorsa alla quale stai tentando di accedere non esiste oppure potrebbe essere stata spostata ad un nuovo URL.</h1>
-    </section>
+        <p style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;">
+          Friuli Emergenze · Errore di sistema
+        </p>
+
+        <div style="font-family:var(--font-mono);font-size:6rem;font-weight:700;color:var(--signal-red);letter-spacing:-0.04em;line-height:1;margin-bottom:0.5rem;">
+          404
+        </div>
+
+        <h1 style="font-size:1.45rem;font-weight:800;margin-bottom:0.75rem;">
+          Pagina non trovata
+        </h1>
+
+        <p style="font-size:0.9rem;color:var(--text-secondary);margin-bottom:2.5rem;max-width:380px;margin-inline:auto;line-height:1.7;">
+          La risorsa alla quale stai tentando di accedere non esiste oppure
+          potrebbe essere stata spostata a un nuovo URL.
+        </p>
+
+        <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
+          <a href="/" class="btn-primary btn-solid">← Torna alla home</a>
+          <a href="/gallery" class="btn-primary">Galleria</a>
+        </div>
+
+        <div style="margin-top:2.5rem;background:var(--bg-panel);border:1px solid var(--border);border-radius:var(--radius-md);padding:1rem 1.25rem;font-family:var(--font-mono);font-size:0.72rem;color:var(--text-muted);display:flex;align-items:center;gap:0.75rem;text-align:left;">
+          <span style="width:6px;height:6px;background:var(--signal-red);border-radius:50%;flex-shrink:0;"></span>
+          <span>HTTP 404 · La pagina richiesta non è disponibile su questo server.</span>
+        </div>
+
+      </div>
+    </div>
     
     <footer class="footer-clean">
       <div class="footer-container">
@@ -54,13 +77,13 @@
         </div>
 
         <div class="footer-col">
-          <p class="footer-paragraph">Scopri alcune delle nostre pagine più visitate!</p>
+          <p class="footer-paragraph">Vedi altre parti del nostro progetto!</p>
           <p class="footer-links">
-            <a href="https://myfrem.friuliemergenze.it/" target="_blank">MyFrEM</a>
+            <a href="https://myfrem.friuliemergenze.it/" target="_blank" id="linkFooterBtn">MyFrEM</a>
             <span>·</span>
-            <a href="/chi-sono" target="_blank">Chi sono</a>
+            <a href="/chi-sono" target="_blank" id="linkFooterBtn">Chi sono</a>
             <span>·</span>
-            <a href="/contact-us" target="_blank">Contatti</a>
+            <a href="/contact-us" target="_blank" id="linkFooterBtn">Contatti</a>
           </p>
         </div>
 
@@ -94,7 +117,7 @@
           <a href="https://www.iubenda.com/privacy-policy/95409163/cookie-policy">Cookie Policy</a>
         </p>
         <p class="footer-extra"> 
-          Versione 2.4.1.4
+          Versione 2.5.0.0
         </p>
       </div>
     </footer>

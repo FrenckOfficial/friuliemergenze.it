@@ -29,9 +29,9 @@
           <i class="fas fa-bars"></i>
         </button>
         <ul class="nav-links">
-          <li><a href="/" class="nav-link active">Home</a></li>
+          <li><a href="/" class="nav-link">Home</a></li>
           <li><a href="/gallery" class="nav-link">Galleria</a></li>
-          <li><a href="/photobook" class="nav-link">Photobooks</a></li>
+          <li><a href="/photobook" class="nav-link active">Photobooks</a></li>
           <li><a href="/contact-us" class="nav-link">Contatti</a></li>
           
           <li><a href="https://myfrem.friuliemergenze.it" target="_blank" class="nav-icon" aria-label="MyFrEM">Progetto MyFrEM</a></li>
@@ -53,59 +53,41 @@
     <main>
       <section class="gallery">
         <div class="grid">
-          <div class="grid-item" data-category="protezione-civile">
-            <a
-              href="/assets/mezzi/mercedes311cdi-protezionecivileaquileia.jpeg"
-              data-lightbox="mezzi"
-              data-title="Mercedes 311 CDI - Protezione Civile Aquileia"
-            >
-              <img
-                src="/assets/mezzi/mercedes311cdi-protezionecivileaquileia.jpeg"
-                alt="Mercedes 311 CDI Protezione Civile Aquileia"
-              />
-            </a>
-            <p>Mercedes 311 CDI - Protezione Civile Aquileia</p>
-            <a
-              href="/gallery/scheda/mercedes311cdi-protezionecivileaquileia/"
-              class="btn-scopri"
-              >Scopri di più</a
-            >
+          <div class="grid-item">
+            <div class="grid-item-img-wrap">
+              <a href="/assets/mezzi/mercedes311cdi-protezionecivileaquileia.jpeg">
+                <img src="/assets/mezzi/mercedes311cdi-protezionecivileaquileia.jpeg" alt="Mercedes-Benz 311 CDI - Protezione Civile Aquileia" loading="lazy">
+              </a>
+              <span class="grid-item-tag">PROTEZIONE CIVILE</span>
+            </div>
+            <div class="grid-item-body">
+              <p>Mercedes-Benz 311 CDI - Protezione Civile Aquileia</p>
+              <a href="/gallery/scheda/mercedes311cdi-protezionecivileaquileia/" class="btn-scopri">Scopri di più</a>
+            </div>
           </div>
-          <div class="grid-item" data-category="protezione-civile">
-            <a
-              href="/assets/mezzi/fiatpunto-protezionecivileaquileia.jpeg"
-              data-lightbox="mezzi"
-              data-title="Fiat Punto - Protezione Civile Aquileia"
-            >
-              <img
-                src="/assets/mezzi/fiatpunto-protezionecivileaquileia.jpeg"
-                alt="Fiat Punto Protezione Civile Aquileia"
-              />
-            </a>
-            <p>Fiat Punto - Protezione Civile Aquileia</p>
-            <a
-              href="/gallery/scheda/fiatpunto-protezionecivileaquileia/"
-              class="btn-scopri"
-              >Scopri di più</a
-            >
+          <div class="grid-item">
+            <div class="grid-item-img-wrap">
+              <a href="/assets/mezzi/fiatpunto-protezionecivileaquileia.jpeg">
+                <img src="/assets/mezzi/fiatpunto-protezionecivileaquileia.jpeg" alt="Fiat Punto - Protezione Civile Aquileia" loading="lazy">
+              </a>
+              <span class="grid-item-tag">PROTEZIONE CIVILE</span>
+            </div>
+            <div class="grid-item-body">
+              <p>Fiat Punto - Protezione Civile Aquileia</p>
+              <a href="/gallery/scheda/fiatpunto-protezionecivileaquileia/" class="btn-scopri">Scopri di più</a>
+            </div>
           </div>
-          <div class="grid-item" data-category="protezione-civile">
-            <a
-              href="/assets/mezzi/fordranger-protezionecivileaquileia.jpeg"
-              data-lightbox="mezzi"
-              data-title="Ford Ranger - Protezione Civile Aquileia"
-            >
-              <img
-                src="/assets/mezzi/fordranger-protezionecivileaquileia.jpeg"
-                alt="Ford Ranger Protezione Civile Aquileia"
-              />
-            </a>
-            <p>Ford Ranger - Protezione Civile Aquileia</p>
-            <a
-              href="/gallery/scheda/fordranger-protezionecivileaquileia/"
-              class="btn-scopri"
-              >Scopri di più</a
-            >
+          <div class="grid-item">
+            <div class="grid-item-img-wrap">
+              <a href="/assets/mezzi/fordranger-protezionecivileaquileia.jpeg">
+                <img src="/assets/mezzi/fordranger-protezionecivileaquileia.jpeg" alt="Ford Ranger - Protezione Civile Aquileia loading="lazy">
+              </a>
+              <span class="grid-item-tag">PROTEZIONE CIVILE</span>
+            </div>
+            <div class="grid-item-body">
+              <p>Ford Ranger - Protezione Civile Aquileia</p>
+              <a href="/gallery/scheda/fordranger-protezionecivileaquileia/" class="btn-scopri">Scopri di più</a>
+            </div>
           </div>
         </div>
       </section>
@@ -122,13 +104,13 @@
         </div>
 
         <div class="footer-col">
-          <p class="footer-paragraph">Scopri alcune delle nostre pagine più visitate!</p>
+          <p class="footer-paragraph">Vedi altre parti del nostro progetto!</p>
           <p class="footer-links">
-            <a href="https://myfrem.friuliemergenze.it/" target="_blank">MyFrEM</a>
+            <a href="https://myfrem.friuliemergenze.it/" target="_blank" id="linkFooterBtn">MyFrEM</a>
             <span>·</span>
-            <a href="/chi-sono" target="_blank">Chi sono</a>
+            <a href="/chi-sono" target="_blank" id="linkFooterBtn">Chi sono</a>
             <span>·</span>
-            <a href="/contact-us" target="_blank">Contatti</a>
+            <a href="/contact-us" target="_blank" id="linkFooterBtn">Contatti</a>
           </p>
         </div>
 
@@ -162,7 +144,7 @@
           <a href="https://www.iubenda.com/privacy-policy/95409163/cookie-policy">Cookie Policy</a>
         </p>
         <p class="footer-extra"> 
-          Versione 2.4.1.4
+          Versione 2.5.0.0
         </p>
       </div>
     </footer>

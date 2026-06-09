@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: -apple-system, system-ui, sans-serif;
+    font-family: -apple-system, 'Lexend', sans-serif;
     background: linear-gradient(135deg, #0f172a, #1e293b);
     color: #ffffff;
     height: 100vh;
