@@ -342,6 +342,17 @@ textarea::placeholder {
   border-bottom: 1px solid var(--border-panel);
 }
 
+#galleryRecognition {
+  margin-left: 20px; 
+  margin-top: 1rem; 
+  font-size: 0.9rem; 
+  color: #265aa7;
+}
+#galleryRecognition em {
+  text-decoration: underline;
+  color: var(--text-secondary);
+}
+
 .share {
   margin: 1.5rem 0;
   text-align: center;
