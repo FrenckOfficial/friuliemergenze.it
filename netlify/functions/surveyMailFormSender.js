@@ -46,7 +46,7 @@ export const handler = async (event) => {
           },
           to: [
             {
-              email: "support@friuliemergenze.it"
+              email: "GruppoMembriStaff@gruppi.friuliemergenze.it"
             }
           ],
           subject: `Nuovo sondaggio compilato da ${name}`,

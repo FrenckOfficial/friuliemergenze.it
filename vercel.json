@@ -1,0 +1,38 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": ".",
+  "headers": [
+    {
+      "source": "/gallery.json",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    },
+    {
+      "source": "/assets/logo.png",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/surveyMailFormSender",
+      "destination": "/api/surveyMailFormSender.js"
+    },
+    {
+      "source": "/api/contactMailFormSender",
+      "destination": "/api/contactMailFormSender.js"
+    },
+    {
+      "source": "/api/featuresFeedbackFormSender",
+      "destination": "/api/featuresFeedbackFormSender.js"
+    }
+  ]
+}
