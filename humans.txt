@@ -1,0 +1,13 @@
+/* TEAM */
+    Name: Francesco Vio
+    Role: Project Founder
+    Location: Friuli Venezia Giulia
+    GitHub: https://github.com/FrenckOfficial
+
+/* THANKS */
+    Font Awesome, Google Fonts, XML Sitemaps
+
+/* SITE */
+    Last update: 20/06/2026
+    Standards: HTML5, CSS3, JavaScript, JSON
+    Language: Italian
