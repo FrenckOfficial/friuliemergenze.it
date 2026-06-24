@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <title>Sondaggio - Servizi e Funzionalità - Friuli Emergenze</title>
+    <title>Sondaggio - Sezione notizie - Friuli Emergenze</title>
     <script src="/heading.js"></script>
     <link rel="stylesheet" href="/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
@@ -33,8 +33,8 @@
 
     <header class="hero">
       <img src="/assets/logo.png" alt="Logo Friuli Emergenze" class="logoHeading" />
-      <h1>Sondaggio - Nuovi Servizi e Funzionalità</h1>
-      <p>Aiutaci a migliorare! Condividi le tue idee su quali servizi o funzionalità vorresti vedere</p>
+      <h1>Sondaggio - Sezione notizie</h1>
+      <p>Aiutaci a migliorare! Condividi la tua idea per quando riguarda una futura sezione notizie per il nostro sito.</p>
     </header>
 
     <form id="surveyForm" style="margin-top:2rem;">
@@ -50,38 +50,82 @@
       </div>
 
       <div class="form-group">
-        <label for="platform">A quale piattaforma riguarda il tuo feedback?</label>
-        <select id="platform" name="platform" required>
-          <option value="">-- Seleziona una piattaforma --</option>
-          <option value="friuliemergenze">FriuliEmergenze.it</option>
-          <option value="myfrem">Piattaforma MyFrEM</option>
-          <option value="entrambi">Entrambe le piattaforme</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="features">Quali servizi o funzionalità vorresti vedere aggiunti?</label>
-        <textarea id="features" name="features" rows="5" placeholder="Descrivi nel dettaglio le funzionalità che ti piacerebbe avere..." required></textarea>
-      </div>
-
-      <div class="form-group">
-        <label for="priority">Quanto importante è questa funzionalità per te?</label>
-        <select id="priority" name="priority" required>
+        <label for="interest">Utilizzeresti una sezione "Notizie" sul nostro sito?</label>
+        <select id="interest" name="interest" required>
           <option value="">-- Seleziona un'opzione --</option>
-          <option value="molto_alta">Molto alta - Essenziale</option>
-          <option value="alta">Alta - Importante</option>
-          <option value="media">Media - Sarebbe utile</option>
-          <option value="bassa">Bassa - Nice to have</option>
+          <option value="molto_interessato">Sì, mi interesserebbe molto</option>
+          <option value="interessato">Sì, mi interesserebbe</option>
+          <option value="forse">Forse, dipende dai contenuti</option>
+          <option value="poco_interessato">Poco interessato</option>
+          <option value="no">No, non mi serve</option>
         </select>
       </div>
 
       <div class="form-group">
-        <label for="comment">Note aggiuntive o commenti:</label>
-        <textarea id="comment" name="comment" rows="3" placeholder="Aggiungi qualsiasi altro dettaglio che ritieni utile..."></textarea>
+        <label>Se ci fosse una sezione notizie, quali contenuti ti interesserebbero? (Puoi selezionare più opzioni)</label>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <label style="display: flex; align-items: center;">
+            <input type="checkbox" name="content" value="emergenze" style="margin-right: 0.5rem;">
+            Segnalazioni emergenze e interventi
+          </label>
+          <label style="display: flex; align-items: center;">
+            <input type="checkbox" name="content" value="avvisi" style="margin-right: 0.5rem;">
+            Avvisi e comunicazioni urgenti
+          </label>
+          <label style="display: flex; align-items: center;">
+            <input type="checkbox" name="content" value="eventi" style="margin-right: 0.5rem;">
+            Eventi e attività dell'organizzazione
+          </label>
+          <label style="display: flex; align-items: center;">
+            <input type="checkbox" name="content" value="volontariato" style="margin-right: 0.5rem;">
+            Opportunità di volontariato
+          </label>
+          <label style="display: flex; align-items: center;">
+            <input type="checkbox" name="content" value="storie" style="margin-right: 0.5rem;">
+            Storie e testimonianze
+          </label>
+          <label style="display: flex; align-items: center;">
+            <input type="checkbox" name="content" value="prevenzione" style="margin-right: 0.5rem;">
+            Consigli di prevenzione e sicurezza
+          </label>
+        </div>
       </div>
 
-      <button class="cta-button" type="submit">Invia Feedback</button>
-      <p>Cliccando su "Invia Feedback" accetti il trattamento dei dati personali secondo le normative vigenti.</p>
+      <div class="form-group">
+        <label for="frequency">Con quale frequenza vorresti ricevere notizie?</label>
+        <select id="frequency" name="frequency" required>
+          <option value="">-- Seleziona una frequenza --</option>
+          <option value="giornaliero">Tutti i giorni</option>
+          <option value="3-4_volte">3-4 volte a settimana</option>
+          <option value="settimanale">Una volta a settimana</option>
+          <option value="urgenti_solo">Solo notifiche urgenti/emergenze</option>
+          <option value="non_ricevere">Preferisco consultarle solo dal sito</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="comparison">Rispetto ad altre funzionalità del sito, quanto prioritaria sarebbe una sezione notizie per te?</label>
+        <select id="comparison" name="comparison" required>
+          <option value="">-- Seleziona un'opzione --</option>
+          <option value="prioritaria">Molto prioritaria - la desidero subito</option>
+          <option value="importante">Importante - sarebbe un grande valore aggiunto</option>
+          <option value="carino">Carina da avere - ma non urgente</option>
+          <option value="non_prioritaria">Poco prioritaria - ci sono altre cose più importanti</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="suggestions">Cosa dovrebbe assolutamente contenere una sezione notizie perché ti interessasse?</label>
+        <textarea id="suggestions" name="suggestions" rows="4" placeholder="Ad esempio: ricerca per argomento, archivio ordinato per data, condivisione sui social, newsletter settimanale..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="comment">Altre osservazioni o feedback:</label>
+        <textarea id="comment" name="comment" rows="3" placeholder="Aggiungi qualsiasi commento che ritieni utile..."></textarea>
+      </div>
+
+      <button class="cta-button" type="submit">Invia Risposte</button>
+      <p>Cliccando su "Invia Risposte" accetti il trattamento dei dati personali secondo le normative vigenti.</p>
     </form>
     
     <footer class="footer-clean">
