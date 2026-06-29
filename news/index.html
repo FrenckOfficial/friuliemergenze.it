@@ -121,23 +121,29 @@
           const container = document.querySelector(".grid");
 
           container.innerHTML = data
-            .map(
-              (d) => `
-              <div class="grid-item-news">
-                <a href="${d.link}">
-                  <div class="grid-item-news-img-wrap">
-                    <a href="${d.link}" data-lightbox="news">
-                      <img src="${d.image}" alt="${d.title}" loading="lazy">
-                    </a>
-                    <span class="grid-item-news-tag">${d.date.toUpperCase()}</span>
-                  </div>
-                  <div class="grid-item-news-body">
-                    <p>${d.title}</p>
-                  </div>
-                </a>
-              </div>
-              `
-            )
+            .map((d) => {
+              const date = new Date(d.date);
+              const formatted = new Intl.DateTimeFormat('it-IT', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric'
+              }).format(date);
+              return `
+                <div class="grid-item-news">
+                  <a href="${d.link}">
+                    <div class="grid-item-news-img-wrap">
+                      <a href="${d.link}" data-lightbox="news">
+                        <img src="${d.image}" alt="${d.title}" loading="lazy">
+                      </a>
+                      <span class="grid-item-news-tag">${formatted.toUpperCase()}</span>
+                    </div>
+                    <div class="grid-item-news-body">
+                      <p>${d.title}</p>
+                    </div>
+                  </a>
+                </div>
+              `;
+            })
             .join("");
         })
 
