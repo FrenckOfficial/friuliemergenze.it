@@ -15,6 +15,15 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <style>
+      .about a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      .about a:hover {
+        text-decoration: underline;
+      }
+    </style>
   </head>
   <body class="fade-in">
     <nav class="navbar">
@@ -24,9 +33,11 @@
           <i class="fas fa-bars"></i>
         </button>
         <ul class="nav-links">
-          <li><a href="/" class="nav-link active">Home</a></li>
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/chi-sono" class="nav-link active">Chi sono</a></li>
           <li><a href="/gallery" class="nav-link">Galleria</a></li>
           <li><a href="/photobook" class="nav-link">Photobooks</a></li>
+          <li><a href="/news" class="nav-link">Notizie</a></li>
           <li><a href="/contact-us" class="nav-link">Contatti</a></li>
           
           <li><a href="https://myfrem.friuliemergenze.it" target="_blank" class="nav-icon" aria-label="MyFrEM">Progetto MyFrEM</a></li>
@@ -35,8 +46,6 @@
         </ul>
       </div>
     </nav>
-
-    <main class="mediakit">
       <header class="hero">
         <img src="/assets/logo.png" alt="Logo Friuli Emergenze" class="logoHeading" />
         <h1>❓ Chi sono</h1>
@@ -45,13 +54,13 @@
         </p>
       </header>
 
-      <section>
+      <section class="about">
         <h2>Ma chi c'è veramente dietro a tutto questo progetto?</h2>
         <p>
           Dietro a <b>Friuli Emergenze</b> e ai suoi siti web ci sono io, <b>Francesco</b>, un ragazzo di <b>14 anni</b> appassionato di mezzi di soccorso e tecnologia.
         </p>
         <p>
-          Sono nato in provincia di Gorizia e attualmente vivo nella zona del basso Friuli. Vado ancora a scuola ma trovo sempre del tempo la sera da dedicare al nostro gruppo WhatsApp e all’aggiornamento quotidiano di questo sito e della piattaforma.
+          Sono nato a Monfalcone e attualmente vivo a Grado, essendo un gradese di natura. Vado ovviamente a scuola ma trovo sempre del tempo la sera da dedicare al nostro gruppo WhatsApp e all’aggiornamento quotidiano di questo sito e della piattaforma <b>MyFrEM</b>.
         </p>
         <p>
           Ho creato questo progetto per condividere la mia passione con altre persone e per fondere le mie due passioni: <b>mezzi di emergenza</b> e <b>tecnologia</b>.
@@ -62,7 +71,7 @@
         </p>
       </section>
 
-      <section>
+      <section class="about">
         <h2>Esistono anche altre persone che collaborano alla gestione di questo progetto?</h2>
         <p>
           Sì, ci sono altre persone che collaborano alla gestione di <b>Friuli Emergenze</b>, ma non nella parte web, siccome sono l’unico nello staff capace di programmare.
@@ -72,14 +81,13 @@
         </p>
       </section>
 
-      <section>
-        <h2>Chi gestisce le pagine Instagram, Facebook e TikTok?</h2>
+      <section class="about">
+        <h2>Chi gestisce le pagine <a href="https://www.friuliemergenze.it/social/instagram" target="_blank">Instagram</a>, <a href="https://www.friuliemergenze.it/social/facebook" target="_blank">Facebook</a> e <a href="https://www.friuliemergenze.it/social/tiktok" target="_blank">TikTok</a>?</h2>
         <p>
           Tutte le pagine social di Friuli Emergenze sono gestite da me, <b>Francesco</b>.
           Con Thomas collaboro alla gestione del gruppo WhatsApp e della piattaforma MyFrEM, ma per quanto riguarda i social sono l’unico a gestirli.
         </p>
       </section>
-    </main>
 
     <footer class="footer-clean">
       <div class="footer-container">
@@ -97,7 +105,7 @@
           <p class="footer-links">
             <a href="https://myfrem.friuliemergenze.it/" target="_blank" id="linkFooterBtn">MyFrEM</a>
             <span>·</span>
-            <a href="/chi-sono" target="_blank" id="linkFooterBtn">Chi sono</a>
+            <a href="/news" target="_blank" id="linkFooterBtn">Notizie</a>
             <span>·</span>
             <a href="/contact-us" target="_blank" id="linkFooterBtn">Contatti</a>
           </p>
@@ -128,9 +136,9 @@
 
       <div class="footer-bottom">
         <p class="footer-legal">
-          <a href="https://www.iubenda.com/privacy-policy/95409163">Privacy Policy</a>
+          <a href="https://www.friuliemergenze.it/policies/privacy">Privacy Policy</a>
           <span>·</span>
-          <a href="https://www.iubenda.com/privacy-policy/95409163/cookie-policy">Cookie Policy</a>
+          <a href="https://www.friuliemergenze.it/policies/cookie">Cookie Policy</a>
         </p>
         <p class="footer-extra"> 
           Versione 2.5.0.0
@@ -138,7 +146,7 @@
       </div>
     </footer>
 
-    <script src="/shinystat_script.js?USER=SS-53595029-55bae" style="display: none;"></script>
+    <script src="/scripts/shinystat.js?user=SS-53595029-55bae" style="display: none;"></script>
     <noscript>
       <a href="https://www.shinystat.com/it/" target="_top" style="display: none;">
       <img src="//www.shinystat.com/cgi-bin/shinystat.cgi?USER=SS-53595029-55bae" alt="Statistiche web" style="border:0px; display: none;" /></a>

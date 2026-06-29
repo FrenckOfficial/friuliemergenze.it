@@ -125,7 +125,7 @@ form.addEventListener("submit", async (e) => {
     const emailResult = await emailjs.send("service_ngxrsq8", "template_32nd0dv", {
       email: emailValue,
       name: nameValue,
-      link: `https://friuliemergenze.it/newsletter/confirm/?token=${token}`
+      link: `https://www.friuliemergenze.it/newsletter/confirm/?token=${token}`
     });
 
     console.log("📬 Email inviata:", emailResult);

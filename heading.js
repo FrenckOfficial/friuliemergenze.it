@@ -11,8 +11,8 @@
     { type: 'meta', attrs: { name: 'google-adsense-account', content: 'ca-pub-4233309350636231' } },
     { type: 'meta', attrs: { property: 'og:title', content: titleText } },
     { type: 'meta', attrs: { property: 'og:description', content: 'Pagina di condivisione foto e video di mezzi di soccorso. Ti diamo il benvenuto nel sito ufficiale di Friuli Emergenze!' } },
-    { type: 'meta', attrs: { property: 'og:image', content: 'https://friuliemergenze.it/assets/logo.png' } },
-    { type: 'meta', attrs: { property: 'og:url', content: 'https://friuliemergenze.it' } },
+    { type: 'meta', attrs: { property: 'og:image', content: 'https://www.friuliemergenze.it/assets/logo.png' } },
+    { type: 'meta', attrs: { property: 'og:url', content: 'https://www.friuliemergenze.it' } },
     { type: 'meta', attrs: { property: 'og:type', content: 'website' } },
     { type: 'meta', attrs: { property: 'og:locale', content: 'it_IT' } },
     { type: 'meta', attrs: { name: 'twitter:card', content: 'summary_large_image' } },
@@ -21,7 +21,7 @@
     { type: 'meta', attrs: { name: 'apple-mobile-web-app-title', content: titleText } },
     { type: 'link', attrs: { rel: 'apple-touch-icon', href: '/assets/icons/icon-192x192.png' } },
     { type: 'link', attrs: { rel: 'icon', href: '/assets/logo.png', type: 'image/png' } },
-    { type: 'link', attrs: { rel: 'canonical', href: 'https://friuliemergenze.it' } },
+    { type: 'link', attrs: { rel: 'canonical', href: 'https://www.friuliemergenze.it' } },
     { type: 'link', attrs: { rel: 'preconnect', href: 'https://cdnjs.cloudflare.com' } },
     { type: 'link', attrs: { href: 'https://fonts.googleapis.com/css2?family=Lexend&display=swap', rel: 'stylesheet' } },
     { type: 'link', attrs: { rel: 'stylesheet', href: '/style.css' } },
@@ -55,8 +55,8 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Friuli Emergenze",
-    "url": "https://friuliemergenze.it",
-    "logo": "https://friuliemergenze.it/assets/logo.png"
+    "url": "https://www.friuliemergenze.it",
+    "logo": "https://www.friuliemergenze.it/assets/logo.png"
   });
   head.appendChild(ld);
 

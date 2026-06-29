@@ -1,26 +1,6 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": ".",
-  "headers": [
-    {
-      "source": "/gallery.json",
-      "headers": [
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        }
-      ]
-    },
-    {
-      "source": "/assets/logo.png",
-      "headers": [
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        }
-      ]
-    }
-  ],
   "rewrites": [
     {
       "source": "/api/surveyMailFormSender",
@@ -33,6 +13,77 @@
     {
       "source": "/api/featuresFeedbackFormSender",
       "destination": "/api/featuresFeedbackFormSender.js"
+    },
+    {
+      "source": "/api/sendNewsSectionFeedback",
+      "destination": "/api/sendNewsSectionFeedback.js"
     }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' cdn.jsdelivr.net cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com cdnjs.cloudflare.com; font-src 'self' fonts.gstatic.com cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https:; frame-ancestors 'self'"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "geolocation=(), camera=(), microphone=(), payment=()"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        }
+      ]
+    },
+    {
+      "source": "/gallery.json",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "https://myfrem.friuliemergenze.it"
+        }
+      ]
+    },
+    {
+      "source": "/news.json",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "https://myfrem.friuliemergenze.it"
+        }
+      ]
+    },
+    {
+     "source": "/assets/(.*)",
+     "headers": [
+       {
+         "key": "Cache-Control",
+         "value": "public, max-age=31536000, immutable"
+       }
+     ]
+   },
+   {
+     "source": "/(gallery|news).json",
+     "headers": [
+       {
+         "key": "Cache-Control",
+         "value": "public, max-age=3600"
+       }
+     ]
+   }
   ]
 }

@@ -12,4 +12,4 @@ Allow: /
 Allow: /gallery/scheda/*
 
 # Sitemap principale
-Sitemap: https://friuliemergenze.it/sitemap.xml
+Sitemap: https://www.friuliemergenze.it/sitemap.xml

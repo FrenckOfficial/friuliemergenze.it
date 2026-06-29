@@ -1,184 +1,238 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="https://www.xml-sitemaps.com/css/sitemap.css"?>
 <urlset
       xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:fo="http://www.w3.org/1999/XSL/Format"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 
 <url>
-  <loc>https://friuliemergenze.it/</loc>
+  <loc>https://www.friuliemergenze.it/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://friuliemergenze.it/gallery/</loc>
+  <loc>https://www.friuliemergenze.it/gallery/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://friuliemergenze.it/photobook/</loc>
+  <loc>https://www.friuliemergenze.it/photobook/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://friuliemergenze.it/contact-us/</loc>
+  <loc>https://www.friuliemergenze.it/contact-us/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://friuliemergenze.it/newsletter/</loc>
+  <loc>https://www.friuliemergenze.it/newsletter/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://friuliemergenze.it/chi-sono/</loc>
+  <loc>https://www.friuliemergenze.it/aggiornamenti/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://friuliemergenze.it/regolamento-gruppo/</loc>
+  <loc>https://www.friuliemergenze.it/chi-sono/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://friuliemergenze.it/social/facebook/</loc>
+  <loc>https://www.friuliemergenze.it/regolamento-gruppo/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://friuliemergenze.it/social/instagram/</loc>
+  <loc>https://www.friuliemergenze.it/news/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://friuliemergenze.it/social/tiktok/</loc>
+  <loc>https://www.friuliemergenze.it/sondaggi/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://friuliemergenze.it/social/whatsapp/</loc>
+  <loc>https://www.friuliemergenze.it/regolamento-gruppo/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://friuliemergenze.it/photobook/protezionecivile/cividale-del-friuli/</loc>
+  <loc>https://www.friuliemergenze.it/locandina-gruppo/</loc>
+  <lastmod>2026-06-02T16:26:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.friuliemergenze.it/rivista-annuale-vigilidelfuoco-2025/</loc>
+  <lastmod>2026-06-02T16:26:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.friuliemergenze.it/social/facebook/</loc>
+  <lastmod>2026-06-02T16:26:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.friuliemergenze.it/social/instagram/</loc>
+  <lastmod>2026-06-02T16:26:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.friuliemergenze.it/social/tiktok/</loc>
+  <lastmod>2026-06-02T16:26:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.friuliemergenze.it/social/whatsapp/</loc>
+  <lastmod>2026-06-02T16:26:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.friuliemergenze.it/policies/cookie/</loc>
+  <lastmod>2026-06-02T16:26:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.friuliemergenze.it/policies/privacy/</loc>
+  <lastmod>2026-06-02T16:26:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.friuliemergenze.it/newsletter/confirm</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://friuliemergenze.it/photobook/protezionecivile/aquileia/</loc>
+  <loc>https://www.friuliemergenze.it/newsletter/unsubscribe</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://friuliemergenze.it/photobook/polizialocale/grado/</loc>
+  <loc>https://www.friuliemergenze.it/photobook/protezionecivile/cividale-del-friuli/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://friuliemergenze.it/photobook/protezionecivile/grado/</loc>
+  <loc>https://www.friuliemergenze.it/photobook/protezionecivile/aquileia/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://friuliemergenze.it/gallery/scheda/fordranger-pccividale/</loc>
+  <loc>https://www.friuliemergenze.it/photobook/polizialocale/grado/</loc>
+  <lastmod>2026-06-02T16:26:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.friuliemergenze.it/photobook/protezionecivile/grado/</loc>
+  <lastmod>2026-06-02T16:26:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.friuliemergenze.it/gallery/scheda/fordranger-pccividale/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://friuliemergenze.it/gallery/scheda/nissannavara-pccividale/</loc>
+  <loc>https://www.friuliemergenze.it/gallery/scheda/nissannavara-pccividale/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://friuliemergenze.it/gallery/scheda/mercedesatego1222-pccividale/</loc>
+  <loc>https://www.friuliemergenze.it/gallery/scheda/mercedesatego1222-pccividale/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://friuliemergenze.it/gallery/scheda/ivecoturbodaily35104x4-pccividale/</loc>
+  <loc>https://www.friuliemergenze.it/gallery/scheda/ivecoturbodaily35104x4-pccividale/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://friuliemergenze.it/gallery/scheda/bremachtrekkinggr354x4-pccividale/</loc>
+  <loc>https://www.friuliemergenze.it/gallery/scheda/bremachtrekkinggr354x4-pccividale/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://friuliemergenze.it/gallery/scheda/mercedes311cdi-protezionecivileaquileia/</loc>
+  <loc>https://www.friuliemergenze.it/gallery/scheda/mercedes311cdi-protezionecivileaquileia/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://friuliemergenze.it/gallery/scheda/fiatpunto-protezionecivileaquileia/</loc>
+  <loc>https://www.friuliemergenze.it/gallery/scheda/fiatpunto-protezionecivileaquileia/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://friuliemergenze.it/gallery/scheda/fordranger-protezionecivileaquileia/</loc>
+  <loc>https://www.friuliemergenze.it/gallery/scheda/fordranger-protezionecivileaquileia/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://friuliemergenze.it/gallery/scheda/grado02-polizialocale/</loc>
+  <loc>https://www.friuliemergenze.it/gallery/scheda/grado02-polizialocale/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://friuliemergenze.it/gallery/scheda/fiattipo-polizialocalegrado/</loc>
+  <loc>https://www.friuliemergenze.it/gallery/scheda/fiattipo-polizialocalegrado/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://friuliemergenze.it/gallery/scheda/grado01-polizialocale/</loc>
+  <loc>https://www.friuliemergenze.it/gallery/scheda/grado01-polizialocale/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://friuliemergenze.it/gallery/scheda/grado03-polizialocale/</loc>
+  <loc>https://www.friuliemergenze.it/gallery/scheda/grado03-polizialocale/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://friuliemergenze.it/gallery/scheda/grado01b-polizialocale/</loc>
+  <loc>https://www.friuliemergenze.it/gallery/scheda/grado01b-polizialocale/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://friuliemergenze.it/gallery/scheda/italcargrado-polizialocale/</loc>
+  <loc>https://www.friuliemergenze.it/gallery/scheda/italcargrado-polizialocale/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://friuliemergenze.it/gallery/scheda/unimog-protezionecivilegrado/</loc>
+  <loc>https://www.friuliemergenze.it/gallery/scheda/unimog-protezionecivilegrado/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://friuliemergenze.it/gallery/scheda/fiatpanda-protezionecivilegrado/</loc>
+  <loc>https://www.friuliemergenze.it/gallery/scheda/fiatpanda-protezionecivilegrado/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://friuliemergenze.it/gallery/scheda/toyotahilux-protezionecivilegrado/</loc>
+  <loc>https://www.friuliemergenze.it/gallery/scheda/toyotahilux-protezionecivilegrado/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://friuliemergenze.it/gallery/scheda/nissannavara-protezionecivilegrado/</loc>
+  <loc>https://www.friuliemergenze.it/gallery/scheda/nissannavara-protezionecivilegrado/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://friuliemergenze.it/gallery/scheda/nissancabstar-protezionecivilegrado/</loc>
+  <loc>https://www.friuliemergenze.it/gallery/scheda/nissancabstar-protezionecivilegrado/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://friuliemergenze.it/gallery/scheda/fiatducatox290-protezionecivilegrado/</loc>
+  <loc>https://www.friuliemergenze.it/gallery/scheda/fiatducatox290-protezionecivilegrado/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.51</priority>
 </url>

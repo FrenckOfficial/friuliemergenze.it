@@ -1,0 +1,5 @@
+version: STSv1
+mode: enforce
+max_age: 604800
+mx: friuliemergenze.it
+mx: cert.friuliemergenze.it
