@@ -39,7 +39,10 @@ export default async function handler(req, res) {
           name: "Sistemi Friuli Emergenze",
           email: "autosystem@friuliemergenze.it"
         },
-        to: [{ email: email }],
+        to: [{ 
+          name: "GruppoMembriStaff@gruppi.friuliemergenze.it",
+          email: "GruppoMembriStaff@gruppi.friuliemergenze.it"
+         }],
         subject: '[FORM DI CONTATTO FRIULIEMERGENZE.IT]:' + '' + subject,
         htmlContent,
         replyTo: {
