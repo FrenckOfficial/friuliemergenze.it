@@ -351,7 +351,7 @@
             formStatus.textContent = "Invio in corso...";
             
             try {
-              const response = await fetch("https://www.friuliemergenze.it/api/contactFormMailSender", {
+              const response = await fetch("https://www.friuliemergenze.it/api/contactMailFormSender", {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
