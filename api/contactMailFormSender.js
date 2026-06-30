@@ -42,16 +42,10 @@ export default async function handler(req, res) {
         to: [{ email: email }],
         subject: '[FORM DI CONTATTO FRIULIEMERGENZE.IT]:' + '' + subject,
         htmlContent,
-        replyTo: [
-          {
-            email: "banca.dati@friuliemergenze.it",
-            name: "Banca Dati - Friuli Emergenze"
-          },
-          {
-            email: email,
-            name: name
-          }
-        ]
+        replyTo: {
+          email: email,
+          name: name
+        }
       })
     });
 
