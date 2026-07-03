@@ -10,7 +10,7 @@
 
 <nav class="navbar">
   <div class="navbar-container">
-    <a href="/" class="logo">🚨 Friuli Emergenze</a>
+    <a href="/" class="logo">Friuli Emergenze</a>
 
     <button class="menu-toggle" aria-label="Menu">
       <i class="fas fa-bars"></i>
@@ -110,7 +110,7 @@
         <div class="footer-col">
             <p class="footer-paragraph">Vedi altre parti del nostro progetto!</p>
             <p class="footer-links">
-                <a href="https://myfrem.friuliemergenze.it/" target="_blank">MyFrEM</a>
+                <a href="/piattaforma-myfrem" target="_blank">MyFrEM</a>
                 <span>·</span>
                 <a href="/chi-sono" target="_blank">Chi sono</a>
                 <span>·</span>
@@ -148,7 +148,7 @@
           <a href="https://www.friuliemergenze.it/policies/cookie">Cookie Policy</a>
         </p>
         <p class="footer-extra"> 
-          Versione 2.5.0.0
+          Versione 2.6.0.0
         </p>
     </div>
 </footer>
@@ -162,7 +162,13 @@
 <script>
     document.querySelector(".menu-toggle").addEventListener("click", () => {
         document.querySelector(".nav-links").classList.toggle("open");
-    });
+        const liMyFrEM = document.querySelector(".nav-links a[href='/piattaforma-myfrem']");
+
+        if(liMyFrEM) {
+          console.log("MyFrEM link found, updating innerHTML.");
+          liMyFrEM.innerHTML = `<a href="/piattaforma-myfrem" target="_blank" class="nav-icon" aria-label="MyFrEM" style="margin-left:0;">MyFrEM</a>`
+        }
+      });
 </script>
 </body>
 </html>

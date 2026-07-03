@@ -25,7 +25,7 @@
   <body class="fade-in">
     <nav class="navbar">
       <div class="navbar-container">
-        <a href="/" class="logo">🚨 Friuli Emergenze</a>
+        <a href="/" class="logo">Friuli Emergenze</a>
         <button class="menu-toggle" aria-label="Menu">
           <i class="fas fa-bars"></i>
         </button>
@@ -35,9 +35,8 @@
           <li><a href="/gallery" class="nav-link active">Galleria</a></li>
           <li><a href="/photobook" class="nav-link">Photobooks</a></li>
           <li><a href="/news" class="nav-link">Notizie</a></li>
+          <li><a href="/piattaforma-myfrem" class="nav-icon" aria-label="MyFrEM">Piattaforma MyFrEM</a></li>
           <li><a href="/contact-us" class="nav-link">Contatti</a></li>
-          
-          <li><a href="https://myfrem.friuliemergenze.it" target="_blank" class="nav-icon" aria-label="MyFrEM">Progetto MyFrEM</a></li>
           <li><a href="https://instagram.com/friuliemergenze" target="_blank" class="nav-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
           <li><a href="https://chat.whatsapp.com/DxtvDvxXgWr5XVZ4ZkM4k1?mode=gi_t" target="_blank" class="nav-icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></li>
         </ul>
@@ -121,7 +120,7 @@
         <div class="footer-col">
           <p class="footer-paragraph">Vedi altre parti del nostro progetto!</p>
           <p class="footer-links">
-            <a href="https://myfrem.friuliemergenze.it/" target="_blank" id="linkFooterBtn">MyFrEM</a>
+            <a href="/piattaforma-myfrem" target="_blank" id="linkFooterBtn">MyFrEM</a>
             <span>·</span>
             <a href="/news" target="_blank" id="linkFooterBtn">Notizie</a>
             <span>·</span>
@@ -159,7 +158,7 @@
           <a href="https://www.friuliemergenze.it/policies/cookie">Cookie Policy</a>
         </p>
         <p class="footer-extra"> 
-          Versione 2.5.0.0
+          Versione 2.6.0.0
         </p>
       </div>
     </footer>
@@ -169,5 +168,23 @@
       <a href="https://www.shinystat.com/it/" target="_top" style="display: none;">
       <img src="//www.shinystat.com/cgi-bin/shinystat.cgi?USER=SS-53595029-55bae" alt="Statistiche web" style="border:0px; display: none;" /></a>
     </noscript>
+
+    <script>
+      document.querySelector(".menu-toggle").addEventListener("click", () => {
+        document.querySelector(".nav-links").classList.toggle("open");
+        const liMyFrEM = document.querySelector(".nav-links a[href='/piattaforma-myfrem']");
+
+        if(liMyFrEM) {
+          console.log("MyFrEM link found, updating innerHTML.");
+          liMyFrEM.innerHTML = `<a href="/piattaforma-myfrem" target="_blank" class="nav-icon" aria-label="MyFrEM" style="margin-left:0;">MyFrEM</a>`
+        }
+      });
+
+      window.addEventListener("load", () => {
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.register("/scripts/sw.js");
+        }
+      });
+    </script>
   </body>
 </html>
