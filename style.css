@@ -786,6 +786,14 @@ textarea::placeholder {
   margin: 0 auto;
 }
 
+.row-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  flex-direction: row;
+}
+
 .nuntii-proximi {
   margin-top: 3rem;
   background: var(--bg-panel);

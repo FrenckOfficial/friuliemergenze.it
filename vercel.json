@@ -85,5 +85,12 @@
        }
      ]
    }
+  ],
+  "redirects": [
+    {
+      "source": "/webvisitors",
+      "destination": "https://report.shinystat.com/",
+      "permanent": true
+    }
   ]
 }
