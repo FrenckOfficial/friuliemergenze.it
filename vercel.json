@@ -17,6 +17,10 @@
     {
       "source": "/api/sendNewsSectionFeedback",
       "destination": "/api/sendNewsSectionFeedback.js"
+    },
+    {
+      "source": "/api/signUpFeedbackFormSender",
+      "destination": "/api/signUpFeedbackFormSender.js"
     }
   ],
   "headers": [
