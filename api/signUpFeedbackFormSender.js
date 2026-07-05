@@ -66,7 +66,7 @@ export default async function handler(req, res) {
             email: "francesco@Ffriuliemergenze.it",
           },
         ],
-        subject: `[FEEDBACK PAGINA REGISTRAZIONE] Nuovo suggerimento da ${sanitizedName} - ${platformDisplay}`,
+        subject: `[FEEDBACK PAGINA REGISTRAZIONE] Nuovo suggerimento da ${sanitizedName}`,
         htmlContent,
         replyTo: { email: sanitizedEmail, name: sanitizedName },
       }),
