@@ -63,7 +63,7 @@ export default async function handler(req, res) {
         to: [
           {
             name: "GruppoMembriStaff@gruppi.friuliemergenze.it",
-            email: "francesco@friuliemergenze.it",
+            email: "francesco@Ffriuliemergenze.it",
           },
         ],
         subject: `[FEEDBACK PAGINA REGISTRAZIONE] Nuovo suggerimento da ${sanitizedName} - ${platformDisplay}`,
