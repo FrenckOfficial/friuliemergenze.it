@@ -49,40 +49,59 @@ export default async function handler(req, res) {
       timestamp,
     });
 
-    const response = await fetch("https://api.brevo.com/v3/smtp/email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "api-key": process.env.BREVO_API_KEY,
-      },
-      body: JSON.stringify({
+    const emailPayload = {
         sender: {
-          name: "Sistemi Friuli Emergenze",
-          email: "autosystem@friuliemergenze.it",
+            name: "Sistemi Friuli Emergenze",
+            email: "autosystem@friuliemergenze.it",
         },
         to: [
-          {
+            {
             name: "GruppoMembriStaff@gruppi.friuliemergenze.it",
             email: "GruppoMembriStaff@gruppi.friuliemergenze.it",
-          },
+            },
         ],
         subject: `[FEEDBACK PAGINA REGISTRAZIONE] Nuovo suggerimento da ${sanitizedName}`,
         htmlContent,
         replyTo: { email: sanitizedEmail, name: sanitizedName },
-      }),
+    };
+
+    console.log("📧 PAYLOAD COMPLETO:", JSON.stringify(emailPayload, null, 2));
+
+    const response = await fetch("https://api.brevo.com/v3/smtp/email", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "api-key": process.env.BREVO_API_KEY,
+        },
+        body: JSON.stringify({
+            sender: {
+            name: "Sistemi Friuli Emergenze",
+            email: "autosystem@friuliemergenze.it",
+            },
+            to: [
+            {
+                name: "GruppoMembriStaff@gruppi.friuliemergenze.it",
+                email: "GruppoMembriStaff@gruppi.friuliemergenze.it",
+            },
+            ],
+            subject: `[FEEDBACK PAGINA REGISTRAZIONE] Nuovo suggerimento da ${sanitizedName}`,
+            htmlContent,
+            replyTo: { email: sanitizedEmail, name: sanitizedName },
+        }),
     });
 
-    if (!response.ok) {
-      const errorData = await response.json();
-      console.error("❌ Brevo API error:", errorData);
-      return res.status(response.status).json({
-        error: "Failed to send feedback",
-      });
-    }
+    console.log("📧 Brevo Response Status:", response.status);
+    console.log("📧 Brevo Response OK:", response.ok);
 
     const data = await response.json();
-    console.log("✅ Feedback ricevuto da:", sanitizedEmail);
+    console.log("📧 Brevo Response Body:", JSON.stringify(data, null, 2));
 
+    if (!response.ok) {
+    console.error("❌ Brevo API error:", data);
+    return res.status(response.status).json({ error: "Failed to send feedback" });
+    }
+
+    console.log("✅ Email sent successfully, messageId:", data.messageId);
     return res.status(200).json({ success: true, messageId: data.messageId });
   } catch (error) {
     console.error("❌ Server error:", error.message);
