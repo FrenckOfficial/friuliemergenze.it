@@ -4,7 +4,7 @@
     "image": "/assets/mezzi/sierra271-sogitgrado.jpg",
     "category": "Soccorso Sanitario",
     "spotter": "",
-    "link": "/gallery/scheda/sierra271-sogit/"
+    "link": "/gallery/scheda/sierra271-sogitgrado/"
   },
   {
     "title": "VOLVO FL290 - VVF Gorizia",
@@ -32,7 +32,7 @@
     "image": "/assets/mezzi/sierra275-sogitgrado.png",
     "category": "Soccorso Sanitario",
     "spotter": "",
-    "link": "/gallery/scheda/sierra275-sogit/"
+    "link": "/gallery/scheda/sierra275-sogitgrado/"
   },
   {
     "title": "Fiat Punto - Guardia Costiera Grado",
@@ -478,14 +478,14 @@
   {
     "title": "Sierra 8.2 - SOGIT Grado",
     "image": "https://cldkthlfzxcdswwtcjyw.supabase.co/storage/v1/object/public/MyFrEM%20Photos/7FnRs5UUV8Zm4EaKvHxns9BaoeO2/1783432870942-IMG_1965.jpeg",
-    "category": "Emergenza Sanitaria Territoriale",
+    "category": "Soccorso Sanitario",
     "spotter": "",
     "link": "/gallery/scheda/sierra82-sogitgrado/"
   },
   {
     "title": "Sierra 7.8 - SOGIT Grado",
     "image": "https://cldkthlfzxcdswwtcjyw.supabase.co/storage/v1/object/public/MyFrEM%20Photos/7FnRs5UUV8Zm4EaKvHxns9BaoeO2/1783432922971-IMG_1974.jpeg",
-    "category": "Emergenza Sanitaria Territoriale",
+    "category": "Soccorso Sanitario",
     "spotter": "",
     "link": "/gallery/scheda/sierra78-sogitgrado/"
   }
