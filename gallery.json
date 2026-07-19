@@ -1,12 +1,5 @@
 [
   {
-    "title": "Sierra 2.7.1 - SOGIT Grado",
-    "image": "/assets/mezzi/sierra271-sogitgrado.jpg",
-    "category": "Soccorso Sanitario",
-    "spotter": "",
-    "link": "/gallery/scheda/sierra271-sogitgrado/"
-  },
-  {
     "title": "VOLVO FL290 - VVF Gorizia",
     "image": "/assets/mezzi/volvofl-vvfgorizia.jpeg",
     "category": "Vigili del Fuoco",
@@ -26,13 +19,6 @@
     "category": "Vigili del Fuoco",
     "spotter": "",
     "link": "/gallery/scheda/ivecomaxicity-vvfgorizia/"
-  },
-  {
-    "title": "Sierra 2.7.5 - SOGIT Grado",
-    "image": "/assets/mezzi/sierra275-sogitgrado.png",
-    "category": "Soccorso Sanitario",
-    "spotter": "",
-    "link": "/gallery/scheda/sierra275-sogitgrado/"
   },
   {
     "title": "Fiat Punto - Guardia Costiera Grado",

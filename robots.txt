@@ -1,15 +1,21 @@
 User-agent: *
 
-# Pagine da non indicizzare
-Disallow: /manutenzione/
+Disallow: /?fbclid=
+Disallow: /?utm_*
+
+Disallow: /112-cur-italia/
+Disallow: /api/
 Disallow: /bando-staff/
+Disallow: /manutenzione/
+Disallow: /offline/
+Disallow: /policies/
+Disallow: /scripts/
+Disallow: /403.html
+Disallow: /favicon.ico
+Disallow: /.well-known/
 
-# Evita parametri inutili (opzionale ma utile)
-Disallow: /*?*
-
-# Consenti tutto il resto
 Allow: /
-Allow: /gallery/scheda/*
+Allow: /gallery.json
+Allow: /news.json
 
-# Sitemap principale
 Sitemap: https://www.friuliemergenze.it/sitemap.xml

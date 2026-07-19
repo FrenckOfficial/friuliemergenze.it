@@ -72,11 +72,6 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.friuliemergenze.it/locandina-gruppo/</loc>
-  <lastmod>2026-06-02T16:26:06+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
   <loc>https://www.friuliemergenze.it/rivista-annuale-vigilidelfuoco-2025/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.80</priority>
@@ -138,6 +133,11 @@
 </url>
 <url>
   <loc>https://www.friuliemergenze.it/photobook/protezionecivile/grado/</loc>
+  <lastmod>2026-06-02T16:26:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.friuliemergenze.it/photobook/soccorsosanitario/sogitgrado/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
