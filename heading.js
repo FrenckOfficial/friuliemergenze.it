@@ -1,7 +1,7 @@
 (function () {
   const head = document.head;
   const titleText = document.title;
-  const currentUrl = window.location.href; // ← USA L'URL ATTUALE
+  const currentUrl = window.location.href;
 
   const nodes = [
     { type: 'meta', attrs: { charset: 'UTF-8' } },
