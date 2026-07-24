@@ -518,11 +518,25 @@
     "link": "/gallery/scheda/victor862-gdiflignanosabbiadoro/"
   },
   {
-    "title": "Bravo 32 - Guardia Costiera Trieste",
+    "title": "Bravo 3.2 - Guardia Costiera Trieste",
     "image": "https://cldkthlfzxcdswwtcjyw.supabase.co/storage/v1/object/public/MyFrEM%20Photos/7FnRs5UUV8Zm4EaKvHxns9BaoeO2/1784745810594-WhatsApp%20Image%202026-07-22%20at%2018.57.10.jpeg",
     "category": "Guardia Costiera",
     "spotter": "",
     "link": "/gallery/scheda/bravo32-gctrieste/"
+  },
+  {
+    "title": "Charlie Papa 8.8.1 - Guardia Costiera Trieste",
+    "image": "https://cldkthlfzxcdswwtcjyw.supabase.co/storage/v1/object/public/MyFrEM%20Photos/7FnRs5UUV8Zm4EaKvHxns9BaoeO2/1784741906227-WhatsApp%20Image%202026-07-22%20at%2018.57.09%20(1).jpeg",
+    "category": "Guardia Costiera",
+    "spotter": "",
+    "link": "/gallery/scheda/charliepapa881-gctrieste/"
+  },
+  {
+    "title": "Charlie Papa 2.7.7 - Guardia Costiera Trieste",
+    "image": "https://cldkthlfzxcdswwtcjyw.supabase.co/storage/v1/object/public/MyFrEM%20Photos/7FnRs5UUV8Zm4EaKvHxns9BaoeO2/1784742229370-WhatsApp%20Image%202026-07-22%20at%2018.57.09%20(2).jpeg",
+    "category": "Guardia Costiera",
+    "spotter": "",
+    "link": "/gallery/scheda/charliepapa277-gctrieste/"
   },
   {
     "title": "Alfa Romeo Giulietta - Guardia di Finanza Trieste",
@@ -546,27 +560,6 @@
     "link": "/gallery/scheda/alfaromeogiulietta2-gdiftrieste/"
   },
   {
-    "title": "Moto Morini X-Cape 650 - Polizia Locale del Corpo Intercomunale del Cervignanese",
-    "image": "https://cldkthlfzxcdswwtcjyw.supabase.co/storage/v1/object/public/MyFrEM%20Photos/7FnRs5UUV8Zm4EaKvHxns9BaoeO2/1784746617810-WhatsApp%20Image%202026-07-22%20at%2018.57.11%20(7).jpeg",
-    "category": "Polizia Locale",
-    "spotter": "",
-    "link": "/gallery/scheda/motomorinixcape650-polizialocalecorpointercomunalecervignanese/"
-  },
-  {
-    "title": "Sierra Tango 7.2 - SOGIT Trieste",
-    "image": "https://cldkthlfzxcdswwtcjyw.supabase.co/storage/v1/object/public/MyFrEM%20Photos/7FnRs5UUV8Zm4EaKvHxns9BaoeO2/1784746313353-WhatsApp%20Image%202026-07-22%20at%2018.57.11%20(4).jpeg",
-    "category": "Soccorso Sanitario",
-    "spotter": "",
-    "link": "/gallery/scheda/sierratango72-sogittrieste/"
-  },
-  {
-    "title": "Moto Morini X-Cape 650 - Polizia Locale del Corpo Intercomunale del Cervignanese",
-    "image": "https://cldkthlfzxcdswwtcjyw.supabase.co/storage/v1/object/public/MyFrEM%20Photos/7FnRs5UUV8Zm4EaKvHxns9BaoeO2/1784746678959-WhatsApp%20Image%202026-07-22%20at%2018.57.11%20(8).jpeg",
-    "category": "Polizia Locale",
-    "spotter": "",
-    "link": "/gallery/scheda/motomorinixcape6502-polizialocalecorpointercomunalecervignanese/"
-  },
-  {
     "title": "Jeep Avenger - Guardia di Finanza Trieste",
     "image": "https://cldkthlfzxcdswwtcjyw.supabase.co/storage/v1/object/public/MyFrEM%20Photos/7FnRs5UUV8Zm4EaKvHxns9BaoeO2/1784745201652-WhatsApp%20Image%202026-07-22%20at%2018.57.10%20(1).jpeg",
     "category": "Guardia di Finanza",
@@ -579,13 +572,6 @@
     "category": "Guardia di Finanza",
     "spotter": "",
     "link": "/gallery/scheda/jeepavenger3-gdiftrieste/"
-  },
-  {
-    "title": "Fiat Grande Punto - Polizia di Stato Trieste",
-    "image": "https://cldkthlfzxcdswwtcjyw.supabase.co/storage/v1/object/public/MyFrEM%20Photos/7FnRs5UUV8Zm4EaKvHxns9BaoeO2/1784744797122-WhatsApp%20Image%202026-07-22%20at%2018.57.09.jpeg",
-    "category": "Polizia di Stato",
-    "spotter": "",
-    "link": "/gallery/scheda/fiatgrandepunto-poliziadistatotrieste/"
   },
   {
     "title": "Alfa Romeo Giulia - Guardia di Finanza Trieste",
@@ -602,11 +588,39 @@
     "link": "/gallery/scheda/alfaromeotonale-gdiftrieste/"
   },
   {
-    "title": "Charlie Papa 8.8.1 - Guardia Costiera Trieste",
-    "image": "https://cldkthlfzxcdswwtcjyw.supabase.co/storage/v1/object/public/MyFrEM%20Photos/7FnRs5UUV8Zm4EaKvHxns9BaoeO2/1784741906227-WhatsApp%20Image%202026-07-22%20at%2018.57.09%20(1).jpeg",
-    "category": "Guardia Costiera",
+    "title": "Alfa Romeo Tonale - Guardia di Finanza Trieste",
+    "image": "https://cldkthlfzxcdswwtcjyw.supabase.co/storage/v1/object/public/MyFrEM%20Photos/7FnRs5UUV8Zm4EaKvHxns9BaoeO2/1784745592569-WhatsApp%20Image%202026-07-22%20at%2018.57.10%20(4).jpeg",
+    "category": "Guardia di Finanza",
     "spotter": "",
-    "link": "/gallery/scheda/charliepapa881-gctrieste/"
+    "link": "/gallery/scheda/alfaromeotonale2-gdiftrieste/"
+  },
+  {
+    "title": "Fiat Grande Punto - Polizia di Stato Trieste",
+    "image": "https://cldkthlfzxcdswwtcjyw.supabase.co/storage/v1/object/public/MyFrEM%20Photos/7FnRs5UUV8Zm4EaKvHxns9BaoeO2/1784744797122-WhatsApp%20Image%202026-07-22%20at%2018.57.09.jpeg",
+    "category": "Polizia di Stato",
+    "spotter": "",
+    "link": "/gallery/scheda/fiatgrandepunto-poliziadistatotrieste/"
+  },
+  {
+    "title": "Sierra Tango 7.2 - SOGIT Trieste",
+    "image": "https://cldkthlfzxcdswwtcjyw.supabase.co/storage/v1/object/public/MyFrEM%20Photos/7FnRs5UUV8Zm4EaKvHxns9BaoeO2/1784746313353-WhatsApp%20Image%202026-07-22%20at%2018.57.11%20(4).jpeg",
+    "category": "Soccorso Sanitario",
+    "spotter": "",
+    "link": "/gallery/scheda/sierratango72-sogittrieste/"
+  },
+  {
+    "title": "Moto Morini X-Cape 650 - Polizia Locale del Corpo Intercomunale del Cervignanese",
+    "image": "https://cldkthlfzxcdswwtcjyw.supabase.co/storage/v1/object/public/MyFrEM%20Photos/7FnRs5UUV8Zm4EaKvHxns9BaoeO2/1784746617810-WhatsApp%20Image%202026-07-22%20at%2018.57.11%20(7).jpeg",
+    "category": "Polizia Locale",
+    "spotter": "",
+    "link": "/gallery/scheda/motomorinixcape650-polizialocalecorpointercomunalecervignanese/"
+  },
+  {
+    "title": "Moto Morini X-Cape 650 - Polizia Locale del Corpo Intercomunale del Cervignanese",
+    "image": "https://cldkthlfzxcdswwtcjyw.supabase.co/storage/v1/object/public/MyFrEM%20Photos/7FnRs5UUV8Zm4EaKvHxns9BaoeO2/1784746678959-WhatsApp%20Image%202026-07-22%20at%2018.57.11%20(8).jpeg",
+    "category": "Polizia Locale",
+    "spotter": "",
+    "link": "/gallery/scheda/motomorinixcape6502-polizialocalecorpointercomunalecervignanese/"
   },
   {
     "title": "Toyota Corolla Hybrid - Polizia Locale del Corpo Intercomunale del Cervignanese",
@@ -621,19 +635,5 @@
     "category": "Polizia Locale",
     "spotter": "",
     "link": "/gallery/scheda/toyotaauris-polizialocalecorpointercomunalecervignanese/"
-  },
-  {
-    "title": "Alfa Romeo Tonale - Guardia di Finanza Trieste",
-    "image": "https://cldkthlfzxcdswwtcjyw.supabase.co/storage/v1/object/public/MyFrEM%20Photos/7FnRs5UUV8Zm4EaKvHxns9BaoeO2/1784745592569-WhatsApp%20Image%202026-07-22%20at%2018.57.10%20(4).jpeg",
-    "category": "Guardia di Finanza",
-    "spotter": "",
-    "link": "/gallery/scheda/alfaromeotonale2-gdiftrieste/"
-  },
-  {
-    "title": "Charlie Papa 2.7.7 - Guardia Costiera Trieste",
-    "image": "https://cldkthlfzxcdswwtcjyw.supabase.co/storage/v1/object/public/MyFrEM%20Photos/7FnRs5UUV8Zm4EaKvHxns9BaoeO2/1784742229370-WhatsApp%20Image%202026-07-22%20at%2018.57.09%20(2).jpeg",
-    "category": "Guardia Costiera",
-    "spotter": "",
-    "link": "/gallery/scheda/charliepapa277-gctrieste/"
   }
 ]
