@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <title>Sondaggio - Servizi e Funzionalità | Friuli Emergenze</title>
+    <title>Sondaggio - Tipo di documentazione | Friuli Emergenze</title>
     <script src="/heading.js"></script>
     <link rel="stylesheet" href="/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
@@ -34,8 +34,8 @@
 
     <header class="hero">
       <img src="/assets/logo.png" alt="Logo Friuli Emergenze" class="logoHeading" />
-      <h1>Sondaggio - Nuovi Servizi e Funzionalità</h1>
-      <p>Aiutaci a migliorare! Condividi le tue idee su quali servizi o funzionalità vorresti vedere</p>
+      <h1>Sondaggio - Tipo di documentazione preferita</h1>
+      <p>Aiutaci a creare la documentazione giusta per te! Dimmi che tipo di guide e risorse ti servirebbero</p>
     </header>
 
     <form id="contactForm" style="margin-top:2rem;">
@@ -51,38 +51,90 @@
       </div>
 
       <div class="form-group">
-        <label for="platform">A quale piattaforma riguarda il tuo feedback?</label>
-        <select id="platform" name="platform" required>
-          <option value="">-- Seleziona una piattaforma --</option>
-          <option value="friuliemergenze">FriuliEmergenze.it</option>
-          <option value="myfrem">Piattaforma MyFrEM</option>
-          <option value="entrambi">Entrambe le piattaforme</option>
+        <label for="userRole">Qual è il tuo ruolo / come usi principalmente MyFrEM?</label>
+        <select id="userRole" name="userRole" required>
+          <option value="">-- Seleziona una risposta --</option>
+          <option value="community">Utente community (condivido foto/video)</option>
+          <option value="institutional">Collaboratore istituzionale (ente/VV.F./Carabinieri)</option>
+          <option value="staff">Staff / moderatore</option>
+          <option value="developer">Sviluppatore / tecnico</option>
+          <option value="curious">Curiosando / interessato al progetto</option>
         </select>
       </div>
 
       <div class="form-group">
-        <label for="features">Quali servizi o funzionalità vorresti vedere aggiunti?</label>
-        <textarea id="features" name="features" rows="5" placeholder="Descrivi nel dettaglio le funzionalità che ti piacerebbe avere..." required></textarea>
+        <label>Quali formati di documentazione preferisci? (puoi selezionare più opzioni)</label>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <label style="display:flex; gap:8px; font-weight:normal;">
+            <input type="checkbox" name="format" value="guides"> Guide scritte dettagliate
+          </label>
+          <label style="display:flex; gap:8px; font-weight:normal;">
+            <input type="checkbox" name="format" value="faq"> FAQ (Domande Frequenti)
+          </label>
+          <label style="display:flex; gap:8px; font-weight:normal;">
+            <input type="checkbox" name="format" value="video"> Video tutorial
+          </label>
+          <label style="display:flex; gap:8px; font-weight:normal;">
+            <input type="checkbox" name="format" value="interactive"> Tutorial interattivi / step-by-step
+          </label>
+          <label style="display:flex; gap:8px; font-weight:normal;">
+            <input type="checkbox" name="format" value="cheatsheet"> Cheat sheet / quick reference
+          </label>
+          <label style="display:flex; gap:8px; font-weight:normal;">
+            <input type="checkbox" name="format" value="examples"> Esempi pratici / case studies
+          </label>
+        </div>
       </div>
 
       <div class="form-group">
-        <label for="priority">Quanto importante è questa funzionalità per te?</label>
+        <label>Quali argomenti vorresti approfondire? (puoi selezionare più opzioni)</label>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <label style="display:flex; gap:8px; font-weight:normal;">
+            <input type="checkbox" name="topics" value="signup"> Come registrarsi e creare un profilo
+          </label>
+          <label style="display:flex; gap:8px; font-weight:normal;">
+            <input type="checkbox" name="topics" value="photo"> Caricamento e gestione foto
+          </label>
+          <label style="display:flex; gap:8px; font-weight:normal;">
+            <input type="checkbox" name="topics" value="vehicles"> Catalogo veicoli e ricerca
+          </label>
+          <label style="display:flex; gap:8px; font-weight:normal;">
+            <input type="checkbox" name="topics" value="collaboration"> Collaborazione con istituzioni
+          </label>
+          <label style="display:flex; gap:8px; font-weight:normal;">
+            <input type="checkbox" name="topics" value="moderation"> Revisione e moderazione contenuti
+          </label>
+          <label style="display:flex; gap:8px; font-weight:normal;">
+            <input type="checkbox" name="topics" value="api"> API e integrazione tecnica
+          </label>
+          <label style="display:flex; gap:8px; font-weight:normal;">
+            <input type="checkbox" name="topics" value="privacy"> Privacy e GDPR
+          </label>
+          <label style="display:flex; gap:8px; font-weight:normal;">
+            <input type="checkbox" name="topics" value="troubleshooting"> Troubleshooting / Problemi comuni
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="priority">Quale aspetto ritieni più importante?</label>
         <select id="priority" name="priority" required>
-          <option value="">-- Seleziona un'opzione --</option>
-          <option value="molto_alta">Molto alta - Essenziale</option>
-          <option value="alta">Alta - Importante</option>
-          <option value="media">Media - Sarebbe utile</option>
-          <option value="bassa">Bassa - Nice to have</option>
+          <option value="">-- Seleziona una priorità --</option>
+          <option value="ease">Facilità d'uso (guide semplici e veloci)</option>
+          <option value="complete">Completezza (coprire ogni aspetto in dettaglio)</option>
+          <option value="visual">Contenuti visivi (immagini, video, diagrammi)</option>
+          <option value="practice">Pratica (esempi reali e esercizi)</option>
         </select>
       </div>
 
       <div class="form-group">
-        <label for="comment">Note aggiuntive o commenti:</label>
-        <textarea id="comment" name="comment" rows="3" placeholder="Aggiungi qualsiasi altro dettaglio che ritieni utile..."></textarea>
+        <label for="suggestions">Hai suggerimenti specifici su cosa documentare o come migliorare?</label>
+        <textarea id="suggestions" name="suggestions" style="width:100%; min-height:100px; padding:10px; border:1px solid #ccc; border-radius:5px;"></textarea>
       </div>
 
-      <button class="cta-button" type="submit">Invia Feedback</button>
-      <p>Cliccando su "Invia Feedback" accetti il trattamento dei dati personali secondo le normative vigenti.</p>
+      <button class="cta-button" type="submit">Invia Sondaggio</button>
+      <p>Cliccando su "Invia Sondaggio" accetti il trattamento dei dati personali secondo le normative vigenti.</p>
+      <p>Le tue risposte saranno inviate al Gruppo Mail dello Staff per la valutazione e aiuteranno a migliorare la documentazione di MyFrEM.</p>
     </form>
     
     <footer class="footer-clean">
