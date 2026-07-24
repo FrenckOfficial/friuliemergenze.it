@@ -3,6 +3,11 @@
 <head>
     <title>I nostri photobooks | Friuli Emergenze</title>
     <script src="/heading.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/assets/logo.png" type="image/png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body class="fade-in">
     <nav class="navbar">
@@ -31,41 +36,50 @@
         <p>Scopri i photobook dei vari enti presenti in Friuli - Venezia Giulia</p>
     </header>
 
-    <section class="photobook-section">
-        <p>Per richiedere l'aggiunta di un photobook rivolgersi alla mail <a href="mailto:info@friuliemergenze.it">info@friuliemergenze.it</a></p>
-        <div class="photobooks">
-            <div class="photobook-card">
-                <img src="/assets/photobooks/PC-Cividale.png" alt="Photobook Protezione Civile di Cividale del Friuli" class="photobook-image">
-                <h2>Protezione Civile Cividale del Friuli</h2>
-                <p>Il photobook ufficiale della Protezione Civile di Cividale del Friuli, con foto dei mezzi in dotazione!</p>
-                <a href="/photobook/protezionecivile/cividale-del-friuli/" class="photobook-link">Visualizza photobook</a>
-            </div>
-            <div class="photobook-card">
-                <img src="/assets/photobooks/PC-Aquileia.png" alt="Photobook Protezione Civile di Aquileia" class="photobook-image">
-                <h2>Protezione Civile Aquileia</h2>
-                <p>Il photobook ufficiale della Protezione Civile di Aquileia, con foto dei mezzi in dotazione!</p>
-                <a href="/photobook/protezionecivile/aquileia/" class="photobook-link">Visualizza photobook</a>
-            </div>
-            <div class="photobook-card">
-                <img src="/assets/photobooks/PoliziaLocale.png" alt="Photobook Polizia Locale di Grado" class="photobook-image">
-                <h2>Polizia Locale Grado</h2>
-                <p>Il photobook ufficiale della Polizia Locale di Grado, con foto dei mezzi in dotazione!</p>
-                <a href="/photobook/polizialocale/grado/" class="photobook-link">Visualizza photobook</a>
-            </div>
-            <div class="photobook-card">
-                <img src="/assets/photobooks/PC-Grado.png" alt="Photobook Protezione Civile di Grado" class="photobook-image">
-                <h2>Protezione Civile Grado</h2>
-                <p>Il photobook ufficiale della Protezione Civile di Grado, con foto dei mezzi in dotazione!</p>
-                <a href="/photobook/protezionecivile/grado/" class="photobook-link">Visualizza photobook</a>
-            </div>
-            <div class="photobook-card">
-                <img src="/assets/photobooks/SOGIT-Grado.png" alt="Photobook SOGIT Sezione di Grado" class="photobook-image">
-                <h2>SOGIT Grado</h2>
-                <p>Il photobook ufficiale della SOGIT Sezione di Grado, con foto dei mezzi in dotazione!</p>
-                <a href="/photobook/soccorsosanitario/sogitgrado/" class="photobook-link">Visualizza photobook</a>
-            </div>
-        </div>
-    </section>
+    <main class="photobook-section">
+      <p>Per richiedere l'aggiunta di un photobook rivolgersi alla mail <a href="mailto:info@friuliemergenze.it">info@friuliemergenze.it</a></p>
+      
+      <section class="filter-buttons">
+        <button data-filter="all" class="active">Tutti</button>
+        <button data-filter="Vigili del Fuoco">Vigili del Fuoco</button>
+        <button data-filter="Protezione Civile">Protezione Civile</button>
+        <button data-filter="Soccorso Sanitario">Soccorso Sanitario</button>
+        <button data-filter="Guardia Costiera">Guardia Costiera</button>
+        <button data-filter="Carabinieri">Carabinieri</button>
+        <button data-filter="Polizia di Stato">Polizia di Stato</button>
+        <button data-filter="Polizia Locale">Polizia Locale</button>
+      </section>
+
+      <div class="gallery-search">
+        <input type="text" id="searchInput" placeholder="Cerca un photobook..." style="
+            width: 90%;
+            padding: 0.75rem;
+            margin: 1rem 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+          ">
+      </div>
+
+      <div class="photobook-count" style="
+          text-align: center;
+          margin-top: 1rem;
+          font-size: 1.2rem;
+          font-weight: 600;
+          color: #00bcd4;
+        ">
+        Photobook totali: <span id="photobooksCount">0</span>
+      </div>
+
+      <section class="photobook-section">
+        <div class="photobooks"></div>
+      </section>
+
+      <div id="emptyState" class="empty-state" style="display: none; text-align: center; padding: 2rem;">
+        <p style="font-size: 2rem; margin: 20px 0;">📭</p>
+        <p>Nessun photobook trovato</p>
+      </div>
+    </main>
     
     <footer class="footer-clean">
       <div class="footer-container">
@@ -132,23 +146,73 @@
     </noscript>
 
     <script>
-      window.addEventListener("pageshow", (event) => {
-        document.body.style.opacity = "1";
-        document.body.classList.remove("fade-in");
-        void document.body.offsetWidth;
-        document.body.classList.add("fade-in");
+      let activeService = "all";
 
-        const overlay = document.querySelector(".lightboxOverlay");
-        const box = document.querySelector(".lightbox");
+      fetch("/photobooks.json")
+        .then((res) => res.json())
+        .then((data) => {
+          const container = document.querySelector(".photobooks");
 
-        if (overlay) overlay.style.display = "none";
-        if (box) box.style.display = "none";
+          container.innerHTML = data
+            .map(
+              (p) => `
+                <div class="photobook-card" data-service="${p.service}" data-title="${p.title.toLowerCase()}">
+                    <img src="${p.image}" alt="${p.title}" class="photobook-image" loading="lazy">
+                    <h2>${p.title}</h2>
+                    <p>Il photobook ufficiale di <b>${p.title}</b>, con foto dei mezzi in dotazione!</p>
+                    <a href="${p.link}" class="photobook-link">Visualizza photobook</a>
+                </div>
+              `,
+            )
+            .join("");
 
-        document.body.style.overflow = "";
+          applyFilters();
+        })
+        .catch((error) => {
+          console.error("Errore caricamento photobooks.json:", error);
+          document.querySelector(".photobooks").innerHTML = '';
+          document.getElementById("emptyState").style.display = 'block';
+        });
+
+      function applyFilters() {
+        const cards = document.querySelectorAll(".photobook-card");
+        const searchVal = document.getElementById("searchInput").value.toLowerCase();
+        let count = 0;
+
+        cards.forEach((card) => {
+          const service = card.dataset.service;
+          const title = card.dataset.title;
+
+          const okService = activeService === "all" || service === activeService;
+          const okSearch = searchVal === "" || title.includes(searchVal);
+
+          if (okService && okSearch) {
+            card.style.display = "";
+            count++;
+          } else {
+            card.style.display = "none";
+          }
+        });
+
+        document.getElementById("photobooksCount").textContent = count;
+        document.getElementById("emptyState").style.display = count === 0 ? 'block' : 'none';
+      }
+
+      document.querySelectorAll("[data-filter]").forEach((btn) => {
+        btn.onclick = () => {
+          document
+            .querySelectorAll("[data-filter]")
+            .forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          activeService = btn.dataset.filter;
+          applyFilters();
+        };
       });
-    </script>
 
-    <script>
+      document.getElementById("searchInput").addEventListener("keyup", () => {
+        applyFilters();
+      });
+
       document.querySelector(".menu-toggle").addEventListener("click", () => {
         document.querySelector(".nav-links").classList.toggle("open");
         const liMyFrEM = document.querySelector(".nav-links a[href='/piattaforma-myfrem']");
@@ -164,6 +228,22 @@
           navigator.serviceWorker.register("/scripts/sw.js");
         }
       });
+
+      window.addEventListener("pageshow", (event) => {
+        document.body.style.opacity = "1";
+        document.body.classList.remove("fade-in");
+        void document.body.offsetWidth;
+        document.body.classList.add("fade-in");
+
+        document.body.style.overflow = "";
+      });
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const service = urlParams.get("service");
+
+      if (service) {
+        document.querySelector(`[data-filter="${service}"]`)?.click();
+      }
     </script>
 </body>
 </html>

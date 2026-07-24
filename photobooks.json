@@ -1,0 +1,44 @@
+[
+    {
+        "title": "Protezione Civile Cividale del Friuli",
+        "service": "Protezione Civile",
+        "image": "/assets/photobooks/PC-Cividale.png",
+        "link": "/photobook/protezionecivile/cividale-del-friuli/"
+    },
+    {
+        "title": "Protezione Civile Aquileia",
+        "service": "Protezione Civile",
+        "image": "/assets/photobooks/PC-Aquileia.png",
+        "link": "/photobook/protezionecivile/aquileia/"
+    },
+    {
+        "title": "Polizia Locale Grado",
+        "service": "Polizia Locale",
+        "image": "/assets/photobooks/PoliziaLocale.png",
+        "link": "/photobook/polizialocale/grado/"
+    },
+    {
+        "title": "Protezione Civile Grado",
+        "service": "Protezione Civile",
+        "image": "/assets/photobooks/PC-Grado.png",
+        "link": "/photobook/protezionecivile/grado/"
+    },
+    {
+        "title": "SOGIT Grado",
+        "service": "Soccorso Sanitario",
+        "image": "/assets/photobooks/SOGIT-Grado.png",
+        "link": "/photobook/soccorsosanitario/sogitgrado/"
+    },
+    {
+        "title": "Guardia Costiera Trieste",
+        "service": "Guardia Costiera",
+        "image": "/assets/photobooks/GuardiaCostiera.png",
+        "link": "/photobook/guardiacostiera/direziomaretrieste/"
+    },
+    {
+        "title": "Polizia Locale del Corpo Intercomunale del Cervignanese",
+        "service": "Polizia Locale",
+        "image": "/assets/photobooks/PoliziaLocale.png",
+        "link": "/photobook/polizialocale/corpiintercomunali/cervignanese/"
+    }
+]
