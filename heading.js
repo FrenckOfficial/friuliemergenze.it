@@ -20,6 +20,7 @@
     { type: 'meta', attrs: { name: 'theme-color', content: 'black' } },
     { type: 'meta', attrs: { name: 'mobile-web-app-capable', content: 'yes' } },
     { type: 'meta', attrs: { name: 'apple-mobile-web-app-title', content: titleText } },
+    { type: 'script', attrs: { src: 'https://www.paypal.com/sdk/js?client-id=BAADLRkARb_vp7BpzVb3jmj3oHXkBH4Obg55ERSSLQNcjqm9HnbU7Imvpgng1QentxmHTGunfTA4Sd7Vr0&components=hosted-buttons&disable-funding=venmo&currency=EUR' } },
     { type: 'link', attrs: { rel: 'apple-touch-icon', href: '/assets/icons/icon-192x192.png' } },
     { type: 'link', attrs: { rel: 'icon', href: '/assets/logo.png', type: 'image/png' } },
     { type: 'link', attrs: { rel: 'canonical', href: currentUrl } },

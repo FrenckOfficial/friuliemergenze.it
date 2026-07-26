@@ -2,10 +2,52 @@
 <html lang="it">
   <head>
     <script src="https://embeds.iubenda.com/widgets/46908651-d6da-462f-b037-e6ef97c84795.js"></script>
-    <script src="/heading.js"></script></script>
+    <script src="/heading.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Subaru Forester - Polizia Locale Grado | Friuli Emergenze</title>
-    <script src="/heading.js"></script>
+    <style>
+      #donate-float {
+        position: fixed !important;
+        bottom: 2rem !important;
+        left: 2rem !important;
+        z-index: 999999 !important;
+        animation: slideInUp 0.5s ease-out;
+      }
+
+      .donate-btn {
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.5rem;
+        padding: 0.875rem 1.5rem;
+        background: #ff7b00 !important;
+        color: white !important;
+        border: none !important;
+        border-radius: 50px !important;
+        font-weight: 600 !important;
+        font-size: 1rem !important;
+        cursor: pointer !important;
+        box-shadow: 0 4px 12px rgba(255, 123, 0, 0.3) !important;
+        transition: all 0.3s ease !important;
+        font-family: 'Lexend', sans-serif !important;
+        text-decoration: none !important;
+      }
+
+      .donate-btn:hover {
+        background: #ff6800 !important;
+        transform: scale(1.05) !important;
+        box-shadow: 0 6px 16px rgba(255, 123, 0, 0.4) !important;
+      }
+
+      @keyframes slideInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      @media (max-width: 768px) {
+        .donate-float { bottom: 1rem !important; left: 1rem !important; }
+        .donate-btn { padding: 0.75rem 1rem !important; font-size: 0.95rem !important; }
+      }
+    </style>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 
     <link rel="stylesheet" href="/style.css" />
@@ -20,7 +62,17 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
   </head>
-  <body class="fade-in">
+  <body>
+    <div id="donate-float" style="position: fixed !important; bottom: 2rem !important; left: 2rem !important; z-index: 999999 !important; display: block !important; width: auto !important; height: auto !important;">
+      <a href="https://www.paypal.com/ncp/payment/QQMQWZQYDL28S" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="donate-btn"
+        style="display: flex !important; align-items: center !important; gap: 0.5rem; padding: 0.875rem 1.5rem; background: #ff7b00 !important; color: white; border: none; border-radius: 50px; font-weight: 600; font-size: 1rem; cursor: pointer; text-decoration: none; font-family: Lexend, sans-serif;">
+        <span style="font-size: 1.2rem;">❤️</span>
+        Sostieni
+      </a>
+    </div>
     <nav class="navbar">
       <div class="navbar-container">
         <a href="/" class="logo">Friuli Emergenze</a>
@@ -144,7 +196,7 @@
           <a href="https://www.friuliemergenze.it/policies/cookie">Cookie Policy</a>
         </p>
         <p class="footer-extra"> 
-          Versione 2.7.0.0
+          Versione 2.8.0.0
         </p>
       </div>
     </footer>
@@ -154,7 +206,9 @@
       <a href="https://www.shinystat.com/it/" target="_top" style="display: none;">
       <img src="//www.shinystat.com/cgi-bin/shinystat.cgi?USER=SS-53595029-55bae" alt="Statistiche web" style="border:0px; display: none;" /></a>
     </noscript>
-    <script>window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}</script><script id="zsiqscript" src="https://salesiq.zoho.eu/widget?wc=siq62d27a53bb81a657971f317cee5b4ac1aa6c3d7c062b3c0c06045f0b4467eed9" defer></script>
+    <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="12f1a448-b292-4481-a1b1-00e4f77025d3";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+
+    
 
     <script>
       document.querySelector(".menu-toggle").addEventListener("click", () => {

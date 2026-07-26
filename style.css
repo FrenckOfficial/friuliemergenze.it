@@ -41,6 +41,7 @@ body {
     linear-gradient(rgba(0, 212, 232, 0.025) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 212, 232, 0.025) 1px, transparent 1px);
   background-size: 40px 40px;
+  position: relative;
 }
 
 a {
@@ -108,11 +109,9 @@ textarea::placeholder {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(6px);
   }
   to {
     opacity: 1;
-    transform: none;
   }
 }
 @keyframes fadeOut {
@@ -2797,6 +2796,75 @@ footer {
   display: none !important;
 }
 
+#donate-float {
+  display: block !important;
+  position: fixed !important;
+  bottom: 2rem !important;
+  left: 2rem !important;
+  z-index: 999999 !important;
+  width: auto !important;
+  height: auto !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  animation: slideInUp 0.5s ease-out;
+}
+
+.donate-btn {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  padding: 0.875rem 1.5rem !important;
+  background: #ff7b00 !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 50px !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 12px rgba(255, 123, 0, 0.3) !important;
+  transition: all 0.3s ease !important;
+  font-family: 'Lexend', sans-serif !important;
+  text-decoration: none !important;
+  width: auto !important;
+  height: auto !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+.donate-btn:hover {
+  background: #ff6800 !important;
+  transform: scale(1.05) !important;
+  box-shadow: 0 6px 16px rgba(255, 123, 0, 0.4) !important;
+}
+
+#donate-float--bottom-left {
+  right: auto;
+  left: 2rem;
+}
+
+.donate-btn:active {
+  transform: scale(0.98);
+}
+
+.donate-icon {
+  font-size: 1.2rem;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 900px) {
   .footer-container {
     grid-template-columns: repeat(2, 1fr);
@@ -2980,6 +3048,16 @@ footer {
   .ivr-desc {
     font-size: 0.8rem;
   }
+
+  .donate-float {
+    bottom: 1rem;
+    right: 1rem;
+  }
+  
+  .donate-btn {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
 }
 
 @media (max-width: 600px) {
@@ -3087,6 +3165,11 @@ footer {
     width: 100%;
     padding: 0.875rem 1.5rem;
     font-size: 0.85rem;
+  }
+
+  .donate-float {
+    bottom: 0.8rem;
+    right: 0.8rem;
   }
 }
 
