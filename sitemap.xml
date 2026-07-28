@@ -67,6 +67,11 @@
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://www.friuliemergenze.it/sostienici/</loc>
+  <lastmod>2026-06-02T16:26:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>https://www.friuliemergenze.it/regolamento-gruppo/</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.80</priority>
@@ -107,6 +112,11 @@
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://www.friuliemergenze.it/sostienici/donate/</loc>
+  <lastmod>2026-06-02T16:26:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
   <loc>https://www.friuliemergenze.it/newsletter/confirm</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.64</priority>
@@ -138,6 +148,16 @@
 </url>
 <url>
   <loc>https://www.friuliemergenze.it/photobook/soccorsosanitario/sogitgrado/</loc>
+  <lastmod>2026-06-02T16:26:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.friuliemergenze.it/photobook/guardiacostiera/direziomaretrieste/</loc>
+  <lastmod>2026-06-02T16:26:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.friuliemergenze.it/photobook/polizialocale/corpiintercomunali/cervignanese</loc>
   <lastmod>2026-06-02T16:26:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>

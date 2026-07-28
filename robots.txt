@@ -12,6 +12,7 @@ Disallow: /policies/
 Disallow: /scripts/
 Disallow: /403.html
 Disallow: /favicon.ico
+Disallow: /photobooks.json
 Disallow: /.well-known/
 
 Allow: /
