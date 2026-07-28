@@ -635,5 +635,12 @@
     "category": "Soccorso Tecnico Urgente",
     "spotter": "",
     "link": "/gallery/scheda/peugeoute2008-vvfgorizia/"
+  },
+  {
+    "title": "I-CREW - Servizio di Elisoccorso Regionale",
+    "image": "https://cldkthlfzxcdswwtcjyw.supabase.co/storage/v1/object/public/MyFrEM%20Photos/7FnRs5UUV8Zm4EaKvHxns9BaoeO2/1785234703254-IMG_2583.jpeg",
+    "category": "Soccorso Sanitario",
+    "spotter": "",
+    "link": "/gallery/scheda/icrew-elisoccorsofvg/"
   }
 ]
