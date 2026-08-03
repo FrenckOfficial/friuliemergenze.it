@@ -779,9 +779,17 @@ textarea::placeholder {
 .about,
 .gallery,
 .instagram,
+.main-content,
 .partners {
   padding: 2rem 1rem;
   max-width: 800px;
+  margin: 0 auto;
+}
+
+.main-content img {
+  width: 70%;
+  height: auto;
+  display: block;
   margin: 0 auto;
 }
 
@@ -1069,7 +1077,7 @@ textarea::placeholder {
 }
 
 .form-group {
-  width:100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -2826,7 +2834,7 @@ footer {
   cursor: pointer !important;
   box-shadow: 0 4px 12px rgba(255, 123, 0, 0.3) !important;
   transition: all 0.3s ease !important;
-  font-family: 'Lexend', sans-serif !important;
+  font-family: "Lexend", sans-serif !important;
   text-decoration: none !important;
   width: auto !important;
   height: auto !important;
@@ -2864,21 +2872,21 @@ footer {
     transform: translateY(0);
   }
 }
- 
+
 .section {
   padding: 4rem 2rem;
 }
- 
+
 .section-title {
   text-align: center;
   margin-bottom: 3rem;
 }
- 
+
 .section-title h2 {
   font-size: 2.2rem;
   margin-bottom: 1rem;
 }
- 
+
 .section-title p {
   font-size: 1.1rem;
   color: var(--text-secondary);
@@ -2893,7 +2901,7 @@ footer {
   gap: 2rem;
   margin-top: 2rem;
 }
- 
+
 .donate-card {
   background: var(--bg-panel);
   border: 1px solid var(--border);
@@ -2906,23 +2914,23 @@ footer {
   align-items: center;
   gap: 1.5rem;
 }
- 
+
 .donate-card:hover {
   border-color: var(--accent);
   transform: translateY(-8px);
   box-shadow: 0 12px 32px rgba(0, 212, 232, 0.15);
 }
- 
+
 .donate-icon {
   font-size: 3.5rem;
   color: #ff7b00;
 }
- 
+
 .donate-card h3 {
   font-size: 1.4rem;
   margin: 0;
 }
- 
+
 .donate-card p {
   font-size: 0.95rem;
   color: var(--text-secondary);
@@ -2930,7 +2938,7 @@ footer {
   line-height: 1.6;
   flex-grow: 1;
 }
- 
+
 .donate-card .btn {
   display: inline-flex;
   align-items: center;
@@ -2950,29 +2958,33 @@ footer {
   transition: all 0.2s;
   margin-top: auto;
 }
- 
+
 .donate-card .btn:hover {
   opacity: 0.85;
   transform: scale(1.05);
 }
 
 .impact-section {
-  background: linear-gradient(135deg, rgba(0, 212, 232, 0.08) 0%, rgba(0, 212, 232, 0.02) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 212, 232, 0.08) 0%,
+    rgba(0, 212, 232, 0.02) 100%
+  );
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
- 
+
 .impact-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   margin-top: 3rem;
 }
- 
+
 .impact-card {
   text-align: center;
 }
- 
+
 .impact-number {
   font-size: 2.8rem;
   font-weight: 800;
@@ -2980,7 +2992,7 @@ footer {
   font-family: var(--font-mono);
   margin-bottom: 0.5rem;
 }
- 
+
 .impact-label {
   font-size: 0.95rem;
   color: var(--text-secondary);
@@ -2994,42 +3006,42 @@ footer {
   margin-top: 3rem;
   border: 1px solid var(--border);
 }
- 
+
 .allocation-section h3 {
   text-align: center;
   margin-bottom: 2rem;
 }
- 
+
 .allocation-bars {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
 }
- 
+
 .allocation-item {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
 }
- 
+
 .allocation-label {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
- 
+
 .allocation-label span:first-child {
   font-weight: 600;
   color: var(--text-primary);
 }
- 
+
 .allocation-label span:last-child {
   font-size: 0.9rem;
   color: var(--accent);
   font-family: var(--font-mono);
   font-weight: 700;
 }
- 
+
 .allocation-bar {
   width: 100%;
   height: 24px;
@@ -3038,7 +3050,7 @@ footer {
   overflow: hidden;
   border: 1px solid var(--border-panel);
 }
- 
+
 .allocation-fill {
   height: 100%;
   background: linear-gradient(90deg, var(--accent), #00a8b8);
@@ -3050,7 +3062,7 @@ footer {
   max-width: 800px;
   margin: 0 auto;
 }
- 
+
 .faq-item {
   background: var(--bg-panel);
   border: 1px solid var(--border-panel);
@@ -3058,7 +3070,7 @@ footer {
   margin-bottom: 1rem;
   overflow: hidden;
 }
- 
+
 .faq-question {
   padding: 1.5rem;
   cursor: pointer;
@@ -3070,30 +3082,32 @@ footer {
   transition: background 0.2s;
   user-select: none;
 }
- 
+
 .faq-question:hover {
   background: var(--bg-hover);
 }
- 
+
 .faq-icon {
   font-size: 1.2rem;
   color: var(--accent);
   transition: transform 0.3s;
 }
- 
+
 .faq-item.active .faq-icon {
   transform: rotate(180deg);
 }
- 
+
 .faq-answer {
   padding: 0 1.5rem;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
+  transition:
+    max-height 0.3s ease,
+    padding 0.3s ease;
   color: var(--text-secondary);
   line-height: 1.7;
 }
- 
+
 .faq-item.active .faq-answer {
   padding: 0 1.5rem 1.5rem;
   max-height: 500px;
@@ -3107,11 +3121,11 @@ footer {
   border-radius: var(--radius-lg);
   margin-top: 3rem;
 }
- 
+
 .final-cta h2 {
   margin-bottom: 1rem;
 }
- 
+
 .final-cta p {
   font-size: 1.1rem;
   color: var(--text-secondary);
@@ -3120,9 +3134,197 @@ footer {
   margin-left: auto;
   margin-right: auto;
 }
- 
+
 .final-cta .cta-primary {
   display: inline-flex;
+}
+
+.docs-container {
+  display: flex;
+  min-height: calc(100vh - 200px);
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.docs-sidebar {
+  width: 280px;
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+  background: var(--accent-dim);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+}
+
+.docs-sidebar h3 {
+  color: var(--accent);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 1.5rem 0 0.75rem 0;
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+
+.docs-sidebar h3:first-child {
+  margin-top: 0;
+}
+
+.docs-sidebar a {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.docs-sidebar a:hover {
+  background: var(--accent-dim);
+  color: var(--accent);
+  padding-left: 1rem;
+}
+
+.docs-sidebar a.active {
+  background: rgba(0, 212, 232, 0.2);
+  color: var(--accent);
+  font-weight: 600;
+  border-left: 3px solid var(--accent);
+  padding-left: 0.5rem;
+}
+
+.docs-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.docs-page {
+  display: none;
+}
+
+.docs-page.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.docs-page h1 {
+  font-size: 2.5rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  font-family: var(--font-display);
+}
+
+.docs-page .intro {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+}
+
+.docs-page h2 {
+  font-size: 1.75rem;
+  color: var(--accent);
+  margin: 2rem 0 1rem 0;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.docs-page h3 {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin: 1.5rem 0 0.75rem 0;
+}
+
+.docs-page p {
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+.docs-page ul,
+.docs-page ol {
+  margin-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.docs-page li {
+  margin-bottom: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.docs-page a {
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent-dim);
+  transition: all 0.2s ease;
+}
+
+.docs-page a:hover {
+  color: #ff7b00;
+  border-bottom-color: #ff7b00;
+}
+
+.feature-box {
+  background: var(--accent-glow);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: var(--radius-md);
+}
+
+.feature-box h4 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.warning-box {
+  background: rgba(255, 123, 0, 0.08);
+  border: 1px solid rgba(255, 123, 0, 0.3);
+  border-left: 4px solid #ff7b00;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: var(--radius-md);
+}
+
+.warning-box h4 {
+  color: #ff7b00;
+  margin-bottom: 0.5rem;
+}
+
+.breadcrumb {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  font-family: var(--font-mono);
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  border: none;
+}
+
+.breadcrumb a:hover {
+  border-bottom: 1px solid var(--accent);
+}
+
+@media (max-width: 1024px) {
+  .docs-container {
+    gap: 1rem;
+  }
+
+  .docs-sidebar {
+    width: 220px;
+  }
 }
 
 @media (max-width: 900px) {
@@ -3313,7 +3515,7 @@ footer {
     bottom: 1rem;
     right: 1rem;
   }
-  
+
   .donate-btn {
     padding: 0.75rem 1rem;
     font-size: 0.95rem;
@@ -3322,22 +3524,53 @@ footer {
   .section {
     padding: 3rem 1.5rem;
   }
- 
+
   .section-title h2 {
     font-size: 1.8rem;
   }
- 
+
   .donate-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
- 
+
   .allocation-section {
     padding: 2rem;
   }
- 
+
   .allocation-bars {
     grid-template-columns: 1fr;
+  }
+
+  .docs-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .docs-sidebar {
+    width: 100%;
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .docs-sidebar h3 {
+    flex-basis: 100%;
+  }
+
+  .docs-sidebar a {
+    flex: 1;
+    min-width: 150px;
+    text-align: center;
+  }
+
+  .docs-page h1 {
+    font-size: 1.75rem;
+  }
+
+  .docs-page h2 {
+    font-size: 1.25rem;
   }
 }
 
@@ -3456,23 +3689,23 @@ footer {
   .section {
     padding: 2rem 1rem;
   }
- 
+
   .section-title h2 {
     font-size: 1.5rem;
   }
- 
+
   .donate-card {
     padding: 1.5rem;
   }
- 
+
   .impact-number {
     font-size: 2rem;
   }
- 
+
   .allocation-section {
     padding: 1.5rem;
   }
- 
+
   .final-cta {
     padding: 2rem 1.5rem;
   }
