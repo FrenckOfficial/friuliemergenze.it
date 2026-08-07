@@ -37,7 +37,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' cdn.jsdelivr.net cdnjs.cloudflare.com cdn.iubenda.com embeds.iubenda.com codicebusiness.shinystat.com pianiemergenza.protezionecivile.fvg.it static.elfsight.com kit.fontawesome.com www.paypal.com www.googletagmanager.com client.crisp.chat; style-src 'self' 'unsafe-inline' fonts.googleapis.com cdnjs.cloudflare.com client.crisp.chat; font-src 'self' fonts.gstatic.com cdnjs.cloudflare.com client.crisp.chat; img-src 'self' data: https:; connect-src 'self' https:; frame-src 'self' https://pianiemergenza.protezionecivile.fvg.it; frame-ancestors 'self'"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' cdn.jsdelivr.net cdnjs.cloudflare.com cdn.iubenda.com embeds.iubenda.com codicebusiness.shinystat.com pianiemergenza.protezionecivile.fvg.it static.elfsight.com kit.fontawesome.com www.paypal.com www.googletagmanager.com client.crisp.chat; style-src 'self' 'unsafe-inline' fonts.googleapis.com cdnjs.cloudflare.com client.crisp.chat; font-src 'self' fonts.gstatic.com cdnjs.cloudflare.com client.crisp.chat; img-src 'self' data: https:; connect-src 'self' https: wss:; frame-src 'self' https://pianiemergenza.protezionecivile.fvg.it; frame-ancestors 'self'"
         },
         {
           "key": "Referrer-Policy",
