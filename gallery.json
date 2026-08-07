@@ -642,5 +642,12 @@
     "category": "Soccorso Sanitario",
     "spotter": "",
     "link": "/gallery/scheda/icrew-elisoccorsofvg/"
+  },
+  {
+    "title": "Lamborghini Huracan LP 610-4 - Polizia Stradale Bologna",
+    "image": "https://cldkthlfzxcdswwtcjyw.supabase.co/storage/v1/object/public/MyFrEM%20Photos/BLaBHSKMjjTmPzv0AqrTCmGPJc93/1786106274194-1000054182.jpg",
+    "category": "Polizia di Stato",
+    "spotter": "",
+    "link": "/gallery/scheda/lamborghinihuracan-poliziastradale/"
   }
 ]
