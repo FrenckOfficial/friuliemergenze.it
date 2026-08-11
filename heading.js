@@ -10,6 +10,7 @@
     { type: 'meta', attrs: { name: 'robots', content: 'all' } },
     { type: 'meta', attrs: { name: 'author', content: 'Friuli Emergenze' } },
     { type: 'meta', attrs: { name: 'google-adsense-account', content: 'ca-pub-4233309350636231' } },
+    { type: 'meta', attrs: { name: 'copyright', content: '© 2025-2026 Friuli Emergenze' }},
     { type: 'meta', attrs: { property: 'og:title', content: titleText } },
     { type: 'meta', attrs: { property: 'og:description', content: 'Pagina di condivisione foto e video di mezzi di soccorso. Ti diamo il benvenuto nel sito ufficiale di Friuli Emergenze!' } },
     { type: 'meta', attrs: { property: 'og:image', content: 'https://www.friuliemergenze.it/assets/logo.png' } },
