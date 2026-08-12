@@ -29,6 +29,128 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <script type="text/plain" data-type="application/json" data-src="https://embeds.iubenda.com/widgets/46908651-d6da-462f-b037-e6ef97c84795.js" defer></script>
     <script src="/heading.js" defer></script>
+    <style>
+      .contact-channels {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin: 3rem 0;
+      }
+
+      .channel-card {
+        background: var(--bg-secondary, #0f1419);
+        border: 1px solid var(--border-color, #1a1f2e);
+        border-radius: 12px;
+        padding: 2rem;
+        transition: all 0.3s ease;
+      }
+
+      .channel-card:hover {
+        border-color: var(--accent, #00d4e8);
+        box-shadow: 0 4px 12px rgba(0, 212, 232, 0.1);
+      }
+
+      .channel-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .channel-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: var(--text-primary, #ffffff);
+      }
+
+      .channel-description {
+        font-size: 0.95rem;
+        color: var(--text-secondary, #b0b8c1);
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+      }
+
+      .channel-contact {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.6rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .channel-contact a {
+        color: var(--accent, #00d4e8);
+        text-decoration: none;
+        word-break: break-all;
+        transition: opacity 0.2s;
+      }
+
+      .channel-contact a:hover {
+        opacity: 0.8;
+        text-decoration: underline;
+      }
+
+      .channel-contact i {
+        flex-shrink: 0;
+        opacity: 0.7;
+      }
+
+      .contact-intro {
+        background: linear-gradient(135deg, rgba(0, 212, 232, 0.05) 0%, rgba(255, 123, 0, 0.05) 100%);
+        border: 1px solid rgba(0, 212, 232, 0.1);
+        border-radius: 12px;
+        padding: 2rem;
+        margin-bottom: 3rem;
+        text-align: center;
+      }
+
+      .contact-intro h2 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+      }
+
+      .contact-intro p {
+        color: var(--text-secondary, #b0b8c1);
+        max-width: 600px;
+        margin: 0 auto 0;
+      }
+
+      .divider-section {
+        text-align: center;
+        margin: 3rem 0;
+        color: var(--text-secondary, #b0b8c1);
+      }
+
+      .divider-section::before {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--border-color, #1a1f2e), transparent);
+        margin: 0 auto 1rem;
+      }
+
+      .form-intro-section {
+        background: transparent;
+        padding: 0;
+        margin-bottom: 2rem;
+      }
+
+      .form-intro-content h2 {
+        font-size: 1.8rem;
+        margin-top: 0;
+      }
+
+      @media (max-width: 768px) {
+        .contact-channels {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-intro {
+          padding: 1.5rem;
+        }
+      }
+    </style>
   </head>
   
   <body>
@@ -42,7 +164,7 @@
         rel="noopener noreferrer"
         class="donate-btn"
         style="display: flex !important; align-items: center !important; gap: 0.5rem; padding: 0.875rem 1.5rem; background: #ff7b00 !important; color: white; border: none; border-radius: 50px; font-weight: 600; font-size: 1rem; cursor: pointer; text-decoration: none; font-family: Lexend, sans-serif;">
-        <span style="font-size: 1.2rem;">❤️</span>
+        
         Sostieni
       </a>
     </div>
@@ -72,109 +194,76 @@
     <header class="hero">
       <img src="/assets/logo.png" alt="Logo Friuli Emergenze" class="logoHeading" loading="lazy" width="120" height="120" />
       <h1>Contattaci</h1>
-      <p>Scegli il canale più adatto per la tua esigenza</p>
+      <p>Scegli il canale che preferisci per rimanere in contatto</p>
     </header>
 
     <main class="contact-main">
-      <section class="ivr-section" aria-label="Sistema IVR del centralino">
-        <h2 class="ivr-title">Chiama il nostro centralino</h2>
-        <p class="ivr-subtitle">
-          Componi <a href="tel:+390431980003"><strong style="color: var(--accent);">+39 0431 980003</strong></a> e seleziona il reparto premendo il numero corrispondente
-        </p>
+      <section class="contact-intro">
+        <h2>Come raggiungerci</h2>
+        <p>Abbiamo diversi team pronti ad aiutarti. Scegli il reparto più adatto alla tua esigenza e contattaci direttamente via email o compila il form sottostante. Ti risponderemo nel minor tempo possibile.</p>
+      </section>
 
-        <div class="ivr-grid">
-          <div class="ivr-card">
-            <div class="ivr-number">Premi 1</div>
-            <div class="ivr-name">Supporto tecnico</div>
-            <div class="ivr-desc">Problemi tecnici, segnalazioni bug, assistenza piattaforma</div>
-            <div class="ivr-email">
-              <i class="fas fa-envelope" style="margin-right: 0.4rem;"></i>
-              <a href="mailto:francesco@friuliemergenze.it">francesco@friuliemergenze.it</a>
-            </div>
-          </div>
-
-          <div class="ivr-card">
-            <div class="ivr-number">Premi 2</div>
-            <div class="ivr-name">Piattaforma MyFrEM</div>
-            <div class="ivr-desc">Registrazione, account, features della community</div>
-            <div class="ivr-email">
-              <i class="fas fa-envelope" style="margin-right: 0.4rem;"></i>
-              <a href="mailto:piattaforma@friuliemergenze.it">piattaforma@friuliemergenze.it</a>
-            </div>
-          </div>
-
-          <div class="ivr-card">
-            <div class="ivr-number">Premi 3</div>
-            <div class="ivr-name">Redazione foto</div>
-            <div class="ivr-desc">Upload foto, gallery, contenuti fotografici, uso foto</div>
-            <div class="ivr-email">
-              <i class="fas fa-envelope" style="margin-right: 0.4rem;"></i>
-              <a href="mailto:luca.cicogna@friuliemergenze.it">luca.cicogna@friuliemergenze.it</a>
-            </div>
-          </div>
-
-          <div class="ivr-card">
-            <div class="ivr-number">Premi 4</div>
-            <div class="ivr-name">Ufficio collaborazioni</div>
-            <div class="ivr-desc">Partnership, uso foto, accordi istituzionali</div>
-            <div class="ivr-email">
-              <i class="fas fa-envelope" style="margin-right: 0.4rem;"></i>
-              <a href="mailto:info@friuliemergenze.it">info@friuliemergenze.it</a>
-            </div>
-          </div>
-
-          <div class="ivr-card">
-            <div class="ivr-number">Premi 5</div>
-            <div class="ivr-name">Sale operative</div>
-            <div class="ivr-desc">Segnalazioni maxiemergenze e informazioni generali</div>
-            <div class="ivr-email">
-              <i class="fas fa-envelope" style="margin-right: 0.4rem;"></i>
-              <a href="mailto:info@friuliemergenze.it">info@friuliemergenze.it</a>
-            </div>
-          </div>
-
-          <div class="ivr-card">
-            <div class="ivr-number">Premi 6</div>
-            <div class="ivr-name">Media e stampa</div>
-            <div class="ivr-desc">Press release, comunicati stampa, interviste</div>
-            <div class="ivr-email">
-              <i class="fas fa-envelope" style="margin-right: 0.4rem;"></i>
-              <a href="mailto:press@friuliemergenze.it">press@friuliemergenze.it</a>
-            </div>
-          </div>
-
-          <div class="ivr-card">
-            <div class="ivr-number">Premi 7</div>
-            <div class="ivr-name">Enti e associazioni</div>
-            <div class="ivr-desc">Contatti istituzionali, enti pubblici, associazioni</div>
-            <div class="ivr-email">
-              <i class="fas fa-envelope" style="margin-right: 0.4rem;"></i>
-              <a href="mailto:francesco@friuliemergenze.it">francesco@friuliemergenze.it</a>
-            </div>
-          </div>
-
-          <div class="ivr-card">
-            <div class="ivr-number">Premi 9</div>
-            <div class="ivr-name">Riascolto del messaggio</div>
-            <div class="ivr-desc">Ripetizione del messaggio di centralino</div>
-            <div class="ivr-email">
-              <i class="fas fa-envelope" style="margin-right: 0.4rem;"></i>
-              <a href="mailto:info@friuliemergenze.it">info@friuliemergenze.it</a>
-            </div>
+      <section class="contact-channels" aria-label="Canali di contatto per dipartimento">
+        <div class="channel-card">
+          <div class="channel-title">Supporto tecnico</div>
+          <div class="channel-description">Problemi tecnici, segnalazioni bug, assistenza con la piattaforma</div>
+          <div class="channel-contact">
+            <a href="mailto:francesco@friuliemergenze.it">francesco@friuliemergenze.it</a>
           </div>
         </div>
 
-        <div class="ivr-divider"></div>
+        <div class="channel-card">
+          <div class="channel-title">Piattaforma MyFrEM</div>
+          <div class="channel-description">Registrazione, gestione account, features della community</div>
+          <div class="channel-contact">
+            <a href="mailto:piattaforma@friuliemergenze.it">piattaforma@friuliemergenze.it</a>
+          </div>
+        </div>
+
+        <div class="channel-card">
+          <div class="channel-title">Redazione foto</div>
+          <div class="channel-description">Upload foto, gallery, contenuti fotografici, utilizzo immagini</div>
+          <div class="channel-contact">
+            <a href="mailto:redazione@friuliemergenze.it">redazione@friuliemergenze.it</a>
+          </div>
+        </div>
+
+        <div class="channel-card">
+          <div class="channel-title">Collaborazioni</div>
+          <div class="channel-description">Partnership, accordi istituzionali, utilizzo foto autorizzato</div>
+          <div class="channel-contact">
+            <a href="mailto:info@friuliemergenze.it">info@friuliemergenze.it</a>
+          </div>
+        </div>
+
+        <div class="channel-card">
+          <div class="channel-title">Media e stampa</div>
+          <div class="channel-description">Press release, comunicati stampa, richieste per interviste</div>
+          <div class="channel-contact">
+            <a href="mailto:press@friuliemergenze.it">press@friuliemergenze.it</a>
+          </div>
+        </div>
+
+        <div class="channel-card">
+          <div class="channel-title">Enti e istituzioni</div>
+          <div class="channel-description">Contatti istituzionali, enti pubblici, associazioni</div>
+          <div class="channel-contact">
+            <a href="mailto:francesco@friuliemergenze.it">francesco@friuliemergenze.it</a>
+          </div>
+        </div>
       </section>
+
+      <div class="divider-section">
+        Preferisci scrivere un messaggio?
+      </div>
 
       <section class="form-intro-section">
         <div class="form-intro-content">
-          <h2>Scrivi direttamente a noi</h2>
-          <p>Non riusciamo a rispondere via telefono? Usa il form sottostante e specifica il tuo reparto di interesse. Ti contatteremo il prima possibile.</p>
+          <h2>Inviaci un messaggio diretto</h2>
+          <p>Se preferisci non contattare direttamente un reparto, puoi usare il form sottostante. Specifica il tuo reparto di interesse e ti contatteremo il prima possibile.</p>
           
           <div class="form-info-grid">
             <div class="form-info-card">
-              <div class="info-icon">⏱️</div>
               <div class="info-text">
                 <strong>Tempi di risposta</strong>
                 <span>Entro 24-48h</span>
@@ -182,41 +271,30 @@
             </div>
             
             <div class="form-info-card">
-              <div class="info-icon">📞</div>
               <div class="info-text">
-                <strong>Preferisci il telefono?</strong>
-                <span>Chiama il centralino</span>
+                <strong>Contatto diretto?</strong>
+                <span>Scrivi ai reparti sopra</span>
               </div>
             </div>
             
             <div class="form-info-card">
-              <div class="info-icon">🚀</div>
               <div class="info-text">
-                <strong>Urgente?</strong>
-                <span>Contatta il reparto diretto</span>
+                <strong>Specifico e veloce</strong>
+                <span>Descrivi bene il tuo problema</span>
               </div>
             </div>
-          </div>
- 
-          <div class="form-hints-section">
-            <p class="hints-title">💡 Consigli per una risposta veloce:</p>
-            <ul class="hints-list">
-              <li><strong>Sii specifico:</strong> Descrivi bene il tuo problema o richiesta</li>
-              <li><strong>Indica il reparto:</strong> Menziona quale servizio ti interessa (foto, tecnico, collaborazioni...)</li>
-              <li><strong>Lascia recapiti:</strong> Email e telefono per contattarti facilmente</li>
-            </ul>
           </div>
         </div>
       </section>
           
       <section class="contact-form-section" aria-labelledby="contact-form-heading">
         <div class="contact-card">
-          <h2 id="contact-form-heading">✉️ Inviaci un messaggio</h2>
+          <h2 id="contact-form-heading">Inviaci un messaggio</h2>
           <form id="contactForm" novalidate>
             <div class="form-group" style="display:flex;flex-direction:row;gap:3rem">
               <div id="ust22012" style="display:flex;flex-direction:column;">
                 <label for="name">Nome *</label>
-                <input type="text" id="name" name="name" required aria-required="true"placeholder="Il tuo nome">
+                <input type="text" id="name" name="name" required aria-required="true" placeholder="Il tuo nome">
                 <span class="error-message" id="nameError"></span>
               </div>
               
@@ -316,7 +394,7 @@
           <a href="https://www.friuliemergenze.it/policies/cookie" target="_blank" rel="noopener noreferrer">Cookie Policy</a>
         </p>
         <p class="footer-extra">
-          Versione 3.0.0.0
+          Versione 3.0.1.0
         </p>
       </div>
     </footer>
@@ -328,8 +406,6 @@
       </a>
     </noscript>
     <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="12f1a448-b292-4481-a1b1-00e4f77025d3";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
-
-    
 
     <script>
       document.querySelector(".menu-toggle").addEventListener("click", function() {
