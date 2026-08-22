@@ -6,19 +6,17 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 async function getIpInfo() {
+  const cached = sessionStorage.getItem('userGeoData');
+  if (cached) return JSON.parse(cached);
+
   try {
-    const response = await fetch("https://ipapi.co/json/");
-    if (!response.ok) {
-      console.error(`Errore ${response.status} da ipapi.co`);
-      return { ip: "Non disponibile", country: null };
-    }
+    const response = await fetch("/api/getLocation");
     const data = await response.json();
-    return {
-      ip: data.ip || "Non disponibile",
-      country: data.country_code || null
-    };
+    
+    sessionStorage.setItem('userGeoData', JSON.stringify(data));
+    return data;
   } catch (error) {
-    console.error("Errore nel recupero IP/paese:", error);
+    console.error("Errore geolocation:", error);
     return { ip: "Non disponibile", country: null };
   }
 }

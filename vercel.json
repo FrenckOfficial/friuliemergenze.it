@@ -21,6 +21,14 @@
     {
       "source": "/api/signUpFeedbackFormSender",
       "destination": "/api/signUpFeedbackFormSender.js"
+    },
+    {
+      "source": "/api/documentationFeedbackFormSender",
+      "destination": "/api/documentationFeedbackFormSender.js"
+    },
+    {
+      "source": "/api/getLocation",
+      "destination": "/api/getLocation.js"
     }
   ],
   "headers": [
