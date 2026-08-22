@@ -40,7 +40,7 @@ export default async function handler(req, res) {
     res.setHeader('Access-Control-Allow-Origin', 'https://www.friuliemergenze.it');
 
     return res.json({
-      ip: ip !== 'unknown' ? ip : "Non disponibile",
+      ip: ip || "Non disponibile",
       country: country || null
     });
 
