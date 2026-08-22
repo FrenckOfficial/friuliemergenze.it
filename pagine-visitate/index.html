@@ -83,6 +83,10 @@
       </table>
     </div>
  
+    <div id="noDataState" class="pages-empty" style="display: none;">
+      <p>Nessuna pagina visitata registrata al momento.</p>
+    </div>
+
     <div id="emptyState" class="pages-empty" style="display: none;">
       <p>Nessun risultato trovato. Prova a modificare i filtri di ricerca.</p>
     </div>
@@ -247,18 +251,27 @@
       render() {
         const tbody = document.getElementById('pagesTableBody');
         const emptyState = document.getElementById('emptyState');
+        const noDataState = document.getElementById('noDataState');
         const paginationDiv = document.getElementById('pagination');
- 
+
         if (this.filteredData.length === 0) {
           tbody.innerHTML = '';
           tbody.style.display = 'none';
-          emptyState.style.display = 'block';
           paginationDiv.style.display = 'none';
+
+          if (this.allData.length === 0) {
+            noDataState.style.display = 'block';
+            emptyState.style.display = 'none';
+          } else {
+            noDataState.style.display = 'none';
+            emptyState.style.display = 'block';
+          }
           return;
         }
- 
+
         tbody.style.display = '';
         emptyState.style.display = 'none';
+        noDataState.style.display = 'none';
  
         // Pagination
         const totalPages = Math.ceil(this.filteredData.length / this.itemsPerPage);
