@@ -96,7 +96,7 @@
  
   <script type="module">
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js';
-    import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js';
+    import { getFirestore, collection, getDocs, query, orderBy } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js';
     import { firebaseConfig } from 'https://www.friuliemergenze.it/scripts/firebaseConfig.js';
  
     class PagesVisitedAnalytics {
@@ -121,7 +121,8 @@
  
       async loadData() {
         try {
-          const querySnapshot = await getDocs(collection(this.db, "pageVisits"));
+          const q = query(collection(this.db, 'pagesVisited'), orderBy('timestamp', 'desc'));
+          const querySnapshot = await getDocs(q);
           this.allData = querySnapshot.docs.map(doc => {
             const data = doc.data();
             return {
