@@ -20,7 +20,7 @@ const page = window.location.pathname;
 const ipAddress = await getIpAddress();
 
 async function createDoc() {
-  if (page === "/pagine-visitate") {
+  if (page === ("/pagine-visitate" || "/pagine-visitate/")) {
     return;
   };
 
