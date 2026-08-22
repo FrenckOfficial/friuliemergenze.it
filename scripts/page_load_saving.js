@@ -27,7 +27,8 @@ async function createDoc() {
   try {
     const docRef = await addDoc(collection(db, "pageVisits"), {
       page,
-      ipAddress
+      ipAddress,
+      timestamp: new Date()
     });
 
     console.log("Documento pagina ", page, " visitata creato con ID:", docRef.id);
