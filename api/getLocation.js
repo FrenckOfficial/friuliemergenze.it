@@ -1,33 +1,40 @@
-// /api/getLocation.js
 export default async function handler(req, res) {
-  // 🔍 DEBUG: Mostra TUTTI gli header
-  console.log("🔍 Headers ricevuti:", {
-    'x-forwarded-for': req.headers['x-forwarded-for'],
-    'cf-connecting-ip': req.headers['cf-connecting-ip'],
-    'x-real-ip': req.headers['x-real-ip'],
-    'x-vercel-ip-timezone': req.headers['x-vercel-ip-timezone'],
-    'cf-ipcountry': req.headers['cf-ipcountry'],
-  });
-
-  console.log("🔍 req.ip:", req.ip);
-  console.log("🔍 req.connection.remoteAddress:", req.connection?.remoteAddress);
-  console.log("🔍 req.socket.remoteAddress:", req.socket?.remoteAddress);
-  console.log("🔍 req.geo:", req.geo);
-
   try {
-    // ✅ Prova TUTTI i possibili header
     const ip = 
       req.headers['x-forwarded-for']?.split(',')[0]?.trim() ||
       req.headers['cf-connecting-ip'] ||
       req.headers['x-real-ip'] ||
       req.ip ||
-      req.connection?.remoteAddress ||
-      req.socket?.remoteAddress ||
       'unknown';
 
-    const country = await fetch(`https://ip-api.com/json/${ip}`).then(response => response.json()).then(data => data.countryCode);
+    console.log("📍 IP estratto:", ip);
 
-    console.log("✅ Risultato finale:", { ip, country });
+    if (!ip || ip === 'unknown') {
+      return res.json({ ip: "Non disponibile", country: null });
+    }
+
+    // ✅ Chiama ip-api.com con error handling
+    let country = null;
+    
+    try {
+      const countryFetch = await fetch(`https://ip-api.com/json/${ip}?fields=country,countryCode,status`);
+      
+      if (!countryFetch.ok) {
+        console.warn("⚠️ ip-api.com status:", countryFetch.status);
+        // Fallback: continua senza country
+      } else {
+        const countryResponse = await countryFetch.json();
+        
+        // ✅ Usa countryCode (es. "IT", "US", "FR")
+        if (countryResponse.status === 'success') {
+          country = countryResponse.countryCode;
+          console.log("✅ Country code:", country);
+        }
+      }
+    } catch (fetchError) {
+      console.warn("⚠️ Errore fetch country:", fetchError.message);
+      // Continua senza country
+    }
 
     res.setHeader('Cache-Control', 'public, max-age=86400');
     res.setHeader('Access-Control-Allow-Origin', 'https://www.friuliemergenze.it');
@@ -38,7 +45,7 @@ export default async function handler(req, res) {
     });
 
   } catch (error) {
-    console.error("❌ Errore:", error);
+    console.error("❌ Errore critico:", error.message);
     res.json({ ip: "Non disponibile", country: null });
   }
 }
