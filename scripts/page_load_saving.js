@@ -33,6 +33,11 @@ async function createDoc() {
 
   console.log(country)
 
+  if (ipAddress === "93.41.1.144") {
+    console.log("Visita da IP Friuli Emergenze, non tracciata.");
+    return;
+  }
+
   if (country === "US") {
     console.log("Visita da IP US, non tracciata.");
     return;
