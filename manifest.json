@@ -1,6 +1,6 @@
 {
   "name": "Friuli Emergenze",
-  "short_name": "FriuliEmergenze",
+  "short_name": "Friuli Emergenze",
   "description": "Community di condivisione foto e video di mezzi di soccorso in Friuli Venezia Giulia.",
   "start_url": "/?source=pwa",
   "scope": "/",

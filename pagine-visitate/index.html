@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagine visitate | Friuli Emergenze</title>
+  <script src="/heading.js"></script>
+  <link rel="stylesheet" href="/pagine-visitate/load.css">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KTJBJDMJ');</script>
+  <!-- End Google Tag Manager -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2LRKW2EXEL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-2LRKW2EXEL');
+  </script>
+</head>
+<body>
+  <section class="pages-visited-section">
+    <h1>Pagine Visitate</h1>
+    <p>Analisi del traffico e delle pagine consultate</p>
+ 
+    <div class="pages-stats">
+      <div class="pages-stat-card">
+        <h4>Totale Visite</h4>
+        <p class="number" id="totalVisits">0</p>
+      </div>
+      <div class="pages-stat-card">
+        <h4>Pagine Uniche</h4>
+        <p class="number" id="uniquePages">0</p>
+      </div>
+      <div class="pages-stat-card">
+        <h4>IP Unici</h4>
+        <p class="number" id="uniqueIPs">0</p>
+      </div>
+      <div class="pages-stat-card">
+        <h4>Oggi</h4>
+        <p class="number" id="todayVisits">0</p>
+      </div>
+    </div>
+ 
+    <div class="pages-controls">
+      <div class="pages-search">
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="Cerca per pagina o IP address..."
+          aria-label="Cerca pagine"
+        >
+      </div>
+      <div class="pages-filters">
+        <button class="pages-filter-btn active" data-filter="all">Tutte</button>
+        <button class="pages-filter-btn" data-filter="today">Oggi</button>
+        <button class="pages-filter-btn" data-filter="week">Ultima Settimana</button>
+        <button class="pages-filter-btn" data-filter="month">Ultimo Mese</button>
+      </div>
+    </div>
+ 
+    <div class="pages-table-wrapper">
+      <table class="pages-table">
+        <thead>
+          <tr>
+            <th class="sortable" data-sort="page">Pagina</th>
+            <th class="sortable" data-sort="ipAddress">IP Address</th>
+            <th class="sortable" data-sort="timestamp">Data e Ora</th>
+          </tr>
+        </thead>
+        <tbody id="pagesTableBody">
+          <tr>
+            <td colspan="3" style="text-align: center; padding: 2rem; color: var(--text-muted);">
+              Caricamento dati...
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+ 
+    <div id="emptyState" class="pages-empty" style="display: none;">
+      <p>Nessun risultato trovato. Prova a modificare i filtri di ricerca.</p>
+    </div>
+ 
+    <div class="pages-pagination" id="pagination" style="display: none;"></div>
+  </section>
+ 
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js';
+    import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js';
+    import { firebaseConfig } from 'https://www.friuliemergenze.it/scripts/firebaseConfig.js';
+ 
+    class PagesVisitedAnalytics {
+      constructor(db) {
+        this.db = db;
+        this.allData = [];
+        this.filteredData = [];
+        this.currentPage = 1;
+        this.itemsPerPage = 25;
+        this.sortField = null;
+        this.sortOrder = 'desc';
+        this.currentFilter = 'all';
+ 
+        this.init();
+      }
+ 
+      async init() {
+        await this.loadData();
+        this.setupEventListeners();
+        this.render();
+      }
+ 
+      async loadData() {
+        try {
+          const querySnapshot = await getDocs(collection(this.db, "pageVisits"));
+          this.allData = querySnapshot.docs.map(doc => {
+            const data = doc.data();
+            return {
+              page: data.page || 'N/A',
+              ipAddress: data.ipAddress || 'N/A',
+              timestamp: data.timestamp 
+                ? new Date(data.timestamp.seconds * 1000 + data.timestamp.nanoseconds / 1000000)
+                : new Date()
+            };
+          });
+          console.log(`Caricate ${this.allData.length} visite da Firestore`);
+        } catch (error) {
+          console.error('Errore nel caricamento da Firestore:', error);
+          this.allData = [];
+        }
+        this.applyFilters();
+      }
+ 
+      setupEventListeners() {
+        // Search
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+          this.currentPage = 1;
+          this.applyFilters();
+          this.render();
+        });
+ 
+        // Filters
+        document.querySelectorAll('.pages-filter-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            document.querySelectorAll('.pages-filter-btn').forEach(b => b.classList.remove('active'));
+            e.target.classList.add('active');
+            this.currentFilter = e.target.dataset.filter;
+            this.currentPage = 1;
+            this.applyFilters();
+            this.render();
+          });
+        });
+ 
+        // Sorting
+        document.querySelectorAll('th.sortable').forEach(th => {
+          th.addEventListener('click', () => {
+            const field = th.dataset.sort;
+            if (this.sortField === field) {
+              this.sortOrder = this.sortOrder === 'asc' ? 'desc' : 'asc';
+            } else {
+              this.sortField = field;
+              this.sortOrder = 'desc';
+            }
+            
+            // Update UI
+            document.querySelectorAll('th.sortable').forEach(t => {
+              t.classList.remove('asc', 'desc');
+            });
+            if (this.sortField) {
+              th.classList.add(this.sortOrder);
+            }
+            
+            this.applyFilters();
+            this.render();
+          });
+        });
+      }
+ 
+      applyFilters() {
+        let filtered = [...this.allData];
+ 
+        // Date filter
+        const now = new Date();
+        const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+        const weekAgo = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
+        const monthAgo = new Date(today.getTime() - 30 * 24 * 60 * 60 * 1000);
+ 
+        if (this.currentFilter === 'today') {
+          filtered = filtered.filter(item => new Date(item.timestamp) >= today);
+        } else if (this.currentFilter === 'week') {
+          filtered = filtered.filter(item => new Date(item.timestamp) >= weekAgo);
+        } else if (this.currentFilter === 'month') {
+          filtered = filtered.filter(item => new Date(item.timestamp) >= monthAgo);
+        }
+ 
+        // Search filter
+        const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+        if (searchTerm) {
+          filtered = filtered.filter(item =>
+            item.page.toLowerCase().includes(searchTerm) ||
+            item.ipAddress.toLowerCase().includes(searchTerm)
+          );
+        }
+ 
+        // Sorting
+        if (this.sortField) {
+          filtered.sort((a, b) => {
+            let aVal = a[this.sortField];
+            let bVal = b[this.sortField];
+ 
+            if (this.sortField === 'timestamp') {
+              aVal = new Date(aVal);
+              bVal = new Date(bVal);
+            }
+ 
+            if (aVal < bVal) return this.sortOrder === 'asc' ? -1 : 1;
+            if (aVal > bVal) return this.sortOrder === 'asc' ? 1 : -1;
+            return 0;
+          });
+        }
+ 
+        this.filteredData = filtered;
+        this.updateStats();
+      }
+ 
+      updateStats() {
+        const uniquePages = new Set(this.allData.map(d => d.page)).size;
+        const uniqueIPs = new Set(this.allData.map(d => d.ipAddress)).size;
+        
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const todayCount = this.allData.filter(d => 
+          new Date(d.timestamp) >= today
+        ).length;
+ 
+        document.getElementById('totalVisits').textContent = this.allData.length;
+        document.getElementById('uniquePages').textContent = uniquePages;
+        document.getElementById('uniqueIPs').textContent = uniqueIPs;
+        document.getElementById('todayVisits').textContent = todayCount;
+      }
+ 
+      render() {
+        const tbody = document.getElementById('pagesTableBody');
+        const emptyState = document.getElementById('emptyState');
+        const paginationDiv = document.getElementById('pagination');
+ 
+        if (this.filteredData.length === 0) {
+          tbody.innerHTML = '';
+          tbody.style.display = 'none';
+          emptyState.style.display = 'block';
+          paginationDiv.style.display = 'none';
+          return;
+        }
+ 
+        tbody.style.display = '';
+        emptyState.style.display = 'none';
+ 
+        // Pagination
+        const totalPages = Math.ceil(this.filteredData.length / this.itemsPerPage);
+        const startIdx = (this.currentPage - 1) * this.itemsPerPage;
+        const endIdx = startIdx + this.itemsPerPage;
+        const pageData = this.filteredData.slice(startIdx, endIdx);
+ 
+        // Render rows
+        tbody.innerHTML = pageData.map(item => {
+          const date = new Date(item.timestamp);
+          const dateStr = date.toLocaleDateString('it-IT');
+          const timeStr = date.toLocaleTimeString('it-IT');
+ 
+          return `
+            <tr>
+              <td class="page-name">${this.escapeHtml(item.page)}</td>
+              <td class="ip-address">${this.escapeHtml(item.ipAddress)}</td>
+              <td class="timestamp">
+                <div class="timestamp-date">${dateStr}</div>
+                <div class="timestamp-time">${timeStr}</div>
+              </td>
+            </tr>
+          `;
+        }).join('');
+ 
+        // Render pagination
+        if (totalPages > 1) {
+          paginationDiv.style.display = 'flex';
+          let paginationHtml = `
+            <button ${this.currentPage === 1 ? 'disabled' : ''} 
+                    onclick="analytics.goToPage(${this.currentPage - 1})">
+              ← Precedente
+            </button>
+          `;
+ 
+          // Page numbers
+          for (let i = 1; i <= totalPages; i++) {
+            if (i === 1 || i === totalPages || 
+                (i >= this.currentPage - 1 && i <= this.currentPage + 1)) {
+              paginationHtml += `
+                <button ${i === this.currentPage ? 'style="background: var(--accent-dim); border-color: var(--accent); color: var(--accent);"' : ''}
+                        onclick="analytics.goToPage(${i})">
+                  ${i}
+                </button>
+              `;
+            } else if (i === 2 || i === totalPages - 1) {
+              paginationHtml += '<span>…</span>';
+            }
+          }
+ 
+          paginationHtml += `
+            <button ${this.currentPage === totalPages ? 'disabled' : ''} 
+                    onclick="analytics.goToPage(${this.currentPage + 1})">
+              Successivo →
+            </button>
+          `;
+          paginationDiv.innerHTML = paginationHtml;
+        } else {
+          paginationDiv.style.display = 'none';
+        }
+      }
+ 
+      goToPage(page) {
+        const totalPages = Math.ceil(this.filteredData.length / this.itemsPerPage);
+        if (page >= 1 && page <= totalPages) {
+          this.currentPage = page;
+          this.render();
+          document.querySelector('.pages-table-wrapper').scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+ 
+      escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+      }
+    }
+ 
+    // Inizializza Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    
+    // Rendi globale per accesso dai button di paginazione
+    window.analytics = new PagesVisitedAnalytics(db);
+  </script>
+</body>
+</html>
