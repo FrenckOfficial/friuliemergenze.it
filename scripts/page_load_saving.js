@@ -13,6 +13,10 @@ async function getIpInfo() {
     const response = await fetch("/api/getLocation");
     const data = await response.json();
     
+    // 🔍 DEBUG: Vedi cosa ritorna
+    console.log("Risposta /api/getLocation:", data);
+    console.log("Response status:", response.status);
+    
     sessionStorage.setItem('userGeoData', JSON.stringify(data));
     return data;
   } catch (error) {
