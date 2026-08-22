@@ -5,31 +5,26 @@ import { firebaseConfig } from '/scripts/firebaseConfig.js';
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-async function getIpAddress() {
+async function getIpInfo() {
   try {
-    const response = await fetch("https://api.ipify.org?format=json");
+    const response = await fetch("https://ipapi.co/json/");
+    if (!response.ok) {
+      console.error(`Errore ${response.status} da ipapi.co`);
+      return { ip: "Non disponibile", country: null };
+    }
     const data = await response.json();
-    return data.ip;
+    return {
+      ip: data.ip || "Non disponibile",
+      country: data.country_code || null
+    };
   } catch (error) {
-    console.error("Errore nel recupero IP:", error);
-    return "Non disponibile";
-  }
-}
-
-async function getCountry(ip) {
-  try {
-    const response = await fetch(`https://ip-api.com/json/${ip}?fields=countryCode`);
-    const data = await response.json();
-    return data.countryCode || null; // es. "US", "IT"
-  } catch (error) {
-    console.error("Errore nel recupero paese:", error);
-    return null;
+    console.error("Errore nel recupero IP/paese:", error);
+    return { ip: "Non disponibile", country: null };
   }
 }
 
 const page = window.location.pathname;
-const ipAddress = await getIpAddress();
-const country = await getCountry(ipAddress);
+const { ip: ipAddress, country } = await getIpInfo();
 
 async function createDoc() {
   if (page === "/pagine-visitate" || page === "/pagine-visitate/") {
