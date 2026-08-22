@@ -1,5 +1,5 @@
 // /api/getLocation.js
-export default function handler(req, res) {
+export default async function handler(req, res) {
   // 🔍 DEBUG: Mostra TUTTI gli header
   console.log("🔍 Headers ricevuti:", {
     'x-forwarded-for': req.headers['x-forwarded-for'],
@@ -25,10 +25,7 @@ export default function handler(req, res) {
       req.socket?.remoteAddress ||
       'unknown';
 
-    const country = 
-      req.headers['cf-ipcountry'] ||
-      req.geo?.country ||
-      null;
+    const country = await fetch(`https://ip-api.com/json/${ip}`).then(response => response.json()).then(data => data.countryCode);
 
     console.log("✅ Risultato finale:", { ip, country });
 
