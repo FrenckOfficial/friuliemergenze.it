@@ -121,7 +121,7 @@
  
       async loadData() {
         try {
-          const q = query(collection(this.db, 'pagesVisited'), orderBy('timestamp', 'desc'));
+          const q = query(collection(this.db, 'pageVisits'), orderBy('timestamp', 'desc'));
           const querySnapshot = await getDocs(q);
           this.allData = querySnapshot.docs.map(doc => {
             const data = doc.data();
