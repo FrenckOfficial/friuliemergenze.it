@@ -1,58 +1,47 @@
 // /api/getLocation.js
-export default async function handler(req, res) {
+export default function handler(req, res) {
+  // 🔍 DEBUG: Mostra TUTTI gli header
+  console.log("🔍 Headers ricevuti:", {
+    'x-forwarded-for': req.headers['x-forwarded-for'],
+    'cf-connecting-ip': req.headers['cf-connecting-ip'],
+    'x-real-ip': req.headers['x-real-ip'],
+    'x-vercel-ip-timezone': req.headers['x-vercel-ip-timezone'],
+    'cf-ipcountry': req.headers['cf-ipcountry'],
+  });
+
+  console.log("🔍 req.ip:", req.ip);
+  console.log("🔍 req.connection.remoteAddress:", req.connection?.remoteAddress);
+  console.log("🔍 req.socket.remoteAddress:", req.socket?.remoteAddress);
+  console.log("🔍 req.geo:", req.geo);
+
   try {
-    const ip = req.headers['x-forwarded-for']?.split(',')[0]?.trim() ||
-               req.headers['cf-connecting-ip'] ||
-               req.connection.remoteAddress;
+    // ✅ Prova TUTTI i possibili header
+    const ip = 
+      req.headers['x-forwarded-for']?.split(',')[0]?.trim() ||
+      req.headers['cf-connecting-ip'] ||
+      req.headers['x-real-ip'] ||
+      req.ip ||
+      req.connection?.remoteAddress ||
+      req.socket?.remoteAddress ||
+      'unknown';
 
-    console.log("IP:", ip);
+    const country = 
+      req.headers['cf-ipcountry'] ||
+      req.geo?.country ||
+      null;
 
-    // ✅ Lista servizi con fallback
-    const services = [
-      // Service 1: ip-api.com (NO CORS, ma funziona da backend)
-      async () => {
-        const r = await fetch(`https://ip-api.com/json/${ip}?fields=country`);
-        const d = await r.json();
-        return d.status === 'success' ? { ip, country: d.countryCode } : null;
-      },
-      // Service 2: ipwhois.io
-      async () => {
-        const r = await fetch(`https://ipwhois.io/api/json/ip?ipAddress=${ip}`);
-        const d = await r.json();
-        return d.is_vpn !== undefined ? { ip, country: d.country_code } : null;
-      },
-      // Service 3: ipdata.co (gratuito, 1500/giorno)
-      async () => {
-        const r = await fetch(`https://api.ipdata.co/${ip}`);
-        const d = await r.json();
-        return d.country_code ? { ip, country: d.country_code } : null;
-      }
-    ];
+    console.log("✅ Risultato finale:", { ip, country });
 
-    // Prova i servizi in ordine
-    for (const service of services) {
-      try {
-        const result = await Promise.race([
-          service(),
-          new Promise((_, reject) => 
-            setTimeout(() => reject(new Error('Timeout')), 3000)
-          )
-        ]);
-        
-        if (result) {
-          console.log("✅ Servizio funzionato:", result);
-          res.setHeader('Cache-Control', 'public, max-age=86400');
-          return res.json(result);
-        }
-      } catch (e) {
-        console.warn("⚠️ Servizio fallito:", e.message);
-      }
-    }
+    res.setHeader('Cache-Control', 'public, max-age=86400');
+    res.setHeader('Access-Control-Allow-Origin', 'https://www.friuliemergenze.it');
 
-    res.json({ ip, country });
+    return res.json({
+      ip: ip !== 'unknown' ? ip : "Non disponibile",
+      country: country || null
+    });
 
   } catch (error) {
-    console.error("Errore critico:", error);
+    console.error("❌ Errore:", error);
     res.json({ ip: "Non disponibile", country: null });
   }
 }
