@@ -10,7 +10,7 @@
 - **Tech Stack:** Firebase (Auth + Firestore), Supabase, Brevo, Vercel, Cloudflare
 - **Fondamentale:** Documentazione fotografica amatoriale e archivio pubblico di veicoli emergenza FVG
 - **Aggiornamenti:** Settimanali (foto nuove), bi-settimanali (articoli), mensili (newsletter)
-- **Community:** ~50+ membri WhatsApp, social media attivi (Instagram/TikTok)
+- **Community:** ~70+ membri WhatsApp, social media attivi (Instagram/TikTok)
 
 ---
 
@@ -20,7 +20,6 @@
 - `gallery` - Archivio fotografico di veicoli emergenza
 - `photobook` - Collezione di photobooks tematici
 - `newsletter` - Iscrizione a newsletter
-- `news` - Notizie in collaborazione con Il Goriziano e TRIESTE.news
 - `chi-sono` - Biografia e metodologia del progetto
 - `piattaforma-myfrem` - Funzionamento della piattaforma MyFrEM
 - `contact-us` - Contatti e collaborazioni
@@ -40,10 +39,6 @@
 ### Newsletter
 **URL:** [Newsletter | Friuli Emergenze](https://www.friuliemergenze.it/newsletter)
 **Descrizione:** Iscrizione alla newsletter per aggiornamenti mensili su nuove foto, storie di emergenza, news dal territorio.
-
-### News
-**URL:** [Notizie | Friuli Emergenze](https://www.friuliemergenze.it/news)
-**Descrizione:** Pagina dedicata alle notizie sull'ambito emergenza in collaborazione con Il Goriziano e TRIESTE.news
 
 ### Chi Sono
 **URL:** [Chi sono | Friuli Emergenze](https://www.friuliemergenze.it/chi-sono)
@@ -124,11 +119,19 @@
 
 ## Contenuti Principali
 
-**Argomenti:** Emergenze, vigili del fuoco, ambulanze, polizia, protezione civile, fotografia, documentazione, territorio FVG, Grado, Cervignano, Gorizia.
+**Argomenti:** Emergenze, vigili del fuoco, ambulanze, polizia, protezione civile, fotografia, documentazione, territorio FVG.
 
-**Formato:** Articoli, fotogallerie, video TikTok/Instagram, photobooks PDF, sondaggi community.
+**Formato:** Fotogallerie, video TikTok/Instagram, photobooks, sondaggi community.
 
 **Frequenza:** Aggiornamenti settimanali (foto nuove), articoli bi-settimanali, newsletter.
+
+---
+
+## Lo staff
+
+**Francesco Vio:** È il fondatore di Friuli Emergenze, ha 14 anni ed è originario di Grado. Da quando era piccolo nutre una passione per il mondo dell'emergenza, che ha portato avanti fino a creare Friuli Emergenze. È contattabile alla mail [francesco@fruliemergenze.it](mailto:francesco@friuliemergenze.it)
+**Thomas Castellan:** È il primo affiancatore di Francesco nel progetto Friuli Emergenze. Ha 15 anni ed è un volontario della CRI di Trieste. Senza di lui tutto l'ecosistema non andrebbe avanti. Aiuta attivamente Francesco e tutto lo staff occupandosi principalmente del Gruppo WhatsApp. È contattabile alla mail [thomas@fruliemergenze.it](mailto:thomas@friuliemergenze.it)
+**Riccardo Rossi:** È il responsabile alla Redazione di Friuli Emergenze. Si occupa principalmente della moderazione delle foto e della sua pubblicazione all'interno della galleria del sito web. È contattabile alla mail [riccardo.rossi@fruliemergenze.it](mailto:riccardo.rossi@friuliemergenze.it)
 
 ---
 
@@ -136,6 +139,6 @@
 
 - **Form contatti:** [Contattaci | Friuli Emergenze](https://www.friuliemergenze.it/contact-us)
 - **Email:** info@friuliemergenze.it
-- **Telefono:** 0431/980003
+- **Telefono:** 389/4757472
 - **WhatsApp:** https://www.friuliemergenze.it/social/whatsapp
 - **Instagram DM:** @friuliemergenze
