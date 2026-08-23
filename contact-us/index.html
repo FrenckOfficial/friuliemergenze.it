@@ -32,22 +32,32 @@
     <style>
       .contact-channels {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.5rem;
-        margin: 3rem 0;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2.5rem;
+        margin: 4rem 0;
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .channel-card {
         background: var(--bg-secondary, #0f1419);
         border: 1px solid var(--border-color, #1a1f2e);
         border-radius: 12px;
-        padding: 2rem;
+        border-bottom: 4px solid var(--accent, #00d4e8);
+        padding: 2.5rem 2rem;
         transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        min-height: 320px;
       }
 
       .channel-card:hover {
-        border-color: var(--accent, #00d4e8);
-        box-shadow: 0 4px 12px rgba(0, 212, 232, 0.1);
+        border-color: var(--border-color, #1a1f2e);
+        border-bottom-color: #ff7b00;
+        box-shadow: 0 8px 24px rgba(0, 212, 232, 0.12);
+        transform: translateY(-4px);
       }
 
       .channel-icon {
@@ -56,17 +66,19 @@
       }
 
       .channel-title {
-        font-size: 1.2rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+        margin-top: 0;
         color: var(--text-primary, #ffffff);
       }
 
       .channel-description {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         color: var(--text-secondary, #b0b8c1);
-        margin-bottom: 1.5rem;
-        line-height: 1.5;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+        flex-grow: 1;
       }
 
       .channel-contact {
@@ -141,12 +153,108 @@
         margin-top: 0;
       }
 
+      /* Dropdown Enhancement Styles */
+      .form-group.select-group {
+        position: relative;
+      }
+
+      .select-hint {
+        font-size: 0.8rem;
+        color: var(--text-muted, #3d5068);
+        margin-top: -0.8rem;
+        margin-bottom: 1rem;
+        font-style: italic;
+        display: block;
+      }
+
+      .form-group select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2300d4e8' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 1rem center;
+        background-size: 12px;
+        padding-right: 2.5rem;
+      }
+
+      .form-group select:focus {
+        box-shadow: 0 0 0 3px rgba(0, 212, 232, 0.1);
+      }
+
+      .form-group select option {
+        background: var(--bg-deep, #090c0f);
+        color: var(--text-primary, #e8edf2);
+        padding: 0.75rem;
+      }
+
+      .form-group select option:checked {
+        background: linear-gradient(var(--accent, #00d4e8), var(--accent, #00d4e8));
+        background-color: var(--accent, #00d4e8) !important;
+        color: var(--bg-deep, #090c0f);
+      }
+
+      /* Channel info badge */
+      .channel-badge {
+        display: inline-block;
+        background: rgba(0, 212, 232, 0.12);
+        border: 1px solid rgba(0, 212, 232, 0.3);
+        color: var(--accent, #00d4e8);
+        padding: 0.25rem 0.75rem;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-family: var(--font-mono, monospace);
+      }
+
+      .channel-group-header {
+        color: var(--text-secondary);
+        font-style: italic;
+        font-size: 0.85rem;
+        margin-top: 0.5rem;
+        padding-top: 0.5rem;
+        border-top: 1px solid rgba(0, 212, 232, 0.2);
+      }
+
+      @media (max-width: 1024px) {
+        .contact-channels {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2rem;
+        }
+      }
+
       @media (max-width: 768px) {
         .contact-channels {
           grid-template-columns: 1fr;
+          gap: 2rem;
+          margin: 3rem 0;
+        }
+
+        .channel-card {
+          min-height: 280px;
+          padding: 2rem;
         }
 
         .contact-intro {
+          padding: 1.5rem;
+        }
+
+        .form-group {
+          margin-bottom: 1.25rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .contact-channels {
+          gap: 1.5rem;
+          margin: 2rem 0;
+        }
+
+        .channel-card {
+          min-height: 260px;
           padding: 1.5rem;
         }
       }
@@ -205,51 +313,63 @@
 
       <section class="contact-channels" aria-label="Canali di contatto per dipartimento">
         <div class="channel-card">
+          <span class="channel-badge"><i class="fas fa-wrench"></i> Tecnico</span>
           <div class="channel-title">Supporto tecnico</div>
           <div class="channel-description">Problemi tecnici, segnalazioni bug, assistenza con la piattaforma</div>
           <div class="channel-contact">
-            <a href="mailto:francesco@friuliemergenze.it">francesco@friuliemergenze.it</a>
+            <a href="mailto:technical@friuliemergenze.it">technical@friuliemergenze.it</a>
           </div>
+          <div class="channel-group-header">Responsabile: Thomas Castellan</div>
         </div>
 
         <div class="channel-card">
+          <span class="channel-badge"><i class="fas fa-users"></i> Piattaforma</span>
           <div class="channel-title">Piattaforma MyFrEM</div>
-          <div class="channel-description">Registrazione, gestione account, features della community</div>
+          <div class="channel-description">Registrazione, gestione account, features della community, bug della piattaforma</div>
           <div class="channel-contact">
-            <a href="mailto:piattaforma@friuliemergenze.it">piattaforma@friuliemergenze.it</a>
+            <a href="mailto:support.myfrem@friuliemergenze.it">support.myfrem@friuliemergenze.it</a>
           </div>
+          <div class="channel-group-header">Team: Thomas, Community Manager</div>
         </div>
 
         <div class="channel-card">
-          <div class="channel-title">Redazione foto</div>
+          <span class="channel-badge"><i class="fas fa-camera"></i> Foto</span>
+          <div class="channel-title">Redazione Foto</div>
           <div class="channel-description">Upload foto, gallery, contenuti fotografici, utilizzo immagini</div>
           <div class="channel-contact">
             <a href="mailto:redazione@friuliemergenze.it">redazione@friuliemergenze.it</a>
           </div>
+          <div class="channel-group-header">Responsabile: Riccardo Rossi</div>
         </div>
 
         <div class="channel-card">
+          <span class="channel-badge"><i class="fas fa-handshake"></i> Partnership</span>
           <div class="channel-title">Collaborazioni</div>
-          <div class="channel-description">Partnership, accordi istituzionali, utilizzo foto autorizzato</div>
+          <div class="channel-description">Partnership, accordi istituzionali, utilizzo foto autorizzato, progetti comuni</div>
           <div class="channel-contact">
             <a href="mailto:info@friuliemergenze.it">info@friuliemergenze.it</a>
           </div>
+          <div class="channel-group-header">Accoglimento: Info generale</div>
         </div>
 
         <div class="channel-card">
-          <div class="channel-title">Media e stampa</div>
-          <div class="channel-description">Press release, comunicati stampa, richieste per interviste</div>
+          <span class="channel-badge"><i class="fas fa-newspaper"></i> Media</span>
+          <div class="channel-title">Media e Stampa</div>
+          <div class="channel-description">Press release, comunicati stampa, richieste per interviste, media relations</div>
           <div class="channel-contact">
-            <a href="mailto:press@friuliemergenze.it">press@friuliemergenze.it</a>
+            <a href="mailto:comunicazione@friuliemergenze.it">comunicazione@friuliemergenze.it</a>
           </div>
+          <div class="channel-group-header">Team: Francesco, Redazione</div>
         </div>
 
         <div class="channel-card">
-          <div class="channel-title">Enti e istituzioni</div>
-          <div class="channel-description">Contatti istituzionali, enti pubblici, associazioni</div>
+          <span class="channel-badge"><i class="fas fa-landmark"></i> Istituzioni</span>
+          <div class="channel-title">Enti e Istituzioni</div>
+          <div class="channel-description">Contatti istituzionali, enti pubblici, associazioni, organizzazioni regionali</div>
           <div class="channel-contact">
             <a href="mailto:francesco@friuliemergenze.it">francesco@friuliemergenze.it</a>
           </div>
+          <div class="channel-group-header">Responsabile: Francesco Vio</div>
         </div>
       </section>
 
@@ -260,7 +380,7 @@
       <section class="form-intro-section">
         <div class="form-intro-content">
           <h2>Inviaci un messaggio diretto</h2>
-          <p>Se preferisci non contattare direttamente un reparto, puoi usare il form sottostante. Specifica il tuo reparto di interesse e ti contatteremo il prima possibile.</p>
+          <p>Se preferisci non contattare direttamente un reparto, puoi usare il form sottostante. Specifica il tuo tipo di richiesta e ti contatteremo il prima possibile.</p>
           
           <div class="form-info-grid">
             <div class="form-info-card">
@@ -292,17 +412,39 @@
           <h2 id="contact-form-heading">Inviaci un messaggio</h2>
           <form id="contactForm" novalidate>
             <div class="form-group" style="display:flex;flex-direction:row;gap:3rem">
-              <div id="ust22012" style="display:flex;flex-direction:column;">
+              <div style="display:flex;flex-direction:column;flex:1;">
                 <label for="name">Nome *</label>
                 <input type="text" id="name" name="name" required aria-required="true" placeholder="Il tuo nome">
                 <span class="error-message" id="nameError"></span>
               </div>
               
-              <div id="ust22012" style="display:flex;flex-direction:column;">
+              <div style="display:flex;flex-direction:column;flex:1;">
                 <label for="email">Email *</label>
                 <input type="email" id="email" name="email" required aria-required="true" placeholder="La tua email">
                 <span class="error-message" id="emailError"></span>
               </div>
+            </div>
+
+            <div class="form-group select-group">
+              <label for="department">Tipo di richiesta *</label>
+              <select id="department" name="department" required aria-required="true">
+                <option value="">-- Seleziona un dipartimento --</option>
+                <optgroup label="Supporto">
+                  <option value="technical">Supporto Tecnico - Problemi e bug</option>
+                  <option value="myfrem">Piattaforma MyFrEM - Account e features</option>
+                  <option value="content">Redazione - Foto e contenuti</option>
+                </optgroup>
+                <optgroup label="Collaborazioni">
+                  <option value="partnership">Collaborazioni - Partnership e accordi</option>
+                  <option value="media">Media e Stampa - Press e interviste</option>
+                  <option value="institutional">Enti e Istituzioni - Contatti ufficiali</option>
+                </optgroup>
+                <optgroup label="Altro">
+                  <option value="general">Contatto Generale - Altro</option>
+                </optgroup>
+              </select>
+              <span class="select-hint">Scegli il dipartimento più adatto alla tua richiesta</span>
+              <span class="error-message" id="departmentError"></span>
             </div>
     
             <div class="form-group">
@@ -394,7 +536,7 @@
           <a href="https://www.friuliemergenze.it/policies/cookie" target="_blank" rel="noopener noreferrer">Cookie Policy</a>
         </p>
         <p class="footer-extra">
-          Versione 3.0.3.0
+          Versione 3.1.0.0
         </p>
       </div>
     </footer>
@@ -432,6 +574,34 @@
     </script>
 
     <script>
+      // Department selection handler with live feedback
+      const departmentSelect = document.getElementById("department");
+      const departmentHint = document.querySelector(".select-hint");
+      
+      const departmentDescriptions = {
+        "technical": "Ti contatterà il nostro team tecnico (Thomas)",
+        "myfrem": "Risponderà il support team di MyFrEM",
+        "content": "Risponderà la redazione (Riccardo)",
+        "partnership": "Risponderà il team collaborazioni",
+        "media": "Risponderà il nostro ufficio comunicazione",
+        "institutional": "Risponderà Francesco (Responsabile Generale)",
+        "general": "Risponderà il nostro team di accoglimento"
+      };
+
+      departmentSelect.addEventListener("change", function() {
+        if (this.value && departmentDescriptions[this.value]) {
+          departmentHint.textContent = "✓ " + departmentDescriptions[this.value];
+          departmentHint.style.color = "var(--accent, #00d4e8)";
+          departmentHint.style.fontStyle = "normal";
+        } else {
+          departmentHint.textContent = "Scegli il dipartimento più adatto alla tua richiesta";
+          departmentHint.style.color = "var(--text-muted, #3d5068)";
+          departmentHint.style.fontStyle = "italic";
+        }
+      });
+    </script>
+
+    <script>
       const contactForm = document.getElementById("contactForm");
       
       if (contactForm) {
@@ -440,11 +610,15 @@
           
           const name = document.getElementById("name").value.trim();
           const email = document.getElementById("email").value.trim();
+          const department = document.getElementById("department").value.trim();
           const subject = document.getElementById("subject").value.trim();
           const message = document.getElementById("message").value.trim();
           const privacy = document.getElementById("privacy").checked;
           
           let isValid = true;
+          
+          // Clear previous errors
+          document.querySelectorAll(".error-message").forEach(el => el.textContent = "");
           
           if (!name) {
             document.getElementById("nameError").textContent = "Il nome è obbligatorio";
@@ -453,6 +627,11 @@
           
           if (!email || !email.includes("@")) {
             document.getElementById("emailError").textContent = "Email non valida";
+            isValid = false;
+          }
+
+          if (!department) {
+            document.getElementById("departmentError").textContent = "Seleziona un dipartimento";
             isValid = false;
           }
           
@@ -484,6 +663,7 @@
                 body: JSON.stringify({
                   name,
                   email,
+                  department,
                   subject,
                   message
                 })
@@ -491,12 +671,18 @@
               
               if (response.ok) {
                 formStatus.textContent = "✅ Messaggio inviato con successo!";
+                formStatus.classList.add("success");
                 contactForm.reset();
+                departmentHint.textContent = "Scegli il dipartimento più adatto alla tua richiesta";
+                departmentHint.style.color = "var(--text-muted, #3d5068)";
+                departmentHint.style.fontStyle = "italic";
               } else {
                 formStatus.textContent = "❌ Errore nell'invio. Prova di nuovo.";
+                formStatus.classList.add("error");
               }
             } catch (error) {
               formStatus.textContent = "❌ Errore di connessione.";
+              formStatus.classList.add("error");
               console.error("Form error:", error);
             }
           }
