@@ -53,18 +53,23 @@
   iubendaScript.src = 'https://embeds.iubenda.com/widgets/46908651-d6da-462f-b037-e6ef97c84795.js';
   head.appendChild(iubendaScript);
 
-  (function(c, l, a, r, i, t, y) {
-    c[a] = c[a] || function() {
-      (c[a].q = c[a].q || []).push(arguments);
-    };
+  const clarityScript = document.createElement('script');
+  clarityScript.textContent = `
+    (function(c, l, a, r, i, t, y) {
+      c[a] = c[a] || function() {
+        (c[a].q = c[a].q || []).push(arguments);
+      };
 
-    t = l.createElement(r);
-    t.async = 1;
-    t.src = "https://www.clarity.ms/tag/" + i;
+      t = l.createElement(r);
+      t.async = 1;
+      t.src = "https://www.clarity.ms/tag/" + i;
 
-    y = l.getElementsByTagName(r)[0];
-    y.parentNode.insertBefore(t, y);
-  })(window, document, "clarity", "script", "y7xnqslzlm");
+      y = l.getElementsByTagName(r)[0];
+      y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "y7xnqslzlm");
+  `;
+
+  head.appendChild(clarityScript);
 
   const ld = document.createElement('script');
   ld.type = 'application/ld+json';
