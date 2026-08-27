@@ -71,6 +71,11 @@
 
   head.appendChild(clarityScript);
 
+  const googleScript = document.createElement('script');
+  googleScript.async = true;
+  googleScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-2LRKW2EXEL';
+  head.appendChild(googleScript);
+
   const ld = document.createElement('script');
   ld.type = 'application/ld+json';
   ld.textContent = JSON.stringify({

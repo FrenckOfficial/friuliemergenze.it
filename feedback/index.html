@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback — Friuli Emergenze</title>
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    .feedback-section {
+      max-width: 700px;
+      margin: 4rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .feedback-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .feedback-header h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .feedback-header p {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .feedback-form {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .form-group label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: 0.02em;
+    }
+
+    .form-group label .required {
+      color: var(--signal-red);
+      margin-left: 0.2rem;
+    }
+
+    .form-group select,
+    .form-group textarea {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 1rem;
+      color: var(--text-primary);
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-dim);
+    }
+
+    .form-group select::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--text-muted);
+    }
+
+    .rating-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .rating-stars {
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .star-btn {
+      width: 48px;
+      height: 48px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text-secondary);
+      font-size: 1.8rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .star-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-dim);
+      transform: scale(1.1);
+    }
+
+    .star-btn.active {
+      background: var(--accent-dim);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .rating-value {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-left: auto;
+      font-weight: 600;
+    }
+
+    .feedback-note {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      font-style: italic;
+      padding: 0.75rem 1rem;
+      background: var(--accent-glow);
+      border-left: 2px solid var(--accent);
+      border-radius: var(--radius-sm);
+    }
+
+    .form-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .btn-submit,
+    .btn-reset {
+      flex: 1;
+      padding: 0.75rem 1.5rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+      font-family: inherit;
+    }
+
+    .btn-submit {
+      background: var(--accent);
+      color: var(--bg-deep);
+    }
+
+    .btn-submit:hover:not(:disabled) {
+      background: #00b8cc;
+      transform: translateY(-2px);
+    }
+
+    .btn-submit:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .btn-reset {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+
+    .btn-reset:hover {
+      background: var(--accent-dim);
+    }
+
+    .feedback-message {
+      padding: 1rem 1.25rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      display: none;
+      animation: slideIn 0.3s ease;
+    }
+
+    .feedback-message.success {
+      background: rgba(29, 168, 81, 0.15);
+      border: 1px solid #1da851;
+      color: #1da851;
+    }
+
+    .feedback-message.error {
+      background: rgba(232, 72, 85, 0.15);
+      border: 1px solid var(--signal-red);
+      color: var(--signal-red);
+    }
+
+    .feedback-message.show {
+      display: block;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .loader {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(0, 212, 232, 0.2);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin-right: 0.5rem;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 768px) {
+      .feedback-section {
+        margin: 2rem auto;
+      }
+
+      .feedback-header h1 {
+        font-size: 1.5rem;
+      }
+
+      .feedback-form {
+        padding: 1.5rem;
+      }
+
+      .rating-stars {
+        flex-wrap: wrap;
+      }
+
+      .star-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 1.6rem;
+      }
+
+      .form-actions {
+        flex-direction: column;
+      }
+
+      .btn-submit,
+      .btn-reset {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="feedback-section">
+    <div class="feedback-header">
+      <h1>Feedback</h1>
+      <p>Condividi la tua esperienza con noi. Il tuo parere ci aiuta a migliorare i servizi di documentazione e monitoraggio delle emergenze in Friuli-Venezia Giulia.</p>
+    </div>
+
+    <form id="feedbackForm" class="feedback-form">
+      <div id="messageContainer"></div>
+
+      <div class="form-group rating-group">
+        <label for="rating">Valutazione <span class="required">*</span></label>
+        <div class="rating-stars" id="ratingStars">
+          <button type="button" class="star-btn" data-rating="1" title="Scarso">★</button>
+          <button type="button" class="star-btn" data-rating="2" title="Mediocre">★</button>
+          <button type="button" class="star-btn" data-rating="3" title="Buono">★</button>
+          <button type="button" class="star-btn" data-rating="4" title="Molto buono">★</button>
+          <button type="button" class="star-btn" data-rating="5" title="Eccellente">★</button>
+          <div class="rating-value" id="ratingValue">—</div>
+        </div>
+        <input type="hidden" id="rating" name="rating" value="">
+      </div>
+
+      <div class="form-group">
+        <label for="category">Categoria <span class="required">*</span></label>
+        <select id="category" name="category" required>
+          <option value="">Seleziona una categoria...</option>
+          <option value="contenuti">Contenuti e Documentazione</option>
+          <option value="sito">Funzionalità del Sito</option>
+          <option value="piattaforma">MyFrEM - Piattaforma</option>
+          <option value="social">Social Media</option>
+          <option value="bug">Segnalazione Bug</option>
+          <option value="suggerimento">Suggerimento</option>
+          <option value="altro">Altro</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Il tuo feedback <span class="required">*</span></label>
+        <textarea 
+          id="message" 
+          name="message" 
+          placeholder="Condividi i tuoi pensieri, suggerimenti o segnalazioni... (minimo 10 caratteri)"
+          required
+          minlength="10"
+          maxlength="2000"
+        ></textarea>
+        <div class="feedback-note">
+          Questo modulo è completamente anonimo. I tuoi dati non saranno mai condivisi con terzi.
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn-submit" id="submitBtn">Invia Feedback</button>
+        <button type="reset" class="btn-reset" id="resetBtn">Cancella</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Firebase (solo per Firestore) -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+    import { firebaseConfig } from "/scripts/firebaseConfig.js";
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const form = document.getElementById("feedbackForm");
+    const ratingStars = document.querySelectorAll(".star-btn");
+    const ratingInput = document.getElementById("rating");
+    const ratingValue = document.getElementById("ratingValue");
+    const submitBtn = document.getElementById("submitBtn");
+    const messageContainer = document.getElementById("messageContainer");
+
+    ratingStars.forEach(star => {
+      star.addEventListener("click", (e) => {
+        e.preventDefault();
+        const rating = star.dataset.rating;
+        ratingInput.value = rating;
+
+        ratingStars.forEach(s => {
+          if (s.dataset.rating <= rating) {
+            s.classList.add("active");
+          } else {
+            s.classList.remove("active");
+          }
+        });
+
+        const labels = ["Scarso", "Mediocre", "Buono", "Molto buono", "Eccellente"];
+        ratingValue.textContent = labels[rating - 1];
+      });
+
+      star.addEventListener("mouseover", (e) => {
+        const rating = star.dataset.rating;
+        ratingStars.forEach(s => {
+          if (s.dataset.rating <= rating) {
+            s.style.color = "var(--accent)";
+            s.style.borderColor = "var(--accent)";
+          } else {
+            s.style.color = "var(--text-secondary)";
+            s.style.borderColor = "var(--border)";
+          }
+        });
+      });
+    });
+
+    document.getElementById("ratingStars").addEventListener("mouseleave", () => {
+      const activeRating = ratingInput.value;
+      ratingStars.forEach(s => {
+        if (activeRating && s.dataset.rating <= activeRating) {
+          s.style.color = "var(--accent)";
+          s.style.borderColor = "var(--accent)";
+        } else {
+          s.style.color = "var(--text-secondary)";
+          s.style.borderColor = "var(--border)";
+        }
+      });
+    });
+
+    function showMessage(text, type) {
+      messageContainer.innerHTML = `
+        <div class="feedback-message ${type} show">
+          ${type === "success" ? "✓ " : "✗ "}${text}
+        </div>
+      `;
+      setTimeout(() => {
+        messageContainer.querySelector(".feedback-message").classList.remove("show");
+      }, 5000);
+    }
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const rating = document.getElementById("rating").value;
+      const category = document.getElementById("category").value;
+      const message = document.getElementById("message").value;
+
+      if (!rating || !category || !message) {
+        showMessage("Compila tutti i campi obbligatori", "error");
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span class="loader"></span>Invio...';
+
+      try {
+        await addDoc(collection(db, "feedback"), {
+          rating: parseInt(rating),
+          category,
+          message,
+          timestamp: new Date().toISOString(),
+          userAgent: navigator.userAgent,
+          referrer: document.referrer || "diretto",
+          createdAt: serverTimestamp(),
+          status: "nuovo"
+        });
+
+        console.log("✓ Feedback salvato su Firestore");
+
+        const response = await fetch("/api/feedbackFormSender", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            rating: parseInt(rating),
+            category,
+            message,
+            timestamp: new Date().toISOString(),
+            userAgent: navigator.userAgent,
+            referrer: document.referrer || "diretto"
+          })
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.error || "Errore nell'invio email");
+        }
+
+        console.log("✓ Email inviata", data);
+
+        showMessage("Grazie! Il tuo feedback è stato ricevuto.", "success");
+        form.reset();
+        ratingInput.value = "";
+        ratingValue.textContent = "—";
+        ratingStars.forEach(s => s.classList.remove("active"));
+      } catch (error) {
+        console.error("Errore:", error);
+        showMessage("Si è verificato un errore. Riprova più tardi.", "error");
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Invia Feedback";
+      }
+    });
+  </script>
+</body>
+</html>
