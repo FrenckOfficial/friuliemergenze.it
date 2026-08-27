@@ -22,6 +22,7 @@
     { type: 'meta', attrs: { name: 'apple-mobile-web-app-capable', content: 'yes' } },
     { type: 'meta', attrs: { name: 'apple-mobile-web-app-title', content: titleText } },
     { type: 'script', attrs: { src: 'https://www.paypal.com/sdk/js?client-id=BAADLRkARb_vp7BpzVb3jmj3oHXkBH4Obg55ERSSLQNcjqm9HnbU7Imvpgng1QentxmHTGunfTA4Sd7Vr0&components=hosted-buttons&disable-funding=venmo&currency=EUR' } },
+    { type: 'script', attrs: { src: 'https://www.friuliemergenze.it/scripts/modalshow.js' } },
     { type: 'link', attrs: { rel: 'apple-touch-icon', href: '/assets/icons/icon-192x192.png' } },
     { type: 'link', attrs: { rel: 'icon', href: '/assets/logo.png', type: 'image/png' } },
     { type: 'link', attrs: { rel: 'canonical', href: currentUrl } },
@@ -71,10 +72,29 @@
 
   head.appendChild(clarityScript);
 
+  const tagManagerScript = document.createElement('script');
+  tagManagerScript.textContent = `
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KTJBJDMJ');
+  `;
+  head.appendChild(tagManagerScript);
+
   const googleScript = document.createElement('script');
   googleScript.async = true;
   googleScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-2LRKW2EXEL';
   head.appendChild(googleScript);
+
+  const googleScript2 = document.createElement('script');
+  googleScript2.textContent = `
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2LRKW2EXEL');
+  `;
+  head.appendChild(googleScript2);
 
   const ld = document.createElement('script');
   ld.type = 'application/ld+json';
