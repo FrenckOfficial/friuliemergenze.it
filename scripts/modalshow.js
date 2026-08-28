@@ -4,11 +4,11 @@
   const MODAL_CONFIG = {
     key: 'friuliemergenze_welcome_seen',
     expiryDays: 30,
-    delay: 500,
+    delay: 15000,
     icon: '👋',
     subtitle: 'Benvenuto',
     title: 'Scopri Friuli Emergenze',
-    message: 'La documentazione civile sulla realtà dei servizi di emergenza in Friuli-Venezia Giulia. Esplora i mezzi, le stazioni e i servizi attraverso foto, dati e informazioni verificate.',
+    message: 'Friuli Emergenze è una realtà online riguardante la documentazione e il "censimento" dei mezzi di emergenza sul territorio. Ci occupiamo di fotografare (con l\'aiuto della community) e censire tutti i mezzi di emergenza nel territorio del Friuli-Venezia Giulia con lo scopo di mostrare le risorse attive e disponibili nel sistema del soccorso regionale,',
     primaryText: 'Dai un Feedback',
     primaryUrl: '/feedback',
     secondaryText: 'Chiudi'
