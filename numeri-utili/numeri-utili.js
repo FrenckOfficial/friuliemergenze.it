@@ -7,7 +7,7 @@ const db = getFirestore(app);
 
 const grid = document.getElementById("ivrGrid");
 const status = document.getElementById("ivrStatus");
-
+ 
 function escapeHtml(str = "") {
   return str.replace(/[&<>"']/g, (c) => ({
     "&": "&amp;",
@@ -17,17 +17,17 @@ function escapeHtml(str = "") {
     "'": "&#39;",
   }[c]));
 }
-
+ 
 function renderCard(entry) {
   const card = document.createElement("div");
   card.className = "ivr-card";
-
+ 
   const categoria = escapeHtml(entry.categoria || "Realtà FVG");
   const nome = escapeHtml(entry.nome || "Senza nome");
   const descrizione = entry.descrizione ? escapeHtml(entry.descrizione) : "";
   const telefono = entry.telefono ? escapeHtml(entry.telefono) : "";
   const email = entry.email ? escapeHtml(entry.email) : "";
-
+ 
   card.innerHTML = `
     <span class="ivr-number">${categoria}</span>
     <h3 class="ivr-name">${nome}</h3>
@@ -35,28 +35,28 @@ function renderCard(entry) {
     ${telefono ? `<p class="ivr-email">📞 <a href="tel:${telefono.replace(/\s+/g, "")}">${telefono}</a></p>` : ""}
     ${email ? `<p class="ivr-email">✉️ <a href="mailto:${email}">${email}</a></p>` : ""}
   `;
-
+ 
   return card;
 }
-
+ 
 async function loadNumeri() {
   try {
-    const q = query(
-      collection(db, "numeriUtili"),
-      where("approvato", "==", true),
-      orderBy("nome", "asc")
-    );
+    const q = query(collection(db, "numeriUtili"), where("approvato", "==", true));
     const snapshot = await getDocs(q);
-
+ 
     if (snapshot.empty) {
       status.textContent = "Nessuna realtà pubblicata al momento. Sii il primo a segnalarne una!";
       status.classList.remove("error");
       return;
     }
-
+ 
+    const entries = snapshot.docs
+      .map((doc) => doc.data())
+      .sort((a, b) => (a.nome || "").localeCompare(b.nome || "", "it"));
+ 
     grid.innerHTML = "";
-    snapshot.forEach((doc) => {
-      grid.appendChild(renderCard(doc.data()));
+    entries.forEach((entry) => {
+      grid.appendChild(renderCard(entry));
     });
     status.textContent = "";
   } catch (err) {
@@ -65,5 +65,5 @@ async function loadNumeri() {
     status.classList.add("error");
   }
 }
-
+ 
 loadNumeri();
