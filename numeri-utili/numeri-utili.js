@@ -37,8 +37,8 @@ function renderCard(entry) {
     <span class="ivr-number">${categoria}</span>
     <h3 class="ivr-name">${nome}</h3>
     ${descrizione ? `<p class="ivr-desc">${descrizione}</p>` : ""}
-    ${telefono ? `<p class="ivr-email">📞 <a href="tel:${buildTelHref(entry.telefono || "")}">${telefono}</a></p>` : ""}
-    ${email ? `<p class="ivr-email">✉️ <a href="mailto:${email}">${email}</a></p>` : ""}
+    ${telefono ? `<p class="ivr-email"><a href="tel:${buildTelHref(entry.telefono || "")}">${telefono}</a></p>` : ""}
+    ${email ? `<p class="ivr-email"><a href="mailto:${email}">${email}</a></p>` : ""}
   `;
  
   return card;
