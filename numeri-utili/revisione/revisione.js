@@ -8,6 +8,11 @@ const db = getFirestore(app);
 const grid = document.getElementById("revGrid");
 const status = document.getElementById("revStatus");
  
+function buildTelHref(telefono = "") {
+  const beforeNote = telefono.split("(")[0].trim();
+  return beforeNote.replace(/[^\d+]/g, "");
+}
+ 
 function escapeHtml(str = "") {
   return str.replace(/[&<>"']/g, (c) => ({
     "&": "&amp;",
@@ -33,7 +38,7 @@ function renderCard(id, entry) {
     <span class="ivr-number">${categoria}</span>
     <h3 class="ivr-name">${nome}</h3>
     ${descrizione ? `<p class="ivr-desc">${descrizione}</p>` : ""}
-    ${telefono ? `<p class="ivr-email">📞 <a href="tel:${telefono.replace(/\s+/g, "")}">${telefono}</a></p>` : ""}
+    ${telefono ? `<p class="ivr-email">📞 <a href="tel:${buildTelHref(entry.telefono || "")}">${telefono}</a></p>` : ""}
     ${email ? `<p class="ivr-email">✉️ <a href="mailto:${email}">${email}</a></p>` : ""}
     <div style="display:flex; gap:0.75rem; margin-top:1.25rem;">
       <button class="btn-primary approve-btn" style="flex:1; justify-content:center;">✓ Approva</button>
