@@ -5,7 +5,7 @@ import { firebaseConfig } from "/scripts/firebaseConfig.js";
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-const grid = document.getElementById("ivrGrid");
+const tableBody = document.getElementById("numeriTableBody");
 const status = document.getElementById("ivrStatus");
  
 function buildTelHref(telefono = "") {
@@ -23,25 +23,22 @@ function escapeHtml(str = "") {
   }[c]));
 }
  
-function renderCard(entry) {
-  const card = document.createElement("div");
-  card.className = "ivr-card";
+function renderRow(entry) {
+  const row = document.createElement("tr");
  
-  const categoria = escapeHtml(entry.categoria || "Realtà FVG");
+  const categoria = escapeHtml(entry.categoria || "—");
   const nome = escapeHtml(entry.nome || "Senza nome");
-  const descrizione = entry.descrizione ? escapeHtml(entry.descrizione) : "";
   const telefono = entry.telefono ? escapeHtml(entry.telefono) : "";
   const email = entry.email ? escapeHtml(entry.email) : "";
  
-  card.innerHTML = `
-    <span class="ivr-number">${categoria}</span>
-    <h3 class="ivr-name">${nome}</h3>
-    ${descrizione ? `<p class="ivr-desc">${descrizione}</p>` : ""}
-    ${telefono ? `<p class="ivr-email"><a href="tel:${buildTelHref(entry.telefono || "")}">${telefono}</a></p>` : ""}
-    ${email ? `<p class="ivr-email"><a href="mailto:${email}">${email}</a></p>` : ""}
+  row.innerHTML = `
+    <td class="col-nome">${nome}</td>
+    <td class="col-categoria">${categoria}</td>
+    <td class="col-telefono">${telefono ? `<a href="tel:${buildTelHref(entry.telefono || "")}">${telefono}</a>` : "—"}</td>
+    <td class="col-email">${email ? `<a href="mailto:${email}">${email}</a>` : "—"}</td>
   `;
  
-  return card;
+  return row;
 }
  
 async function loadNumeri() {
@@ -59,9 +56,9 @@ async function loadNumeri() {
       .map((doc) => doc.data())
       .sort((a, b) => (a.nome || "").localeCompare(b.nome || "", "it"));
  
-    grid.innerHTML = "";
+    tableBody.innerHTML = "";
     entries.forEach((entry) => {
-      grid.appendChild(renderCard(entry));
+      tableBody.appendChild(renderRow(entry));
     });
     status.textContent = "";
   } catch (err) {

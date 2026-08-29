@@ -3,6 +3,76 @@
 <head>
     <title>Numeri utili - Friuli Emergenze</title>
     <script src="/heading.js"></script>
+    <style>
+      .numeri-table-wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        overflow-x: auto;
+      }
+      .numeri-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: var(--bg-panel);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        font-size: 0.9rem;
+      }
+      .numeri-table th,
+      .numeri-table td {
+        padding: 0.85rem 1.1rem;
+        text-align: left;
+        border-bottom: 1px solid var(--border-panel);
+        vertical-align: middle;
+      }
+      .numeri-table thead th {
+        background: var(--accent-dim);
+        color: var(--accent);
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        border-bottom: 1px solid var(--border);
+      }
+      .numeri-table tbody tr:last-child td {
+        border-bottom: none;
+      }
+      .numeri-table tbody tr:hover {
+        background: var(--bg-hover);
+      }
+      .numeri-table td.col-nome {
+        color: var(--text-primary);
+        font-weight: 600;
+      }
+      .numeri-table td.col-categoria {
+        color: var(--text-secondary);
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+      .numeri-table td.col-telefono a,
+      .numeri-table td.col-email a {
+        color: var(--accent);
+        font-family: var(--font-mono);
+        font-weight: 600;
+        white-space: nowrap;
+      }
+      .numeri-table td.col-email a {
+        word-break: break-all;
+        white-space: normal;
+      }
+      @media (max-width: 700px) {
+        .numeri-table th,
+        .numeri-table td {
+          padding: 0.65rem 0.75rem;
+          font-size: 0.82rem;
+        }
+      }
+    </style>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -46,70 +116,25 @@
     </header>
 
     <main class="section">
-        <!-- ============ NUMERI NAZIONALI DI EMERGENZA ============ -->
-        <section class="ivr-section" style="padding-top:0;">
-            <h3 class="ivr-title">Numeri di emergenza nazionali</h3>
-            <p class="ivr-subtitle">Validi su tutto il territorio, attivi 24 ore su 24</p>
-
-            <div class="ivr-grid">
-                <div class="ivr-card">
-                    <span class="ivr-number">EMERGENZA GENERALE</span>
-                    <h3 class="ivr-name">Numero Unico Emergenze</h3>
-                    <p class="ivr-desc">Smista la chiamata al servizio competente: sanitario, vigili del fuoco o forze dell'ordine.</p>
-                    <p class="ivr-email"><a href="tel:112">112</a></p>
-                    <p class="ivr-email"><a href="mailto:nue112@protezionecivile.fvg.it">nue112@protezionecivile.fvg.it</a></p>
-                </div>
-
-                <div class="ivr-card">
-                    <span class="ivr-number">SANITARIA</span>
-                    <h3 class="ivr-name">Emergenza Sanitaria</h3>
-                    <p class="ivr-desc">Ambulanza e soccorso medico urgente.</p>
-                    <p class="ivr-email"><a href="tel:112">112</a></p>
-                    <p class="ivr-email"><a href="mailto:sores@arcs.sanita.fvg.it">sores@arcs.sanita.fvg.it</a></p>
-                </div>
-
-                <div class="ivr-card">
-                    <span class="ivr-number">INCENDI</span>
-                    <h3 class="ivr-name">Vigili del Fuoco</h3>
-                    <p class="ivr-desc">Incendi, incidenti, dissesti e soccorso tecnico urgente.</p>
-                    <p class="ivr-email"><a href="tel:112">112</a></p>
-                    <p class="ivr-email">
-                        <ol>
-                            <li>GO: <a href="mailto:so.gorizia@vigilfuoco.it">so.gorizia@vigilfuoco.it</a></li>
-                            <li>UD: <a href="mailto:so.udine@vigilfuoco.it">so.udine@vigilfuoco.it</a></li>
-                            <li>PN: <a href="mailto:so.pordenone@vigilfuoco.it">so.pordenone@vigilfuoco.it</a></li>
-                            <li>TS: <a href="mailto:so.trieste@vigilfuoco.it">so.trieste@vigilfuoco.it</a></li>
-                        </ol>
-                    </p>
-                </div>
-
-                <div class="ivr-card">
-                    <span class="ivr-number">PROTEZIONE CIVILE</span>
-                    <h3 class="ivr-name">Emergenza Ambientale / Incendi Boschivi</h3>
-                    <p class="ivr-desc">Segnalazioni di incendi boschivi e emergenze di protezione civile.</p>
-                    <p class="ivr-email"><a href="tel:800500300">800500300</a></p>
-                    <p class="ivr-email"><a href="mailto:sor@protezionecivile.fvg.it">sor@protezionecivile.fvg.it</a></p>
-                </div>
-            </div>
-        </section>
-
-        <div class="ivr-divider" style="max-width:1200px; margin-left:auto; margin-right:auto;"></div>
-
         <section class="ivr-section" style="padding-top:1rem;">
-            <h3 class="ivr-title">Realtà emergenziali e di volontariato in FVG</h3>
-            <p class="ivr-subtitle">Contatti diretti segnalati dalla community — verificati prima della pubblicazione</p>
-
-            <div id="ivrStatus" class="form-status" style="max-width:500px; margin:0 auto 1.5rem;"></div>
-
-            <div class="ivr-grid" id="ivrGrid">
-            <!-- Le card vengono generate dinamicamente da numeri-utili.js -->
-            </div>
-
-            <div style="text-align:center; margin-top:2.5rem;">
-            <a href="/numeri-utili/aggiungi/" class="btn-primary">＋ Aggiungi un numero utile</a>
-            </div>
+          <div class="numeri-table-wrap">
+          <table class="numeri-table">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Categoria</th>
+                <th>Telefono</th>
+                <th>Email</th>
+              </tr>
+            </thead>
+            <tbody id="numeriTableBody">
+              <!-- Le righe vengono generate dinamicamente da numeri-utili.js -->
+            </tbody>
+          </table>
+          <div style="text-align:center; margin-top:2.5rem;">
+            <a href="/numeri-utili/aggiungi/" class="btn-primary">Aggiungi un numero utile</a>
+          </div>
         </section>
-
     </main>
 
     <footer class="footer-clean">
