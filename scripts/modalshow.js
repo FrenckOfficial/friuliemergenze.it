@@ -4,7 +4,7 @@
   const MODAL_CONFIG = {
     key: 'friuliemergenze_welcome_seen',
     expiryDays: 30,
-    delay: 15000,
+    delay: 60000,
     icon: '👋',
     subtitle: 'Benvenuto',
     title: 'Scopri Friuli Emergenze',
