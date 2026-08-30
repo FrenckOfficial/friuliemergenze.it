@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <title>Barca affonda nel porto di Grado: intervento dei Vigili del Fuoco e della Protezione Civile | Notizie - Friuli Emergenze</title>
+    <script src="/heading.js"></script>
+    <style>
+        .article-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            line-height: 1.8;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            color: #ddd;
+        }
+
+        .gallery-section {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 2px solid #ddd;
+        }
+
+        .gallery-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #ddd;
+        }
+
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px white;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .overlay-icon {
+            color: white;
+            font-size: 2rem;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .lightbox-image {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+        }
+
+        .lightbox-caption {
+            color: #ccc;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            text-align: center;
+            max-width: 90vw;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 2.5rem;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .lightbox-close:hover {
+            transform: scale(1.2);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 0 2rem;
+            user-select: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .lightbox-nav:hover {
+            opacity: 0.7;
+        }
+
+        .lightbox-prev {
+            left: 0;
+        }
+
+        .lightbox-next {
+            right: 0;
+        }
+
+        .lightbox-counter {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ccc;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .article-content {
+                padding: 1rem;
+                font-size: 1rem;
+            }
+
+            .photo-gallery {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 1rem;
+            }
+
+            .gallery-item img {
+                height: 150px;
+            }
+
+            .lightbox-nav {
+                padding: 0 1rem;
+                font-size: 1.5rem;
+            }
+
+            .lightbox-close {
+                font-size: 2rem;
+                top: 10px;
+                right: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTJBJDMJ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+    <div id="donate-float" style="position: fixed !important; bottom: 2rem !important; left: 2rem !important; z-index: 999999 !important; display: block !important; width: auto !important; height: auto !important;">
+      <a href="https://www.friuliemergenze.it/sostienici/donate" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="donate-btn"
+        style="display: flex !important; align-items: center !important; gap: 0.5rem; padding: 0.875rem 1.5rem; background: #ff7b00 !important; color: white; border: none; border-radius: 50px; font-weight: 600; font-size: 1rem; cursor: pointer; text-decoration: none; font-family: Lexend, sans-serif;">
+        
+        Sostieni
+      </a>
+    </div>
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="/" class="logo">Friuli Emergenze</a>
+        <button class="menu-toggle" aria-label="Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/chi-sono" class="nav-link">Chi sono</a></li>
+          <li><a href="/gallery" class="nav-link">Galleria</a></li>
+          <li><a href="/photobook" class="nav-link">Photobooks</a></li>
+          <li><a href="/sostienici" class="nav-link">Sostienici</a></li>
+          <li><a href="/piattaforma-myfrem" class="nav-icon" aria-label="MyFrEM">Piattaforma MyFrEM</a></li>
+          <li><a href="/contact-us" class="nav-link">Contatti</a></li>
+          <li><a href="https://www.friuliemergenze.it/social/instagram" target="_blank" class="nav-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="https://www.friuliemergenze.it/social/whatsapp" target="_blank" class="nav-icon"><i class="fab fa-whatsapp"></i></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <img src="/assets/logo.png" alt="Logo Friuli Emergenze" class="logoHeading" />
+      <h1>Barca affonda nel porto di Grado: intervento dei Vigili del Fuoco e della Protezione Civile</h1>
+      <p>L'imbarcazione, ormeggiata all'interno del porto, è affondata durante la notte. Le operazioni di recupero si sono concluse nella tarda mattinata.</p>
+    </header>
+
+    <main class="section">
+      <article class="article-content">
+        <p>Grado – Intervento nella mattinata di oggi, domenica 30 agosto, all'interno del porto di Grado, dove un'imbarcazione da diporto è affondata durante la notte mentre si trovava ormeggiata.</p>
+        
+        <p>L'imbarcazione si trovava nello specchio acqueo del porto, nei pressi del bar al Porto.</p>
+        
+        <p>Secondo le informazioni raccolte sul posto, l'imbarcazione risultava assicurata all'ormeggio solamente dalla parte prodiera. La variazione del livello dell'acqua legata al ciclo di alta e bassa marea avrebbe quindi favorito l'imbarco di acqua dalla zona poppiera, portando progressivamente all'affondamento. La dinamica dovrà comunque essere considerata come ricostruzione dell'accaduto e non come causa ufficialmente accertata.</p>
+        
+        <p>Sul posto sono intervenuti i Vigili del Fuoco, la Guardia Costiera, la Protezione Civile e la Polizia Locale di Grado, quest'ultima impegnata nella gestione e nella deviazione del traffico durante le operazioni.</p>
+        
+        <p>Il dispositivo dei Vigili del Fuoco ha visto l'impiego di diversi mezzi provenienti da più distaccamenti: un'APS Iveco CityEuroFire e un Nissan Navara dal distaccamento di Grado, un'autogru Astra Cormach dal distaccamento di Gorizia e il mezzo dei sommozzatori, su base Iveco Daily, dal distaccamento di Trieste.</p>
+        
+        <p>Le squadre hanno lavorato alle operazioni di messa in sicurezza e recupero dell'imbarcazione, utilizzando anche delle pompe per l'aspirazione dell'acqua.</p>
+        
+        <p>Durante l'intervento è stata inoltre rilevata la presenza di carburante fuoriuscito dall'imbarcazione, rendendo necessario il coinvolgimento della Protezione Civile per le attività connesse allo sversamento e alla messa in sicurezza dell'area.</p>
+        
+        <p>Non risultano persone ferite né persone da soccorrere: al momento dell'intervento l'imbarcazione si trovava infatti ormeggiata.</p>
+        
+        <p>Le operazioni hanno richiesto anche l'impiego dell'autogru di Gorizia, utilizzata per consentire il recupero del natante. Una volta riportata a terra, l'imbarcazione è stata successivamente caricata e trasportata via strada da una ditta privata, mediante un mezzo per trasporto eccezionale.</p>
+        
+        <p>Per consentire le operazioni della gru e garantire la sicurezza nell'area di intervento, per alcune ore è stato inoltre interdetto il transito dei veicoli nel tratto compreso tra Piazza Oberdan e Via Lugnan. La Polizia Locale ha provveduto a deviare il traffico durante le operazioni, permettendo ai mezzi di soccorso e a quelli impegnati nel recupero di operare in sicurezza.</p>
+        
+        <p>Le operazioni si sono concluse dopo il recupero e la rimozione dell'imbarcazione.</p>
+        
+        <p>Friuli Emergenze ha seguito le operazioni sul posto, documentando le varie fasi dell'intervento con materiale fotografico.</p>
+
+        <section class="gallery-section">
+          <h2 class="gallery-title">Galleria Fotografica</h2>
+          <div class="photo-gallery" id="photoGallery">
+            <div class="gallery-item" onclick="openLightbox(0)">
+              <img src="https://interventi.friuliemergenze.it/Interforze/BarcaAffondata30Agosto2026/3.jpeg" alt="Primi soccorsi sul posto">
+              <div class="gallery-overlay">
+                <span class="overlay-icon">🔍</span>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(1)">
+              <img src="https://interventi.friuliemergenze.it/Interforze/BarcaAffondata30Agosto2026/1.jpeg" alt="Panne antiinquinamento della Protezione Civile">
+              <div class="gallery-overlay">
+                <span class="overlay-icon">🔍</span>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(2)">
+              <img src="https://interventi.friuliemergenze.it/Interforze/BarcaAffondata30Agosto2026/13.jpeg" alt="Posizionamento delle panne antiinquinamento">
+              <div class="gallery-overlay">
+                <span class="overlay-icon">🔍</span>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(3)">
+              <img src="https://interventi.friuliemergenze.it/Interforze/BarcaAffondata30Agosto2026/4.jpeg" alt="Controlli di posizionamento delle panne">
+              <div class="gallery-overlay">
+                <span class="overlay-icon">🔍</span>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(4)">
+              <img src="https://interventi.friuliemergenze.it/Interforze/BarcaAffondata30Agosto2026/2.jpeg" alt="Panne in posizione">
+              <div class="gallery-overlay">
+                <span class="overlay-icon">🔍</span>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(5)">
+              <img src="https://interventi.friuliemergenze.it/Interforze/BarcaAffondata30Agosto2026/5.jpeg" alt="Barca affondata e panne in posizione">
+              <div class="gallery-overlay">
+                <span class="overlay-icon">🔍</span>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(6)">
+              <img src="https://interventi.friuliemergenze.it/Interforze/BarcaAffondata30Agosto2026/6.jpeg" alt="Barca affondata">
+              <div class="gallery-overlay">
+                <span class="overlay-icon">🔍</span>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(7)">
+              <img src="https://interventi.friuliemergenze.it/Interforze/BarcaAffondata30Agosto2026/7.jpeg" alt="Arrivo dell'autogru">
+              <div class="gallery-overlay">
+                <span class="overlay-icon">🔍</span>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(8)">
+              <img src="https://interventi.friuliemergenze.it/Interforze/BarcaAffondata30Agosto2026/8.jpeg" alt="Autogru con braccio in estensione">
+              <div class="gallery-overlay">
+                <span class="overlay-icon">🔍</span>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(9)">
+              <img src="https://interventi.friuliemergenze.it/Interforze/BarcaAffondata30Agosto2026/9.jpeg" alt="Aggancio della barca alle cinghie dell'autogru con l'aiuto del Nucleo Sommozzatori di Trieste">
+              <div class="gallery-overlay">
+                <span class="overlay-icon">🔍</span>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(10)">
+              <img src="https://interventi.friuliemergenze.it/Interforze/BarcaAffondata30Agosto2026/12.jpeg" alt="Furgone Iveco Daily del Nucleo Sommozzatori di Trieste">
+              <div class="gallery-overlay">
+                <span class="overlay-icon">🔍</span>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(11)">
+              <img src="https://interventi.friuliemergenze.it/Interforze/BarcaAffondata30Agosto2026/10.jpeg" alt="Sollevamento della barca">
+              <div class="gallery-overlay">
+                <span class="overlay-icon">🔍</span>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(12)">
+              <img src="https://interventi.friuliemergenze.it/Interforze/BarcaAffondata30Agosto2026/11.jpeg" alt="Posizionamento della barca nel pianale del camion per il trasporto">
+              <div class="gallery-overlay">
+                <span class="overlay-icon">🔍</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+      <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+      <span class="lightbox-nav lightbox-prev" onclick="previousImage()">&#10094;</span>
+      <div class="lightbox-content">
+        <img id="lightboxImage" class="lightbox-image" src="" alt="">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+      </div>
+      <span class="lightbox-nav lightbox-next" onclick="nextImage()">&#10095;</span>
+      <div class="lightbox-counter">
+        <span id="imageCounter">1</span> / <span id="totalImages">13</span>
+      </div>
+    </div>
+
+    <footer class="footer-clean">
+      <div class="footer-container">
+
+        <div class="footer-col">
+          <p class="footer-brand">
+            <a href="/"><i class="fa-regular fa-copyright"></i> 2026 Friuli Emergenze</a>
+          </p>
+          <p class="footer-desc">
+            Pagina di condivisione foto e video di mezzi di soccorso. Ti diamo il benvenuto nel nostro sito ufficiale!
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-paragraph">Vedi altre parti del nostro progetto!</p>
+          <p class="footer-links">
+            <a href="/piattaforma-myfrem" target="_blank" id="linkFooterBtn">MyFrEM</a>
+            <span>·</span>
+            <a href="/news" target="_blank" id="linkFooterBtn">Notizie</a>
+            <span>·</span>
+            <a href="/contact-us" target="_blank" id="linkFooterBtn">Contatti</a>
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-paragraph">Seguici sui nostri canali social</p>
+          <p class="footer-social">
+            <a href="/social/facebook" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <span>·</span>
+            <a href="/social/instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <span>·</span>
+            <a href="/social/tiktok" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+            <span>·</span>
+            <a href="/social/whatsapp" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-paragraph">Inviaci una mail</p>
+          <p class="footer-extra" style="display:flex;align-items:center;justify-content:center;">
+            <a href="mailto:info@friuliemergenze.it">
+              <i class="fa-regular fa-envelope"></i>
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-legal">
+          <a href="https://www.friuliemergenze.it/policies/privacy">Privacy Policy</a>
+          <span>·</span>
+          <a href="https://www.friuliemergenze.it/policies/cookie">Cookie Policy</a>
+        </p>
+        <p class="footer-extra"> 
+          Versione 3.2.0.0
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      let currentImageIndex = 0;
+      const galleryImages = document.querySelectorAll('.gallery-item img');
+
+      function openLightbox(index) {
+        currentImageIndex = index;
+        const lightbox = document.getElementById('lightbox');
+        const img = galleryImages[index];
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+        const imageCounter = document.getElementById('imageCounter');
+        
+        lightboxImage.src = img.src;
+        lightboxCaption.textContent = img.alt;
+        imageCounter.textContent = index + 1;
+        
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        document.getElementById('lightbox').classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+
+      function nextImage() {
+        currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+        const img = galleryImages[currentImageIndex];
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+        const imageCounter = document.getElementById('imageCounter');
+        
+        lightboxImage.src = img.src;
+        lightboxCaption.textContent = img.alt;
+        imageCounter.textContent = currentImageIndex + 1;
+      }
+
+      function previousImage() {
+        currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+        const img = galleryImages[currentImageIndex];
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+        const imageCounter = document.getElementById('imageCounter');
+        
+        lightboxImage.src = img.src;
+        lightboxCaption.textContent = img.alt;
+        imageCounter.textContent = currentImageIndex + 1;
+      }
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') nextImage();
+        if (e.key === 'ArrowLeft') previousImage();
+      });
+
+      document.querySelector(".menu-toggle").addEventListener("click", () => {
+        document.querySelector(".nav-links").classList.toggle("open");
+        const liMyFrEM = document.querySelector(".nav-links a[href='/piattaforma-myfrem']");
+
+        if(liMyFrEM) {
+          console.log("MyFrEM link found, updating innerHTML.");
+          liMyFrEM.innerHTML = `<a href="/piattaforma-myfrem" target="_blank" class="nav-icon" aria-label="MyFrEM" style="margin-left:0;">MyFrEM</a>`
+        }
+      });
+
+      window.addEventListener("load", () => {
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.register("/scripts/sw.js");
+        }
+      });
+    </script>
+</body>
+</html>
