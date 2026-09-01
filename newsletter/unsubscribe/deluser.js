@@ -44,7 +44,7 @@ async function checkSubscription() {
     console.log("📦 Documenti trovati:", snap.size);
 
     if (snap.empty) {
-      statusBox.textContent = "⚠️ Email non trovata nei nostri iscritti.";
+      statusBox.textContent = `Email non trovata nei nostri iscritti. Probabilmente sei iscritto a MyFrEM e la mail che ti è arrivata è una semplice notifica MyFrEM. In questo caso non è possibile disiscriversi da qui, ma puoi farlo direttamente da MyFrEM. Oppure sei un destinatario personalizzato inserito manualmente dallo staff. Per problematiche scrivi a <a href="mailto:technical@friuliemergenze.it">technical@friuliemergenze.it</a>.`;
       return;
     }
 
