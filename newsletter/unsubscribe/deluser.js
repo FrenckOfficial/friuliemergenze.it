@@ -23,16 +23,16 @@ const email = new URLSearchParams(window.location.search).get("email");
 
 let userDocRef = null;
 
-console.log("📩 Email ricevuta:", email);
+console.log("Email ricevuta:", email);
 
 if (!email) {
-  statusBox.textContent = "❌ Nessuna email trovata nel link.";
+  statusBox.textContent = "Nessuna email trovata nel link.";
   throw new Error("No email provided");
 }
 
 async function checkSubscription() {
   try {
-    console.log("🔎 Controllo iscrizione...");
+    console.log("Controllo iscrizione...");
 
     const q = query(
       collection(db, "newsletterSubs"),
@@ -41,7 +41,7 @@ async function checkSubscription() {
 
     const snap = await getDocs(q);
 
-    console.log("📦 Documenti trovati:", snap.size);
+    console.log("Documenti trovati:", snap.size);
 
     if (snap.empty) {
       statusBox.textContent = `Email non trovata nei nostri iscritti. Probabilmente sei iscritto a MyFrEM e la mail che ti è arrivata è una semplice notifica MyFrEM. In questo caso non è possibile disiscriversi da qui, ma puoi farlo direttamente da MyFrEM. Oppure sei un destinatario personalizzato inserito manualmente dallo staff. Per problematiche scrivi a <a href="mailto:technical@friuliemergenze.it">technical@friuliemergenze.it</a>.`;
@@ -53,44 +53,44 @@ async function checkSubscription() {
 
     const data = docSnap.data();
 
-    console.log("👤 Utente:", data);
+    console.log("Utente:", data);
 
     if (data.verified === false) {
-      statusBox.textContent = "ℹ️ Prima di disiscriverti devi verificare il tuo indirizzo email.";
+      statusBox.textContent = "Prima di disiscriverti devi verificare il tuo indirizzo email.";
       return;
     }
 
-    statusBox.textContent = "✅ Email trovata. Puoi gestire la tua iscrizione.";
+    statusBox.textContent = "Email trovata. Puoi gestire la tua iscrizione.";
     actions.style.display = "block";
 
   } catch (err) {
     console.error(err);
-    statusBox.textContent = "❌ Errore durante la verifica.";
+    statusBox.textContent = "Errore durante la verifica.";
   }
 }
 
 unsubscribeBtn.addEventListener("click", async () => {
   try {
-    console.log("🚫 Disiscrizione in corso...");
+    console.log("Disiscrizione in corso...");
 
     await updateDoc(userDocRef, {
       subscribed: false,
       unsubscribedAt: new Date()
     });
 
-    statusBox.textContent = "❌ Ti sei disiscritto con successo.";
+    statusBox.textContent = "Ti sei disiscritto con successo.";
     actions.style.display = "none";
 
-    console.log("✔️ Disiscrizione completata");
+    console.log("Disiscrizione completata");
 
   } catch (err) {
     console.error(err);
-    statusBox.textContent = "❌ Errore durante la disiscrizione.";
+    statusBox.textContent = "Errore durante la disiscrizione.";
   }
 });
 
 keepBtn.addEventListener("click", () => {
-  statusBox.textContent = "👍 Perfetto, rimani iscritto alla newsletter.";
+  statusBox.textContent = "Perfetto, rimani iscritto alla newsletter.";
   actions.style.display = "none";
 });
 
