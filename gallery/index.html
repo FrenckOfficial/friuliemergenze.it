@@ -1,15 +1,8 @@
 <!doctype html>
 <html lang="it">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Galleria | Friuli Emergenze</title>
     <script src="/heading.js"></script>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-    <link rel="stylesheet" href="/style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="/assets/logo.png" type="image/png" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   </head>
   <body>
   <!-- Google Tag Manager (noscript) -->
@@ -21,11 +14,11 @@
         target="_blank" 
         rel="noopener noreferrer"
         class="donate-btn"
-        style="display: flex !important; align-items: center !important; gap: 0.5rem; padding: 0.875rem 1.5rem; background: #ff7b00 !important; color: white; border: none; border-radius: 50px; font-weight: 600; font-size: 1rem; cursor: pointer; text-decoration: none; font-family: Lexend, sans-serif;">
-        
+        style="display: flex !important; align-items: center !important; gap: 0.5rem; padding: 0.875rem 1.5rem; background: var(--accent) !important; color: white; border: none; border-radius: 50px; font-weight: 600; font-size: 1rem; cursor: pointer; text-decoration: none; font-family: Lexend, sans-serif;">
         Sostieni
       </a>
     </div>
+
     <nav class="navbar">
       <div class="navbar-container">
         <a href="/" class="logo">Friuli Emergenze</a>
@@ -47,58 +40,20 @@
     </nav>
 
     <header class="hero">
-      <img src="/assets/logo.png" alt="Logo Friuli Emergenze" class="logoHeading" data-cmp-info="10">
+      <img src="/assets/logo.png" alt="Logo Friuli Emergenze" class="logoHeading" />
       <h1>Galleria</h1>
-      <p>Tutti i mezzi fotografati e pubblicati da Friuli Emergenze</p>
+      <p>Scopri tutti i mezzi di emergenza fotografati e pubblicati da Friuli Emergenze</p>
     </header>
 
-    <main class="gallery-page">
-      <p class="galleryPMail">Per inviare le tue foto di mezzi di emergenza, puoi utilizzare la piattaforma <a href="https://myfrem.friuliemergenze.it/" target="_blank">MyFrEM</a></p>
-      <section class="filter-buttons">
-        <button data-filter="all" class="active">Tutti</button>
-        <button data-filter="Vigili del Fuoco">Vigili del Fuoco</button>
-        <button data-filter="Protezione Civile">Protezione Civile</button>
-        <button data-filter="Soccorso Sanitario">Soccorso Sanitario</button>
-        <button data-filter="Guardia Costiera">Guardia Costiera</button>
-        <button data-filter="Carabinieri">Carabinieri</button>
-        <button data-filter="Polizia di Stato">Polizia di Stato</button>
-        <button data-filter="Polizia Locale">Polizia Locale</button>
-      </section>
-
-      <section class="filter-spotters">
-        <button data-spotter="all" class="active">Tutti</button>
-        <button data-spotter="ricky_redz">Ricky_redz</button>
-        <button data-spotter="rescuespotter_ts">rescuespotter_ts</button>
-        <button data-spotter="verona_emergency112">verona_emergency112</button>
-        <button data-spotter="malcus08">malcus08</button>
-        <button data-spotter="s.o.g.i.t._sez._trieste">SOGIT Trieste</button>
-        <button data-spotter="matteo.pontello">matteo.pontello</button>
-      </section>
-
-      <div class="gallery-search">
-        <input type="text" id="searchInput" placeholder="Cerca un mezzo..." style="
-            width: 90%;
-            padding: 0.75rem;
-            margin: 1rem 0;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 1rem;
-          ">
+    <main class="gallery-albums">
+      <p class="galleryPMail">Per inviare le tue foto di mezzi di emergenza, puoi utilizzare la piattaforma <a href="https://go.friuliemergenze.it/myfrem" target="_blank">MyFrEM</a></p>
+      <p class="galleryPMail">Per segnalare errori di qualsiasi tipo puoi scrivere una mail a <a href="mailto:segnalazioni@friuliemergenze.it">segnalazioni@friuliemergenze.it</a></p>
+      <br>
+      <div class="gallery-count" style="text-align:center;margin-top:1rem;font-size:1.2rem;font-weight:600;color:var(--accent);">Foto totali: <span id="mezziCount">0</span></div>
+      
+      <div class="albums-grid" id="albumsContainer">
+        <div class="empty-state">Caricamento album...</div>
       </div>
-
-      <div class="gallery-count" style="
-          text-align: center;
-          margin-top: 1rem;
-          font-size: 1.2rem;
-          font-weight: 600;
-          color: #00bcd4;
-        ">
-        Mezzi totali: <span id="mezziCount">64</span>
-      </div>
-
-      <section class="gallery">
-        <div class="grid"></div>
-      </section>
     </main>
 
     <footer class="footer-clean">
@@ -116,8 +71,6 @@
           <p class="footer-paragraph">Vedi altre parti del nostro progetto!</p>
           <p class="footer-links">
             <a href="/piattaforma-myfrem" target="_blank" id="linkFooterBtn">MyFrEM</a>
-            <span>·</span>
-            <a href="/news" target="_blank" id="linkFooterBtn">Notizie</a>
             <span>·</span>
             <a href="/contact-us" target="_blank" id="linkFooterBtn">Contatti</a>
           </p>
@@ -152,128 +105,60 @@
           <span>·</span>
           <a href="https://www.friuliemergenze.it/policies/cookie">Cookie Policy</a>
         </p>
-        <p class="footer-extra"> 
-          Versione 3.2.0.0
-        </p>
+        <p class="footer-extra">Versione 3.3.0.0</p>
       </div>
     </footer>
 
-    <script src="/scripts/shinystat.js?user=SS-53595029-55bae" style="display: none;"></script>
-    <noscript>
-      <a href="https://www.shinystat.com/it/" target="_top" style="display: none;">
-      <img src="//www.shinystat.com/cgi-bin/shinystat.cgi?USER=SS-53595029-55bae" alt="Statistiche web" style="border:0px; display: none;" /></a>
-    </noscript>
-
-    
-
     <script>
-      let activeCategory = "all";
-      let activeSpotter = "all";
-
       fetch("/gallery.json")
         .then((res) => res.json())
         .then((data) => {
-          const container = document.querySelector(".grid");
+          const albums = {};
+          data.forEach((mezzo) => {
+            if (!albums[mezzo.category]) {
+              albums[mezzo.category] = [];
+            }
+            albums[mezzo.category].push(mezzo);
+            document.getElementById("mezziCount").innerHTML = data.length;
+          });
 
-          container.innerHTML = data
-            .map(
-              (d) => `
-                <div class="grid-item" data-category="${d.category}" data-spotter="${d.spotter || ""}">
-                  <div class="grid-item-img-wrap">
-                    <a href="${d.image}" data-lightbox="mezzi">
-                      <img src="${d.image}" alt="${d.title}" loading="lazy">
-                    </a>
-                    <span class="grid-item-tag">${d.category.toUpperCase()}</span>
+          const sortedCategories = Object.keys(albums).sort();
+
+          const container = document.getElementById("albumsContainer");
+          container.innerHTML = sortedCategories
+            .map((category) => {
+              const mezziInCategoria = albums[category];
+              const lastImage = mezziInCategoria.at(-1)?.image || "/assets/placeholder.png";
+              const categorySlug = category.toLowerCase().replace(/\s+/g, "-");
+
+              return `
+                <a href="/gallery/albums/${categorySlug}" class="album-card-link">
+                  <div class="album-card">
+                    <img src="${lastImage}" alt="${category}" class="album-card-img" loading="lazy">
+                    <div class="album-card-content">
+                      <h3 class="album-card-title">${category}</h3>
+                      <div class="album-card-count">
+                        <i class="fas fa-image"></i>
+                        <span>${mezziInCategoria.length} mezz${mezziInCategoria.length > 1 ? "i" : "o"}</span>
+                      </div>
+                    </div>
                   </div>
-                  <div class="grid-item-body">
-                    <p>${d.title}</p>
-                    <a href="${d.link}" class="btn-scopri">Scopri di più</a>
-                  </div>
-                </div>
-              `,
-            )
+                </a>
+              `;
+            })
             .join("");
-
-          applyFilters();
+        })
+        .catch((err) => {
+          console.error("Errore caricamento galleria:", err);
+          document.getElementById("albumsContainer").innerHTML =
+            '<div class="empty-state">Errore nel caricamento della galleria. Riprova più tardi.</div>';
         });
-
-      function applyFilters() {
-        const items = document.querySelectorAll(".grid-item");
-        let count = 0;
-
-        items.forEach((item) => {
-          const cat = item.dataset.category;
-          const spot = item.dataset.spotter;
-
-          const okCat = activeCategory === "all" || cat === activeCategory;
-          const okSpot = activeSpotter === "all" || spot === activeSpotter;
-
-          if (okCat && okSpot) {
-            item.style.display = "";
-            count++;
-          } else {
-            item.style.display = "none";
-          }
-        });
-
-        document.getElementById("mezziCount").textContent = count;
-      }
-
-      document.querySelectorAll("[data-filter]").forEach((btn) => {
-        btn.onclick = () => {
-          document
-            .querySelectorAll("[data-filter]")
-            .forEach((b) => b.classList.remove("active"));
-          btn.classList.add("active");
-          activeCategory = btn.dataset.filter;
-          applyFilters();
-        };
-      });
-
-      document.querySelectorAll("[data-spotter]").forEach((btn) => {
-        btn.onclick = () => {
-          document
-            .querySelectorAll("[data-spotter]")
-            .forEach((b) => b.classList.remove("active"));
-          btn.classList.add("active");
-          activeSpotter = btn.dataset.spotter;
-          applyFilters();
-        };
-      });
-
-      document.getElementById("searchInput").addEventListener("keyup", (e) => {
-        const val = e.target.value.toLowerCase();
-        document.querySelectorAll(".grid-item").forEach((item) => {
-          item.style.display = item.textContent.toLowerCase().includes(val)
-            ? ""
-            : "none";
-        });
-      });
 
       document.querySelector(".menu-toggle").addEventListener("click", () => {
         document.querySelector(".nav-links").classList.toggle("open");
-        const liMyFrEM = document.querySelector(".nav-links a[href='/piattaforma-myfrem']");
-
-        if(liMyFrEM) {
-          console.log("MyFrEM link found, updating innerHTML.");
-          liMyFrEM.innerHTML = `<a href="/piattaforma-myfrem" target="_blank" class="nav-icon" aria-label="MyFrEM" style="margin-left:0;">MyFrEM</a>`
-        }
       });
     </script>
 
-    <script>
-      const urlParams = new URLSearchParams(window.location.search);
-      const spotter = urlParams.get("spotter");
-      const category = urlParams.get("category");
-
-      if (spotter) {
-        document.querySelector(`[data-spotter="${spotter}"]`)?.click();
-      }
-      if (category) {
-        document.querySelector(`[data-filter="${category}"]`)?.click();
-      }
-    </script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+    <script src="/scripts/shinystat.js?user=SS-53595029-55bae" style="display: none;"></script>
   </body>
 </html>

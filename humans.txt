@@ -8,11 +8,16 @@
     Role: Project Collaborator
     Location: Friuli-Venezia Giulia
     GitHub: https://github.com/FrenckOfficial
+    -
+    Name: Riccardo Rossi
+    Role: Project Collaborator
+    Location: Friuli-Venezia Giulia
+    GitHub: https://github.com/FrenckOfficial
 
 /* THANKS */
     Font Awesome, Google Fonts, XML Sitemaps
 
 /* SITE */
-    Last update: 10/07/2026
+    Last update: 02/09/2026
     Standards: HTML5, CSS3, JavaScript, JSON
     Language: Italian

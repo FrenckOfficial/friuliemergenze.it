@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <title>Album Guardia Costiera | Friuli Emergenze</title>
+    <script src="/heading.js"></script>
+  </head>
+  <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTJBJDMJ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+    <div id="donate-float" style="position: fixed !important; bottom: 2rem !important; left: 2rem !important; z-index: 999999 !important; display: block !important; width: auto !important; height: auto !important;">
+      <a href="https://www.friuliemergenze.it/sostienici/donate" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="donate-btn"
+        style="display: flex !important; align-items: center !important; gap: 0.5rem; padding: 0.875rem 1.5rem; background: var(--accent) !important; color: white; border: none; border-radius: 50px; font-weight: 600; font-size: 1rem; cursor: pointer; text-decoration: none; font-family: Lexend, sans-serif;">
+        Sostieni
+      </a>
+    </div>
+
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="/" class="logo">Friuli Emergenze</a>
+        <button class="menu-toggle" aria-label="Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/chi-sono" class="nav-link">Chi sono</a></li>
+          <li><a href="/gallery" class="nav-link active">Galleria</a></li>
+          <li><a href="/photobook" class="nav-link">Photobooks</a></li>
+          <li><a href="/sostienici" class="nav-link">Sostienici</a></li>
+          <li><a href="/piattaforma-myfrem" class="nav-icon" aria-label="MyFrEM">Piattaforma MyFrEM</a></li>
+          <li><a href="/contact-us" class="nav-link">Contatti</a></li>
+          <li><a href="https://www.friuliemergenze.it/social/instagram" target="_blank" class="nav-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="https://www.friuliemergenze.it/social/whatsapp" target="_blank" class="nav-icon"><i class="fab fa-whatsapp"></i></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <img src="/assets/logo.png" alt="Logo Friuli Emergenze" class="logoHeading" />
+      <h1>Album Guardia Costiera</h1>
+      <p>Scopri tutti i mezzi di emergenza fotografati e pubblicati da Friuli Emergenze per quanto riguarda i Guardia Costiera</p>
+    </header>
+
+    <main class="gallery-albums">
+      <p class="galleryPMail">Per inviare le tue foto di mezzi di emergenza, puoi utilizzare la piattaforma <a href="https://go.friuliemergenze.it/myfrem" target="_blank">MyFrEM</a></p>
+      <p class="galleryPMail">Per segnalare errori di qualsiasi tipo puoi scrivere una mail a <a href="mailto:segnalazioni@friuliemergenze.it">segnalazioni@friuliemergenze.it</a></p>
+      <br>
+      <div class="gallery-count" style="text-align:center;margin-top:1rem;font-size:1.2rem;font-weight:600;color:var(--accent);">Foto associate totali: <span id="mezziCount">0</span></div>
+      
+      
+      <div class="albums-grid" id="albumsContainer">
+        <div class="empty-state">Caricamento album...</div>
+      </div>
+    </main>
+
+    <footer class="footer-clean">
+      <div class="footer-container">
+        <div class="footer-col">
+          <p class="footer-brand">
+            <a href="/"><i class="fa-regular fa-copyright"></i> 2026 Friuli Emergenze</a>
+          </p>
+          <p class="footer-desc">
+            Pagina di condivisione foto e video di mezzi di soccorso. Ti diamo il benvenuto nel nostro sito ufficiale!
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-paragraph">Vedi altre parti del nostro progetto!</p>
+          <p class="footer-links">
+            <a href="/piattaforma-myfrem" target="_blank" id="linkFooterBtn">MyFrEM</a>
+            <span>·</span>
+            <a href="/contact-us" target="_blank" id="linkFooterBtn">Contatti</a>
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-paragraph">Seguici sui nostri canali social</p>
+          <p class="footer-social">
+            <a href="/social/facebook" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <span>·</span>
+            <a href="/social/instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <span>·</span>
+            <a href="/social/tiktok" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+            <span>·</span>
+            <a href="/social/whatsapp" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-paragraph">Inviaci una mail</p>
+          <p class="footer-extra" style="display:flex;align-items:center;justify-content:center;">
+            <a href="mailto:info@friuliemergenze.it">
+              <i class="fa-regular fa-envelope"></i>
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-legal">
+          <a href="https://www.friuliemergenze.it/policies/privacy">Privacy Policy</a>
+          <span>·</span>
+          <a href="https://www.friuliemergenze.it/policies/cookie">Cookie Policy</a>
+        </p>
+        <p class="footer-extra">Versione 3.3.0.0</p>
+      </div>
+    </footer>
+
+    <script>
+      fetch("/gallery.json")
+        .then((res) => res.json())
+        .then((data) => {
+          const filtered = data.filter((d) =>
+            d.category && d.category.toLowerCase().includes("guardia costiera")
+          );
+
+          const mezziCount = document.getElementById("mezziCount");
+          mezziCount.innerHTML = filtered.length;
+
+          const container = document.getElementById("albumsContainer");
+
+          if (filtered.length === 0) {
+          container.innerHTML =
+          '<div class="empty-state">Nessun mezzo trovato per questa categoria.</div>';
+          return;
+          }
+
+          container.innerHTML = filtered
+            .map((d) => {
+              return `
+                <div class="grid-item" data-category="${d.category}" data-spotter="${d.spotter || ""}">
+                  <div class="grid-item-img-wrap">
+                    <a href="${d.link}" data-lightbox="mezzi">
+                      <img src="${d.image}" alt="${d.title}" loading="lazy">
+                    </a>
+                    <span class="grid-item-tag">${d.category.toUpperCase()}</span>
+                  </div>
+                  <div class="grid-item-body">
+                    <p>${d.title}</p>
+                    <a href="${d.link}" class="btn-scopri">Scopri di più</a>
+                  </div>
+                </div>
+              `;
+            }).join("");
+          }).catch((err) => {
+              console.error("Errore caricamento galleria:", err);
+              document.getElementById("albumsContainer").innerHTML = '<div class="empty-state">Errore nel caricamento della galleria. Riprova più tardi.</div>';
+          });
+
+      document.querySelector(".menu-toggle").addEventListener("click", () => {
+        document.querySelector(".nav-links").classList.toggle("open");
+      });
+    </script>
+    <script src="/scripts/shinystat.js?user=SS-53595029-55bae" style="display: none;"></script>
+  </body>
+</html>

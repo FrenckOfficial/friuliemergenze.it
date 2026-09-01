@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <title>La galleria di Friuli Emergenze cambia faccia! | Notizie - Friuli Emergenze</title>
+    <script src="/heading.js"></script>
+    <style>
+        .article-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            line-height: 1.8;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            color: #ddd;
+        }
+
+        .gallery-section {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 2px solid #ddd;
+        }
+
+        .gallery-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #ddd;
+        }
+
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px white;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .overlay-icon {
+            color: white;
+            font-size: 2rem;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .lightbox-image {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+        }
+
+        .lightbox-caption {
+            color: #ccc;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            text-align: center;
+            max-width: 90vw;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 2.5rem;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .lightbox-close:hover {
+            transform: scale(1.2);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 0 2rem;
+            user-select: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .lightbox-nav:hover {
+            opacity: 0.7;
+        }
+
+        .lightbox-prev {
+            left: 0;
+        }
+
+        .lightbox-next {
+            right: 0;
+        }
+
+        .lightbox-counter {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ccc;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .article-content {
+                padding: 1rem;
+                font-size: 1rem;
+            }
+
+            .photo-gallery {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 1rem;
+            }
+
+            .gallery-item img {
+                height: 150px;
+            }
+
+            .lightbox-nav {
+                padding: 0 1rem;
+                font-size: 1.5rem;
+            }
+
+            .lightbox-close {
+                font-size: 2rem;
+                top: 10px;
+                right: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTJBJDMJ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+    <div id="donate-float" style="position: fixed !important; bottom: 2rem !important; left: 2rem !important; z-index: 999999 !important; display: block !important; width: auto !important; height: auto !important;">
+      <a href="https://www.friuliemergenze.it/sostienici/donate" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="donate-btn"
+        style="display: flex !important; align-items: center !important; gap: 0.5rem; padding: 0.875rem 1.5rem; background: var(--accent) !important; color: white; border: none; border-radius: 50px; font-weight: 600; font-size: 1rem; cursor: pointer; text-decoration: none; font-family: Lexend, sans-serif;">
+        
+        Sostieni
+      </a>
+    </div>
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="/" class="logo">Friuli Emergenze</a>
+        <button class="menu-toggle" aria-label="Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/chi-sono" class="nav-link">Chi sono</a></li>
+          <li><a href="/gallery" class="nav-link">Galleria</a></li>
+          <li><a href="/photobook" class="nav-link">Photobooks</a></li>
+          <li><a href="/sostienici" class="nav-link">Sostienici</a></li>
+          <li><a href="/piattaforma-myfrem" class="nav-icon" aria-label="MyFrEM">Piattaforma MyFrEM</a></li>
+          <li><a href="/contact-us" class="nav-link">Contatti</a></li>
+          <li><a href="https://www.friuliemergenze.it/social/instagram" target="_blank" class="nav-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="https://www.friuliemergenze.it/social/whatsapp" target="_blank" class="nav-icon"><i class="fab fa-whatsapp"></i></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <img src="/assets/logo.png" alt="Logo Friuli Emergenze" class="logoHeading" />
+      <h1>La galleria di Friuli Emergenze cambia faccia!</h1>
+      <p>Insieme all'aggiornamento che porta alla versione 3.3.0.0 del sito, la galleria ufficiale cambia completamente.</p>
+    </header>
+
+    <main class="section">
+      <div class="article-content">
+        <p>La galleria fotografica di Friuli Emergenze si rinnova. Con l'arrivo della versione 3.3.0.0 del nostro sito, abbiamo deciso di intervenire sulla struttura della galleria, che negli ultimi mesi è diventata sempre più ricca di contenuti.</p>
+        <p>La crescita del numero di fotografie aveva però iniziato a creare un problema: tutte le immagini erano raccolte all'interno di un'unica pagina, organizzate in una grande griglia. Una soluzione che funzionava quando le fotografie erano poche, ma che con l'aumentare dei contenuti rendeva la consultazione della galleria sempre più lunga e dispersiva.</p>
+        <p>Per questo motivo abbiamo deciso di cambiare approccio e di dare alla galleria una nuova struttura.</p>
+
+        <h2 style="color: #ddd; margin-top: 3rem; margin-bottom: 1rem;">Una galleria, tanti album</h2>
+        <p>La principale novità della nuova versione è la suddivisione della galleria in <strong>album dedicati ai singoli corpi</strong>.</p>
+        <p>La pagina principale non mostra più direttamente tutte le fotografie disponibili, ma presenta una serie di <strong>grid</strong> (ovvero griglie), ciascuna caratterizzata da un'immagine e dal nome del corpo a cui è dedicato l'album.</p>
+        <p>Cliccando su una delle griglie, l'utente viene reindirizzato direttamente all'album corrispondente, dove può consultare le fotografie relative a quel corpo.</p>
+        <p>In questo modo abbiamo trasformato quella che prima era un'unica grande raccolta di fotografie in una struttura più ordinata, suddivisa e facilmente consultabile.</p>
+
+        <h2 style="color: #ddd; margin-top: 3rem; margin-bottom: 1rem;">Nessuna fotografia è stata persa</h2>
+        <p>Il cambiamento della struttura non comporta la perdita delle fotografie già presenti nella nostra galleria.</p>
+        <p><strong>Tutte le immagini presenti nella precedente versione sono state mantenute</strong> e sono ora organizzate all'interno della nuova struttura. Il cambiamento riguarda quindi il modo in cui i contenuti vengono presentati e organizzati, senza eliminare il lavoro fotografico raccolto fino ad oggi.</p>
+        <p>E naturalmente, la galleria continuerà a crescere: le nuove fotografie continueranno ad essere pubblicate e ad arricchire gli album dedicati ai diversi corpi.</p>
+
+        <h2 style="color: #ddd; margin-top: 3rem; margin-bottom: 1rem;">Un cambiamento nato dalla crescita</h2>
+        <p>La nuova galleria nasce da un'esigenza molto semplice: <strong>fare spazio alla crescita di Friuli Emergenze</strong>.</p>
+        <p>Con il passare del tempo le fotografie aumentano e i contenuti diventano sempre più numerosi. Continuare a inserire tutto all'interno di una singola pagina avrebbe reso la consultazione sempre più complicata.</p>
+        <p>Abbiamo quindi scelto di intervenire sulla struttura della galleria prima che questo problema diventasse ancora più evidente, creando una base più ordinata sulla quale continuare a costruire la nostra raccolta fotografica.</p>
+        <p>La versione 3.3.0.0 rappresenta così un nuovo passo nell'evoluzione del sito e del modo in cui presentiamo le fotografie dedicate al mondo dell'emergenza e del soccorso in Friuli Venezia Giulia.</p>
+
+        <h2 style="color: #ddd; margin-top: 3rem; margin-bottom: 1rem;">E per il futuro?</h2>
+        <p>Per il momento non abbiamo annunciato ulteriori novità per la galleria, ma questo non significa che la sua evoluzione si fermi qui.</p>
+        <p>Vogliamo continuare ad ascoltare chi utilizza il nostro sito e raccogliere idee e suggerimenti per capire quali funzionalità potrebbero essere utili in futuro.</p>
+        <p>Avete un'idea per un nuovo servizio o una nuova funzionalità che vorreste vedere su Friuli Emergenze? Potete proporcela attraverso il nostro <strong>sondaggio dedicato ai servizi</strong>.</p>
+        <p style="text-align: center; margin-top: 2rem;">
+            <a href="https://go.friuliemergenze.it/sondaggioservizi" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 0.9rem 1.6rem; background: var(--accent); color: white; border-radius: 50px; text-decoration: none; font-weight: 600;">Proponi una nuova idea</a>
+        </p>
+
+        <div class="gallery-section">
+            <h2 class="gallery-title">Scopri la nuova galleria</h2>
+            <p>La nuova versione della galleria è ora disponibile sul nostro sito, con tutte le fotografie già presenti e la nuova organizzazione per album.</p>
+            <p>Vi invitiamo a visitarla, esplorare i nuovi album e continuare a seguirci: la nostra raccolta fotografica è destinata a crescere ancora.</p>
+            <p style="text-align: center; font-size: 1.2rem; margin-top: 2.5rem;"><strong>La galleria cambia faccia.<br>Le fotografie, invece, continuano a raccontare il nostro territorio.</strong></p>
+            <p style="text-align: center; margin-top: 2rem;">
+                <a href="/gallery" style="display: inline-block; padding: 0.9rem 1.6rem; background: var(--accent); color: white; border-radius: 50px; text-decoration: none; font-weight: 600;">Visita la galleria</a>
+            </p>
+        </div>
+    </main>
+
+    <footer class="footer-clean">
+      <div class="footer-container">
+
+        <div class="footer-col">
+          <p class="footer-brand">
+            <a href="/"><i class="fa-regular fa-copyright"></i> 2026 Friuli Emergenze</a>
+          </p>
+          <p class="footer-desc">
+            Pagina di condivisione foto e video di mezzi di soccorso. Ti diamo il benvenuto nel nostro sito ufficiale!
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-paragraph">Vedi altre parti del nostro progetto!</p>
+          <p class="footer-links">
+            <a href="/piattaforma-myfrem" target="_blank" id="linkFooterBtn">MyFrEM</a>
+            <span>·</span>
+            <a href="/contact-us" target="_blank" id="linkFooterBtn">Contatti</a>
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-paragraph">Seguici sui nostri canali social</p>
+          <p class="footer-social">
+            <a href="/social/facebook" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <span>·</span>
+            <a href="/social/instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <span>·</span>
+            <a href="/social/tiktok" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+            <span>·</span>
+            <a href="/social/whatsapp" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-paragraph">Inviaci una mail</p>
+          <p class="footer-extra" style="display:flex;align-items:center;justify-content:center;">
+            <a href="mailto:info@friuliemergenze.it">
+              <i class="fa-regular fa-envelope"></i>
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-legal">
+          <a href="https://www.friuliemergenze.it/policies/privacy">Privacy Policy</a>
+          <span>·</span>
+          <a href="https://www.friuliemergenze.it/policies/cookie">Cookie Policy</a>
+        </p>
+        <p class="footer-extra"> 
+          Versione 3.3.0.0
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.querySelector(".menu-toggle").addEventListener("click", () => {
+        document.querySelector(".nav-links").classList.toggle("open");
+        const liMyFrEM = document.querySelector(".nav-links a[href='/piattaforma-myfrem']");
+
+        if(liMyFrEM) {
+          console.log("MyFrEM link found, updating innerHTML.");
+          liMyFrEM.innerHTML = `<a href="/piattaforma-myfrem" target="_blank" class="nav-icon" aria-label="MyFrEM" style="margin-left:0;">MyFrEM</a>`
+        }
+      });
+
+      window.addEventListener("load", () => {
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.register("/scripts/sw.js");
+        }
+      });
+    </script>
+</body>
+</html>

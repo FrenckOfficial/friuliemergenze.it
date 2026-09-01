@@ -126,13 +126,6 @@
     "link": "/gallery/scheda/tango17-sistema118trieste/"
   },
   {
-    "title": "Fiat Doblò - Marina Militare",
-    "image": "/assets/mezzi/fiatdoblo-marinamilitare.jpg",
-    "category": "esercito",
-    "spotter": "",
-    "link": "/gallery/scheda/fiatdoblo-marinamilitare/"
-  },
-  {
     "title": "Toyota Yaris Cross - Polizia Locale Trieste",
     "image": "/assets/mezzi/toyotayariscross-polizialocalets.jpg",
     "category": "Polizia Locale",
@@ -499,7 +492,7 @@
   {
     "title": "Iveco Daily - Vigili del Fuoco Gorizia",
     "image": "https://cdn.friuliemergenze.it/EyV5R18JkJhbueM78b75uAGedor1/1784229349462-1000080979.jpg",
-    "category": "Soccorso Tecnico Urgente",
+    "category": "Vigili del Fuoco",
     "spotter": "",
     "link": "/gallery/scheda/ivecodaily4x4ivserierestyle-vvfgorizia/"
   },
@@ -632,7 +625,7 @@
   {
     "title": "Peugeout E2008 - Vigili del Fuoco Gorizia",
     "image": "https://cdn.friuliemergenze.it/7FnRs5UUV8Zm4EaKvHxns9BaoeO2/1785088727696-IMG_2341.jpeg",
-    "category": "Soccorso Tecnico Urgente",
+    "category": "Vigili del Fuoco",
     "spotter": "",
     "link": "/gallery/scheda/peugeoute2008-vvfgorizia/"
   },
@@ -653,7 +646,7 @@
   {
     "title": "Iveco CityEuroFire 100E21 I serie - Vigili del Fuoco Monfalcone",
     "image": "https://cdn.friuliemergenze.it/J1eRe4W2edgovr1sgUw8fqJv76E2/IMG_3502.jpg",
-    "category": "Soccorso Tecnico Urgente",
+    "category": "Vigili del Fuoco",
     "spotter": "",
     "link": "/gallery/scheda/ivecocityeurofire100e21iserie-vvfmonfalcone/"
   },
