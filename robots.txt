@@ -14,8 +14,9 @@ Disallow: /403.html
 Disallow: /favicon.ico
 Disallow: /photobooks.json
 Disallow: /.well-known/
-Disallow: /numeri-utili/*
-Disallow: /frequenze/*
+Disallow: /numeri-utili/
+Disallow: /frequenze/
+Disallow: /documenti/
 
 Allow: /
 Allow: /gallery.json
