@@ -24,6 +24,7 @@
     { type: 'meta', attrs: { name: 'apple-mobile-web-app-title', content: titleText } },
     { type: 'script', attrs: { src: 'https://www.paypal.com/sdk/js?client-id=BAADLRkARb_vp7BpzVb3jmj3oHXkBH4Obg55ERSSLQNcjqm9HnbU7Imvpgng1QentxmHTGunfTA4Sd7Vr0&components=hosted-buttons&disable-funding=venmo&currency=EUR' } },
     { type: 'script', attrs: { src: 'https://www.friuliemergenze.it/scripts/modalshow.js' } },
+    { type: 'script', attrs: { src: 'https://analytics.ahrefs.com/analytics.js', 'data-key': 'pauAJVIjwJ3FcC4xUmUKpw', async: true } },
     { type: 'link', attrs: { rel: 'apple-touch-icon', href: '/assets/icons/icon-192x192.png' } },
     { type: 'link', attrs: { rel: 'icon', href: '/assets/logo.png', type: 'image/png' } },
     { type: 'link', attrs: { rel: 'canonical', href: currentUrl } },
@@ -39,7 +40,12 @@
   function exists(el) {
     return [...head.children].some(e =>
       e.tagName.toLowerCase() === el.type &&
-      Object.entries(el.attrs).every(([k, v]) => e.getAttribute(k) === v)
+      Object.entries(el.attrs).every(([k, v]) => {
+        if (typeof v === 'boolean') {
+          return v ? e.hasAttribute(k) : !e.hasAttribute(k);
+        }
+        return e.getAttribute(k) === String(v);
+      })
     );
   }
 
@@ -47,7 +53,13 @@
     if (exists(n)) return;
 
     const el = document.createElement(n.type);
-    Object.entries(n.attrs).forEach(([k, v]) => el.setAttribute(k, v));
+    Object.entries(n.attrs).forEach(([k, v]) => {
+      if (typeof v === 'boolean') {
+        if (v) el.setAttribute(k, '');
+      } else {
+        el.setAttribute(k, v);
+      }
+    });
     head.appendChild(el);
   });
 
